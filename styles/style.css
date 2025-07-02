@@ -1,0 +1,47 @@
+/* style.css */
+
+@import url('header.css');
+@import url('lessons.css');
+@import url('resources.css');
+@import url('games.css');
+@import url('exercises.css');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #4285f4;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #4285f4;
+    transition: background-color 0.3s;
+}
+
+footer a:hover {
+    background-color: #3367d6;
+}

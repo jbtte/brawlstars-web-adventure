@@ -1,0 +1,46 @@
+/* exercises.css ou adicione ao style.css */
+
+.exercise {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.exercise h3 {
+    margin-top: 0;
+}
+
+.exercise p {
+    margin-bottom: 10px;
+}
+
+.exercise pre {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.exercise code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.exercise button {
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.exercise button:hover {
+    background-color: #3367d6;
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+}
