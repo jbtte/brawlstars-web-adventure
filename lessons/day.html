@@ -4,23 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
-      (function () {
-        const isLocal =
-          window.location.hostname === '127.0.0.1' ||
-          window.location.hostname === 'localhost';
-        const repoName = 'python-adventure';
-        const baseUrl = isLocal ? '/' : `/${repoName}/`;
+      // Dynamically set the base URL for local development vs. GitHub Pages
+      // This script must be placed BEFORE any CSS or JS links in the <head>
+      const isLocal =
+        window.location.hostname === '127.0.0.1' ||
+        window.location.hostname === 'localhost';
+      const repoName = 'python-adventure'; // <--- Make sure this is your exact GitHub repo name!
+      const baseUrl = isLocal ? '/' : `/${repoName}/`;
 
-        let baseTag = document.querySelector('base');
-        if (!baseTag) {
-          baseTag = document.createElement('base');
-          document.head.appendChild(baseTag);
-        }
-        baseTag.href = baseUrl;
-      })();
+      const baseTag = document.createElement('base');
+      baseTag.href = baseUrl;
+      document.head.prepend(baseTag); // Add base tag as the very first element in head
     </script>
     <title id="lesson-title-tag">Carregando Lição...</title>
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="resources/images/mario.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
@@ -29,11 +26,11 @@
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
 
     <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
-    <script defer src="/scripts/day_ide.js"></script>
-    <script defer src="/scripts/load_lesson.js"></script>
+    <script defer src="scripts/day_ide.js"></script>
+    <script defer src="scripts/load_lesson.js"></script>
   </head>
   <body>
     <header>
@@ -41,7 +38,7 @@
       <nav class="main-nav lesson-page-nav">
         <ul>
           <li>
-            <a href="/index.html">Voltar ao Mapa das Fases</a>
+            <a href="index.html">Voltar ao Mapa das Fases</a>
           </li>
         </ul>
       </nav>
