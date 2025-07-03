@@ -2,19 +2,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <script>
-      (function () {
-        const isLocal =
-          window.location.hostname === '127.0.0.1' ||
-          window.location.hostname === 'localhost';
-        const repoName = 'python-adventure'; // <<< CONFIRM EXACT REPO NAME
-        const baseUrl = isLocal ? '/' : `/${repoName}/`;
 
-        const baseTag = document.createElement('base');
-        baseTag.href = baseUrl;
-        document.head.prepend(baseTag);
-      })();
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aventura Python: Explorando o Mundo da Programação</title>
 
