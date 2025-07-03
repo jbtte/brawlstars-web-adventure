@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   try {
-    const response = await fetch(`/lessons/${lessonId}.json`);
+    const response = await fetch(`lessons/${lessonId}.json`);
     if (!response.ok) {
       if (response.status === 404) {
         displayErrorMessage(
