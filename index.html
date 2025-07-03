@@ -2,24 +2,22 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-
     <script>
       (function () {
         const isLocal =
           window.location.hostname === '127.0.0.1' ||
           window.location.hostname === 'localhost';
-        const repoName = 'python-adventure'; // <<< Make sure this is your exact GitHub repo name!
+        const repoName = 'python-adventure'; // <<< CONFIRM EXACT REPO NAME
         const baseUrl = isLocal ? '/' : `/${repoName}/`;
 
         const baseTag = document.createElement('base');
         baseTag.href = baseUrl;
-        document.head.prepend(baseTag); // Add base tag as the very first element in head
+        document.head.prepend(baseTag);
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aventura Python: Explorando o Mundo da Programação</title>
 
-    <link rel="icon" type="image/png" href="/resources/images/mario.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
@@ -29,7 +27,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="icon" type="image/png" href="/resources/images/mario.png" />
   </head>
+
   <body>
     <header>
       <h1>Aventura Python: Explorando o Mundo da Programação</h1>
