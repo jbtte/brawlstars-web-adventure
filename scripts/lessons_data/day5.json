@@ -1,0 +1,44 @@
+{
+  "title": "Dia 5 – Projeto: Gerador de Histórias (Mad Libs)",
+  "concepts": [
+    {
+      "heading": "O que é um Mad Lib?",
+      "text": "Mad Libs é um jogo onde o programa pede palavras ao usuário (como nomes, verbos e lugares) e depois monta uma história engraçada com elas."
+    },
+    {
+      "heading": "Como funciona?",
+      "text": "Você usará a função <code>input()</code> para pedir palavras ao usuário e depois montará uma história usando f-strings.",
+      "code": "animal = input(\"Digite um animal: \")\ncor = input(\"Digite uma cor: \")\nprint(f\"Era uma vez um {animal} muito {cor} que vivia na floresta.\")"
+    },
+    {
+      "heading": "Dica: escreva a história antes",
+      "text": "Pense em uma história simples e sublinhe os espaços que vão virar variáveis. Exemplo:\n\"Era uma vez um __ que morava em um __ e gostava de comer __.\""
+    },
+    {
+      "heading": "Foco da aula",
+      "text": "Você vai praticar:\n<ul>\n  <li>Entrada com <code>input()</code></li>\n  <li>Uso de <code>str</code> e concatenação</li>\n  <li>f-strings</li>\n  <li>Execução de um mini-projeto com criatividade</li>\n</ul>"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Crie um programa que peça ao usuário pelo menos 5 palavras: nome, lugar, cor, comida e animal.",
+      "code_hint": "nome = input(\"Digite um nome: \")\nlugar = input(\"Digite um lugar: \")\ncor = input(\"Digite uma cor: \")\ncomida = input(\"Digite uma comida: \")\nanimal = input(\"Digite um animal: \")"
+    },
+    {
+      "prompt": "2. Use essas palavras para montar uma história engraçada usando f-strings.",
+      "code_hint": "print(f\"Um dia, {nome} foi ao {lugar} com um {animal} {cor}. Lá, eles comeram muito {comida} e ficaram felizes para sempre!\")"
+    },
+    {
+      "prompt": "3. Desafio: Adicione mais variáveis, como adjetivos ou verbos, e monte uma história mais longa.",
+      "code_hint": "verbo = input(\"Digite um verbo: \")\nadjetivo = input(\"Digite um adjetivo: \")\nprint(f\"Era uma vez um {animal} muito {adjetivo} que adorava {verbo}. Um dia, ele conheceu {nome} no {lugar} e comeram {comida} juntos.\")"
+    },
+    {
+      "prompt": "4. *Extra:* Salve a história em um arquivo de texto chamado <code>minha_historia.txt</code> usando <code>open()</code> e <code>write()</code>.",
+      "code_hint": "with open(\"minha_historia.txt\", \"w\") as arquivo:\n    arquivo.write(f\"Era uma vez {nome} e um {animal} {cor} que... (sua história aqui)\")"
+    }
+  ],
+  "video_suggestion": {
+    "text": "Veja esse vídeo em português onde o projeto Mad Libs é explicado passo a passo:",
+    "url": "https://www.youtube.com/watch?v=2YqkH0CttJk"
+  }
+}
