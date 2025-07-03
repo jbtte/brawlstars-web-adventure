@@ -1,17 +1,17 @@
 /* styles/style.css */
 
 /* Importar variáveis e base primeiro */
-@import url('base/_variables.css'); /* Crie este arquivo */
-@import url('base/_global.css');    /* Crie este arquivo */
+@import url('base/variables.css'); 
+@import url('base/global.css');    
 
 /* Componentes e seções gerais */
-@import url('components/_header.css');
-@import url('components/_main_layout.css'); /* Estilos para o 'main' e seções gerais */
-@import url('components/_hero.css'); /* Estilos da seção hero (index.html) */
-@import url('components/_lesson_cards.css'); /* Estilos para lesson-card e lesson-container (index.html) */
-@import url('components/_resource_cards.css'); /* Estilos para resource/game cards */
-@import url('components/_ide.css'); /* Estilos específicos do IDE (day.html) */
-@import url('components/_footer.css');
+@import url('components/header.css');
+@import url('components/main_layout.css'); /* Estilos para o 'main' e seções gerais */
+@import url('components/hero.css'); /* Estilos da seção hero (index.html) */
+@import url('components/lesson_cards.css'); /* Estilos para lesson-card e lesson-container (index.html) */
+@import url('components/resource_cards.css'); /* Estilos para resource/game cards */
+@import url('components/ide.css'); /* Estilos específicos do IDE (day.html) */
+@import url('components/footer.css');
 
 /* Responsividade por último para sobrescrever seletivamente */
-@import url('base/_responsive.css'); /* Crie este arquivo */
+@import url('base/responsive.css'); 
