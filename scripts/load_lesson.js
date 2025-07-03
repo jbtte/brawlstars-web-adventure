@@ -95,17 +95,20 @@ document.addEventListener('DOMContentLoaded', async () => {
       conceptsContainer.appendChild(section);
     });
 
-    // Inject exercises
-    // Clear previous exercises, but keep the fixed H2 and P if they are in the HTML
+    // Injeta os exercícios
+    const exercisesContainer = document.getElementById(
+      'lesson-exercises-container'
+    );
+    // Limpa a lista de exercícios anterior se existir
     let exercisesListDiv = exercisesContainer.querySelector(
       '.exercise-list-container'
     );
     if (exercisesListDiv) {
-      exercisesListDiv.innerHTML = ''; // Clear only the dynamic list
+      exercisesListDiv.innerHTML = '';
     } else {
       exercisesListDiv = document.createElement('div');
       exercisesListDiv.className = 'exercise-list-container';
-      exercisesContainer.appendChild(exercisesListDiv); // Append if it didn't exist
+      exercisesContainer.appendChild(exercisesListDiv);
     }
 
     if (lesson.exercises && lesson.exercises.length > 0) {
@@ -115,16 +118,37 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const prompt = document.createElement('p');
         prompt.innerHTML = exercise.prompt;
-
         exerciseDiv.appendChild(prompt);
 
         if (exercise.code_hint) {
-          const pre = document.createElement('pre');
-          const code = document.createElement('code');
-          code.className = 'exercise-snippet';
-          code.textContent = exercise.code_hint;
-          pre.appendChild(code);
-          exerciseDiv.appendChild(pre);
+          // NOVO: Cria o botão para mostrar a dica
+          const showHintButton = document.createElement('button');
+          showHintButton.className = 'show-hint-button'; // Classe para estilização
+          showHintButton.textContent = 'Ver Dica de Código';
+          exerciseDiv.appendChild(showHintButton);
+
+          // NOVO: Cria o contêiner para a dica escondida
+          const hintContainer = document.createElement('div');
+          hintContainer.className = 'hint-container hidden'; // Começa escondido
+
+          const hintPre = document.createElement('pre');
+          const hintCode = document.createElement('code');
+          hintCode.className = 'exercise-snippet';
+          hintCode.textContent = exercise.code_hint;
+          hintPre.appendChild(hintCode);
+          hintContainer.appendChild(hintPre);
+
+          exerciseDiv.appendChild(hintContainer); // Adiciona o contêiner da dica
+
+          // NOVO: Adiciona o evento de clique ao botão
+          showHintButton.addEventListener('click', () => {
+            hintContainer.classList.toggle('hidden'); // Alterna a visibilidade
+            if (hintContainer.classList.contains('hidden')) {
+              showHintButton.textContent = 'Ver Dica de Código';
+            } else {
+              showHintButton.textContent = 'Esconder Dica';
+            }
+          });
         }
         exercisesListDiv.appendChild(exerciseDiv);
       });

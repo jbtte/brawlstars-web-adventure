@@ -1,0 +1,46 @@
+.show-hint-button {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-top: 10px; /* Espaço acima do botão */
+    background-color: var(--mario-grass-green); /* Verde como um cano */
+    color: var(--text-light);
+    font-family: var(--pixel-font);
+    font-size: 0.8em;
+    border: 2px solid var(--mario-dirt-brown);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s ease, background-color 0.1s ease, box-shadow 0.1s ease;
+}
+
+.show-hint-button:hover {
+    transform: translateY(-2px);
+    background-color: #5cb85c; /* Um verde um pouco mais claro */
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+.show-hint-button:active {
+    transform: translateY(1px);
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.hint-container {
+    /* Estilo para o container da dica, que será escondido/mostrado */
+    margin-top: 15px; /* Espaço entre o botão e a dica */
+    transition: opacity 0.3s ease, max-height 0.3s ease; /* Transição suave */
+    overflow: hidden; /* Garante que não haja transbordamento durante a transição */
+    max-height: 500px; /* Altura máxima para transição */
+    opacity: 1; /* Visível por padrão antes da classe hidden */
+}
+
+.hint-container.hidden {
+    max-height: 0; /* Altura zero para esconder */
+    opacity: 0; /* Totalmente transparente */
+    margin-top: 0; /* Remove a margem quando escondido */
+    pointer-events: none; /* Impede interação quando escondido */
+}
+
+/* Garante que o .exercise-snippet dentro da dica não tenha margin-bottom se for o último item da dica */
+.hint-container .exercise-snippet {
+    margin-bottom: 0; 
+}
