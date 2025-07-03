@@ -2,9 +2,26 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <base href="/python-adventure/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        const isLocal =
+          window.location.hostname === '127.0.0.1' ||
+          window.location.hostname === 'localhost';
+        const repoName = 'python-adventure'; // <<< REPLACE with your exact GitHub repo name!
+        const baseUrl = isLocal ? '/' : `/${repoName}/`;
+
+        let baseTag = document.querySelector('base');
+        if (!baseTag) {
+          baseTag = document.createElement('base');
+          document.head.appendChild(baseTag);
+        }
+        baseTag.href = baseUrl;
+      })();
+    </script>
+
     <title id="lesson-title-tag">Carregando Lição...</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
@@ -13,12 +30,11 @@
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
 
     <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
-    <script defer src="scripts/day_ide.js"></script>
-    <script defer src="scripts/load_lesson.js"></script>
-    <link rel="icon" type="image/png" href="resources/images/mario.png" />
+    <script defer src="/scripts/day_ide.js"></script>
+    <script defer src="/scripts/load_lesson.js"></script>
   </head>
   <body>
     <header>
@@ -26,7 +42,7 @@
       <nav class="main-nav lesson-page-nav">
         <ul>
           <li>
-            <a href="index.html">Voltar ao Mapa das Fases</a>
+            <a href="/index.html">Voltar ao Mapa das Fases</a>
           </li>
         </ul>
       </nav>
@@ -80,10 +96,11 @@
           </section>
         </aside>
       </div>
+      <section id="video-suggestion-section" class="video-section"></section>
     </main>
 
     <footer>
-      <p><a href="../index.html">Voltar para a página principal</a></p>
+      <p><a href="/index.html">Voltar para a página principal</a></p>
     </footer>
   </body>
 </html>

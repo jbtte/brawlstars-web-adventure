@@ -1,59 +1,81 @@
 // scripts/load_lesson.js
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const params = new URLSearchParams(window.location.search);
-  const lessonId = params.get('id'); // Obtém o 'id' da URL (ex: ?id=day1)
+  const urlParams = new URLSearchParams(window.location.search);
+  const lessonId = urlParams.get('id');
+
+  // Make sure these elements exist before trying to set properties
+  const lessonTitleTag = document.getElementById('lesson-title-tag');
+  const lessonHeaderTitle = document.getElementById('lesson-header-title');
+  const conceptsContainer = document.getElementById(
+    'lesson-concepts-container'
+  );
+  const exercisesContainer = document.getElementById(
+    'lesson-exercises-container'
+  );
+  const videoSection = document.getElementById('video-suggestion-section');
+
+  // Basic check for essential containers
+  if (
+    !lessonTitleTag ||
+    !lessonHeaderTitle ||
+    !conceptsContainer ||
+    !exercisesContainer ||
+    !videoSection
+  ) {
+    console.error(
+      'Critical HTML elements for lesson loading are missing. Check day.html IDs.'
+    );
+    if (lessonHeaderTitle)
+      lessonHeaderTitle.textContent = 'Erro: Estrutura da Página Incompleta';
+    return; // Stop execution if critical elements are missing
+  }
 
   if (!lessonId) {
     displayErrorMessage(
       'Lição Não Especificada',
-      'Por favor, selecione uma lição na página principal para iniciar sua aventura.'
+      'Por favor, selecione uma lição válida no mapa.',
+      lessonTitleTag,
+      lessonHeaderTitle,
+      conceptsContainer,
+      exercisesContainer
     );
     return;
   }
 
   try {
-    // Tenta carregar o arquivo JSON da lição
-    const response = await fetch(`scripts/lessons_data/${lessonId}.json`);
-
+    const response = await fetch(`/scripts/lessons_data/${lessonId}.json`);
     if (!response.ok) {
-      // Se a resposta NÃO for OK (por exemplo, 404 Not Found)
       if (response.status === 404) {
-        // Lição não encontrada = lição ainda em construção
         displayErrorMessage(
           'Lição em Construção!',
           `A Fase **${lessonId.replace(
             'day',
             'Dia '
-          )}** ainda está sendo codificada. Volte em breve para continuar sua aventura!`
+          )}** ainda está sendo codificada. Volte em breve para continuar sua aventura!`,
+          lessonTitleTag,
+          lessonHeaderTitle,
+          conceptsContainer,
+          exercisesContainer
         );
       } else {
-        // Outros erros HTTP (500, etc.)
         throw new Error(
           `Erro ao carregar lição: ${response.statusText} (${response.status})`
         );
       }
-      return; // Sai da função após exibir a mensagem de erro/construção
+      return;
     }
+    const lesson = await response.json();
 
-    const lesson = await response.json(); // Analisa os dados JSON
+    // Update page title and header
+    lessonTitleTag.textContent = lesson.title;
+    lessonHeaderTitle.textContent = lesson.title;
 
-    // -----------------------------------------------------------------
-    // Injeção de conteúdo (mantida igual, caso a lição seja encontrada)
-    // -----------------------------------------------------------------
-
-    // Atualiza o título da página e o cabeçalho
-    document.getElementById('lesson-title-tag').textContent = lesson.title;
-    document.getElementById('lesson-header-title').textContent = lesson.title;
-
-    // Injeta os conceitos
-    const conceptsContainer = document.getElementById(
-      'lesson-concepts-container'
-    );
-    conceptsContainer.innerHTML = ''; // Limpa o conteúdo existente
+    // Inject concepts
+    conceptsContainer.innerHTML = '';
     lesson.concepts.forEach((concept) => {
       const section = document.createElement('section');
-      const heading = document.createElement('h2');
+      const heading = document.createElement('h2'); // Changed to H2 as per standard section heading
       heading.innerHTML = concept.heading;
 
       const text = document.createElement('p');
@@ -73,17 +95,19 @@ document.addEventListener('DOMContentLoaded', async () => {
       conceptsContainer.appendChild(section);
     });
 
-    // Injeta os exercícios
-    const exercisesContainer = document.getElementById(
-      'lesson-exercises-container'
+    // Inject exercises
+    // Clear previous exercises, but keep the fixed H2 and P if they are in the HTML
+    let exercisesListDiv = exercisesContainer.querySelector(
+      '.exercise-list-container'
     );
-    // Remove a lista de exercícios anterior se existir, para evitar duplicação
-    exercisesContainer.querySelector('.exercise-list-container')?.remove();
+    if (exercisesListDiv) {
+      exercisesListDiv.innerHTML = ''; // Clear only the dynamic list
+    } else {
+      exercisesListDiv = document.createElement('div');
+      exercisesListDiv.className = 'exercise-list-container';
+      exercisesContainer.appendChild(exercisesListDiv); // Append if it didn't exist
+    }
 
-    const exercisesListDiv = document.createElement('div'); // Cria um contêiner para a lista de exercícios
-    exercisesListDiv.className = 'exercise-list-container';
-
-    // Se houver exercícios na lição
     if (lesson.exercises && lesson.exercises.length > 0) {
       lesson.exercises.forEach((exercise) => {
         const exerciseDiv = document.createElement('div');
@@ -104,14 +128,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
         exercisesListDiv.appendChild(exerciseDiv);
       });
-      exercisesContainer.appendChild(exercisesListDiv);
     } else {
-      // Se não houver exercícios para esta lição
       exercisesListDiv.innerHTML = `<p>Nenhum exercício disponível para esta lição ainda. Continue a aventura na próxima fase!</p>`;
-      exercisesContainer.appendChild(exercisesListDiv);
     }
 
-    // Opcional: Atualiza o IDE com o código inicial ou a primeira dica de exercício
+    // Optional: Update IDE with initial code or first exercise hint
     const ideEditor = document.getElementById('python-code-editor');
     if (ideEditor) {
       if (lesson.exercises.length > 0 && lesson.exercises[0].code_hint) {
@@ -122,33 +143,94 @@ document.addEventListener('DOMContentLoaded', async () => {
         ideEditor.value = `# Seu primeiro código Python!\n# Experimente seu código aqui.`;
       }
     }
+
+    // Add video suggestion
+    if (lesson.video_suggestion && videoSection) {
+      // Check if videoSection exists before manipulating
+      videoSection.innerHTML = '';
+      const videoHeading = document.createElement('h2');
+      videoHeading.textContent = 'Aprofunde Seus Conhecimentos';
+      videoSection.appendChild(videoHeading);
+
+      const videoText = document.createElement('p');
+      videoText.innerHTML = lesson.video_suggestion.text;
+      videoSection.appendChild(videoText);
+
+      const videoEmbedDiv = document.createElement('div');
+      videoEmbedDiv.classList.add('video-embed-container');
+
+      const videoIframe = document.createElement('iframe');
+      videoIframe.setAttribute(
+        'src',
+        `https://www.youtube.com/embed/${getYouTubeVideoId(
+          lesson.video_suggestion.url
+        )}`
+      );
+      videoIframe.setAttribute('frameborder', '0');
+      videoIframe.setAttribute(
+        'allow',
+        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+      );
+      videoIframe.setAttribute('allowfullscreen', '');
+      videoIframe.setAttribute('title', 'Sugestão de Vídeo');
+
+      videoEmbedDiv.appendChild(videoIframe);
+      videoSection.appendChild(videoEmbedDiv);
+      videoSection.style.display = 'block'; // Ensure section is visible
+    } else if (videoSection) {
+      videoSection.style.display = 'none'; // Hide section if no video
+    }
   } catch (error) {
-    // Captura erros gerais de rede ou parsing de JSON
     displayErrorMessage(
       'Erro de Carregamento',
-      `Ocorreu um problema ao carregar a lição: ${error.message}. Por favor, tente novamente.`
+      `Ocorreu um problema ao carregar a lição: ${error.message}. Por favor, tente novamente.`,
+      lessonTitleTag,
+      lessonHeaderTitle,
+      conceptsContainer,
+      exercisesContainer
     );
     console.error('Loading lesson error:', error);
   }
 });
 
-// Função auxiliar para exibir mensagens de erro/status
-function displayErrorMessage(title, message) {
-  document.getElementById('lesson-title-tag').textContent = `Erro: ${title}`;
-  document.getElementById('lesson-header-title').textContent = `Erro: ${title}`;
+// Helper function to extract YouTube video ID
+function getYouTubeVideoId(url) {
+  const regExp =
+    /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return match && match[2].length === 11 ? match[2] : null;
+}
 
-  const conceptsContainer = document.getElementById(
-    'lesson-concepts-container'
-  );
-  conceptsContainer.innerHTML = `
-        <section style="text-align: center; color: var(--text-dark);">
-            <h2 style="color:var(--mario-red); text-shadow: 2px 2px 0px rgba(0,0,0,0.2);">${title}</h2>
-            <p style="font-size: 1.1em; line-height: 1.5;">${message}</p>
-            <p>
-                <a href="../index.html" class="back-to-map-button">Voltar ao Mapa das Fases</a>
-            </p>
-        </section>
-    `;
-  // Limpa a seção de exercícios para não mostrar conteúdo antigo
-  document.getElementById('lesson-exercises-container').innerHTML = ``;
+// Function to display error messages (passing elements directly)
+function displayErrorMessage(
+  title,
+  message,
+  lessonTitleTag,
+  lessonHeaderTitle,
+  conceptsContainer,
+  exercisesContainer
+) {
+  if (lessonTitleTag) lessonTitleTag.textContent = `Erro: ${title}`;
+  if (lessonHeaderTitle) lessonHeaderTitle.textContent = `Erro: ${title}`;
+
+  if (conceptsContainer) {
+    conceptsContainer.innerHTML = `
+            <section style="text-align: center; color: var(--text-dark);">
+                <h2 style="color:var(--mario-red); text-shadow: 2px 2px 0px rgba(0,0,0,0.2);">${title}</h2>
+                <p style="font-size: 1.1em; line-height: 1.5;">${message}</p>
+                <p style="margin-top: 20px;">
+                    <a href="/index.html" class="back-to-map-button">Voltar ao Mapa das Fases</a>
+                </p>
+            </section>
+        `;
+  }
+  // Clear exercises section content if it exists
+  if (exercisesContainer) exercisesContainer.innerHTML = ``;
+  // Hide video section if it exists
+  const videoSection = document.getElementById('video-suggestion-section');
+  if (videoSection) videoSection.style.display = 'none';
+
+  // Also hide IDE section if it exists
+  const ideSection = document.querySelector('.interactive-ide-section');
+  if (ideSection) ideSection.style.display = 'none';
 }

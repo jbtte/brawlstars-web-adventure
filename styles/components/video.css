@@ -1,0 +1,47 @@
+.video-section {
+    background-color: var(--mario-block-yellow); /* Um fundo que se destaca */
+    border: 4px solid var(--mario-dirt-brown);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 40px auto; /* Espaçamento e centralização */
+    max-width: 800px; /* Largura máxima para o conteúdo */
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.4);
+    text-align: center; /* Centraliza o texto e o vídeo */
+}
+
+.video-section h2 {
+    font-family: var(--pixel-font);
+    color: var(--text-dark);
+    font-size: 1.8em;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+}
+
+.video-section p {
+    font-family: 'Roboto', sans-serif;
+    color: black; /* Texto mais escuro para contraste no fundo amarelo */
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+.video-embed-container {
+    position: relative;
+    width: 100%;
+    /* Relação de aspecto 16:9 (altura é 56.25% da largura) */
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background-color: black; /* Fundo preto enquanto o vídeo carrega */
+    border-radius: 5px;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove a borda padrão do iframe */
+}
