@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   try {
     // Tenta carregar o arquivo JSON da lição
-    const response = await fetch(`/scripts/lessons_data/${lessonId}.json`);
+    const response = await fetch(`scripts/lessons_data/${lessonId}.json`);
 
     if (!response.ok) {
       // Se a resposta NÃO for OK (por exemplo, 404 Not Found)
