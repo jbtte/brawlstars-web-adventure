@@ -8,7 +8,7 @@
         const isLocal =
           window.location.hostname === '127.0.0.1' ||
           window.location.hostname === 'localhost';
-        const repoName = 'python-adventure'; // <<< REPLACE with your exact GitHub repo name!
+        const repoName = 'python-adventure';
         const baseUrl = isLocal ? '/' : `/${repoName}/`;
 
         let baseTag = document.querySelector('base');
@@ -19,7 +19,6 @@
         baseTag.href = baseUrl;
       })();
     </script>
-
     <title id="lesson-title-tag">Carregando Lição...</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link
