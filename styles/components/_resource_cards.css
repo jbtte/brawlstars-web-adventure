@@ -1,0 +1,84 @@
+/* styles/components/_resource_cards.css */
+.resources-container,
+.games-container {
+    background-color: var(--mario-grass-green);
+    border: 5px solid var(--mario-dirt-brown);
+    border-radius: 15px;
+    padding: 40px 30px 30px;
+    margin-bottom: 30px;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3);
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.resources-container::before,
+.games-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #388E3C;
+    border-bottom: 3px solid var(--mario-dirt-brown);
+    border-radius: 15px 15px 0 0;
+}
+
+.resources-container h2,
+.games-container h2 {
+    color: var(--text-light);
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+}
+
+.resource-cards,
+.game-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.resource-card,
+.game-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 3px solid var(--mario-dirt-brown);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.resource-card:hover,
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.resource-card a,
+.game-card a {
+    font-family: var(--pixel-font);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    display: block;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card p,
+.game-card p {
+    color: black; /* Garante que o texto seja preto e visível */
+    font-size: 0.9em;
+    margin: 0;
+    line-height: 1.3; /* Aumentado ligeiramente para melhor leitura */
+    text-shadow: 0.5px 0.5px 0px rgba(255, 255, 255, 0.6); /* Sombra sutil para destacar */
+    
+}
+
+.lesson-map-container h2,
+.lesson-map-container .map-intro-text {
+    grid-column: 1 / -1; /* Faz esses elementos ocuparem todas as colunas do grid */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo deles */
+}

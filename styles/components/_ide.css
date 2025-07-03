@@ -1,0 +1,171 @@
+/* styles/components/_ide.css */
+
+/* Container que organiza o conteúdo da lição e a sidebar do IDE lado a lado */
+.lesson-layout-wrapper {
+    display: flex; /* Habilita o Flexbox para layout lado a lado */
+    justify-content: space-between; /* Espaço entre as duas colunas */
+    align-items: flex-start; /* Alinha o topo das colunas */
+    gap: 30px; /* Espaço entre a coluna de conteúdo e a sidebar */
+    margin-bottom: 30px; /* Mantém a margem inferior como as outras seções */
+}
+
+/* Coluna que contém o conteúdo principal da lição (conceitos e exercícios) */
+.lesson-content-column {
+    flex: 2; /* Faz esta coluna ocupar mais espaço (ex: 2/3 da largura disponível) */
+    min-width: 0; /* Permite que o conteúdo encolha se a tela for muito pequena */
+    /* Não precisa de background-color ou box-shadow aqui, pois as seções internas já têm */
+}
+
+/* Sidebar do IDE - Onde o editor interativo fica */
+.ide-sidebar {
+    flex: 1; /* Faz esta coluna ocupar menos espaço (ex: 1/3 da largura disponível) */
+    position: sticky; /* Torna a sidebar 'pegajosa' ao rolar */
+    top: 20px; /* A sidebar irá grudar a 20px do topo da viewport quando o scroll a alcançar */
+    align-self: flex-start; /* Garante que a sidebar se alinhe ao topo de seu contêiner flex */
+    max-height: calc(100vh - 40px); /* Limita a altura da sidebar para que ela não seja maior que a tela menos a margem superior/inferior */
+    overflow-y: auto; /* Adiciona uma barra de rolagem interna se o conteúdo da sidebar for muito longo */
+    padding-bottom: 20px; /* Espaçamento na parte inferior da sidebar */
+    z-index: 900; /* Garante que a sidebar fique acima de outros elementos ao rolar */
+}
+
+/* Estilo para a seção do IDE (dentro da sidebar) */
+.interactive-ide-section {
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo claro para o IDE */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Padding interno */
+    /* Removido o margin-bottom padrão, pois o sidebar tem seu próprio espaçamento */
+    margin-bottom: 0;
+    /* Ajuste de sombra para a sidebar */
+    box-shadow: 4px 4px 0px var(--mario-dirt-brown), 8px 8px 0px rgba(0, 0, 0, 0.1);
+    border: 4px solid var(--mario-dirt-brown); /* Borda sólida */
+    text-align: left; /* Alinha o conteúdo do IDE à esquerda */
+    height: 100%; /* Garante que a seção preencha a altura da sidebar */
+    box-sizing: border-box; /* Inclui padding e border na altura/largura */
+}
+
+.interactive-ide-section h2 {
+    text-align: center; /* Centraliza o título da seção IDE */
+    color: var(--mario-red);
+}
+
+.python-ide-container {
+    border: 3px solid var(--mario-dirt-brown);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #282c34; /* Fundo escuro para o editor */
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+.editor-header, .output-header {
+    background-color: var(--mario-dirt-brown);
+    color: var(--text-light);
+    font-family: var(--pixel-font);
+    padding: 8px 15px;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+}
+
+#pyodide-status {
+    font-size: 0.7em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+.status-loading { color: var(--mario-block-yellow); }
+.status-ready { color: var(--mario-grass-green); }
+.status-error { color: var(--mario-red); }
+
+#python-code-editor {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    border: none;
+    background-color: #1c1f24;
+    color: #abb2bf;
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+    font-size: 0.95em;
+    line-height: 1.5;
+    resize: vertical;
+    outline: none;
+}
+
+.run-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: var(--mario-red);
+    color: var(--text-light);
+    font-family: var(--pixel-font);
+    font-size: 1.1em;
+    border: none;
+    border-top: 3px solid var(--mario-dirt-brown);
+    border-bottom: 3px solid var(--mario-dirt-brown);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.2);
+}
+
+.run-button:hover:not(:disabled) {
+    background-color: #FF6347;
+    transform: translateY(-2px);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.2), 0 3px 0 rgba(0,0,0,0.2);
+}
+
+.run-button:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow: inset 0 3px 0 rgba(0,0,0,0.2);
+}
+
+.run-button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.run-button .button-icon {
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+.output-container {
+    border-top: 2px solid var(--mario-dirt-brown);
+    background-color: #0d1117;
+}
+
+#python-output {
+    min-height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: left;
+    color: #e6edf3;
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+    font-size: 0.95em;
+    background-color: #0d1117;
+    border: none;
+    overflow-y: auto;
+}
+
+/* Responsividade específica para o layout lado a lado */
+@media (max-width: 900px) { /* Define o ponto de quebra onde o layout muda */
+    .lesson-layout-wrapper {
+        flex-direction: column; /* Colunas empilham-se em telas menores */
+        align-items: center; /* Centraliza os itens empilhados */
+        gap: 20px; /* Reduz o espaçamento entre os elementos empilhados */
+    }
+
+    .lesson-content-column,
+    .ide-sidebar {
+        width: 100%; /* Ocupam a largura total disponível */
+        position: static; /* Remove o sticky quando empilhado */
+        max-height: none; /* Remove a restrição de altura */
+        overflow-y: visible; /* Remove a barra de rolagem interna */
+    }
+}

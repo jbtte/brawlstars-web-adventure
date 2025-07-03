@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="lesson-title-tag">Carregando Lição...</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+    <script defer src="../scripts/day_ide.js"></script>
+    <script defer src="../scripts/load_lesson.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 id="lesson-header-title">Aventura Python: Carregando...</h1>
+      <nav class="main-nav lesson-page-nav">
+        <ul>
+          <li>
+            <a href="../index.html">Voltar ao Mapa das Fases</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="lesson-layout-wrapper">
+        <div class="lesson-content-column">
+          <div id="lesson-concepts-container"></div>
+
+          <section id="lesson-exercises-container" class="exercises-section">
+            <h2>Exercícios: Hora de Codificar!</h2>
+            <p>
+              Use o "Seu Playground Python!" acima para resolver estes desafios.
+              Cole seu código lá e execute para testar!
+            </p>
+            <div class="exercise-list-container"></div>
+          </section>
+        </div>
+
+        <aside class="ide-sidebar">
+          <section class="interactive-ide-section">
+            <h2>Seu Playground Python!</h2>
+            <p>
+              Use o editor abaixo para experimentar o código. Digite seus
+              exemplos, resolva os exercícios e clique em "Executar" para ver o
+              resultado!
+            </p>
+            <div class="python-ide-container">
+              <div class="editor-header">
+                <span>Editor de Código Python</span>
+                <span id="pyodide-status" class="status-loading"
+                  >Carregando IDE...</span
+                >
+              </div>
+              <textarea id="python-code-editor" rows="18" cols="80">
+# Onde a mágica acontece!
+# Experimente seu código Python aqui.
+# Clique em 'Executar Código' para ver o resultado.
+</textarea
+              >
+              <button id="run-python-code" class="run-button" disabled>
+                Executar Código
+                <span class="button-icon">▶️</span>
+              </button>
+              <div class="output-container">
+                <div class="output-header">Saída do Código</div>
+                <pre id="python-output" class="code-output"></pre>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <p><a href="../index.html">Voltar para a página principal</a></p>
+    </footer>
+  </body>
+</html>

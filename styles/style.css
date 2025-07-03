@@ -1,47 +1,17 @@
-/* style.css */
+/* styles/style.css */
 
-@import url('header.css');
-@import url('lessons.css');
-@import url('resources.css');
-@import url('games.css');
-@import url('exercises.css');
+/* Importar variáveis e base primeiro */
+@import url('base/_variables.css'); /* Crie este arquivo */
+@import url('base/_global.css');    /* Crie este arquivo */
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-}
+/* Componentes e seções gerais */
+@import url('components/_header.css'); /* Crie este arquivo */
+@import url('components/_main_layout.css'); /* Estilos para o 'main' e seções gerais */
+@import url('components/_hero.css'); /* Estilos da seção hero (index.html) */
+@import url('components/_lesson_cards.css'); /* Estilos para lesson-card e lesson-container (index.html) */
+@import url('components/_resource_cards.css'); /* Estilos para resource/game cards */
+@import url('components/_ide.css'); /* Estilos específicos do IDE (day.html) */
+@import url('components/_footer.css'); /* Crie este arquivo */
 
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 30px;
-}
-
-h2 {
-    color: #4285f4;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    background-color: #4285f4;
-    transition: background-color 0.3s;
-}
-
-footer a:hover {
-    background-color: #3367d6;
-}
+/* Responsividade por último para sobrescrever seletivamente */
+@import url('base/_responsive.css'); /* Crie este arquivo */

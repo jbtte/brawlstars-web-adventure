@@ -1,0 +1,68 @@
+{
+  "title": "Dia 1 - Começando com Python: Instalação, Editor e Organização",
+  "concepts": [
+    {
+      "heading": "O que é Python?",
+      "text": "Python é uma linguagem de programação usada para criar jogos, sites, aplicativos, automações e muito mais. É fácil de aprender e muito poderosa!",
+      "code": ""
+    },
+    {
+      "heading": "Passo 1: Instalando o Python",
+      "text": "1. Acesse o site oficial: <a href='https://www.python.org/downloads/' target='_blank'>python.org/downloads</a><br>\n2. Clique em 'Download Python' (a versão recomendada aparecerá em destaque).<br>\n3. Execute o instalador e <b>marque a opção</b> 'Add Python to PATH' antes de clicar em 'Install Now'.",
+      "code": ""
+    },
+    {
+      "heading": "Passo 2: Instalando o Thonny (Editor Recomendado)",
+      "text": "O Thonny é um editor simples e perfeito para iniciantes.<br>\n1. Acesse <a href='https://thonny.org/' target='_blank'>thonny.org</a><br>\n2. Baixe a versão para o seu sistema (Windows, Mac ou Linux).<br>\n3. Instale e abra o programa.",
+      "code": ""
+    },
+    {
+      "heading": "Passo 3: Criando sua primeira pasta de projetos",
+      "text": "Vamos manter tudo organizado desde o começo!<br>\n1. Vá até sua área de trabalho.<br>\n2. Crie uma pasta chamada <code>meus_projetos_python</code>.<br>\n3. Dentro dela, crie uma subpasta chamada <code>semana_1</code>.<br>\nVocê vai guardar seus arquivos Python (.py) aqui.",
+      "code": ""
+    },
+    {
+      "heading": "Passo 4: Seu primeiro código no Thonny",
+      "text": "1. Abra o Thonny.<br>\n2. Clique em <b>File → New</b> para criar um novo arquivo.<br>\n3. Escreva o seguinte código:",
+      "code": "print(\"Olá, mundo!\")"
+    },
+    {
+      "heading": "Passo 5: Salvando e executando o código",
+      "text": "1. Salve o arquivo clicando em <b>File → Save As</b><br>\n2. Vá até a pasta <code>meus_projetos_python/semana_1</code> e salve como <code>ola_mundo.py</code><br>\n3. Clique no botão verde 'Run' ou pressione <b>F5</b> para ver o resultado.",
+      "code": ""
+    },
+    {
+      "heading": "Abrindo arquivos já salvos",
+      "text": "Para abrir um arquivo salvo:<br>\n1. No Thonny, clique em <b>File → Open</b><br>\n2. Vá até sua pasta onde está o arquivo .py<br>\n3. Clique duas vezes no arquivo para abri-lo e depois aperte <b>F5</b> para executar.",
+      "code": ""
+    },
+    {
+      "heading": "Cheat Sheet: Comandos úteis que usaremos muito",
+      "text": "<ul>\n  <li><code>print(\"texto\")</code>: Mostra algo na tela</li>\n  <li><code># comentário</code>: Comentário no código (Python ignora)</li>\n  <li><code>nome = \"João\"</code>: Cria uma variável com valor 'João'</li>\n  <li><code>idade = 12</code>: Guarda o número 12 na variável 'idade'</li>\n  <li><code>input(\"pergunta\")</code>: Pede algo ao usuário</li>\n  <li><code>int()</code>, <code>float()</code>, <code>str()</code>: Convertem tipos de dados</li>\n</ul>",
+      "code": ""
+    },
+    {
+      "heading": "Dica Extra: IDLE vs. Thonny",
+      "text": "O IDLE vem com o Python, mas o Thonny é melhor para iniciantes. Se quiser usar o IDLE:<br>\n1. Procure por 'IDLE' no menu Iniciar.<br>\n2. Clique em 'File → New File' para criar um novo script.<br>\n3. Salve e execute com F5, igual no Thonny.",
+      "code": ""
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Instale o Python e o Thonny seguindo os passos acima. Marque como concluído quando estiver feito.",
+      "code_hint": "# Nenhum código necessário, só instalar e abrir o Thonny com sucesso."
+    },
+    {
+      "prompt": "2. Crie a pasta <code>meus_projetos_python</code> e depois a subpasta <code>semana_1</code>.",
+      "code_hint": "# Nenhum código necessário. Organize seus arquivos e mantenha tudo nesta pasta."
+    },
+    {
+      "prompt": "3. No Thonny, escreva seu primeiro programa: <code>print(\"Olá, mundo!\")</code>, salve como <code>ola_mundo.py</code> e execute.",
+      "code_hint": "print(\"Olá, mundo!\")"
+    },
+    {
+      "prompt": "4. Crie um novo arquivo chamado <code>meu_nome.py</code>. Nele, escreva um código que imprima seu nome e idade.",
+      "code_hint": "print(\"Meu nome é João\")\nprint(\"Tenho 12 anos\")"
+    }
+  ]
+}

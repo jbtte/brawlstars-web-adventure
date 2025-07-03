@@ -1,0 +1,96 @@
+/* styles/components/_lesson_cards.css */
+/* Contêiner das Lições - O "Mapa" ou "Fases" (para index.html) */
+.lesson-map-container {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 25px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+
+    /* Adiciona a imagem de fundo do mapa (se presente) */
+    /* background-image: url('http://googleusercontent.com/image_generation_content/5'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* min-height: 400px; */
+    /* border-radius: 10px; */
+    /* overflow: hidden; */
+    /* padding-top: 50px; */
+    /* padding-bottom: 50px; */
+}
+
+/* Estilo dos "blocos de lição" (para index.html) */
+.lesson-card {
+    background-color: var(--mario-dirt-brown);
+    border: 4px solid var(--mario-block-yellow);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    cursor: pointer;
+    text-align: center;
+    width: auto; /* Permite que a largura seja controlada pelo grid */
+    max-width: 200px; /* Limite máximo para o tamanho do cartão */
+    margin: 0 auto; /* <--- ESSA É A CHAVE: Centraliza o cartão dentro de sua célula na grade */
+    
+}
+
+.lesson-card::before {
+    content: '⭐';
+    font-size: 2em;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.lesson-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.5);
+}
+
+.lesson-card a {
+    font-family: var(--pixel-font);
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1em;
+    display: block;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
+}
+
+.lesson-card p {
+    color: var(--text-light);
+    font-size: 0.8em;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.lesson-map-container h2,
+.lesson-map-container .map-intro-text {
+    grid-column: 1 / -1; /* Faz esses elementos ocuparem todas as colunas do grid */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo deles */
+}
+
+/* --- ALTERAÇÃO AQUI: Estilo para o parágrafo de introdução do mapa --- */
+.map-intro-text {
+    font-family: var(--pixel-font); /* Usar a fonte pixel art para mais impacto */
+    color: var(--text-light); /* Cor clara para contrastar com o mapa */
+    font-size: 1.1em; /* Um pouco maior para ser notável */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4); /* Sombra mais forte para um efeito 3D */
+    margin-top: -10px; /* Ajusta a posição vertical em relação ao título h2 */
+    margin-bottom: 30px; /* Mais espaço abaixo para separar dos cartões */
+    line-height: 1.4; /* Melhora a legibilidade */
+}

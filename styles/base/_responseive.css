@@ -1,0 +1,41 @@
+/* styles/base/_responsive.css */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    header {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    section {
+        padding: 20px;
+    }
+    section h2 {
+        font-size: 1.4em;
+    }
+    .lesson-map-container, /* Para index.html */
+    .lesson-container, /* Para day.html se usado para layout de conceitos */
+    .resource-cards,
+    .game-cards {
+        grid-template-columns: 1fr; /* Coluna única em telas pequenas */
+    }
+    .lesson-card { /* Para index.html */
+        min-height: 100px;
+        width: auto;
+    }
+    .hero-section {
+        padding: 40px 15px;
+    }
+    .hero-section h2 {
+        font-size: 1.8em;
+    }
+    .start-adventure-button {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+}

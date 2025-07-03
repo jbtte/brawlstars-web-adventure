@@ -1,0 +1,65 @@
+/* styles/components/_header.css */
+header {
+    background-color: var(--mario-sky-blue);
+    color: var(--text-light);
+    padding: 15px 20px;
+    border-bottom: 5px solid var(--mario-dirt-brown);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* display: flex; /* REMOVA OU COMENTE ESTA LINHA */
+    /* justify-content: space-between; */ /* REMOVA OU COMENTE ESTA LINHA */
+    /* align-items: center; */ /* REMOVA OU COMENTE ESTA LINHA */
+    /* --- FIM DA ALTERAÇÃO --- */
+    text-align: center; /* Centraliza todo o conteúdo do header */
+}
+
+header h1 {
+    font-family: var(--pixel-font);
+    font-size: 2em;
+    margin: 0 auto 15px auto; /* 0px topo, auto lados (para centralizar), 15px inferior */
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
+    /*white-space: nowrap;*/
+    width: fit-content; /* Permite que o h1 seja centralizado como um bloco */
+    line-height: 50px;
+}
+
+/* Navegação principal */
+.main-nav {
+    width: fit-content; /* Garante que a nav ocupe toda a largura para centralizar o ul */
+    margin: 0 auto;
+    text-align: center; /* Garante centralização do menu */
+    background-color: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente para destacar */
+    padding: 10px 0; /* Espaçamento interno */
+    /*border-top: 2px solid var(--mario-dirt-brown); /* Borda superior para separação */
+    /*border-bottom: 2px solid var(--mario-dirt-brown); /* Borda inferior */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil para profundidade */
+    margin-top: 10px; /* Adiciona um pouco mais de espaço do título */
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centraliza os itens da lista dentro da ul */
+    gap: 20px;
+}
+
+.main-nav a {
+    font-family: var(--pixel-font);
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.main-nav a:hover {
+    border-color: var(--mario-block-yellow);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}

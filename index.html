@@ -8,90 +8,234 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="icon" type="image/png" href="./resources/images/mario.png" />
   </head>
   <body>
     <header>
       <h1>Aventura Python: Explorando o Mundo da Programação</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#lessons">Fases</a></li>
+          <li><a href="#resources">Recursos</a></li>
+          <li><a href="#challenges">Desafios</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-      <section>
-        <h2>Bem-vindo à Aventura Python!</h2>
-        <p>
-          Embarcamos em uma jornada emocionante para aprender a linguagem de
-          programação Python. Ao longo desta aventura, você descobrirá os
-          conceitos fundamentais da programação e desenvolverá habilidades
-          práticas para criar seus próprios programas.
+      <section class="hero-section">
+        <div class="hero-content">
+          <h2>Bem-vindo à Aventura Python!</h2>
+          <p>
+            Prepare-se para uma jornada épica pelo reino da programação. Cada
+            fase desbloqueia novos poderes e desafios. Você está pronto para
+            salvar o dia com código?
+          </p>
+          <a href="#lessons" class="start-adventure-button">
+            <span class="button-text">Iniciar Aventura!</span>
+            <span class="button-icon">🚀</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="lessons" class="lesson-map-container">
+        <h2>O Mapa das Fases Python</h2>
+        <p class="map-intro-text">
+          Clique nas fases para iniciar sua missão de codificação!
         </p>
+        <div class="lesson-card phase-1">
+          <a href="lessons/day.html?id=day1">
+            <span class="phase-number">Fase 1</span>
+            <span class="phase-title">Introdução e IDLE</span>
+          </a>
+          <div class="status-icon unlocked"></div>
+        </div>
+        <div class="lesson-card phase-2">
+          <a href="lessons/day.html?id=day2">
+            <span class="phase-number">Fase 2</span>
+            <span class="phase-title">Variáveis e Operadores</span>
+          </a>
+          <div class="status-icon unlocked"></div>
+        </div>
+        <div class="lesson-card phase-3">
+          <a href="lessons/day.html?id=day3">
+            <span class="phase-number">Fase 3</span>
+            <span class="phase-title">Strings e Texto</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-4">
+          <a href="lessons/day.html?id=day4">
+            <span class="phase-number">Fase 4</span>
+            <span class="phase-title">Listas e Indexação</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-5">
+          <a href="lessons/day.html?id=day5">
+            <span class="phase-number">Fase 5</span>
+            <span class="phase-title">Projeto: Mad Libs</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+
+        <div class="lesson-card phase-6">
+          <a href="lessons/day.html?id=day6">
+            <span class="phase-number">Fase 6</span>
+            <span class="phase-title">Condicionais (If/Else)</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-7">
+          <a href="lessons/day.html?id=day7">
+            <span class="phase-number">Fase 7</span>
+            <span class="phase-title">Laços For</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-8">
+          <a href="lessons/day.html?id=day8">
+            <span class="phase-number">Fase 8</span>
+            <span class="phase-title">Laços While</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-9">
+          <a href="lessons/day.html?id=day9">
+            <span class="phase-number">Fase 9</span>
+            <span class="phase-title">Funções</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-10">
+          <a href="lessons/day.html?id=day10">
+            <span class="phase-number">Fase 10</span>
+            <span class="phase-title">Projeto: Jogo de Adivinhação</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+
+        <div class="lesson-card phase-11">
+          <a href="lessons/day.html?id=day11">
+            <span class="phase-number">Fase 11</span>
+            <span class="phase-title">Dicionários</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-12">
+          <a href="lessons/day.html?id=day12">
+            <span class="phase-number">Fase 12</span>
+            <span class="phase-title">Módulos e Bibliotecas</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-13">
+          <a href="lessons/day.html?id=day13">
+            <span class="phase-number">Fase 13</span>
+            <span class="phase-title">Leitura e Escrita de Arquivos</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-14">
+          <a href="lessons/day.html?id=day14">
+            <span class="phase-number">Fase 14</span>
+            <span class="phase-title">Tratamento de Exceções</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-15">
+          <a href="lessons/day.html?id=day15">
+            <span class="phase-number">Fase 15</span>
+            <span class="phase-title">Projeto: Calculadora</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+
+        <div class="lesson-card phase-16">
+          <a href="lessons/day.html?id=day16">
+            <span class="phase-number">Fase 16</span>
+            <span class="phase-title">Introdução a POO (Classes)</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-17">
+          <a href="lessons/day.html?id=day17">
+            <span class="phase-number">Fase 17</span>
+            <span class="phase-title">POO: Herança</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-18">
+          <a href="lessons/day.html?id=day18">
+            <span class="phase-number">Fase 18</span>
+            <span class="phase-title">Projeto Final: Início do Jogo</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-19">
+          <a href="lessons/day.html?id=day19">
+            <span class="phase-number">Fase 19</span>
+            <span class="phase-title">Projeto Final</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
+        <div class="lesson-card phase-20">
+          <a href="lessons/day.html?id=day20">
+            <span class="phase-number">Fase 20</span>
+            <span class="phase-title">Projeto Final: Conclusão</span>
+          </a>
+          <div class="status-icon locked"></div>
+        </div>
       </section>
 
-      <section class="lesson-container">
-        <div class="lesson-card">
-          <a href="lessons/day1.html">Dia 1</a>
-          <p>Introdução ao Python</p>
-        </div>
-        <div class="lesson-card">
-          <a href="lessons/day2.html">Dia 2</a>
-          <p>Variáveis, Tipos de Dados e Operadores Matemáticos</p>
-        </div>
-        <div class="lesson-card">
-          <a href="lessons/day3.html">Dia 3</a>
-          <p>Strings e Manipulação de Texto</p>
-        </div>
-        <div class="lesson-card">
-          <a href="lessons/day4.html">Dia 4</a>
-          <p>Listas e Indexação</p>
-        </div>
-        <div class="lesson-card">
-          <a href="lessons/day5.html">Dia 5</a>
-          <p>Projeto: Gerador de História Mad Libs</p>
-        </div>
-      </section>
-
-      <section class="resources-container">
-        <h2>Recursos Adicionais</h2>
+      <section id="resources" class="resources-container">
+        <h2>Arsenal de Recursos</h2>
         <div class="resource-cards">
           <div class="resource-card">
             <a href="https://docs.python.org/3/" target="_blank"
-              >Documentação oficial do Python</a
+              >Documentação Oficial</a
             >
-            <p>Acesse a documentação completa da linguagem Python</p>
+            <p>Seu guia supremo para o Python.</p>
           </div>
           <div class="resource-card">
             <a href="https://www.python.org/community/" target="_blank"
               >Comunidade Python</a
             >
-            <p>Conecte-se com outros entusiastas do Python</p>
+            <p>Conecte-se com outros heróis da programação.</p>
           </div>
           <div class="resource-card">
             <a href="https://pythontutor.com/" target="_blank">Python Tutor</a>
-            <p>Visualize a execução do seu código Python passo a passo</p>
+            <p>Visualize a magia do seu código passo a passo.</p>
           </div>
         </div>
       </section>
 
-      <section class="games-container">
-        <h2>Jogos e Desafios</h2>
+      <section id="challenges" class="games-container">
+        <h2>Arena de Desafios</h2>
         <div class="game-cards">
           <div class="game-card">
             <a href="https://codecombat.com/" target="_blank">CodeCombat</a>
-            <p>Aprenda Python enquanto joga um jogo de aventura</p>
+            <p>Aprenda Python enquanto joga!</p>
           </div>
           <div class="game-card">
             <a href="https://www.codingame.com/" target="_blank">CodinGame</a>
-            <p>Desafios de programação com elementos de jogos</p>
+            <p>Desafios de programação com elementos de jogos.</p>
           </div>
           <div class="game-card">
             <a href="https://checkio.org/" target="_blank">CheckiO</a>
-            <p>Resolva desafios de programação em Python</p>
+            <p>Resolva quebra-cabeças de código em Python.</p>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2023 Aventura Python. Todos os direitos reservados.</p>
+      <p>&copy; 2025 Aventura Python. Todos os direitos reservados.</p>
     </footer>
   </body>
 </html>

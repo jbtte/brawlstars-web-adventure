@@ -1,0 +1,11 @@
+/* styles/base/_variables.css */
+:root {
+    --mario-sky-blue: #6495ED;
+    --mario-grass-green: #4CAF50;
+    --mario-dirt-brown: #8B4513;
+    --mario-block-yellow: #FFD700;
+    --mario-red: #FF4500;
+    --text-dark: #333;
+    --text-light: #F0F0F0;
+    --pixel-font: 'Press Start 2P', cursive;
+}
