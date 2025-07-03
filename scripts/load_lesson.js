@@ -219,7 +219,7 @@ function displayErrorMessage(
                 <h2 style="color:var(--mario-red); text-shadow: 2px 2px 0px rgba(0,0,0,0.2);">${title}</h2>
                 <p style="font-size: 1.1em; line-height: 1.5;">${message}</p>
                 <p style="margin-top: 20px;">
-                    <a href="/index.html" class="back-to-map-button">Voltar ao Mapa das Fases</a>
+                    <a href="index.html" class="back-to-map-button">Voltar ao Mapa das Fases</a>
                 </p>
             </section>
         `;
