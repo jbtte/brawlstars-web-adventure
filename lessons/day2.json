@@ -1,46 +1,46 @@
 {
-  "title": "Dia 2 - Variáveis, Tipos de Dados e Operadores Matemáticos",
+  "title": "Lição 2 – Fazendo perguntas ao computador",
   "concepts": [
     {
-      "heading": "Variáveis: Caixas de Informação",
-      "text": "Uma variável é como uma caixa com nome onde guardamos informações. Em Python, usamos o sinal de igual (=) para colocar algo dentro dela.",
-      "code": "nome = \"João\"\nidade = 12\naltura = 1.55\nprint(nome)\nprint(idade)\nprint(altura)"
+      "heading": "O que vamos aprender hoje?",
+      "text": "Hoje vamos fazer o computador perguntar coisas para você e mostrar sua resposta. Usamos o comando <code>input()</code> para isso!"
     },
     {
-      "heading": "Tipos de Dados: O que está na caixa?",
-      "text": "Python identifica automaticamente o tipo de dado que você colocou na variável:\n<ul>\n  <li><code>int</code>: número inteiro (ex: 7, -1, 0)</li>\n  <li><code>float</code>: número com casas decimais, usando ponto (ex: 3.14, 1.5)</li>\n  <li><code>str</code>: texto (ex: \"Olá\", 'Python')</li>\n</ul>\nVocê pode verificar o tipo de uma variável com <code>type()</code>.",
-      "code": "print(type(10))\nprint(type(2.5))\nprint(type(\"Olá\"))"
+      "heading": "Veja o vídeo explicando passo a passo",
+      "text": "Este vídeo em português mostra como usar o <code>print()</code> junto com o <code>input()</code>: você faz uma pergunta e o computador responde de volta."
     },
     {
-      "heading": "Operadores Matemáticos: Fazendo Contas com Python",
-      "text": "Python pode ser usado como uma calculadora. Veja os operadores básicos:\n<ul>\n  <li><code>+</code> Adição: <code>3 + 2</code> → <code>5</code></li>\n  <li><code>-</code> Subtração: <code>7 - 4</code> → <code>3</code></li>\n  <li><code>*</code> Multiplicação: <code>6 * 2</code> → <code>12</code></li>\n  <li><code>/</code> Divisão: <code>10 / 2</code> → <code>5.0</code> (sempre float)</li>\n</ul>\nVocê pode usar parênteses <code>()</code> para controlar a ordem das operações.",
-      "code": "a = 10\nb = 4\nprint(\"Soma:\", a + b)\nprint(\"Subtração:\", a - b)\nprint(\"Multiplicação:\", a * b)\nprint(\"Divisão:\", a / b)"
+      "heading": "Como funciona o input()",
+      "text": "O <code>input()</code> mostra uma pergunta na tela e espera você digitar algo. O que você digita é guardado em uma caixinha (variável). Exemplo:",
+      "code": "nome = input(\"Qual é seu nome? \")\nprint(\"Oi, \" + nome + \"! Que legal te conhecer!\")"
+    },
+    {
+      "heading": "Vamos tentar com comida favorita",
+      "text": "O computador vai perguntar sua comida favorita e vai responder com humor. Copie e rode isso:",
+      "code": "comida = input(\"Qual sua comida favorita? \")\nprint(\"Puxa, eu também adoro \" + comida + \"!\")"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. **Variáveis Pessoais:** Crie variáveis com seu nome, idade e altura. Mostre cada uma com <code>print()</code>.",
-      "code_hint": "meu_nome = \"SeuNome\"\nminha_idade = 12\nminha_altura = 1.55\nprint(meu_nome)\nprint(minha_idade)\nprint(minha_altura)"
+      "prompt": "1. Pergunte o nome do seu amigo e depois diga: 'Oi, [nome]! Vamos brincar hoje?'",
+      "code_hint": "nome = input(\"Digite o nome do seu amigo: \")\nprint(\"Oi, \" + nome + \"! Vamos brincar hoje?\")"
     },
     {
-      "prompt": "2. **Operações com Números:** Crie duas variáveis <code>a</code> e <code>b</code>. Mostre a soma, subtração, multiplicação e divisão entre elas.",
-      "code_hint": "a = 10\nb = 3\nprint(\"Soma:\", a + b)\nprint(\"Subtração:\", a - b)\nprint(\"Multiplicação:\", a * b)\nprint(\"Divisão:\", a / b)"
+      "prompt": "2. Pergunte a idade do seu irmão e responda algo tipo: 'Uau, [idade]! Que legal!'",
+      "code_hint": "idade = input(\"Idade do seu irmão: \")\nprint(\"Uau, \" + idade + \"! Que legal!\")"
     },
     {
-      "prompt": "3. **Ano de Nascimento:** Crie uma variável com sua idade e outra com o ano atual. Calcule o ano em que você nasceu.",
-      "code_hint": "idade = 12\nano_atual = 2025\nano_nascimento = ano_atual - idade\nprint(\"Ano de nascimento:\", ano_nascimento)"
-    },
-    {
-      "prompt": "4. **Idade em 2030:** Peça ao usuário sua idade e diga quantos anos ele terá em 2030.",
-      "code_hint": "idade = int(input(\"Quantos anos você tem? \"))\nidade_2030 = idade + (2030 - 2025)\nprint(\"Você terá\", idade_2030, \"anos em 2030.\")"
-    },
-    {
-      "prompt": "5. **Média de Notas:** Peça duas notas ao usuário, calcule e mostre a média.",
-      "code_hint": "nota1 = float(input(\"Nota 1: \"))\nnota2 = float(input(\"Nota 2: \"))\nmedia = (nota1 + nota2) / 2\nprint(\"Média:\", media)"
-    },
-    {
-      "prompt": "6. **Desafio de Números:** Peça dois números e mostre a soma, dobro da soma, diferença, produto e média.",
-      "code_hint": "x = float(input(\"Número 1: \"))\ny = float(input(\"Número 2: \"))\nsoma = x + y\ndobro = soma * 2\ndiferenca = x - y\nproduto = x * y\nmedia = (x + y) / 2\nprint(\"Soma:\", soma)\nprint(\"Dobro da soma:\", dobro)\nprint(\"Diferença:\", diferenca)\nprint(\"Produto:\", produto)\nprint(\"Média:\", media)"
+      "prompt": "3. Desafio: Pergunte duas coisas diferentes (cor, fruta, animal...) e mostre uma frase divertida com essas respostas.",
+      "code_hint": "cor = input(\"Diga uma cor: \")\nfruta = input(\"Diga uma fruta: \")\nprint(\"Nossa, um \" + fruta + \" \" + cor + \" seria super legal!\")"
     }
-  ]
+  ],
+  "project": {
+    "name": "Perguntas Divertidas",
+    "description": "Programa que faz 3 perguntas diferentes e responde com frases divertidas usando as respostas.",
+    "goal": "Ensinar como o <code>input()</code> funciona e como usar as respostas para criar frases personalizadas."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português com truques de usar <code>print()</code> e <code>input()</code> de forma divertida:",
+    "url": "https://www.youtube.com/watch?v=SHOXlpw6G3Q"
+  }
 }
