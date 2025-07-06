@@ -43,3 +43,76 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Seleciona todos os cards de lição no mapa
+  const lessonCards = document.querySelectorAll(
+    '.lesson-map-container .lesson-card'
+  );
+  // Seleciona o botão de zerar progresso
+  const resetButton = document.getElementById('reset-lessons-button');
+
+  // Função para aplicar a classe 'visited' aos cards
+  function updateLessonCardsStatus() {
+    if (typeof Storage !== 'undefined') {
+      lessonCards.forEach((card) => {
+        const lessonLink = card.querySelector('a');
+        if (lessonLink) {
+          let lessonId;
+          const href = lessonLink.getAttribute('href');
+
+          const urlMatch = href.match(
+            /(day(\d+))(\.html)?(\?id=)?(day(\d+))?/i
+          );
+          if (urlMatch && urlMatch[2]) {
+            lessonId = `day${urlMatch[2]}`;
+          } else if (urlMatch && urlMatch[6]) {
+            lessonId = `day${urlMatch[6]}`;
+          } else {
+            console.warn(`Não foi possível extrair lessonId de: ${href}`);
+            return;
+          }
+
+          if (localStorage.getItem(`lesson_${lessonId}`) === 'visited') {
+            card.classList.add('visited');
+          } else {
+            card.classList.remove('visited'); // Garante que a classe seja removida se o progresso for zerado
+          }
+        }
+      });
+    } else {
+      console.warn(
+        'Seu navegador não suporta localStorage. O progresso não será exibido/salvo.'
+      );
+    }
+  }
+
+  // Função para zerar o progresso
+  function resetAllLessons() {
+    if (
+      confirm(
+        'Tem certeza que deseja zerar todo o seu progresso? Esta ação não pode ser desfeita!'
+      )
+    ) {
+      if (typeof Storage !== 'undefined') {
+        // Percorre todos os itens do localStorage e remove os relacionados a lições
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key.startsWith('lesson_')) {
+            localStorage.removeItem(key);
+          }
+        }
+        console.log('Progresso de todas as lições zerado.');
+        updateLessonCardsStatus(); // Atualiza o status visual dos cards
+      }
+    }
+  }
+
+  // Chama a função para atualizar o status dos cards ao carregar a página
+  updateLessonCardsStatus();
+
+  // Adiciona o event listener ao botão de zerar progresso
+  if (resetButton) {
+    resetButton.addEventListener('click', resetAllLessons);
+  }
+});

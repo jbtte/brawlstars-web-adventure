@@ -15,6 +15,7 @@
 @import url('components/footer.css');
 @import url('components/video.css');
 @import url('components/button.css');
+@import url('components/reset_section.css'); 
 
 /* Responsividade por último para sobrescrever seletivamente */
 @import url('base/responsive.css'); 

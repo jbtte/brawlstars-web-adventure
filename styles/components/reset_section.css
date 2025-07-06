@@ -1,0 +1,65 @@
+/* styles/components/_reset_section.css */
+
+/* Seção do botão de Zerar Progresso */
+.reset-progress-section {
+    background-color: var(--mario-lava-orange); /* Fundo cor de lava/perigo */
+    border-radius: 15px; /* Bordas arredondadas como os "canos" */
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3), 12px 12px 0px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    border: 5px solid var(--mario-dirt-brown); /* Borda como os "canos" */
+    text-align: center;
+    position: relative; /* Necessário para o ::before */
+    overflow: hidden; /* Garante que o ::before não vaze */
+    background-color: var(--mario-grass-green);
+}
+
+.reset-progress-section h2 {
+    color: var(--mario-red); /* Título em vermelho vivo */
+    font-size: 1.8em;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5); /* Sombra mais forte para destacar */
+    margin-bottom: 15px;
+}
+
+.reset-progress-section p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: var(--text-light); /* Texto do parágrafo em branco/claro */
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+    margin-bottom: 25px;
+}
+
+/* Pseudo-elemento para o "topo do cano" visual */
+.reset-progress-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px; /* Altura do topo */
+    background-color: #CC5500; /* Um tom de laranja/vermelho um pouco mais escuro para o topo */
+    border-bottom: 3px solid var(--mario-dirt-brown);
+    border-radius: 15px 15px 0 0;
+}
+
+/* --- ALTERAÇÃO AQUI: Botão de reset com background branco --- */
+/* Como o botão usa a classe .back-to-map-button, ajustaremos ela para este uso específico */
+/* É importante que este estilo venha DEPOIS da definição original de .back-to-map-button,
+   ou que seja mais específico. */
+.reset-progress-section #reset-lessons-button { /* Mais específico para o botão de reset */
+    background-color: white; /* Fundo branco */
+    color: var(--mario-red); /* Texto vermelho para alto contraste */
+    border: 3px solid var(--mario-red); /* Borda vermelha para combinar */
+    box-shadow: 3px 3px 0px var(--mario-dirt-brown), 5px 5px 0px rgba(0,0,0,0.2); /* Sombra para profundidade */
+}
+
+.reset-progress-section #reset-lessons-button:hover {
+    background-color: #FFCDD2; /* Um vermelho claro no hover */
+    color: var(--mario-red);
+    box-shadow: 5px 5px 0px var(--mario-dirt-brown), 8px 8px 0px rgba(0,0,0,0.3);
+}
+
+.reset-progress-section #reset-lessons-button:active {
+    background-color: #EF9A9A;
+}
