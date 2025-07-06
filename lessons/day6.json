@@ -1,0 +1,52 @@
+{
+  "title": "Dia 6 – Laços for e a função range()",
+  "concepts": [
+    {
+      "heading": "O que é um laço for?",
+      "text": "O laço <code>for</code> é usado quando queremos repetir algo um número definido de vezes. Ele é ótimo para listas, contagens e repetições simples."
+    },
+    {
+      "heading": "Como usar for com range()",
+      "text": "<code>range()</code> gera uma sequência de números. Exemplo: <code>range(5)</code> gera 0, 1, 2, 3, 4.",
+      "code": "for i in range(5):\n    print(\"Repetição número:\", i)"
+    },
+    {
+      "heading": "Usando range() com início e fim",
+      "text": "Você pode dizer onde começa e onde termina:",
+      "code": "for i in range(1, 6):\n    print(i)  # Imprime de 1 a 5"
+    },
+    {
+      "heading": "Range com passo",
+      "text": "Também é possível pular números usando um 'passo':",
+      "code": "for i in range(0, 10, 2):\n    print(i)  # 0, 2, 4, 6, 8"
+    },
+    {
+      "heading": "Vídeo em português",
+      "text": "Este vídeo ensina como funciona o laço for com range() e mostra exemplos visuais:",
+      "code": ""
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Escreva um for que imprima os números de 1 a 10.",
+      "code_hint": "for i in range(1, 11):\n    print(i)"
+    },
+    {
+      "prompt": "2. Imprima os números pares de 0 a 20 usando range com passo.",
+      "code_hint": "for i in range(0, 21, 2):\n    print(i)"
+    },
+    {
+      "prompt": "3. Desafio: use o for para mostrar uma contagem regressiva de 5 até 1.",
+      "code_hint": "for i in range(5, 0, -1):\n    print(i)"
+    }
+  ],
+  "project": {
+    "name": "Contador Personalizado",
+    "description": "Crie um programa que pergunte ao usuário o início, o fim e o passo da contagem e use for com range() para mostrar o resultado.",
+    "goal": "Praticar o uso completo de <code>range()</code> com início, fim e passo, integrando com input."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português ensinando for e range de forma clara e prática:",
+    "url": "https://www.youtube.com/watch?v=HlYFW2zaYQM"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "title": "Dia 7 – Laços while e controle de repetição",
+  "concepts": [
+    {
+      "heading": "O que é um laço while?",
+      "text": "O laço <code>while</code> repete um bloco de código enquanto uma condição for verdadeira. É útil quando não sabemos exatamente quantas vezes vamos repetir algo."
+    },
+    {
+      "heading": "Exemplo básico de while",
+      "code": "contador = 1\nwhile contador <= 5:\n    print(\"Contando:\", contador)\n    contador += 1"
+    },
+    {
+      "heading": "Cuidado: loops infinitos",
+      "text": "Se a condição do <code>while</code> nunca ficar falsa, o programa vai repetir para sempre! Sempre altere alguma variável dentro do laço."
+    },
+    {
+      "heading": "Usando break para parar o laço",
+      "code": "while True:\n    texto = input(\"Digite 'sair' para parar: \")\n    if texto == \"sair\":\n        break\n    print(\"Você escreveu:\", texto)"
+    },
+    {
+      "heading": "Vídeo em português",
+      "text": "Este vídeo explica como usar <code>while</code> e <code>break</code> com exemplos simples e úteis:"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Crie um laço while que conte de 1 até 10.",
+      "code_hint": "n = 1\nwhile n <= 10:\n    print(n)\n    n += 1"
+    },
+    {
+      "prompt": "2. Crie um programa que continue perguntando o nome do usuário até ele digitar 'fim'.",
+      "code_hint": "while True:\n    nome = input(\"Digite seu nome (ou 'fim' para sair): \")\n    if nome == \"fim\":\n        break\n    print(f\"Olá, {nome}!\")"
+    },
+    {
+      "prompt": "3. Desafio: Faça um programa que pergunte números e pare quando o usuário digitar zero.",
+      "code_hint": "while True:\n    numero = int(input(\"Digite um número (0 para parar): \"))\n    if numero == 0:\n        break\n    print(f\"Você digitou {numero}\")"
+    }
+  ],
+  "project": {
+    "name": "Repetidor inteligente",
+    "description": "Crie um programa que só para quando o usuário digitar uma senha secreta. Enquanto isso, ele continua pedindo inputs e mostrando algo engraçado.",
+    "goal": "Praticar laço while, condição de parada e uso de break com input."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português explicando o laço while e o uso de break:",
+    "url": "https://www.youtube.com/watch?v=k6U-i4gXkLM"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "title": "Dia 8 – Funções: def, parâmetros e return",
+  "concepts": [
+    {
+      "heading": "O que é uma função?",
+      "text": "Funções são blocos de código que realizam uma tarefa. Elas ajudam a organizar o programa e evitar repetições."
+    },
+    {
+      "heading": "Criando uma função",
+      "text": "Use <code>def</code> para definir uma função. Exemplo:",
+      "code": "def diga_ola():\n    print(\"Olá!\")\n\ndiga_ola()"
+    },
+    {
+      "heading": "Funções com parâmetros",
+      "text": "Você pode passar valores para a função usando parâmetros entre parênteses.",
+      "code": "def saudacao(nome):\n    print(f\"Olá, {nome}!\")\n\nsaudacao(\"Ana\")"
+    },
+    {
+      "heading": "Funções com return",
+      "text": "Use <code>return</code> para a função devolver um valor.",
+      "code": "def soma(a, b):\n    return a + b\n\nresultado = soma(3, 5)\nprint(resultado)"
+    },
+    {
+      "heading": "Vídeo em português",
+      "text": "Este vídeo ensina como usar funções em Python com exemplos simples e bem explicados:"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Crie uma função que diga 'Bem-vindo ao curso de Python!' e chame-a.",
+      "code_hint": "def boas_vindas():\n    print(\"Bem-vindo ao curso de Python!\")\n\nboas_vindas()"
+    },
+    {
+      "prompt": "2. Crie uma função `dobro(numero)` que retorna o dobro de um número.",
+      "code_hint": "def dobro(numero):\n    return numero * 2\n\nprint(dobro(4))"
+    },
+    {
+      "prompt": "3. Desafio: Crie uma função que receba o nome e a idade de uma pessoa e retorne uma frase personalizada.",
+      "code_hint": "def apresenta(nome, idade):\n    return f\"Olá, {nome}! Você tem {idade} anos.\"\n\nprint(apresenta(\"João\", 12))"
+    }
+  ],
+  "project": {
+    "name": "Mini biblioteca de funções",
+    "description": "Crie 3 funções: uma que some dois números, outra que calcule média e outra que elogie o nome da pessoa.",
+    "goal": "Fixar a estrutura <code>def</code>, prática com parâmetros e <code>return</code>."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português ensinando funções em Python (def, parâmetros, return):",
+    "url": "https://www.youtube.com/watch?v=F6u5rhUQ6dU"
+  }
+}

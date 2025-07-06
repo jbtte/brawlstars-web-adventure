@@ -1,0 +1,49 @@
+{
+  "title": "Dia 9 – Entrada de dados e conversão de tipos",
+  "concepts": [
+    {
+      "heading": "O que é input()?",
+      "text": "A função <code>input()</code> serve para pedir algo ao usuário. O que o usuário digita é sempre tratado como texto (tipo <code>str</code>)."
+    },
+    {
+      "heading": "Exemplo básico de input",
+      "code": "nome = input(\"Qual é o seu nome? \")\nprint(\"Olá,\", nome)"
+    },
+    {
+      "heading": "Convertendo para número: int() e float()",
+      "text": "Se você quiser usar o valor digitado como número, precisa converter:\n<ul>\n  <li><code>int()</code>: transforma em número inteiro</li>\n  <li><code>float()</code>: transforma em número com vírgula (usa ponto)</li>\n</ul>",
+      "code": "idade = int(input(\"Quantos anos você tem? \"))\naltura = float(input(\"Qual sua altura? \"))\nprint(\"Idade vezes altura:\", idade * altura)"
+    },
+    {
+      "heading": "Cuidado com vírgula!",
+      "text": "Python aceita ponto como separador decimal, não vírgula. Use <code>1.75</code>, e não <code>1,75</code>."
+    },
+    {
+      "heading": "Vídeo em português",
+      "text": "Este vídeo ensina como usar <code>input()</code> e como transformar a resposta em número com <code>int()</code> e <code>float()</code>:"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Peça a idade do usuário e mostre a idade ao quadrado.",
+      "code_hint": "idade = int(input(\"Quantos anos você tem? \"))\nprint(\"Sua idade ao quadrado é:\", idade ** 2)"
+    },
+    {
+      "prompt": "2. Peça a altura e diga quantos centímetros ela representa.",
+      "code_hint": "altura = float(input(\"Qual sua altura em metros? \"))\nprint(\"Sua altura em centímetros é:\", altura * 100)"
+    },
+    {
+      "prompt": "3. Desafio: peça dois números, some e mostre o resultado.",
+      "code_hint": "a = float(input(\"Digite o primeiro número: \"))\nb = float(input(\"Digite o segundo número: \"))\nprint(\"A soma é:\", a + b)"
+    }
+  ],
+  "project": {
+    "name": "Calculadora de Idade e Altura",
+    "description": "Peça nome, idade e altura do usuário. Mostre uma frase com essas informações e calcule idade x altura.",
+    "goal": "Praticar <code>input()</code>, <code>int()</code>, <code>float()</code> e montagem de frases com variáveis."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português explicando input, int, float e conversão de tipos:",
+    "url": "https://www.youtube.com/watch?v=ZBAMdFZbdZU"
+  }
+}

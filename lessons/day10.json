@@ -1,0 +1,52 @@
+{
+  "title": "Dia 10 – Jogo de adivinhação com dicas",
+  "concepts": [
+    {
+      "heading": "Como funciona o jogo?",
+      "text": "O computador escolhe um número aleatório e você tenta adivinhar. Ele vai dando dicas se seu palpite é maior ou menor."
+    },
+    {
+      "heading": "Usando o módulo random",
+      "text": "Use <code>import random</code> e <code>random.randint(início, fim)</code> para gerar um número aleatório.",
+      "code": "import random\nnumero = random.randint(1, 100)"
+    },
+    {
+      "heading": "Laço while com condição de parada",
+      "text": "O laço repete até você acertar ou atingir o número máximo de tentativas.",
+      "code": "tentativas = 0\nwhile tentativas < 5:\n    palpite = int(input(\"Seu palpite: \"))\n    tentativas += 1\n    if palpite == numero:\n        print(\"Parabéns! Você acertou!\")\n        break\n    elif palpite < numero:\n        print(\"Tente um número maior.\")\n    else:\n        print(\"Tente um número menor.\")\n"
+    },
+    {
+      "heading": "Final do jogo",
+      "text": "Se você não acertar nas tentativas, o programa mostra o número secreto.",
+      "code": "else:\n    print(f\"Acabou! O número era {numero}.\")"
+    },
+    {
+      "heading": "Vídeo em português",
+      "text": "Este vídeo explica como criar um jogo de adivinhação passo a passo, com dicas e limites de tentativas:",
+      "code": ""
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Crie um jogo onde o número vai de 1 a 20 e você tenha 3 tentativas.",
+      "code_hint": "import random\nnumero = random.randint(1, 20)\ntentativas = 0\nwhile tentativas < 3:\n    palpite = int(input(\"Palpite 1–20: \"))\n    tentativas += 1\n    if palpite == numero:\n        print(\"Acertou!\")\n        break\n    elif palpite < numero:\n        print(\"Maiooor...\")\n    else:\n        print(\"Meioor...\")\nelse:\n    print(f\"Errado. Era {numero}\")"
+    },
+    {
+      "prompt": "2. Mostre quantas tentativas o jogador usou para acertar.",
+      "code_hint": "…\nprint(f\"Você acertou em {tentativas} tentativas!\")"
+    },
+    {
+      "prompt": "3. Desafio: peça ao jogador para escolher o intervalo mínimo e máximo (ex: 1 a 50) antes de começar o jogo.",
+      "code_hint": "minimo = int(input(\"Min? \"))\nmaximo = int(input(\"Max? \"))\nnumero = random.randint(minimo, maximo)\n…"
+    }
+  ],
+  "project": {
+    "name": "Adivinhação com Desafio",
+    "description": "Jogo onde o computador escolhe número, dá dicas, controla tentativas e ajusta intervalo conforme o jogador.",
+    "goal": "Aplicar `random`, `while`, `if/elif/else`, `break`, `int(input())` e lógica de jogo."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português (com legendas) ensinando jogo de adivinhação com dicas:",
+    "url": "https://www.youtube.com/watch?v=t_pGcvGEImQ"
+  }
+}
