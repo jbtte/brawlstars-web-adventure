@@ -8,6 +8,7 @@
 @import url('components/header.css');
 @import url('components/main_layout.css'); /* Estilos para o 'main' e seções gerais */
 @import url('components/hero.css'); /* Estilos da seção hero (index.html) */
+@import url('components/lesson_map_common.css');
 @import url('components/lesson_cards.css'); /* Estilos para lesson-card e lesson-container (index.html) */
 @import url('components/resource_cards.css'); /* Estilos para resource/game cards */
 @import url('components/ide.css'); /* Estilos específicos do IDE (day.html) */

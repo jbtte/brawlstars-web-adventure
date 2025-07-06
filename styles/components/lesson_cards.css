@@ -1,65 +1,7 @@
 /* styles/components/lesson_cards.css - Para Python-Adventure (Tema Mario) */
-
-/* Contêiner das Lições - O "Mapa" ou "Fases" (para index.html) */
-.lesson-map-container {
-    background-color: transparent;
-    box-shadow: none;
-    border: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 25px;
-    padding: 20px;
-    position: relative;
-    z-index: 1;
-
-    /* Imagem de fundo da seção de lições */
-    background-image: url('../../resources/images/lessons-section-bg.png');
-    background-size: repeat;
-    background-position: center center;
-    min-height: 500px;
-    border-radius: 10px;
-    overflow: hidden;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-/* --- ALTERAÇÃO AQUI: Título e Parágrafo da Seção de Lições --- */
-.lesson-map-container h2 {
-    grid-column: 1 / -1;
-    text-align: center;
-    margin-bottom: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px 15px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-    /* Cor do texto: Mais claro, talvez o amarelo ou um branco */
-    color: var(--mario-block-yellow); /* Amarelo vibrante do Bloco '?' */
-    /* text-shadow: Sombra mais escura para destacar */
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); /* Sombra mais escura e definida */
-}
-
-.lesson-map-container .map-intro-text {
-    grid-column: 1 / -1;
-    text-align: center;
-    font-family: var(--pixel-font);
-    /* Cor do texto: Mais claro, como o branco */
-    color: var(--text-light); /* Branco/cinza claro */
-    font-size: 1.1em;
-    /* text-shadow: Sombra mais escura e definida */
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5); /* Sombra mais escura */
-    margin-top: -10px;
-    margin-bottom: 30px;
-    line-height: 1.4;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 5px 10px;
-    border-radius: 0;
-    box-shadow: none;
-}
-
-/* ESTILO DO BLOCO DE INTERROGAÇÃO DO MARIO (SEM '?') E TEXTO DESTAQUE */
 .lesson-card {
-    background-color: #FFDA61; /* Amarelo vibrante do Bloco '?' */
-    border: none;
+  background-color: transparent; /* A imagem será o fundo principal */  
+  border: none;
     border-radius: 8px;
     padding: 15px;
     
@@ -83,8 +25,6 @@
     max-width: 180px;
     margin: 0 auto;
     overflow: hidden;
-
-    
     
     /* Adiciona um overlay semi-transparente sobre a imagem para o texto ser legível */
     /* A cor amarela do bloco será dada pelo overlay e pela imagem */
@@ -147,4 +87,47 @@
     /* .status-icon.unlocked { background-image: url('../resources/images/star-icon.png'); } */
     /* .status-icon.locked { background-image: url('../resources/images/lock-icon.png'); } */
 }
+.lesson-card.visited {
+    /* Remove a sombra de relevo do bloco "?" e adiciona uma sombra mais "plana" */
+    box-shadow: 
+        inset 1px 1px 3px rgba(0, 0, 0, 0.2), /* Sombra interna sutil */
+        2px 2px 0px rgba(0, 0, 0, 0.4); /* Sombra mais escura para profundidade */
+    
+    /* Imagem de fundo da parede de tijolos com overlay mais escuro */
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Overlay mais escuro para o texto */
+        url('../../resources/images/brick-wall-bg.jpg'); /* Sua imagem da parede de tijolos */
+    
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Ajuste da cor do texto para cards visitados */
+.lesson-card.visited a {
+    color: #F0F0F0; /* Branco acinzentado para melhor contraste com tijolo */
+    text-shadow: 
+        1.5px 1.5px 0px rgba(0, 0, 0, 0.8), /* Sombra preta forte */
+        -1.5px -1.5px 0px rgba(0, 0, 0, 0.8),
+        1.5px -1.5px 0px rgba(0, 0, 0, 0.8),
+        -1.5px 1.5px 0px rgba(0, 0, 0, 0.8),
+        0 0 5px rgba(255, 255, 255, 0.5); /* Brilho sutil */
+
+    background-color: rgba(0, 0, 0, 0.3); /* Fundo preto 50% transparente */
+    padding: 2px 5px; /* Pequeno padding para o fundo */
+    border-radius: 3px; /* Bordas arredondadas */
+}
+
+.lesson-card.visited p {
+    color: #E0E0E0; /* Branco acinzentado mais suave */
+    text-shadow: 
+        1px 1px 0px rgba(0, 0, 0, 0.7), 
+        -1px -1px 0px rgba(0, 0, 0, 0.7);
+}
+
+/* Opcional: Ajuste do ícone de status para cards visitados, se houver um ícone específico */
+/* .lesson-card.visited .status-icon {
+    background-image: url('../resources/images/checked-icon.png');
+} */
+
 /* --- FIM DO ESTILO DA CAIXA DA LIÇÃO --- */

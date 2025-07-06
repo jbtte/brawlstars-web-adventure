@@ -67,6 +67,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     const lesson = await response.json();
 
+    if (typeof Storage !== 'undefined') {
+      localStorage.setItem(`lesson_${lessonId}`, 'visited');
+      console.log(`Lição ${lessonId} marcada como visitada no localStorage.`);
+    } else {
+      console.warn(
+        'Seu navegador não suporta localStorage. O progresso da lição não será salvo.'
+      );
+    }
+
     // Update page title and header
     lessonTitleTag.textContent = lesson.title;
     lessonHeaderTitle.textContent = lesson.title;
