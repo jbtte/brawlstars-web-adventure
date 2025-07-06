@@ -9,6 +9,8 @@ body {
     overflow-x: hidden;
     position: relative;
     padding-bottom: 60px;
+    /* Imagem de fundo da página */
+    background-image: url('../../resources/images/page-bg.png');
 }
 
 body::before { /* Nuvem */

@@ -1,36 +1,76 @@
-/* styles/components/_lesson_cards.css */
+/* styles/components/lesson_cards.css - Para Python-Adventure (Tema Mario) */
+
 /* Contêiner das Lições - O "Mapa" ou "Fases" (para index.html) */
 .lesson-map-container {
     background-color: transparent;
     box-shadow: none;
     border: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 25px;
     padding: 20px;
     position: relative;
     z-index: 1;
 
-    /* Adiciona a imagem de fundo do mapa (se presente) */
-    /* background-image: url('http://googleusercontent.com/image_generation_content/5'); */
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
-    /* min-height: 400px; */
-    /* border-radius: 10px; */
-    /* overflow: hidden; */
-    /* padding-top: 50px; */
-    /* padding-bottom: 50px; */
+    /* Imagem de fundo da seção de lições */
+    background-image: url('../../resources/images/lessons-section-bg.png');
+    background-size: repeat;
+    background-position: center center;
+    min-height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
-/* Estilo dos "blocos de lição" (para index.html) */
+/* --- ALTERAÇÃO AQUI: Título e Parágrafo da Seção de Lições --- */
+.lesson-map-container h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    /* Cor do texto: Mais claro, talvez o amarelo ou um branco */
+    color: var(--mario-block-yellow); /* Amarelo vibrante do Bloco '?' */
+    /* text-shadow: Sombra mais escura para destacar */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); /* Sombra mais escura e definida */
+}
+
+.lesson-map-container .map-intro-text {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-family: var(--pixel-font);
+    /* Cor do texto: Mais claro, como o branco */
+    color: var(--text-light); /* Branco/cinza claro */
+    font-size: 1.1em;
+    /* text-shadow: Sombra mais escura e definida */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5); /* Sombra mais escura */
+    margin-top: -10px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 5px 10px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* ESTILO DO BLOCO DE INTERROGAÇÃO DO MARIO (SEM '?') E TEXTO DESTAQUE */
 .lesson-card {
-    background-color: var(--mario-dirt-brown);
-    border: 4px solid var(--mario-block-yellow);
+    background-color: #FFDA61; /* Amarelo vibrante do Bloco '?' */
+    border: none;
     border-radius: 8px;
-    padding: 10px;
-    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.4);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 15px;
+    
+    /* Simula a borda mais grossa e o relevo */
+    box-shadow: 
+        inset 2px 2px 5px rgba(0, 0, 0, 0.1), /* Leve sombra interna para profundidade */
+        4px 4px 0 #D6A44A, /* Borda sólida mais escura na direita e embaixo */
+        -2px -2px 0 #FFF2A9; /* Borda mais clara na esquerda e em cima para o brilho */
+    
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+    
     position: relative;
     display: flex;
     flex-direction: column;
@@ -39,58 +79,72 @@
     min-height: 120px;
     cursor: pointer;
     text-align: center;
-    width: auto; /* Permite que a largura seja controlada pelo grid */
-    max-width: 200px; /* Limite máximo para o tamanho do cartão */
-    margin: 0 auto; /* <--- ESSA É A CHAVE: Centraliza o cartão dentro de sua célula na grade */
+    width: auto;
+    max-width: 180px;
+    margin: 0 auto;
+    overflow: hidden;
+
     
-}
-
-.lesson-card::before {
-    content: '⭐';
-    font-size: 2em;
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-.lesson-card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.5);
+    
+    /* Adiciona um overlay semi-transparente sobre a imagem para o texto ser legível */
+    /* A cor amarela do bloco será dada pelo overlay e pela imagem */
+    background-image: 
+        linear-gradient(rgba(255, 218, 97, 0.7), rgba(255, 218, 97, 0.7)), 
+        url('../../resources/images/question-mark-box.jpg'); /* Caminho para a sua imagem interna do bloco */
+    background-size: cover ; /* Ajusta a imagem para cobrir todo o card */
+    background-position: center center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
 }
 
 .lesson-card a {
     font-family: var(--pixel-font);
-    color: var(--text-light);
     text-decoration: none;
-    font-size: 1em;
-    display: block;
-    margin-bottom: 5px;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
+    font-size: 0.9em; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    transition: none;
+
+    color: #FFFFFF; /* Mantido branco para o texto da fase */
+    text-shadow: 
+        1.5px 1.5px 0px #000000, 
+        -1.5px -1.5px 0px #000000,
+        1.5px -1.5px 0px #000000,
+        -1.5px 1.5px 0px #000000,
+        0 0 5px rgba(255, 255, 255, 0.7);
 }
 
 .lesson-card p {
-    color: var(--text-light);
-    font-size: 0.8em;
+    font-size: 0.75em;
     margin: 0;
     line-height: 1.2;
+    opacity: 1; 
+    margin-top: 5px;
+    
+    color: #FFFFFF; /* Mantido branco para o parágrafo da fase */
+    text-shadow: 
+        1px 1px 0px #000000, 
+        -1px -1px 0px #000000;
 }
 
-.lesson-map-container h2,
-.lesson-map-container .map-intro-text {
-    grid-column: 1 / -1; /* Faz esses elementos ocuparem todas as colunas do grid */
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 20px; /* Adiciona um espaço abaixo deles */
+/* Status icon para ficar sobre a caixa */
+.lesson-card .status-icon {
+    z-index: 3;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* Adicione as imagens de status aqui */
+    /* .status-icon.unlocked { background-image: url('../resources/images/star-icon.png'); } */
+    /* .status-icon.locked { background-image: url('../resources/images/lock-icon.png'); } */
 }
-
-/* --- ALTERAÇÃO AQUI: Estilo para o parágrafo de introdução do mapa --- */
-.map-intro-text {
-    font-family: var(--pixel-font); /* Usar a fonte pixel art para mais impacto */
-    color: var(--text-light); /* Cor clara para contrastar com o mapa */
-    font-size: 1.1em; /* Um pouco maior para ser notável */
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4); /* Sombra mais forte para um efeito 3D */
-    margin-top: -10px; /* Ajusta a posição vertical em relação ao título h2 */
-    margin-bottom: 30px; /* Mais espaço abaixo para separar dos cartões */
-    line-height: 1.4; /* Melhora a legibilidade */
-}
+/* --- FIM DO ESTILO DA CAIXA DA LIÇÃO --- */

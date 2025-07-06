@@ -1,6 +1,6 @@
 /* styles/components/_hero.css */
 .hero-section {
-    /* background-image: url('../images/mario-background-hero.png'); */
+    background-image: url('../../resources/images/hero-section-bg.png');
     background-color: var(--mario-sky-blue);
     color: var(--text-light);
     padding: 60px 20px;
