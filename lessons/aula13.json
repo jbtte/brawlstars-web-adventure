@@ -1,0 +1,52 @@
+{
+  "title": "Dia 13 – Módulos e import: usando código pronto ou seu próprio",
+  "concepts": [
+    {
+      "heading": "O que é um módulo?",
+      "text": "Um módulo é um arquivo `.py` que contém funções, variáveis ou códigos. Você pode usar `import` para usar esse código em outro programa."
+    },
+    {
+      "heading": "Importando módulos prontos",
+      "text": "Muitos módulos já vêm com o Python. Exemplo:",
+      "code": "import math\nprint(math.sqrt(9))  # mostra 3.0"
+    },
+    {
+      "heading": "Importando parte do módulo",
+      "text": "Você pode importar apenas o que precisa:",
+      "code": "from math import sqrt\nprint(sqrt(16))"
+    },
+    {
+      "heading": "Criando seu próprio módulo",
+      "text": "Se salvar funções em um arquivo, é um módulo. Depois você pode reaproveitá-las:",
+      "code": "# arquivo saudacoes.py\n def ola(nome):\n     return f\"Olá, {nome}!\"\n\n# no outro arquivo\nfrom saudacoes import ola\nprint(ola(\"Ana\"))"
+    },
+    {
+      "heading": "Vídeo em português",
+      "text": "Este vídeo do canal LabEx ensina como criar e importar módulos em Python:",
+      "code": ""
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Importe o módulo `random` e use `random.randint(1, 10)` para mostrar um número aleatório.",
+      "code_hint": "import random\nprint(random.randint(1, 10))"
+    },
+    {
+      "prompt": "2. Crie um arquivo chamado `minhas_funcoes.py` com uma função `boas_vindas()` que retorna ‘Oi!’; importe e use em outro script.",
+      "code_hint": "# em minhas_funcoes.py\ndef boas_vindas():\n    return \"Oi!\"\n\n# em principal.py\nfrom minhas_funcoes import boas_vindas\nprint(boas_vindas())"
+    },
+    {
+      "prompt": "3. Desafio: no mesmo módulo, adicione função `soma(a,b)` que retorna a soma, e teste importando nos dois estilos (`import` e `from`).",
+      "code_hint": "# em minhas_funcoes.py\ndef soma(a, b):\n    return a + b\n\n# em principal.py\nimport minhas_funcoes\nfrom minhas_funcoes import soma\n\nprint(minhas_funcoes.soma(2,3))\nprint(soma(5,7))"
+    }
+  ],
+  "project": {
+    "name": "Minha caixa de ferramentas",
+    "description": "Crie um módulo com duas funções (ex: saudação e soma). Importe-o e use essas funções em outro script.",
+    "goal": "Ensinar criação de módulos, reutilização de código, e importação nos dois estilos (`import` e `from`)."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português explicando como criar e importar módulos:",
+    "url": "https://www.youtube.com/watch?v=oOUyhGNib2Q"
+  }
+}

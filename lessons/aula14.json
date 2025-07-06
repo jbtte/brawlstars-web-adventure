@@ -1,0 +1,47 @@
+{
+  "title": "Dia 14 – Leitura e escrita de arquivos",
+  "concepts": [
+    {
+      "heading": "O que é um arquivo?",
+      "text": "Um arquivo é um documento que fica salvo no computador, como um arquivo de texto. Usamos Python para ler (abrir e ver) e escrever (criar ou modificar) esses arquivos."
+    },
+    {
+      "heading": "Abrindo um arquivo",
+      "text": "Use `open()` com modo:<ul><li>'r' para ler</li><li>'w' para escrever (apaga antes)</li><li>'a' para adicionar no final</li></ul>",
+      "code": "arquivo = open('exemplo.txt', 'r')\nconteudo = arquivo.read()\nprint(conteudo)\narquivo.close()"
+    },
+    {
+      "heading": "Escrevendo em um arquivo",
+      "text": "Para criar ou escrever, use 'w' ou 'a', depois `write()` e finalize com `close()` (ou `with`).",
+      "code": "arquivo = open('saida.txt', 'w')\narquivo.write('Olá, arquivo!\\n')\narquivo.close()"
+    },
+    {
+      "heading": "Usando with (melhor jeito)",
+      "text": "O `with` abre e fecha o arquivo automaticamente:",
+      "code": "with open('idades.txt', 'a') as f:\n    f.write('João: 12 anos\\n')"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Crie um arquivo `lista.txt`, escreva três nomes de amigos e depois abra e mostre esse conteúdo.",
+      "code_hint": "with open('lista.txt', 'w') as f:\n    f.write('Ana\\nBruno\\nCarla\\n')\nwith open('lista.txt', 'r') as f:\n    print(f.read())"
+    },
+    {
+      "prompt": "2. Crie um arquivo `diario.txt` em modo append e escreva uma frase nova cada vez que rodar.",
+      "code_hint": "with open('diario.txt', 'a') as f:\n    f.write('Hoje eu aprendi Python!\\n')"
+    },
+    {
+      "prompt": "3. Desafio: leia `diario.txt` e conte quantas linhas ele tem.",
+      "code_hint": "with open('diario.txt', 'r') as f:\n    linhas = f.readlines()\n    print('Linhas:', len(linhas))"
+    }
+  ],
+  "project": {
+    "name": "Diário de Programação",
+    "description": "Crie um minidiário que adiciona uma frase por dia e ao final mostra quantas frases existem.",
+    "goal": "Praticar leitura, escrita, acréscimo de texto e contagem de linhas em arquivos."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português que mostra leitura, escrita e uso do with em Python:",
+    "url": "https://www.youtube.com/watch?v=tCGqX17P6Zw"
+  }
+}

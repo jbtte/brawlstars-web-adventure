@@ -1,0 +1,47 @@
+{
+  "title": "Dia 15 – Calculadora com tratamento de erros",
+  "concepts": [
+    {
+      "heading": "Por que tratar erros?",
+      "text": "Às vezes o usuário digita algo errado, como uma letra em vez de número, ou divide por zero. Se não tratarmos, o programa quebra! Vamos aprender a usar `try/except` para evitar isso."
+    },
+    {
+      "heading": "Estrutura básica do try/except",
+      "text": "Envolva o código que pode falhar em `try:` e defina o que fazer em `except:` caso dê erro.\nVeja o formato:",
+      "code": "try:\n    x = int(input(\"Digite um número: \"))\n    print(\"Você digitou:\", x)\nexcept ValueError:\n    print(\"Isso não é um número válido!\")"
+    },
+    {
+      "heading": "Tratando divisão por zero",
+      "text": "Também é possível tratar diferentes tipos de erro.",
+      "code": "try:\n    a = int(input(\"Dividendo: \"))\n    b = int(input(\"Divisor: \"))\n    print(\"Resultado:\", a / b)\nexcept ZeroDivisionError:\n    print(\"Erro: não pode dividir por zero!\")\nexcept ValueError:\n    print(\"Digite apenas números inteiros!\")"
+    },
+    {
+      "heading": "Vídeo em português",
+      "text": "Este vídeo explica como usar `try`, `except`, tratar erros de valor ou divisão por zero de forma clara:",
+      "code": ""
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Peça um número e mostre o dobro. Use `try/except` para avisar se não for número.",
+      "code_hint": "try:\n    n = int(input(\"Digite um número: \"))\n    print(\"Dobro:\", n * 2)\nexcept:\n    print(\"Ops, não reconheci esse número!\")"
+    },
+    {
+      "prompt": "2. Peça dois números para divisão, trate `ValueError` e `ZeroDivisionError` separadamente.",
+      "code_hint": "try:\n    a = int(input(\"A: \"))\n    b = int(input(\"B: \"))\n    print(a / b)\nexcept ValueError:\n    print(\"Digite apenas números!\")\nexcept ZeroDivisionError:\n    print(\"Não dá pra dividir por zero!\")"
+    },
+    {
+      "prompt": "3. Desafio: crie uma calculadora que pede operação (+, -, *, /), trata erros e mostra resultado ou mensagem.",
+      "code_hint": "try:\n    op = input(\"Operação (+ - * /): \")\n    a = float(input(\"A: \"))\n    b = float(input(\"B: \"))\n    if op == '+': res = a + b\n    elif op == '-': res = a - b\n    elif op == '*': res = a * b\n    elif op == '/': res = a / b\n    else: raise ValueError('Operação inválida')\n    print(\"Resultado:\", res)\nexcept ValueError as e:\n    print(\"Erro:\", e)\nexcept ZeroDivisionError:\n    print(\"Não pode dividir por zero!\")"
+    }
+  ],
+  "project": {
+    "name": "Super Calculadora Segura",
+    "description": "Crie uma mini calculadora que recebe operação e números, trata entradas erradas e divisão por zero, e sempre continua funcionando.",
+    "goal": "Praticar `try/except`, múltiplos tipos de exceção e lógica de operações."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português explicando tratamento de erros com `try/except`:",
+    "url": "https://www.youtube.com/watch?v=83dHYiwxOjg"
+  }
+}

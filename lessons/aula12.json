@@ -1,0 +1,52 @@
+{
+  "title": "Dia 12 – Dicionários: associando chaves a valores",
+  "concepts": [
+    {
+      "heading": "O que é um dicionário?",
+      "text": "Um dicionário em Python é como um mini banco de dados: em vez de usar números para contar, usamos palavras (chaves) para encontrar informações (valores)."
+    },
+    {
+      "heading": "Criando um dicionário",
+      "text": "Use chaves `{}` e escreva pares `<chave>: <valor>`, separados por vírgula.",
+      "code": "pessoa = {'nome': 'Ana', 'idade': 12, 'cidade': 'Rio'}\nprint(pessoa)"
+    },
+    {
+      "heading": "Acessando valores por chave",
+      "text": "Para pegar um valor, use a chave entre colchetes:",
+      "code": "print(pessoa['nome'])  # 'Ana'\nprint(pessoa['idade'])  # 12"
+    },
+    {
+      "heading": "Adicionando, alterando e removendo",
+      "text": "Você pode criar ou modificar assim:",
+      "code": "pessoa['altura'] = 1.50  # adiciona a chave 'altura'\npessoa['idade'] = 13      # muda o valor da idade\ndel pessoa['cidade']      # remove a chave 'cidade'"
+    },
+    {
+      "heading": "Percorrendo todas as informações",
+      "text": "Use `items()`, `keys()` e `values()` para ver tudo:",
+      "code": "for chave, valor in pessoa.items():\n    print(chave, '→', valor)"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Crie um dicionário `carro` com chave/valor: marca, modelo e ano. Depois, mostre o modelo.",
+      "code_hint": "carro = {'marca':'Fiat', 'modelo':'Uno', 'ano':2020}\nprint(carro['modelo'])"
+    },
+    {
+      "prompt": "2. Adicione a cor ao dicionário e mostre quantas informações ele tem (use `len()`).",
+      "code_hint": "carro['cor'] = 'vermelho'\nprint(len(carro))"
+    },
+    {
+      "prompt": "3. Desafio: remova o ano e mostre as chaves e valores restantes (use `.items()`).",
+      "code_hint": "del carro['ano']\nfor k, v in carro.items():\n    print(k, v)"
+    }
+  ],
+  "project": {
+    "name": "Cadastro de Personagem",
+    "description": "Crie um dicionário com nome, idade, poder favorito e nível (1‑10). Mostre cada informação usando loop.",
+    "goal": "Praticar criação, acesso, modificação e loop em dicionários."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português que explica dicionários no Python de forma clara:",
+    "url": "https://www.youtube.com/watch?v=ZWj8o692qGY"
+  }
+}

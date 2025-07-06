@@ -1,0 +1,52 @@
+{
+  "title": "Dia 11 – Listas: guardar vários itens juntos",
+  "concepts": [
+    {
+      "heading": "O que é uma lista?",
+      "text": "Uma lista é como uma caixa com compartimentos numerados, onde você pode guardar vários valores juntos — como nomes, números ou qualquer coisa."
+    },
+    {
+      "heading": "Como criar uma lista",
+      "text": "Use colchetes para criar uma lista e coloque valores separados por vírgulas.",
+      "code": "frutas = ['maçã', 'banana', 'laranja']\nprint(frutas)"
+    },
+    {
+      "heading": "Acessando itens por índice",
+      "text": "Cada item tem um número, começando do 0. O primeiro é índice 0, o segundo é 1, e assim por diante.",
+      "code": "print(frutas[0])  # maçã\nprint(frutas[2])  # laranja"
+    },
+    {
+      "heading": "Adicionando e removendo itens",
+      "text": "Use `append()` para adicionar e `remove()` ou `pop()` para tirar algo da lista.",
+      "code": "frutas.append('uva')\nprint(frutas)\nfrutas.remove('banana')\nprint(frutas)"
+    },
+    {
+      "heading": "Sabendo quantos itens tem",
+      "text": "Use `len()` para saber o tamanho da lista.",
+      "code": "print(len(frutas))  # quantos itens"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Crie list `cores` com 3 cores diferentes e mostre o segundo item.",
+      "code_hint": "cores = ['vermelho', 'azul', 'verde']\nprint(cores[1])"
+    },
+    {
+      "prompt": "2. Adicione mais uma cor à lista e depois mostre o total de cores.",
+      "code_hint": "cores.append('amarelo')\nprint(len(cores))"
+    },
+    {
+      "prompt": "3. Desafio: remova uma cor e mostre a lista atualizada.",
+      "code_hint": "cores.remove('verde')\nprint(cores)"
+    }
+  ],
+  "project": {
+    "name": "Minha coleção de favoritos",
+    "description": "Crie uma lista com seus 5 jogos, filmes ou comidas favoritas. Mostre o primeiro, o último e o tamanho da lista.",
+    "goal": "Ensinar como criar, acessar, adicionar e remover itens de uma lista, além de usar `len()`."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português que explica listas e seus métodos básicos:",
+    "url": "https://www.youtube.com/watch?v=4hMTl2A6feM"
+  }
+}
