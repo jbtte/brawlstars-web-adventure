@@ -1,0 +1,51 @@
+{
+  "title": "Dia 16 – Introdução à Programação Orientada a Objetos (POO)",
+  "concepts": [
+    {
+      "heading": "O que é POO?",
+      "text": "POO significa Programação Orientada a Objetos, um jeito de organizar o código usando 'caixinhas' chamadas classes, que definem objetos com características (atributos) e ações (métodos)."
+    },
+    {
+      "heading": "Criando sua primeira classe",
+      "text": "Use <code>class</code> para criar uma classe. Dentro dela, use <code>def __init__</code> para inicializar atributos.",
+      "code": "class Personagem:\n    def __init__(self, nome, vida):\n        self.nome = nome\n        self.vida = vida"
+    },
+    {
+      "heading": "Criando objetos (instâncias)",
+      "text": "Depois de definir uma classe, você pode criar objetos a partir dela.",
+      "code": "hero = Personagem(\"Mario\", 100)\nprint(hero.nome, hero.vida)"
+    },
+    {
+      "heading": "Adicionando métodos (ações)",
+      "text": "Use funções dentro da classe para definir comportamentos dos objetos.",
+      "code": "class Personagem:\n    def __init__(self, nome, vida):\n        self.nome = nome\n        self.vida = vida\n    def dizer_ola(self):\n        print(f\"Olá, eu sou {self.nome} e tenho {self.vida} de vida!\")\n\nhero = Personagem(\"Luigi\", 80)\nhero.dizer_ola()"
+    },
+    {
+      "heading": "Vídeo em português",
+      "text": "Este vídeo ensina passo a passo a criar classes, objetos e métodos em Python de forma clara:"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Defina uma classe `Animal` com `nome` e `som` como atributos. Crie um método `falar()` que imprima o som do animal.",
+      "code_hint": "class Animal:\n    def __init__(self, nome, som):\n        self.nome = nome\n        self.som = som\n    def falar(self):\n        print(self.som)\n\nc = Animal(\"Gato\", \"Miau\")\nc.falar()"
+    },
+    {
+      "prompt": "2. Crie uma classe `Bola` com atributo `cor` e um método `rolar()` que imprima 'A bola [cor] está rolando!'",
+      "code_hint": "class Bola:\n    def __init__(self, cor):\n        self.cor = cor\n    def rolar(self):\n        print(f\"A bola {self.cor} está rolando!\")\n\nb = Bola(\"vermelha\")\nb.rolar()"
+    },
+    {
+      "prompt": "3. Desafio: Adicione um método `mudar_cor(nova_cor)` na classe Bola que altera a cor e devolve a nova cor.",
+      "code_hint": "class Bola:\n    def __init__(self, cor):\n        self.cor = cor\n    def mudar_cor(self, nova_cor):\n        self.cor = nova_cor\n        return self.cor\n\nb = Bola(\"azul\")\nprint(b.mudar_cor(\"verde\"))"
+    }
+  ],
+  "project": {
+    "name": "Objetos do mundo real",
+    "description": "Crie pelo menos duas classes com atributos e métodos, instancie objetos e chame seus métodos em um script.",
+    "goal": "Entender como criar classes, atributos, métodos e como objetos interagem."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português que ensina POO: classes, objetos e métodos:",
+    "url": "https://www.youtube.com/watch?v=TJQFj67AcGc"
+  }
+}

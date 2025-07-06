@@ -1,0 +1,48 @@
+{
+  "title": "Dia 19 – Jogo completo: Forca no terminal",
+  "concepts": [
+    {
+      "heading": "Como funciona a Forca",
+      "text": "O jogador tenta adivinhar uma palavra ocultando letras. Ele tem algumas chances antes de perder. Vamos usar `while`, listas, `input()` e lógica para controlar o jogo."
+    },
+    {
+      "heading": "Estrutura básica do jogo",
+      "text": "1. Escolha uma palavra secreta. 2. Mostre ___ para cada letra. 3. Pergunte uma letra. 4. Revele as letras certas. 5. Conte erros."
+    },
+    {
+      "heading": "Exemplo de trecho do jogo",
+      "code": "palavra = \"python\"\nletras_certas = []\nerros = 0\nwhile erros < 6 and set(palavra) != set(letras_certas):\n    letra = input(\"Digite uma letra: \")\n    if letra in palavra:\n        letras_certas.append(letra)\n    else:\n        erros += 1\n    # Mostrar estado atual da palavra e erros"
+    },
+    {
+      "heading": "Finalizando o jogo",
+      "text": "Quando o `while` terminar, mostramos se o jogador ganhou ou perdeu, junto com a palavra secreta."
+    },
+    {
+      "heading": "Vídeo em português",
+      "text": "Este vídeo mostra passo a passo a criação de um jogo da Forca em Python no terminal:"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Escreva um trecho que mostra ___ para cada letra da palavra.",
+      "code_hint": "for letra in palavra:\n    if letra in letras_certas:\n        print(letra, end=' ')\n    else:\n        print('_', end=' ')"
+    },
+    {
+      "prompt": "2. Crie a lógica que adiciona letras certas e conta erros.",
+      "code_hint": "if letra in palavra:\n    letras_certas.append(letra)\nelse:\n    erros += 1"
+    },
+    {
+      "prompt": "3. Desafio: acrescente repetição do jogo até o jogador dizer que quer sair.",
+      "code_hint": "while True:\n    # jogo completo\n    novamente = input('Jogar de novo? (s/n) ')\n    if novamente.lower() != 's':\n        break"
+    }
+  ],
+  "project": {
+    "name": "Forca no terminal",
+    "description": "Crie um jogo da Forca simples: pede letra, verifica se está na palavra, controla erros, e avisa vitória ou derrota.",
+    "goal": "Aplicar variados conceitos aprendidos: loops, listas, input, if, lógica de jogo e repetição."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português ensinando como criar o jogo da Forca no terminal:",
+    "url": "https://www.youtube.com/watch?v=_A_2aTFHzJ0"
+  }
+}

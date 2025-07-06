@@ -1,0 +1,49 @@
+{
+  "title": "Dia 18 – Organização de projetos e boas práticas",
+  "concepts": [
+    {
+      "heading": "Por que organizar o projeto?",
+      "text": "Quando o código cresce, fica difícil encontrar os arquivos certos. Estruturar bem o projeto ajuda no entendimento, manutenção e novas ideias."
+    },
+    {
+      "heading": "Como organizar pastas e arquivos",
+      "text": "Uma estrutura comum é separar assim:\n```\nmeu_projeto/\n  src/            ← código principal (.py)\n  tests/          ← testes do projeto\n  data/           ← arquivos de dados (como .txt)\n  README.md       ← explicação do projeto\n```\nIsso facilita a vida de quem for ler ou contribuir no projeto. :contentReference[oaicite:1]{index=1}"
+    },
+    {
+      "heading": "O que é seguir boas práticas?",
+      "text": "Usar nomes claros, evitar código repetido, documentar ideias e testar o que funciona — tudo isso faz parte de boas práticas. :contentReference[oaicite:2]{index=2}"
+    },
+    {
+      "heading": "Usando ferramentas para ajudar",
+      "text": "Podemos usar `pipenv` (ou `venv`) para criar um ambiente isolado, e ferramentas como `flake8` ou `black` para manter o código limpo. :contentReference[oaicite:3]{index=3}"
+    },
+    {
+      "heading": "Vídeo em português",
+      "text": "Este vídeo do PyCon Portugal mostra organização de pastas, uso de ambientes virtuais e escrita de testes:",
+      "code": ""
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Crie uma estrutura de pastas no seu computador: `meu_projeto/src`, `tests` e `data`. Dentro de `src`, salve um arquivo `main.py` que imprime algo.",
+      "code_hint": "# Em src/main.py\nprint(\"Tudo certo!\")"
+    },
+    {
+      "prompt": "2. Dentro de `tests`, crie `test_main.py` que importe e rode `main.py`.",
+      "code_hint": "# Em tests/test_main.py\nimport src.main\n#printou algo sem erro."
+    },
+    {
+      "prompt": "3. Escreva um README.md explicando o que faz o projeto.",
+      "code_hint": "# Abra README.md e escreva: \"Esse projeto imprime 'Tudo certo!'\""
+    }
+  ],
+  "project": {
+    "name": "Meu projeto organizado",
+    "description": "Monte um projeto simples com pasta `src`, `tests`, `data` e README, e rode o código principal.",
+    "goal": "Ensinar estrutura de projeto, ambientes, documentação e testes."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português do PyCon PT sobre organização de projetos em Python:",
+    "url": "https://www.youtube.com/watch?v=6_W1_CbMCw4"
+  }
+}

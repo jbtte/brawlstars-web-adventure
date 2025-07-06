@@ -1,0 +1,54 @@
+{
+  "title": "Dia 17 – Herança e sobrescrita de métodos",
+  "concepts": [
+    {
+      "heading": "O que é herança?",
+      "text": "Herança é quando uma classe filha recebe todas as características da classe pai e ainda pode ter coisas diferentes."
+    },
+    {
+      "heading": "Classe pai e classe filha",
+      "text": "A classe filha é criada com: class Gato(Animal). Isso significa que Gato herda tudo de Animal e pode adicionar ou modificar coisas."
+    },
+    {
+      "heading": "Exemplo de herança",
+      "code": "class Animal:\n    def __init__(self, nome):\n        self.nome = nome\n    def falar(self):\n        print(\"...Som genérico...\")\n\nclass Gato(Animal):\n    pass\n\ng = Gato(\"Miauzinho\")\ng.falar()"
+    },
+    {
+      "heading": "Sobrescrevendo (override)",
+      "text": "A classe filha pode mudar o comportamento herdado, redefinindo o método.",
+      "code": "class Gato(Animal):\n    def falar(self):\n        print(\"Miau!\")\n\ng = Gato(\"Miauzinho\")\ng.falar()"
+    },
+    {
+      "heading": "Chamando método do pai",
+      "text": "Da filha você ainda pode usar o método original com super().",
+      "code": "class Gato(Animal):\n    def falar(self):\n        super().falar()\n        print(\"Miau à moda do gato!\")\n\ng = Gato(\"Miauzinho\")\ng.falar()"
+    },
+    {
+      "heading": "Vídeo em português",
+      "text": "Este vídeo explica herança e sobrescrita de métodos em Python de forma visual e didática:"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Crie uma classe Animal com o método falar() genérico. Depois crie Cachorro que herda de Animal sem mudar nada e teste.",
+      "code_hint": "class Animal:\n    def __init__(self, nome):\n        self.nome = nome\n    def falar(self):\n        print(\"Algum som...\")\n\nclass Cachorro(Animal):\n    pass\n\nc = Cachorro(\"Totó\")\nc.falar()"
+    },
+    {
+      "prompt": "2. Agora sobrescreva falar() na classe Cachorro para imprimir 'Au au!'.",
+      "code_hint": "class Cachorro(Animal):\n    def falar(self):\n        print(\"Au au!\")\n\nc = Cachorro(\"Totó\")\nc.falar()"
+    },
+    {
+      "prompt": "3. Desafio: crie classes Gato e Cachorro, sobrescreva falar() em cada uma, e adicione método cumprimentar() que usa falar().",
+      "code_hint": "class Gato(Animal):\n    def falar(self):\n        print(\"Miau!\")\n    def cumprimentar(self):\n        print(\"Olá, eu sou\", self.nome)\n        self.falar()\n\nclass Cachorro(Animal):\n    def falar(self):\n        print(\"Au au!\")\n    def cumprimentar(self):\n        print(\"Olá, eu sou\", self.nome)\n        self.falar()"
+    }
+  ],
+  "project": {
+    "name": "Animais que falam",
+    "description": "Crie classes Animal, Gato e Cachorro. Cada um deve falar diferente e cumprimentar. Teste instanciando objetos.",
+    "goal": "Praticar herança, sobrescrita de métodos e uso de super()."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português explicando herança e override em Python:",
+    "url": "https://www.youtube.com/watch?v=Wo5dMEP_BbI"
+  }
+}

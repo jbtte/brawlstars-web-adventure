@@ -1,0 +1,49 @@
+{
+  "title": "Dia 20 – Jogo Final: Jogo de Terminal com Melhoria e Organização",
+  "concepts": [
+    {
+      "heading": "Unindo tudo que você aprendeu",
+      "text": "Agora você vai criar um jogo completo que usa vários conceitos: funções, loops, condições, listas e arquivos, tudo bem organizado."
+    },
+    {
+      "heading": "Estrutura recomendada do código",
+      "text": "Separe o jogo em funções: `jogar()`, `mostrar_resultado()`, `salvar_pontuacao()`. E escreva a parte que roda tudo dentro de:\n<code>if __name__ == \"__main__\":</code>"
+    },
+    {
+      "heading": "Como guardar a pontuação",
+      "text": "Você pode salvar a pontuação em um arquivo, usando `with open(...)` para gravar nome e pontos."
+    },
+    {
+      "heading": "Adicionando melhorias",
+      "text": "Você pode adicionar mais níveis, dicas, menu inicial, e comando para reiniciar o jogo."
+    },
+    {
+      "heading": "Vídeo em português",
+      "text": "Este vídeo mostra a criação de um jogo completo no terminal, com organização por funções e estrutura clara:",
+      "url": "https://www.youtube.com/watch?v=hSLM9ed1NNw"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Escreva uma função `jogar()` que contém todo o jogo (forca ou outro).",
+      "code_hint": "def jogar():\n    # conteudo do jogo aqui\n\nif __name__ == \"__main__\":\n    jogar()"
+    },
+    {
+      "prompt": "2. Adicione um menu inicial que pergunta se o jogador quer iniciar ou sair.",
+      "code_hint": "op = input(\"Quer jogar? (s/n): \")\nif op.lower() == 's':\n    jogar()\nelse:\n    print(\"Até logo!\")"
+    },
+    {
+      "prompt": "3. Salve o nome do jogador e a pontuação em `pontuacoes.txt` cada vez que vencer.",
+      "code_hint": "with open('pontuacoes.txt', 'a') as f:\n    f.write(f\"{nome}:{pontos}\\n\")"
+    }
+  ],
+  "project": {
+    "name": "Mega Jogo Final",
+    "description": "Crie um jogo completo no terminal, organizado em funções, com menu inicial, pontuação salva em arquivo e opção de reiniciar.",
+    "goal": "Aplicar funções, laços, condições, arquivos e organização em um projeto real e completo."
+  },
+  "video_suggestion": {
+    "text": "Vídeo em português mostrando a construção de um jogo completo no terminal com estrutura por funções:",
+    "url": "https://www.youtube.com/watch?v=hSLM9ed1NNw"
+  }
+}
