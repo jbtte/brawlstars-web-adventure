@@ -1,38 +1,29 @@
 /* styles/base/_global.css */
-body {
-    font-family: 'Roboto', sans-serif;
+html, body {
+    height: 100%; /* Garante que html e body ocupem 100% da viewport */
     margin: 0;
-    background: linear-gradient(to bottom, var(--mario-sky-blue) 0%, var(--mario-sky-blue) 70%, var(--mario-grass-green) 70%, var(--mario-grass-green) 100%);
-    background-size: 100% 100vh;
-    color: var(--text-dark);
-    text-align: center;
-    overflow-x: hidden;
-    position: relative;
-    padding-bottom: 60px;
-    /* Imagem de fundo da página */
-    background-image: url('../../resources/images/page-bg.png');
+    padding: 0;
+    overflow-x: hidden; /* Mantém horizontal sem barra de rolagem */
+    overflow-y: scroll; /* Força a barra de rolagem vertical no body */
 }
 
-body::before { /* Nuvem */
-    content: '';
-    position: absolute;
-    top: 50px;
-    left: 10%;
-    width: 150px;
-    height: 80px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-    box-shadow: 100px 30px rgba(255, 255, 255, 0.8),
-                -80px 60px rgba(255, 255, 255, 0.8),
-                250px 0px rgba(255, 255, 255, 0.8),
-                400px 80px rgba(255, 255, 255, 0.8);
-    z-index: -1;
+body {
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 60px;
+    text-align: center;
+    color: var(--text-dark);
+
+    /* Imagem de fundo da página */
+    background-image: url('../../resources/images/page-bg.png');
 }
 
 main {
     max-width: 1000px;
     margin: 20px auto;
     padding: 0 20px;
+    position: relative; /* Mantido para z-index */
+    z-index: 10;
+    
 }
 
 /* Estilo padrão para todas as seções (seus "blocos de conteúdo") */

@@ -20,8 +20,17 @@
     <script defer src="scripts/load_lesson.js"></script>
   </head>
   <body>
+    <audio id="background-music" loop>
+      <source
+        src="resources/sounds/super-mario-bros-theme.mp3"
+        type="audio/mpeg"
+      />
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
     <header>
       <h1 id="lesson-header-title">Aventura Python: Carregando...</h1>
+    </header>
+    <div class="header-controls-wrapper">
       <nav class="main-nav lesson-page-nav">
         <ul>
           <li>
@@ -29,7 +38,10 @@
           </li>
         </ul>
       </nav>
-    </header>
+      <button id="music-toggle-button" class="music-toggle-button">
+        🎵 Ligado
+      </button>
+    </div>
 
     <main>
       <div class="lesson-layout-wrapper">
@@ -86,5 +98,6 @@
       <p><a href="index.html">Voltar para a página principal</a></p>
     </footer>
     <script src="scripts/load_lesson.js"></script>
+    <script src="scripts/music_control.js"></script>
   </body>
 </html>

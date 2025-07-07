@@ -44,3 +44,32 @@
 .hint-container .exercise-snippet {
     margin-bottom: 0; 
 }
+
+/* Estilos para o Botão de Controle de Música */
+.music-toggle-button {
+    background-color: var(--mario-red); /* Volta para o vermelho Mario */
+    color: var(--text-light);
+    font-family: var(--pixel-font);
+    font-size: 0.7em;
+    padding: 5px 10px;
+    border: 2px solid var(--mario-dirt-brown); /* Borda marrom */
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+    transition: all 0.1s ease;
+    white-space: nowrap; /* Evita quebra de linha */
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    margin-left: 20px; /* Aumentado de 10px para 20px */
+}
+
+
+.music-toggle-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.4);
+    background-color: #FF6347; /* Vermelho mais claro no hover */
+}
+
+.music-toggle-button:active {
+    transform: translateY(1px);
+    box-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+}

@@ -1,17 +1,44 @@
 /* styles/base/_responsive.css */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.5em;
+        flex-grow: 0;
+        margin-bottom: 10px;
     }
-    header {
-        flex-direction: column;
-        padding: 10px 0;
+
+    .header-controls-wrapper {
+        flex-direction: column; /* Empilha o menu e o botão */
+        gap: 10px; /* Espaço entre eles */
+        max-width: 100%; /* Ocupa largura total */
+        padding: 10px 0; /* Padding vertical para quando empilhado */
+        position: static; /* Remove sticky em mobile para não cobrir tudo ao rolar */
+        background-color: var(--mario-sky-blue); /* Fundo no mobile */
+        box-shadow: none; /* Remove sombra em mobile */
+        border-bottom: none; /* Remove borda em mobile */
     }
+
+    .main-nav {
+        width: 100%; /* Ocupa largura total */
+        margin: 0; /* Remove margem lateral */
+        padding: 5px 0; /* Menos padding */
+        background-color: rgba(0, 0, 0, 0.3); /* Fundo para o menu em mobile */
+        border-radius: 5px;
+        border-top: 2px solid var(--mario-dirt-brown); /* Bordas para o menu em mobile */
+        border-bottom: 2px solid var(--mario-dirt-brown);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
     .main-nav ul {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
     }
+
+    .music-toggle-button {
+        margin-left: 0; /* Remove margem lateral */
+        margin-top: 10px; /* Empilha abaixo da nav */
+        width: fit-content; /* Ocupa largura do conteúdo */
+    }
+
     section {
         padding: 20px;
     }
