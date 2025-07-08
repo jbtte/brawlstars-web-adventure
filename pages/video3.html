@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        const isLocal =
+          window.location.hostname === '127.0.0.1' ||
+          window.location.hostname === 'localhost';
+        const repoName = 'python-adventure'; // <<< Seu nome de repo aqui
+        const baseUrl = isLocal ? '/' : `/${repoName}/`;
+        const baseTag = document.createElement('base');
+        baseTag.href = baseUrl;
+        document.head.prepend(baseTag);
+      })();
+    </script>
+    <title>Aventura Python: O que é Python?</title>
+    <link rel="icon" type="image/png" href="/resources/images/mario.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>O que é Python? Linguagem Secreta Revelada!</h1>
+      <nav class="main-nav lesson-page-nav">
+        <ul>
+          <li>
+            <a href="/index.html">Voltar ao Mapa das Fases</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="video-page-section">
+        <p>
+          Pronto para desvendar a linguagem que faz jogos, aplicativos e robôs
+          ganharem vida? 🤖💻 O Python é o seu novo superpoder!
+        </p>
+        <p>
+          Lembre-se: se precisar, ligue as legendas autogeradas em português
+          diretamente no player do vídeo (no ícone "CC" ou na engrenagem ⚙️).
+        </p>
+        <div class="video-embed-container">
+          <iframe
+            src="https://www.youtube.com/embed/bdUqQidffPE?cc_lang_pref=pt&cc_load_policy=1&hl=pt"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            title="O que é Python?"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2025 Aventura Python. Todos os direitos reservados.
+        <a href="/index.html">Voltar à página principal</a>
+      </p>
+    </footer>
+  </body>
+</html>
