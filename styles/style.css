@@ -14,6 +14,7 @@
 @import url('components/intro-videos.css');
 @import url('components/lesson_cards.css'); /* Estilos para lesson-card e lesson-container (index.html) */
 @import url('components/lesson_map_common.css');
+@import url('components/lessons_content_types.css');
 @import url('components/main_layout.css'); /* Estilos para o 'main' e seções gerais */
 @import url('components/reset_section.css'); 
 @import url('components/resource_cards.css'); /* Estilos para resource/game cards */

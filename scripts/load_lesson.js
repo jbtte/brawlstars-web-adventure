@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const lessonId = urlParams.get('id');
 
-  // Make sure these elements exist before trying to set properties
   const lessonTitleTag = document.getElementById('lesson-title-tag');
   const lessonHeaderTitle = document.getElementById('lesson-header-title');
   const conceptsContainer = document.getElementById(
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   );
   const videoSection = document.getElementById('video-suggestion-section');
 
-  // Basic check for essential containers
   if (
     !lessonTitleTag ||
     !lessonHeaderTitle ||
@@ -28,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     );
     if (lessonHeaderTitle)
       lessonHeaderTitle.textContent = 'Erro: Estrutura da Página Incompleta';
-    return; // Stop execution if critical elements are missing
+    return;
   }
 
   if (!lessonId) {
@@ -65,6 +63,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
       return;
     }
+
     const lesson = await response.json();
 
     if (typeof Storage !== 'undefined') {
@@ -76,40 +75,67 @@ document.addEventListener('DOMContentLoaded', async () => {
       );
     }
 
-    // Update page title and header
     lessonTitleTag.textContent = lesson.title;
     lessonHeaderTitle.textContent = lesson.title;
 
-    // Inject concepts
     conceptsContainer.innerHTML = '';
     lesson.concepts.forEach((concept) => {
       const section = document.createElement('section');
-      const heading = document.createElement('h2'); // Changed to H2 as per standard section heading
-      heading.innerHTML = concept.heading;
+      section.classList.add('lesson-block', `lesson-block--${concept.type}`);
 
-      const text = document.createElement('p');
-      text.innerHTML = concept.text;
+      if (concept.heading) {
+        const heading = document.createElement('h2');
+        heading.innerHTML = concept.heading;
+        section.appendChild(heading);
+      }
 
-      section.appendChild(heading);
-      section.appendChild(text);
+      if (concept.text) {
+        const text = document.createElement('p');
+        text.innerHTML = concept.text;
+        section.appendChild(text);
+      }
 
-      if (concept.code) {
+      if (concept.steps && concept.steps.length > 0) {
+        const stepsList = document.createElement('ol');
+        stepsList.classList.add('lesson-steps');
+        concept.steps.forEach((step) => {
+          const listItem = document.createElement('li');
+          listItem.innerHTML = step;
+          stepsList.appendChild(listItem);
+        });
+        section.appendChild(stepsList);
+      }
+
+      if (concept.image_placeholder) {
+        const imgPlaceholder = document.createElement('div');
+        imgPlaceholder.classList.add('image-placeholder');
+        if (concept.image_url) {
+          const img = document.createElement('img');
+          img.src = concept.image_url;
+          img.alt = concept.image_placeholder;
+          imgPlaceholder.appendChild(img);
+        } else {
+          imgPlaceholder.innerHTML = `<p>${concept.image_placeholder}</p>`;
+        }
+        section.appendChild(imgPlaceholder);
+      }
+
+      if (concept.type === 'code' && concept.code) {
         const pre = document.createElement('pre');
         const code = document.createElement('code');
-        code.className = 'language-python';
+        code.classList.add('language-python');
         code.textContent = concept.code;
         pre.appendChild(code);
         section.appendChild(pre);
       }
+
       conceptsContainer.appendChild(section);
     });
 
-    // Injeta os exercícios
-    const exercisesContainer = document.getElementById(
+    const exercisesContainerElem = document.getElementById(
       'lesson-exercises-container'
     );
-    // Limpa a lista de exercícios anterior se existir
-    let exercisesListDiv = exercisesContainer.querySelector(
+    let exercisesListDiv = exercisesContainerElem.querySelector(
       '.exercise-list-container'
     );
     if (exercisesListDiv) {
@@ -117,46 +143,46 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else {
       exercisesListDiv = document.createElement('div');
       exercisesListDiv.className = 'exercise-list-container';
-      exercisesContainer.appendChild(exercisesListDiv);
+      exercisesContainerElem.appendChild(exercisesListDiv);
     }
 
     if (lesson.exercises && lesson.exercises.length > 0) {
       lesson.exercises.forEach((exercise) => {
         const exerciseDiv = document.createElement('div');
-        exerciseDiv.className = 'exercise';
+        exerciseDiv.classList.add(
+          'exercise-item',
+          `exercise-item--${exercise.type}`
+        );
 
         const prompt = document.createElement('p');
         prompt.innerHTML = exercise.prompt;
         exerciseDiv.appendChild(prompt);
 
         if (exercise.code_hint) {
-          // NOVO: Cria o botão para mostrar a dica
           const showHintButton = document.createElement('button');
-          showHintButton.className = 'show-hint-button'; // Classe para estilização
+          showHintButton.className = 'show-hint-button';
           showHintButton.textContent = 'Ver Dica de Código';
           exerciseDiv.appendChild(showHintButton);
 
-          // NOVO: Cria o contêiner para a dica escondida
           const hintContainer = document.createElement('div');
-          hintContainer.className = 'hint-container hidden'; // Começa escondido
+          hintContainer.className = 'hint-container hidden';
 
           const hintPre = document.createElement('pre');
           const hintCode = document.createElement('code');
-          hintCode.className = 'exercise-snippet';
+          hintCode.className = 'language-python';
           hintCode.textContent = exercise.code_hint;
           hintPre.appendChild(hintCode);
           hintContainer.appendChild(hintPre);
 
-          exerciseDiv.appendChild(hintContainer); // Adiciona o contêiner da dica
+          exerciseDiv.appendChild(hintContainer);
 
-          // NOVO: Adiciona o evento de clique ao botão
           showHintButton.addEventListener('click', () => {
-            hintContainer.classList.toggle('hidden'); // Alterna a visibilidade
-            if (hintContainer.classList.contains('hidden')) {
-              showHintButton.textContent = 'Ver Dica de Código';
-            } else {
-              showHintButton.textContent = 'Esconder Dica';
-            }
+            hintContainer.classList.toggle('hidden');
+            showHintButton.textContent = hintContainer.classList.contains(
+              'hidden'
+            )
+              ? 'Ver Dica de Código'
+              : 'Esconder Dica';
           });
         }
         exercisesListDiv.appendChild(exerciseDiv);
@@ -165,40 +191,50 @@ document.addEventListener('DOMContentLoaded', async () => {
       exercisesListDiv.innerHTML = `<p>Nenhum exercício disponível para esta lição ainda. Continue a aventura na próxima fase!</p>`;
     }
 
-    // Optional: Update IDE with initial code or first exercise hint
-    const ideEditor = document.getElementById('python-code-editor');
-    if (ideEditor) {
-      if (lesson.exercises.length > 0 && lesson.exercises[0].code_hint) {
-        ideEditor.value = lesson.exercises[0].code_hint;
-      } else if (lesson.concepts.length > 0 && lesson.concepts[0].code) {
-        ideEditor.value = lesson.concepts[0].code;
-      } else {
-        ideEditor.value = `# Seu primeiro código Python!\n# Experimente seu código aqui.`;
-      }
+    if (lesson.project) {
+      const projectBlock = document.createElement('section');
+      projectBlock.classList.add(
+        'lesson-block',
+        `lesson-block--${lesson.project.type}`
+      );
+
+      const heading = document.createElement('h2');
+      heading.textContent = lesson.project.name;
+      projectBlock.appendChild(heading);
+
+      const description = document.createElement('p');
+      description.innerHTML = lesson.project.description;
+      projectBlock.appendChild(description);
+
+      const goal = document.createElement('p');
+      goal.innerHTML = `<strong>Objetivo:</strong> ${lesson.project.goal}`;
+      projectBlock.appendChild(goal);
+
+      conceptsContainer.appendChild(projectBlock);
     }
 
-    // Add video suggestion
-    if (lesson.video_suggestion && videoSection) {
-      // Check if videoSection exists before manipulating
-      videoSection.innerHTML = '';
-      const videoHeading = document.createElement('h2');
-      videoHeading.textContent = 'Aprofunde Seus Conhecimentos';
-      videoSection.appendChild(videoHeading);
+    if (lesson.video_suggestion) {
+      const videoBlock = document.createElement('section');
+      videoBlock.classList.add(
+        'lesson-block',
+        `lesson-block--${lesson.video_suggestion.type}`
+      );
 
-      const videoText = document.createElement('p');
-      videoText.innerHTML = lesson.video_suggestion.text;
-      videoSection.appendChild(videoText);
+      const heading = document.createElement('h2');
+      heading.textContent = 'Vídeo Complementar';
+      videoBlock.appendChild(heading);
+
+      const text = document.createElement('p');
+      text.innerHTML = lesson.video_suggestion.text;
+      videoBlock.appendChild(text);
 
       const videoEmbedDiv = document.createElement('div');
       videoEmbedDiv.classList.add('video-embed-container');
 
       const videoIframe = document.createElement('iframe');
-      videoIframe.setAttribute(
-        'src',
-        `https://www.youtube.com/embed/${getYouTubeVideoId(
-          lesson.video_suggestion.url
-        )}`
-      );
+      videoIframe.setAttribute('width', '560');
+      videoIframe.setAttribute('height', '315');
+      videoIframe.setAttribute('src', lesson.video_suggestion.url);
       videoIframe.setAttribute('frameborder', '0');
       videoIframe.setAttribute(
         'allow',
@@ -208,10 +244,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       videoIframe.setAttribute('title', 'Sugestão de Vídeo');
 
       videoEmbedDiv.appendChild(videoIframe);
-      videoSection.appendChild(videoEmbedDiv);
-      videoSection.style.display = 'block'; // Ensure section is visible
-    } else if (videoSection) {
-      videoSection.style.display = 'none'; // Hide section if no video
+      videoBlock.appendChild(videoEmbedDiv);
+
+      conceptsContainer.appendChild(videoBlock);
+    } else {
+      if (videoSection) videoSection.style.display = 'none';
+    }
+
+    if (typeof hljs !== 'undefined') {
+      hljs.highlightAll();
     }
   } catch (error) {
     displayErrorMessage(
@@ -226,7 +267,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// Helper function to extract YouTube video ID
 function getYouTubeVideoId(url) {
   const regExp =
     /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
@@ -234,7 +274,6 @@ function getYouTubeVideoId(url) {
   return match && match[2].length === 11 ? match[2] : null;
 }
 
-// Function to display error messages (passing elements directly)
 function displayErrorMessage(
   title,
   message,
@@ -248,22 +287,20 @@ function displayErrorMessage(
 
   if (conceptsContainer) {
     conceptsContainer.innerHTML = `
-            <section style="text-align: center; color: var(--text-dark);">
-                <h2 style="color:var(--mario-red); text-shadow: 2px 2px 0px rgba(0,0,0,0.2);">${title}</h2>
-                <p style="font-size: 1.1em; line-height: 1.5;">${message}</p>
-                <p style="margin-top: 20px;">
-                    <a href="index.html" class="back-to-map-button">Voltar ao Mapa das Fases</a>
-                </p>
-            </section>
-        `;
+      <section style="text-align: center; color: var(--text-dark);">
+        <h2 style="color:var(--mario-red); text-shadow: 2px 2px 0px rgba(0,0,0,0.2);">${title}</h2>
+        <p style="font-size: 1.1em; line-height: 1.5;">${message}</p>
+        <p style="margin-top: 20px;">
+          <a href="index.html" class="back-to-map-button">Voltar ao Mapa das Fases</a>
+        </p>
+      </section>
+    `;
   }
-  // Clear exercises section content if it exists
   if (exercisesContainer) exercisesContainer.innerHTML = ``;
-  // Hide video section if it exists
+
   const videoSection = document.getElementById('video-suggestion-section');
   if (videoSection) videoSection.style.display = 'none';
 
-  // Also hide IDE section if it exists
   const ideSection = document.querySelector('.interactive-ide-section');
   if (ideSection) ideSection.style.display = 'none';
 }
