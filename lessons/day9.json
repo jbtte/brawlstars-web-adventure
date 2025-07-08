@@ -126,6 +126,7 @@
     }
   ],
   "project": {
+    "type": "project",
     "name": "Mini Conversa Inteligente",
     "description": "Monte um programa que faz 3 perguntas ao usuário: nome, idade e altura. Depois, responda com uma mensagem divertida como: 'Olá, Maria! Você tem 11 anos e mede 1.50m'. Faça também uma conta com os dados (ex: idade × altura).",
     "goal": "Treinar <code>input()</code>, <code>int()</code>, <code>float()</code>, <code>type()</code> e criar mensagens personalizadas com <code>print()</code>."

@@ -1,0 +1,305 @@
+/* styles/components/_lesson_content_types.css */
+
+/* Estilo base para todos os blocos de conteúdo injetados */
+/* Herdam de 'section' em global.css, mas ajustam-se aqui */
+.lesson-block {
+    margin-bottom: 30px; /* Espaço entre os blocos */
+    padding: 25px; /* Padding interno padrão */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2), 10px 10px 0px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    border: 3px solid var(--mario-dirt-brown); /* Borda padrão */
+    text-align: left; /* Alinhamento do texto */
+    position: relative; /* Para pseudo-elementos */
+    overflow: hidden; /* Para garantir que sombras/bordas internas fiquem dentro */
+}
+
+.lesson-block h2 { /* Títulos dentro dos blocos (Conceito, Resumo, etc.) */
+    font-family: var(--pixel-font);
+    font-size: 1.5em; /* Ligeiramente menor que o H2 da seção principal */
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 5px; /* Espaço abaixo do título */
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.1); /* Linha sutil abaixo do título */
+    color: var(--mario-red); /* Cor padrão para títulos internos */
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* --- ESTILOS PARA CADA TIPO DE BLOCO --- */
+
+/* type: "explanation" */
+.lesson-block--explanation {
+    background-color: rgba(255, 255, 255, 0.9); /* Branco quase puro, base */
+    border-color: var(--mario-sky-blue); /* Borda azul clara */
+    box-shadow: 6px 6px 0px var(--mario-sky-blue), 10px 10px 0px rgba(0,0,0,0.1);
+}
+.lesson-block--explanation h2 {
+    color: var(--mario-blue); /* Título em azul */
+}
+
+/* type: "code" */
+.lesson-block--code {
+    background-color: #515C6B; /* Um cinza azulado médio/escuro, menos perto do preto */
+    border-color: #7A8696; /* Borda um pouco mais clara e distinta */
+    color: #F0F0F0; /* Texto claro padrão para o bloco */
+    box-shadow: 6px 6px 0px #7A8696, 10px 10px 0px rgba(0,0,0,0.15); /* Sombra correspondente */
+    padding: 15px;
+}
+.lesson-block--code h2 {
+    color: #FFDA61; /* Título em amarelo para código */
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+    border-bottom-color: rgba(255,255,255,0.1);
+}
+.lesson-block--code p {
+    color: #F0F0F0; /* COR CLARA (branco acinzentado) para contrastar com o fundo escuro */
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.5); /* Sombra escura para definir bem */
+    margin-bottom: 15px; /* Mantém a margem para separar do código */
+    font-size: 1em; /* Tamanho padrão, se precisar ajustar */}
+
+.lesson-block--code pre { /* Alvo: a tag <pre> que contém o <code> */
+    background-color: #000000; /* Fundo PRETO PURO para o código em si */
+    border: 1px solid #FFFFFF; /* Borda BRANCA para delimitar */
+    border-radius: 4px; /* Bordas levemente arredondadas */
+    padding: 10px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5); /* Sombra interna mais forte */
+    overflow-x: auto;
+    margin: 0;
+}
+.lesson-block--code pre code { /* Estilo para o <code> dentro do <pre> */
+    color: #D4EDDA; /* Cor do texto do código (um verde claro, como texto de terminal) */
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* type: "question" */
+.lesson-block--question {
+    background-color: #FFFFAA; /* Amarelo claro para perguntas */
+    border-color: var(--mario-block-yellow); /* Borda amarela mais forte */
+    border-style: dashed; /* Borda pontilhada */
+    box-shadow: 6px 6px 0px var(--mario-block-yellow), 10px 10px 0px rgba(0,0,0,0.1);
+    position: relative;
+}
+.lesson-block--question h2 {
+    color: var(--mario-dirt-brown); /* Título em marrom */
+}
+.lesson-block--question::before {
+    content: '❓'; /* Ponto de interrogação como decorador */
+    font-size: 2em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* type: "summary" */
+.lesson-block--summary {
+    background-color: #E0FFD0; /* Verde claro, como uma folha de conclusão */
+    border-color: var(--mario-grass-green); /* Borda verde */
+    box-shadow: 6px 6px 0px var(--mario-grass-green), 10px 10px 0px rgba(0,0,0,0.1);
+}
+.lesson-block--summary h2 {
+    color: var(--mario-grass-green); /* Título em verde */
+}
+.lesson-block--summary p {
+    font-weight: bold; /* Texto em negrito para o resumo */
+    color: var(--text-dark);
+}
+.lesson-block--summary p::before {
+    content: '✅'; /* Checkmark para cada item */
+    margin-right: 5px;
+}
+/* Estilo para listas (se o resumo usar lista, como em day1.json) */
+.lesson-block--summary ul,
+.lesson-block--summary ol {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+.lesson-block--summary ul li::before,
+.lesson-block--summary ol li::before {
+    content: '✅'; /* Checkmark para cada item da lista */
+    margin-right: 10px;
+    color: var(--mario-grass-green);
+    font-size: 1em;
+    position: static;
+    transform: none;
+    display: inline-block;
+}
+
+/* type: "exercise" - Para itens individuais de exercício */
+/* Nota: O container principal dos exercícios é .lesson-block--exercises-group */
+.exercise-item { /* Estilos para cada exercício individual */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco para cada item */
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px; /* Espaço entre exercícios */
+    border: 2px solid var(--mario-stone-gray); /* Borda discreta */
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+.exercise-item p { /* Texto do prompt do exercício */
+    color: var(--text-dark);
+    font-size: 1em;
+    margin-bottom: 10px;
+    text-shadow: none; /* Remover sombra forte aqui */
+}
+/* O botão e a dica já têm estilos próprios */
+
+/* type: "exercises-group" (Contêiner de todos os exercícios) */
+.lesson-block--exercises-group {
+    background-color: #FFE0B2; /* Laranja pálido */
+    border-color: var(--mario-lava-orange); /* Borda laranja forte */
+    box-shadow: 6px 6px 0px var(--mario-lava-orange), 10px 10px 0px rgba(0,0,0,0.1);
+}
+.lesson-block--exercises-group h2 {
+    color: var(--mario-red); /* Título em vermelho */
+}
+
+/* type: "project" */
+.lesson-block--project {
+    background-color: #FFDA61; /* Amarelo vibrante, como um pergaminho ou mapa de tesouro */
+    border-color: var(--mario-dirt-brown); /* Borda marrom forte */
+    border-style: double; /* Borda dupla para dar um ar de importância */
+    border-width: 5px; /* Borda mais grossa */
+    box-shadow: 
+        10px 10px 0px rgba(0, 0, 0, 0.4), /* Sombra mais pronunciada para "flutuar" mais */
+        15px 15px 0px rgba(0, 0, 0, 0.2); /* Segunda sombra para profundidade */
+    padding: 35px; /* Mais padding interno para dar espaço */
+    margin-top: 40px; /* Mais espaço acima para separação */
+    position: relative; /* Para possíveis ícones ou decorações */
+    text-align: center; /* Centraliza o conteúdo */
+    overflow: hidden; /* Garante que nada vaze */
+  }
+.lesson-block--project h2 {
+    color: var(--mario-red); /* Título do projeto em vermelho */
+    font-family: var(--pixel-font);
+    font-size: 1.8em; /* Título maior */
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.5); /* Sombra forte */
+    margin-bottom: 15px;
+    border-bottom: 2px dashed var(--mario-red); /* Linha tracejada vermelha abaixo do título */
+    padding-bottom: 10px;
+}
+.lesson-block--project p {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-dark); /* Texto em cor escura para boa legibilidade no amarelo */
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-shadow: 0.5px 0.5px 0px rgba(255, 255, 255, 0.7); /* Sombra sutil branca */
+}
+.lesson-block--project p strong { /* Negrito para o Objetivo: */
+    color: var(--mario-blue); /* Cor azul para destacar o objetivo */
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* type: "video" */
+.lesson-block--video {
+    background-color: var(--mario-sky-blue); /* Fundo azul do céu */
+    border-color: var(--mario-dirt-brown); /* Borda marrom */
+    box-shadow: 6px 6px 0px var(--mario-dirt-brown), 10px 10px 0px rgba(0,0,0,0.1);
+}
+.lesson-block--video h2 {
+    color: var(--text-light); /* Título branco */
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+}
+.lesson-block--video p {
+    color: var(--text-light); /* Texto branco */
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+}
+
+/* type: "image" */
+.lesson-block--image {
+    background-color: #E0E0E0; /* Cinza claro para moldura da imagem */
+    border-color: var(--mario-stone-gray);
+    padding: 10px; /* Padding menor */
+    box-shadow: 4px 4px 0px var(--mario-stone-gray);
+}
+.lesson-block--image .image-placeholder p {
+    color: #555; /* Cor do texto do placeholder */
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+/* Se for uma imagem real, estilizar a tag img */
+.lesson-block--image img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove espaçamento extra abaixo da imagem */
+    margin: 0 auto; /* Centraliza a imagem */
+    border: 2px solid var(--mario-dirt-brown); /* Borda para a imagem */
+    box-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+}
+
+/* type: "installation" */
+.lesson-block--installation {
+    background-color: #DDEEFF; /* Azul mais claro para instruções */
+    border-color: var(--mario-blue);
+    box-shadow: 6px 6px 0px var(--mario-blue), 10px 10px 0px rgba(0,0,0,0.1);
+}
+.lesson-block--installation h2 {
+    color: var(--mario-blue);
+}
+.lesson-block--installation .lesson-steps { /* Estilo para a lista de passos */
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    margin: 10px 0;
+}
+.lesson-block--installation .lesson-steps li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+.lesson-block--installation .lesson-steps li::before {
+    content: '➡️'; /* Seta como marcador de passo */
+    font-size: 0.9em;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--mario-red);
+}
+
+/* type: "instruction" */
+.lesson-block--instruction {
+    background-color: #FFF0CC; /* Amarelo alaranjado claro para instruções */
+    border-color: var(--mario-lava-orange);
+    border-style: dotted; /* Borda pontilhada para instrução */
+    box-shadow: 4px 4px 0px var(--mario-lava-orange);
+}
+.lesson-block--instruction h2 {
+    color: var(--mario-lava-orange);
+}
+
+/* type: "celebration" */
+.lesson-block--celebration {
+    background-color: #FFD700; /* Ouro vibrante para celebração */
+    border-color: var(--mario-block-yellow);
+    border-style: double; /* Borda dupla */
+    box-shadow: 8px 8px 0px var(--mario-block-yellow), 12px 12px 0px rgba(0,0,0,0.1);
+}
+.lesson-block--celebration h2 {
+    color: var(--mario-red); /* Título em vermelho */
+}
+.lesson-block--celebration p {
+    font-family: var(--pixel-font); /* Texto em pixel art para celebração */
+    font-size: 1.2em;
+    color: var(--mario-dirt-brown);
+    text-shadow: 1px 1px 0px var(--text-light);
+    line-height: 1.5;
+}
+
+/* --- ESTILOS GERAIS PARA ELEMENTOS INJETADOS --- */
+.lesson-block p code,
+.exercise-item p code {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+    color: #007bff; /* Azul para código inline */
+}
