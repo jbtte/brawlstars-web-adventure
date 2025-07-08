@@ -52,7 +52,7 @@
     {
       "type": "question",
       "heading": "🤔 Dúvidas comuns de quem está começando",
-      "text": "**Por que começa do 0?** Porque no Python (e em muitas linguagens), a contagem começa do zero. É como se a primeira volta fosse a número 0.\n\n**Por que o último número não aparece?** O `range(5)` vai até o número antes do 5. Então ele mostra 0, 1, 2, 3 e 4. O número final nunca aparece!\n\n**Posso trocar o nome do `i`?** Sim! `i` é só um nome. Você pode usar `num`, `vez`, `contador`, ou qualquer outro — só não pode usar espaços ou acentos.\n\n**O que acontece se eu colocar `range(1, 5)`?** Ele mostra: 1, 2, 3, 4. Começa no 1 e vai até um antes do 5."
+      "text": "**Por que começa do 0?** Porque no Python (e em muitas linguagens), a contagem começa do zero. É como se a primeira volta fosse a número 0.\n**Por que o último número não aparece?** O `range(5)` vai até o número antes do 5. Então ele mostra 0, 1, 2, 3 e 4. O número final nunca aparece!\n**Posso trocar o nome do `i`?** Sim! `i` é só um nome. Você pode usar `num`, `vez`, `contador`, ou qualquer outro — só não pode usar espaços ou acentos.\n**O que acontece se eu colocar `range(1, 5)`?** Ele mostra: 1, 2, 3, 4. Começa no 1 e vai até um antes do 5."
     },
     {
       "type": "summary",

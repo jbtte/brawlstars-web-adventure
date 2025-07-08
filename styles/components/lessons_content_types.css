@@ -11,6 +11,7 @@
     text-align: left; /* Alinhamento do texto */
     position: relative; /* Para pseudo-elementos */
     overflow: hidden; /* Para garantir que sombras/bordas internas fiquem dentro */
+    white-space: pre-wrap;
 }
 
 .lesson-block h2 { /* Títulos dentro dos blocos (Conceito, Resumo, etc.) */
