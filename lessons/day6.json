@@ -1,52 +1,91 @@
 {
-  "title": "Dia 6 – Laços for e a função range()",
+  "title": "Dia 6 – Aprendendo a repetir com o laço for e a função range()",
   "concepts": [
     {
+      "type": "explanation",
+      "heading": "Vamos imaginar uma tarefa chata...",
+      "text": "Se eu pedir para você escrever 'Oi' cinco vezes no Thonny, você vai digitar print('Oi') cinco vezes? 😩 E se fossem 100 vezes? 😱"
+    },
+    {
+      "type": "code",
       "heading": "O que é um laço for?",
-      "text": "O laço <code>for</code> é usado quando queremos repetir algo um número definido de vezes. Ele é ótimo para listas, contagens e repetições simples."
+      "text": "O laço for é como dizer: 'Repita isso para mim várias vezes'. Você escreve o que quer uma vez só, e o Python faz o trabalho repetitivo. É como um robô que segue ordens passo a passo.",
+      "code": "for i in range(5):\n    print(\"Oi\")"
     },
     {
-      "heading": "Como usar for com range()",
-      "text": "<code>range()</code> gera uma sequência de números. Exemplo: <code>range(5)</code> gera 0, 1, 2, 3, 4.",
-      "code": "for i in range(5):\n    print(\"Repetição número:\", i)"
+      "type": "explanation",
+      "heading": "Vamos entender essa frase mágica:",
+      "text": "Essa linha tem várias partes importantes: `for`, `i`, `in`, `range()` e os dois pontos. Cada pedacinho tem um papel!"
     },
     {
-      "heading": "Usando range() com início e fim",
-      "text": "Você pode dizer onde começa e onde termina:",
-      "code": "for i in range(1, 6):\n    print(i)  # Imprime de 1 a 5"
+      "type": "explanation",
+      "heading": "Quadro: Como montar um laço for?",
+      "text": "<table><tr><th>Parte</th><th>O que significa</th><th>Exemplo</th></tr>\n<tr><td><code>for</code></td><td>Começa o laço</td><td><code>for i in range(5):</code></td></tr>\n<tr><td><code>i</code></td><td>Variável que muda a cada volta</td><td><code>0, 1, 2, 3, 4</code></td></tr>\n<tr><td><code>in</code></td><td>Lê-se 'em'</td><td><code>i in range(5)</code></td></tr>\n<tr><td><code>range()</code></td><td>Gera os números</td><td><code>range(5)</code> gera 0 a 4</td></tr>\n<tr><td><code>:</code></td><td>Indica que o bloco será repetido</td><td><code>:</code> no final da linha</td></tr>\n<tr><td><code>indentação</code></td><td>Espaço antes da linha</td><td><code>    print(i)</code></td></tr></table>"
     },
     {
-      "heading": "Range com passo",
-      "text": "Também é possível pular números usando um 'passo':",
-      "code": "for i in range(0, 10, 2):\n    print(i)  # 0, 2, 4, 6, 8"
+      "type": "explanation",
+      "heading": "O que é o `i`?",
+      "text": "`i` é só um nome para a variável que muda a cada repetição. Ela começa com 0, depois vira 1, depois 2, e assim por diante. Você pode trocar o nome por `num`, `linha`, `contador`, mas `i` é o mais usado."
     },
     {
-      "heading": "Vídeo em português",
-      "text": "Este vídeo ensina como funciona o laço for com range() e mostra exemplos visuais:",
-      "code": ""
+      "type": "explanation",
+      "heading": "O que é `range()`?",
+      "text": "`range()` é uma função que cria uma sequência de números para o for repetir. É como uma fila invisível de números que o Python vai lendo um por um."
+    },
+    {
+      "type": "code",
+      "heading": "Testando range() no Thonny",
+      "text": "Teste isso! O que aparece? O que é o valor de i a cada volta?",
+      "code": "for i in range(3):\n    print(\"Volta número:\", i)"
+    },
+    {
+      "type": "explanation",
+      "heading": "Tipos de range",
+      "text": "- `range(fim)` → vai de 0 até um antes do fim\n- `range(início, fim)` → começa no número que você quiser, vai até um antes do fim\n- `range(início, fim, passo)` → mesmo esquema, mas pulando de tanto em tanto"
+    },
+    {
+      "type": "code",
+      "heading": "Exemplos úteis de range",
+      "text": "Repare que o último número NUNCA aparece. Sempre para um antes!",
+      "code": "range(5)       # 0, 1, 2, 3, 4\nrange(2, 6)    # 2, 3, 4, 5\nrange(1, 10, 2)  # 1, 3, 5, 7, 9"
+    },
+    {
+      "type": "question",
+      "heading": "🤔 Dúvidas comuns de quem está começando",
+      "text": "**Por que começa do 0?** Porque no Python (e em muitas linguagens), a contagem começa do zero. É como se a primeira volta fosse a número 0.\n\n**Por que o último número não aparece?** O `range(5)` vai até o número antes do 5. Então ele mostra 0, 1, 2, 3 e 4. O número final nunca aparece!\n\n**Posso trocar o nome do `i`?** Sim! `i` é só um nome. Você pode usar `num`, `vez`, `contador`, ou qualquer outro — só não pode usar espaços ou acentos.\n\n**O que acontece se eu colocar `range(1, 5)`?** Ele mostra: 1, 2, 3, 4. Começa no 1 e vai até um antes do 5."
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "🔁 `for` repete comandos para você\n📦 `range()` cria os números da repetição\n📌 `i` é a variável que muda a cada volta\n🧪 Dá pra fazer laços contando, pulando ou invertendo"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. Escreva um for que imprima os números de 1 a 10.",
-      "code_hint": "for i in range(1, 11):\n    print(i)"
+      "type": "exercise",
+      "prompt": "1. Imprima 'Linha X' para cada número de 1 a 5 (substitua X pelo número).",
+      "code_hint": "for i in range(1, 6):\n    print(f\"Linha {i}\")"
     },
     {
-      "prompt": "2. Imprima os números pares de 0 a 20 usando range com passo.",
-      "code_hint": "for i in range(0, 21, 2):\n    print(i)"
+      "type": "exercise",
+      "prompt": "2. Use um laço `for` para imprimir os números de 10 a 15.",
+      "code_hint": "for num in range(10, 16):\n    print(num)"
     },
     {
-      "prompt": "3. Desafio: use o for para mostrar uma contagem regressiva de 5 até 1.",
-      "code_hint": "for i in range(5, 0, -1):\n    print(i)"
+      "type": "exercise",
+      "prompt": "3. Desafio: Crie um laço `for` que imprima a frase 'Aventura!' 3 vezes.",
+      "code_hint": "for _ in range(3):\n    print(\"Aventura!\")"
     }
   ],
   "project": {
+    "type": "project",
     "name": "Contador Personalizado",
-    "description": "Crie um programa que pergunte ao usuário o início, o fim e o passo da contagem e use for com range() para mostrar o resultado.",
-    "goal": "Praticar o uso completo de <code>range()</code> com início, fim e passo, integrando com input."
+    "description": "Peça ao usuário o número de início, fim e passo. Use for + range para contar e mostrar na tela.",
+    "goal": "Praticar range(início, fim, passo), input(), print() e for com controle total."
   },
   "video_suggestion": {
-    "text": "Vídeo em português ensinando for e range de forma clara e prática:",
-    "url": "https://www.youtube.com/watch?v=HlYFW2zaYQM"
+    "type": "video",
+    "text": "Vídeo em português explicando for e range de forma clara e prática:",
+    "url": "https://www.youtube.com/watch?v=Bpmks-l04ck"
   }
 }

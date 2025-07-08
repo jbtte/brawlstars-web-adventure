@@ -1,54 +1,100 @@
 {
-  "title": "Lição 1 – O computador diz 'olá!' e mostra como tudo funciona",
+  "title": "Dia 1 – Bem-vindo ao mundo da programação!",
   "concepts": [
     {
-      "heading": "O que vamos aprender hoje?",
-      "text": "Hoje vamos aprender o básico: como abrir o Python, usar o Thonny (ou IDLE), criar um arquivo e fazer o computador dizer algo na tela com o comando <code>print()</code>."
+      "type": "explanation",
+      "heading": "Você vai ensinar o computador!",
+      "text": "Hoje começa sua jornada como programador! Você vai aprender a conversar com o computador e ensinar ele a fazer coisas incríveis: responder, contar piadas, fazer jogos e muito mais."
     },
     {
-      "heading": "Ajudinha em vídeo",
-      "text": "Veja este vídeo em português que mostra como escrever seu primeiro 'Olá, Mundo!' no Python:",
-      "code": ""
+      "type": "explanation",
+      "heading": "O que é programar?",
+      "text": "Programar é escrever instruções que o computador entende. É como ensinar um robô a obedecer você. Vamos ver um exemplo?"
     },
     {
-      "heading": "Instalando o Python e abrindo o Thonny",
-      "text": "1. Acesse python.org e baixe a versão recomendada.<br>2. Marque 'Add Python to PATH' na instalação.<br>3. Abra o Thonny (ou IDLE)."
+      "type": "code",
+      "heading": "Seu primeiro código",
+      "text": "Esse código manda o computador dizer 'Olá!'\n Copie e cole ele aqui do lado no 'Editor de Código Python'. Depois aperte 'Executar Código':",
+      "code": "print(\"Olá! Você já está programando!\")"
     },
     {
-      "heading": "Criando sua pasta de código",
-      "text": "Na sua área de trabalho, crie a pasta <code>python_kids</code> e, dentro dela, outra pasta chamada <code>licao1</code>. É ali que vamos guardar tudo!"
+      "type": "explanation",
+      "heading": "Onde vamos escrever nossos códigos?",
+      "text": "Vamos usar um programa especial chamado **Thonny**. Ele é como um caderno mágico onde escrevemos tudo o que queremos que o computador faça."
     },
     {
+      "type": "installation",
+      "heading": "Como instalar o Thonny?",
+      "text": "Se você ainda não tem o Thonny instalado, siga estes passos:",
+      "steps": [
+        "Acesse o site: https://thonny.org",
+        "Clique em 'Download' e escolha a versão do seu computador (Windows, Mac ou Linux)",
+        "Quando terminar de baixar, clique duas vezes no arquivo e siga as instruções na tela"
+      ],
+      "image_placeholder": "📷 (aqui você pode colocar uma imagem do site do Thonny)"
+    },
+    {
+      "type": "explanation",
+      "heading": "Conhecendo o Thonny",
+      "text": "Quando abrir o Thonny, você vai ver duas áreas importantes:",
+      "steps": [
+        "**Área de Código (em cima)** – é onde você vai escrever seus programas",
+        "**Shell (embaixo)** – é onde o computador responde para você"
+      ],
+      "image_placeholder": "📷 (adicione aqui uma imagem com setas mostrando as partes do Thonny)"
+    },
+    {
+      "type": "code",
       "heading": "Escrevendo seu primeiro programa",
-      "text": "No Thonny, vá em 'File → New'. Digite:",
-      "code": "print(\"Olá! Eu sou o MarioBot e estou aprendendo a programar!\")"
+      "text": "No espaço de cima (área de código), escreva essa linha:",
+      "code": "print(\"Olá, mundo!\")"
     },
     {
-      "heading": "Salvando e executando o código",
-      "text": "Clique em 'File → Save As', vá até a pasta <code>licao1</code>, salve como <code>licao1.py</code>. Depois aperte F5 ou clique no botão verde para executar."
+      "type": "instruction",
+      "heading": "Como executar o código",
+      "text": "Agora clique no botão verde ▶️ lá no topo (ou aperte F5 no teclado). Você verá a frase aparecendo lá embaixo, no Shell.",
+      "image_placeholder": "📷 (imagem do botão 'Executar' no Thonny)"
     },
     {
-      "heading": "O que aconteceu?",
-      "text": "O Python leu seu arquivo, executou o `print()` e mostrou o texto na tela. Você deu o primeiro passo na programação!"
+      "type": "celebration",
+      "heading": "Parabéns!",
+      "text": "Você executou seu primeiro código! 🎉 Pode contar para todo mundo: agora você é um programador!"
+    },
+    {
+      "type": "instruction",
+      "heading": "Salvando seu primeiro programa",
+      "text": "Clique em **Arquivo → Salvar como...**, escolha um lugar fácil (como a área de trabalho) e digite o nome **hello_world.py**. Não esqueça do final `.py` — isso mostra que é um arquivo de Python!",
+      "image_placeholder": "📷 (adicione aqui uma imagem do menu Arquivo → Salvar como...)"
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "✅ Você entendeu o que é programação\n✅ Instalou o Thonny (ou viu como instalar)\n✅ Escreveu e executou seu primeiro programa\n✅ Aprendeu a salvar seu código\n\nAmanhã tem mais! Vamos aprender a fazer o computador conversar com você 😄"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. Crie um programa que imprima: 'Oi! Eu sou o [nome do seu filho] e comecei a programar!'",
-      "code_hint": "print(\"Oi! Eu sou o João e comecei a programar!\")"
+      "type": "exercise",
+      "prompt": "1. Escreva outro código parecido, como:\n\n```python\nprint(\"Meu nome é Maria e eu adoro programar!\")\n```"
     },
     {
-      "prompt": "2. Escreva mais 3 frases divertidas para o computador dizer (pode ser sobre comidas, jogos ou animais).",
-      "code_hint": "print(\"Eu adoro pizza!\")\nprint(\"Meus jogos favoritos são Mario!\")\nprint(\"Tenho um dragão de brinquedo!\")"
+      "type": "exercise",
+      "prompt": "2. Salve este novo código com o nome **meu_nome.py**"
+    },
+    {
+      "type": "exercise",
+      "prompt": "3. Tente mudar o texto do print e execute de novo para ver o que acontece!"
     }
   ],
   "project": {
-    "name": "Boas‑vindas do MarioBot",
-    "description": "Crie um programa que se apresente com nome e 2 frases divertidas.",
-    "goal": "Ensinar a criar, salvar e rodar um arquivo Python com o comando `print()`."
+    "type": "project",
+    "name": "Primeira Apresentação",
+    "description": "Crie um pequeno programa que mostre 3 frases diferentes sobre você. Exemplo:\n```python\nprint(\"Oi, eu sou a Sofia!\")\nprint(\"Tenho 12 anos.\")\nprint(\"Adoro chocolate!\")```",
+    "goal": "Praticar o uso do print() e salvar arquivos .py"
   },
   "video_suggestion": {
-    "text": "Aula em português com o primeiro 'Olá, Mundo!' em Python:",
-    "url": "https://www.youtube.com/watch?v=DLyzcGYHVpQ"
+    "type": "video",
+    "text": "Veja esse vídeo explicando como instalar o Thonny e rodar o primeiro código:",
+    "url": "https://youtu.be/1wouN4iOUo0"
   }
 }

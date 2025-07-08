@@ -1,51 +1,127 @@
 {
-  "title": "Dia 8 – Funções: def, parâmetros e return",
+  "title": "Dia 8 – Funções: Como criar e usar",
   "concepts": [
     {
+      "type": "explanation",
       "heading": "O que é uma função?",
-      "text": "Funções são blocos de código que realizam uma tarefa. Elas ajudam a organizar o programa e evitar repetições."
+      "text": "Função é um nome que damos para um bloco de código que pode ser usado várias vezes. É como montar um lanche: você faz os mesmos passos e pode repetir quantas vezes quiser sem escrever tudo de novo."
     },
     {
-      "heading": "Criando uma função",
-      "text": "Use <code>def</code> para definir uma função. Exemplo:",
-      "code": "def diga_ola():\n    print(\"Olá!\")\n\ndiga_ola()"
+      "type": "code",
+      "heading": "Criando sua primeira função",
+      "text": "Use a palavra def, o nome da função, parênteses () e dois pontos. Depois escreva o que ela faz com indentação. No final, chame a função para ela rodar.",
+      "code": "def diga_ola():\n    print(\"Olá!\")\n    print(\"Tudo bem com você?\")\n\ndiga_ola()"
     },
     {
-      "heading": "Funções com parâmetros",
-      "text": "Você pode passar valores para a função usando parâmetros entre parênteses.",
-      "code": "def saudacao(nome):\n    print(f\"Olá, {nome}!\")\n\nsaudacao(\"Ana\")"
+      "type": "question",
+      "heading": "DÚVIDA COMUM: Por que não apareceu nada?",
+      "text": "Se você só criou a função e não chamou ela, nada acontece. Teste no Thonny deixando só a definição da função e veja o que acontece."
     },
     {
-      "heading": "Funções com return",
-      "text": "Use <code>return</code> para a função devolver um valor.",
-      "code": "def soma(a, b):\n    return a + b\n\nresultado = soma(3, 5)\nprint(resultado)"
+      "type": "explanation",
+      "heading": "Funções com parâmetros – como se fosse um espaço em branco",
+      "text": "Quando criamos uma função com um parâmetro, como `nome`, estamos deixando um espaço reservado para preencher depois. É como um cartão de aniversário escrito assim: 'Olá, ______!'. Você só completa com o nome de quem quiser."
     },
     {
-      "heading": "Vídeo em português",
-      "text": "Este vídeo ensina como usar funções em Python com exemplos simples e bem explicados:"
+      "type": "code",
+      "heading": "Criando a função com um espaço reservado (placeholder)",
+      "text": "`nome` é um parâmetro, um lugar que a função guarda para usar depois. Ainda não sabemos qual nome será, só sabemos que vai usar esse espaço dentro da função.",
+      "code": "def diga_ola_para(nome):\n    print(\"Olá,\", nome, \"! Tudo bem?\")"
+    },
+    {
+      "type": "code",
+      "heading": "Chamando a função e preenchendo o espaço",
+      "text": "Agora estamos chamando a função e dizendo: 'use João no lugar de nome', depois 'use Maria' e assim por diante. Cada chamada usa o valor que o usuário colocou no lugar do parâmetro.",
+      "code": "diga_ola_para(\"João\")\ndiga_ola_para(\"Maria\")\ndiga_ola_para(\"Lucas\")"
+    },
+    {
+      "type": "explanation",
+      "heading": "Por que isso é útil?",
+      "text": "Isso faz com que a mesma função funcione para vários casos diferentes. Em vez de escrever 10 vezes 'print(\"Olá, João!\")', 'print(\"Olá, Maria!\")'... podemos usar a mesma função com valores diferentes."
+    },
+    {
+      "type": "code",
+      "heading": "Teste no Thonny!",
+      "text": "Copie isso no Thonny e rode. Veja como a função faz a mesma coisa, mas muda a mensagem conforme o valor passado para o parâmetro!",
+      "code": "def elogio(nome):\n    print(nome, \"é muito inteligente!\")\n\nelogio(\"Ana\")\nelogio(\"Pedro\")\nelogio(\"Júlia\")"
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo simples sobre parâmetros",
+      "text": "1️⃣ O parâmetro é um espaço reservado.\n2️⃣ Quando chamamos a função, colocamos um valor nesse espaço.\n3️⃣ Esse valor é usado dentro da função.\n4️⃣ Assim, a função pode ter vários resultados diferentes!"
+    },
+    {
+      "type": "explanation",
+      "heading": "Função que devolve um valor com return",
+      "text": "Até agora nossas funções só mostravam coisas na tela com print. Mas às vezes queremos que a função nos devolva um valor para guardar e usar depois. Para isso usamos o return."
+    },
+    {
+      "type": "code",
+      "heading": "Exemplo simples: somando dois números",
+      "text": "Aqui a função faz a conta a + b e devolve esse valor com return. Ela não mostra nada ainda — só devolve o resultado.",
+      "code": "def somar(a, b):\n    return a + b"
+    },
+    {
+      "type": "code",
+      "heading": "Guardando o valor que a função devolveu",
+      "text": "Quando chamamos somar(3, 4), ela devolve o valor 7. Esse valor entra dentro da variável resultado. Depois, usamos print para mostrar.",
+      "code": "resultado = somar(3, 4)\nprint(\"A soma é:\", resultado)"
+    },
+    {
+      "type": "code",
+      "heading": "Diferença entre print e return",
+      "text": "O print mostra direto na tela, mas não devolve nada. O return devolve o valor para você guardar. Veja: x vira None porque print não devolve nada, e y guarda o texto do return.",
+      "code": "def teste_print():\n    print(\"Isso é um print\")\n\ndef teste_return():\n    return \"Isso é um return\"\n\nx = teste_print()\ny = teste_return()\n\nprint(\"x:\", x)\nprint(\"y:\", y)"
+    },
+    {
+      "type": "explanation",
+      "heading": "Por que usar return?",
+      "text": "Com return, podemos fazer contas, verificações e devoluções que serão usadas depois. Isso deixa o código mais organizado, fácil de testar e reutilizar. Funções com return são como uma máquina que faz algo e te entrega o resultado."
+    },
+    {
+      "type": "code",
+      "heading": "Teste no Thonny!",
+      "text": "Copie e cole esse código. Digite um número e veja a função calcular o dobro e devolver o valor para a variável resultado!",
+      "code": "def dobro(n):\n    return n * 2\n\nx = int(input(\"Digite um número: \"))\nresultado = dobro(x)\nprint(\"O dobro é:\", resultado)"
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo simples sobre return",
+      "text": "1️⃣ return devolve um valor da função.\n2️⃣ Esse valor pode ser guardado em uma variável.\n3️⃣ Usamos depois do return o que queremos que a função entregue.\n4️⃣ print mostra na tela, return entrega um valor."
+    },
+    {
+      "type": "question",
+      "heading": "DÚVIDA COMUM: Qual a diferença entre print e return?",
+      "text": "Print mostra na tela, return devolve o valor para você usar. Veja no exemplo como x vira None e y guarda o texto.",
+      "code": "def teste_print():\n    print(\"Isso é um print\")\n\ndef teste_return():\n    return \"Isso é um return\"\n\nx = teste_print()\ny = teste_return()\n\nprint(\"x:\", x)\nprint(\"y:\", y)"
+    },
+    {
+      "type": "code",
+      "heading": "Combinando tudo o que já aprendemos",
+      "text": "Aqui usamos função, if, input, return e conversão de tipo juntos!",
+      "code": "def verifica_maioridade(idade):\n    if idade >= 18:\n        return \"Você é maior de idade!\"\n    else:\n        return \"Você ainda é menor de idade.\"\n\nidade_usuario = int(input(\"Quantos anos você tem? \"))\nmensagem = verifica_maioridade(idade_usuario)\nprint(mensagem)"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. Crie uma função que diga 'Bem-vindo ao curso de Python!' e chame-a.",
-      "code_hint": "def boas_vindas():\n    print(\"Bem-vindo ao curso de Python!\")\n\nboas_vindas()"
+      "type": "exercise",
+      "prompt": "Crie uma função chamada 'dobro' que receba um número e devolva ele multiplicado por 2.",
+      "code_hint": "Use def, parâmetro, return e depois chame a função."
     },
     {
-      "prompt": "2. Crie uma função `dobro(numero)` que retorna o dobro de um número.",
-      "code_hint": "def dobro(numero):\n    return numero * 2\n\nprint(dobro(4))"
+      "type": "exercise",
+      "prompt": "Peça para o usuário digitar um número e mostre o dobro dele usando a função.",
+      "code_hint": "Use input(), int() e print()."
     },
     {
-      "prompt": "3. Desafio: Crie uma função que receba o nome e a idade de uma pessoa e retorne uma frase personalizada.",
-      "code_hint": "def apresenta(nome, idade):\n    return f\"Olá, {nome}! Você tem {idade} anos.\"\n\nprint(apresenta(\"João\", 12))"
+      "type": "exercise",
+      "prompt": "Desafio extra: Crie uma função chamada 'bem_vindo' que receba o nome de alguém e diga uma frase personalizada com esse nome.",
+      "code_hint": "Use string com vírgulas ou f-string."
     }
   ],
-  "project": {
-    "name": "Mini biblioteca de funções",
-    "description": "Crie 3 funções: uma que some dois números, outra que calcule média e outra que elogie o nome da pessoa.",
-    "goal": "Fixar a estrutura <code>def</code>, prática com parâmetros e <code>return</code>."
-  },
   "video_suggestion": {
-    "text": "Vídeo em português ensinando funções em Python (def, parâmetros, return):",
-    "url": "https://www.youtube.com/watch?v=F6u5rhUQ6dU"
+    "type": "video",
+    "text": "Funções em Python para Iniciantes (em português):",
+    "url": "https://youtu.be/jy2qX22dSjM?si=f_t_mi40McBPGtaK"
   }
 }

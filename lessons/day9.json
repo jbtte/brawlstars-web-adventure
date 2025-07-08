@@ -1,49 +1,137 @@
 {
-  "title": "Dia 9 – Entrada de dados e conversão de tipos",
+  "title": "Dia 9 – Tipos de Dados e input(): Aprendendo a conversar com o computador",
   "concepts": [
     {
-      "heading": "O que é input()?",
-      "text": "A função <code>input()</code> serve para pedir algo ao usuário. O que o usuário digita é sempre tratado como texto (tipo <code>str</code>)."
+      "type": "introduction",
+      "heading": "Vamos começar com uma pergunta...",
+      "text": "Você sabia que o computador precisa entender o tipo de informação que você está enviando para ele? Vamos aprender como o Python faz isso!"
     },
     {
-      "heading": "Exemplo básico de input",
+      "type": "explanation",
+      "heading": "O que são tipos de dados?",
+      "text": "Tipo de dado é a forma como o Python classifica as informações. Ele precisa saber se você está mandando um número, um texto ou uma decisão."
+    },
+    {
+      "type": "explanation",
+      "heading": "int – número inteiro",
+      "text": "Números inteiros são aqueles sem vírgula: 0, -3, 2023... Em Python chamamos isso de <code>int</code>."
+    },
+    {
+      "type": "explanation",
+      "heading": "float – número com vírgula (mas com ponto!)",
+      "text": "Números com parte decimal são chamados de <code>float</code>: 1.5, 0.0, -4.2. E lembre: usamos ponto, não vírgula!"
+    },
+    {
+      "type": "explanation",
+      "heading": "str – texto (string)",
+      "text": "Tudo que estiver entre aspas é <code>str</code>, que significa string. Pode ser 'Olá', '123' ou até 'True'. Mesmo que pareça número, se está entre aspas, é texto!"
+    },
+    {
+      "type": "explanation",
+      "heading": "bool – verdadeiro ou falso",
+      "text": "É um tipo especial: só tem duas opções possíveis, <code>True</code> ou <code>False</code>. É como o computador responde perguntas do tipo: \"Isso é verdade?\""
+    },
+    {
+      "type": "code",
+      "heading": "Testando os tipos com type()",
+      "text": "Vamos usar <code>type()</code> para descobrir o tipo de um valor.",
+      "code": "print(type(10))\nprint(type(3.14))\nprint(type(\"Oi, turma!\"))\nprint(type(True))"
+    },
+    {
+      "type": "comment",
+      "heading": "Misturar tipos pode dar erro!",
+      "text": "O que acontece se você tentar somar um número com um texto? Teste esse exemplo:",
+      "code": "print(\"5\" + 5)"
+    },
+    {
+      "type": "explanation",
+      "heading": "input() sempre devolve texto (str)",
+      "text": "Você lembra da lição 2? Lá a gente aprendeu que o <code>input()</code> é usado para fazer uma pergunta ao usuário. O computador mostra essa pergunta na tela e espera uma resposta. Só que tem um detalhe importante: **tudo que vem do <code>input()</code> é guardado como texto (str)** — mesmo que a pessoa digite um número!"
+    },
+    {
+      "type": "code",
+      "heading": "Exemplo simples com input()",
+      "text": "Veja esse exemplo, pra gente relembrar: o programa pergunta o nome e responde com uma saudação.",
       "code": "nome = input(\"Qual é o seu nome? \")\nprint(\"Olá,\", nome)"
     },
     {
-      "heading": "Convertendo para número: int() e float()",
-      "text": "Se você quiser usar o valor digitado como número, precisa converter:\n<ul>\n  <li><code>int()</code>: transforma em número inteiro</li>\n  <li><code>float()</code>: transforma em número com vírgula (usa ponto)</li>\n</ul>",
-      "code": "idade = int(input(\"Quantos anos você tem? \"))\naltura = float(input(\"Qual sua altura? \"))\nprint(\"Idade vezes altura:\", idade * altura)"
+      "type": "question",
+      "heading": "🧐 Por que isso importa?",
+      "text": "**Você sabia que se digitar 10, o computador vai entender como \"10\" e não como número?** Isso significa que não dá pra fazer contas com esse valor... ainda!"
     },
     {
-      "heading": "Cuidado com vírgula!",
-      "text": "Python aceita ponto como separador decimal, não vírgula. Use <code>1.75</code>, e não <code>1,75</code>."
+      "type": "code",
+      "heading": "Veja um erro clássico com input()",
+      "text": "O que acontece aqui?",
+      "code": "idade = input(\"Quantos anos você tem? \")\nprint(idade * 2)"
     },
     {
-      "heading": "Vídeo em português",
-      "text": "Este vídeo ensina como usar <code>input()</code> e como transformar a resposta em número com <code>int()</code> e <code>float()</code>:"
+      "type": "explanation",
+      "heading": "Transformando texto em número",
+      "text": "Se a resposta for um número, podemos converter com <code>int()</code> (para inteiros) ou <code>float()</code> (para números com ponto)."
+    },
+    {
+      "type": "code",
+      "heading": "Convertendo idade para int",
+      "text": "Quando pedimos a idade com <code>input()</code>, a resposta é texto. Mas se queremos somar, subtrair ou multiplicar com ela, precisamos transformar em número. Com <code>int()</code>, a idade '12' vira número 12. Agora sim podemos fazer contas, como descobrir a idade daqui a 5 anos!",
+      "code": "idade = int(input(\"Quantos anos você tem? \"))\nprint(\"Ano que vem você terá:\", idade + 1)"
+    },
+    {
+      "type": "comment",
+      "heading": "Cuidado com o ponto!",
+      "text": "Se você quiser perguntar altura, use <code>float()</code> e lembre o usuário: use ponto no lugar da vírgula!"
+    },
+    {
+      "type": "code",
+      "heading": "Convertendo altura para float",
+      "text": "Se alguém digita a altura como '1.60', o <code>input()</code> guarda isso como texto. Mas a gente quer fazer conta com esse número, certo? Para isso, usamos <code>float()</code> — ele transforma o texto em número com decimal. Assim podemos calcular, por exemplo, a média de alturas ou multiplicar pela idade.",
+      "code": "altura = float(input(\"Qual sua altura? \"))\nprint(\"Você tem\", altura, \"metros\")"
+    },
+    {
+      "type": "code",
+      "heading": "Juntando tudo num programa legal",
+      "text": "Agora que você já entendeu os tipos, o uso do <code>input()</code> e como fazer as conversões, vamos montar um pequeno programa que pergunta seu nome, sua idade e sua altura. Depois, ele usa essas informações para conversar com você e até fazer uma conta! Esse tipo de exercício mostra como tudo isso se conecta de verdade. Vamos testar?",
+      "code": "nome = input(\"Qual é o seu nome? \")\nidade = int(input(\"Quantos anos você tem? \"))\naltura = float(input(\"Qual sua altura em metros? \"))\nprint(\"Olá,\", nome + \"!\")\nprint(\"Você tem\", idade, \"anos e mede\", altura, \"m.\")\nprint(\"Idade vezes altura:\", idade * altura)"
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "🎯 Tipos de dados: <code>int</code>, <code>float</code>, <code>str</code>, <code>bool</code>\n📩 <code>input()</code> sempre devolve <code>str</code>\n🔁 Para fazer contas, converta com <code>int()</code> ou <code>float()</code>\n🔍 Use <code>type()</code> para descobrir o tipo de um valor"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. Peça a idade do usuário e mostre a idade ao quadrado.",
-      "code_hint": "idade = int(input(\"Quantos anos você tem? \"))\nprint(\"Sua idade ao quadrado é:\", idade ** 2)"
+      "prompt": "1. Descubra o tipo de cada valor abaixo usando type(): 3, \"3\", 3.0, True",
+      "code_hint": "print(type(3))\nprint(type(\"3\"))\nprint(type(3.0))\nprint(type(True))"
     },
     {
-      "prompt": "2. Peça a altura e diga quantos centímetros ela representa.",
-      "code_hint": "altura = float(input(\"Qual sua altura em metros? \"))\nprint(\"Sua altura em centímetros é:\", altura * 100)"
+      "prompt": "2. Crie uma variável com um número inteiro e outra com um texto. Depois tente somá-las e veja o erro.",
+      "code_hint": "idade = 12\nnome = \"João\"\nprint(idade + nome)"
     },
     {
-      "prompt": "3. Desafio: peça dois números, some e mostre o resultado.",
-      "code_hint": "a = float(input(\"Digite o primeiro número: \"))\nb = float(input(\"Digite o segundo número: \"))\nprint(\"A soma é:\", a + b)"
+      "prompt": "3. Corrija o erro anterior convertendo o número para texto.",
+      "code_hint": "idade = 12\nnome = \"João\"\nprint(nome + \" tem \" + str(idade) + \" anos\")"
+    },
+    {
+      "prompt": "4. Pergunte a idade da pessoa e diga quantos anos ela terá em 5 anos.",
+      "code_hint": "idade = int(input(\"Quantos anos você tem? \"))\nprint(\"Em 5 anos você terá:\", idade + 5)"
+    },
+    {
+      "prompt": "5. Peça duas notas e mostre a média.",
+      "code_hint": "n1 = float(input(\"Nota 1: \"))\nn2 = float(input(\"Nota 2: \"))\nprint(\"Média:\", (n1 + n2) / 2)"
+    },
+    {
+      "prompt": "6. Desafio: peça qualquer coisa ao usuário e diga qual o tipo dela.",
+      "code_hint": "resposta = input(\"Digite algo: \")\nprint(\"O tipo é:\", type(resposta))"
     }
   ],
   "project": {
-    "name": "Calculadora de Idade e Altura",
-    "description": "Peça nome, idade e altura do usuário. Mostre uma frase com essas informações e calcule idade x altura.",
-    "goal": "Praticar <code>input()</code>, <code>int()</code>, <code>float()</code> e montagem de frases com variáveis."
+    "name": "Mini Conversa Inteligente",
+    "description": "Monte um programa que faz 3 perguntas ao usuário: nome, idade e altura. Depois, responda com uma mensagem divertida como: 'Olá, Maria! Você tem 11 anos e mede 1.50m'. Faça também uma conta com os dados (ex: idade × altura).",
+    "goal": "Treinar <code>input()</code>, <code>int()</code>, <code>float()</code>, <code>type()</code> e criar mensagens personalizadas com <code>print()</code>."
   },
   "video_suggestion": {
-    "text": "Vídeo em português explicando input, int, float e conversão de tipos:",
-    "url": "https://www.youtube.com/watch?v=ZBAMdFZbdZU"
+    "text": "Vídeo em português explicando tipos de dados, input(), int(), float() e como usar para conversar com o usuário:",
+    "url": "https://www.youtube.com/watch?v=iWZ0HkLxLJM"
   }
 }

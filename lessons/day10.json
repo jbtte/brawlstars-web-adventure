@@ -1,52 +1,76 @@
 {
-  "title": "Dia 10 – Jogo de adivinhação com dicas",
+  "title": "Dia 10 – Vamos jogar? Criando um jogo de adivinhação com dicas",
   "concepts": [
     {
-      "heading": "Como funciona o jogo?",
-      "text": "O computador escolhe um número aleatório e você tenta adivinhar. Ele vai dando dicas se seu palpite é maior ou menor."
+      "type": "explanation",
+      "heading": "Você gosta de adivinhar?",
+      "text": "Hoje vamos programar um jogo onde o computador escolhe um número secreto e você tenta descobrir qual é. A cada palpite, ele vai te dar uma dica: 'maior' ou 'menor'."
     },
     {
-      "heading": "Usando o módulo random",
-      "text": "Use <code>import random</code> e <code>random.randint(início, fim)</code> para gerar um número aleatório.",
-      "code": "import random\nnumero = random.randint(1, 100)"
+      "type": "code",
+      "heading": "Como o computador escolhe um número sozinho?",
+      "text": "Usamos o módulo random do Python. Ele serve para gerar números aleatórios — ou seja, que mudam toda vez. É como se o computador jogasse um dado invisível e secreto. Por trás disso existe uma fórmula especial que o Python usa para fingir que está sendo aleatório. Mais pra frente, a gente vai aprender como essa fórmula funciona, mas por enquanto só precisamos saber usar!",
+      "code": "import random\nnumero = random.randint(1, 100)",
+      "note": "Aqui o número será sorteado entre 1 e 100. Você pode mudar esse intervalo se quiser."
     },
     {
-      "heading": "Laço while com condição de parada",
-      "text": "O laço repete até você acertar ou atingir o número máximo de tentativas.",
-      "code": "tentativas = 0\nwhile tentativas < 5:\n    palpite = int(input(\"Seu palpite: \"))\n    tentativas += 1\n    if palpite == numero:\n        print(\"Parabéns! Você acertou!\")\n        break\n    elif palpite < numero:\n        print(\"Tente um número maior.\")\n    else:\n        print(\"Tente um número menor.\")\n"
+      "type": "code",
+      "heading": "E como fazemos o jogo repetir até acertar?",
+      "text": "Usamos o laço while! Ele vai rodar várias vezes, até você acertar ou acabar as tentativas. Cada rodada é uma chance!",
+      "code": "tentativas = 0\nwhile tentativas < 5:\n    palpite = int(input(\"Seu palpite: \"))\n    tentativas += 1",
+      "note": "Aqui estamos contando quantas tentativas o jogador já fez. Enquanto for menos que 5, o jogo continua!"
     },
     {
-      "heading": "Final do jogo",
-      "text": "Se você não acertar nas tentativas, o programa mostra o número secreto.",
-      "code": "else:\n    print(f\"Acabou! O número era {numero}.\")"
+      "type": "code",
+      "heading": "Hora de dar as dicas",
+      "text": "Dentro do while, usamos if para comparar o palpite com o número secreto. Se for igual: parabéns! Se for menor, damos a dica 'maior'. Se for maior, dizemos 'menor'.",
+      "code": "if palpite == numero:\n    print(\"Parabéns! Você acertou!\")\n    break\nelif palpite < numero:\n    print(\"Tente um número maior.\")\nelse:\n    print(\"Tente um número menor.\")"
     },
     {
-      "heading": "Vídeo em português",
-      "text": "Este vídeo explica como criar um jogo de adivinhação passo a passo, com dicas e limites de tentativas:",
-      "code": ""
+      "type": "code",
+      "heading": "E se o jogador errar todas?",
+      "text": "Podemos mostrar uma mensagem no final, revelando o número secreto.",
+      "code": "else:\n    print(f\"Acabou! O número era {numero}.\")",
+      "note": "Essa parte vem depois do while e mostra que o jogo terminou. Você pode deixar a mensagem divertida ou dramática!"
+    },
+    {
+      "type": "code",
+      "heading": "Teste completo no Thonny",
+      "text": "Esse é o jogo completo. Copie, teste e brinque! Depois, tente fazer ele funcionar com mais tentativas ou com intervalo diferente.",
+      "code": "import random\nnumero = random.randint(1, 100)\ntentativas = 0\nwhile tentativas < 5:\n    palpite = int(input(\"Seu palpite: \"))\n    tentativas += 1\n    if palpite == numero:\n        print(f\"Acertou em {tentativas} tentativas!\")\n        break\n    elif palpite < numero:\n        print(\"Mais alto!\")\n    else:\n        print(\"Mais baixo!\")\nelse:\n    print(f\"Você perdeu! O número era {numero}\")"
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "🎯 Usamos random para escolher um número\n🔁 Usamos while para repetir o jogo\n📩 input() para receber o palpite\n📊 if/elif/else para dar dicas\n🏁 break para parar quando acertar"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. Crie um jogo onde o número vai de 1 a 20 e você tenha 3 tentativas.",
-      "code_hint": "import random\nnumero = random.randint(1, 20)\ntentativas = 0\nwhile tentativas < 3:\n    palpite = int(input(\"Palpite 1–20: \"))\n    tentativas += 1\n    if palpite == numero:\n        print(\"Acertou!\")\n        break\n    elif palpite < numero:\n        print(\"Maiooor...\")\n    else:\n        print(\"Meioor...\")\nelse:\n    print(f\"Errado. Era {numero}\")"
+      "type": "exercise",
+      "prompt": "1. Mude o intervalo para 1 a 20 e permita apenas 3 tentativas.",
+      "code_hint": "numero = random.randint(1, 20)\ntentativas = 0\nwhile tentativas < 3:\n    ..."
     },
     {
+      "type": "exercise",
       "prompt": "2. Mostre quantas tentativas o jogador usou para acertar.",
-      "code_hint": "…\nprint(f\"Você acertou em {tentativas} tentativas!\")"
+      "code_hint": "print(f\"Você acertou em {tentativas} tentativas!\")"
     },
     {
-      "prompt": "3. Desafio: peça ao jogador para escolher o intervalo mínimo e máximo (ex: 1 a 50) antes de começar o jogo.",
-      "code_hint": "minimo = int(input(\"Min? \"))\nmaximo = int(input(\"Max? \"))\nnumero = random.randint(minimo, maximo)\n…"
+      "type": "exercise",
+      "prompt": "3. Desafio: peça ao jogador para escolher o intervalo mínimo e máximo antes de começar o jogo.",
+      "code_hint": "minimo = int(input(\"Min? \"))\nmaximo = int(input(\"Max? \"))\nnumero = random.randint(minimo, maximo)"
     }
   ],
   "project": {
+    "type": "project",
     "name": "Adivinhação com Desafio",
-    "description": "Jogo onde o computador escolhe número, dá dicas, controla tentativas e ajusta intervalo conforme o jogador.",
-    "goal": "Aplicar `random`, `while`, `if/elif/else`, `break`, `int(input())` e lógica de jogo."
+    "description": "Crie um jogo completo onde o jogador define o intervalo do número, tenta adivinhar, recebe dicas e vê o resultado no final.",
+    "goal": "Aplicar tudo que você aprendeu: random, input(), int(), while, if/else e lógica de repetição com break."
   },
   "video_suggestion": {
-    "text": "Vídeo em português (com legendas) ensinando jogo de adivinhação com dicas:",
+    "type": "video",
+    "text": "Vídeo em português ensinando como criar um jogo de adivinhação passo a passo:",
     "url": "https://www.youtube.com/watch?v=t_pGcvGEImQ"
   }
 }

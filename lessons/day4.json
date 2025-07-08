@@ -2,48 +2,84 @@
   "title": "Dia 4 – Condicionais: if, elif e else",
   "concepts": [
     {
+      "type": "concept",
       "heading": "O que são Condicionais?",
-      "text": "Condicionais servem para tomar decisões no código: executamos um bloco se uma condição for verdadeira, outro se não for, e assim por diante."
+      "text": "Hoje a gente vai aprender a tomar decisões com o nosso código! Em vez de sempre fazer a mesma coisa, podemos dizer: 'se acontecer isso, faça aquilo'. O Python faz isso com o if, elif e else."
     },
     {
+      "type": "comment",
+      "heading": "💡 Exemplo do mundo real",
+      "text": "Pense assim: 'Se estiver chovendo, levo guarda-chuva. Senão, vou sem.' Isso é uma condicional."
+    },
+    {
+      "type": "concept",
       "heading": "if: Fazendo algo se a condição for verdadeira",
-      "text": "A sintaxe é:\n<code>if condição:</code>\n⠀<code>    faça_algo()</code>\n\nO bloco indentado só roda se a condição for verdadeira.",
+      "text": "A palavra `if` significa 'se'. Com ela, o computador testa uma condição. Se for verdadeira, ele executa o que está dentro do bloco indentado (com espaço).",
       "code": "idade = 12\nif idade >= 18:\n    print(\"Você é maior de idade\")"
     },
     {
+      "type": "question",
+      "heading": "❓ DÚVIDA COMUM: O que é >= ?",
+      "text": "Esse símbolo quer dizer 'maior ou igual'. Então `idade >= 18` significa: a idade é maior ou igual a 18?"
+    },
+    {
+      "type": "concept",
       "heading": "if‑else: Decisão binária",
-      "text": "Quer fazer algo quando a condição for falsa também? Use <code>else</code>:\n<code>if condição:</code>\n⠀<code>    bloco1</code>\n<code>else:</code>\n⠀<code>    bloco2</code>",
+      "text": "Com `else`, dizemos o que fazer se a condição for falsa. Assim cobrimos os dois casos possíveis:",
       "code": "n = 7\nif n % 2 == 0:\n    print(\"Par\")\nelse:\n    print(\"Ímpar\")"
     },
     {
+      "type": "question",
+      "heading": "❓ DÚVIDA COMUM: O que significa % 2 == 0?",
+      "text": "Esse código testa se o número é divisível por 2 (ou seja, se é par). `%` é o 'resto da divisão'."
+    },
+    {
+      "type": "concept",
       "heading": "if‑elif‑else: Múltiplas escolhas",
-      "text": "Para várias possibilidades, use <code>elif</code> entre <code>if</code> e <code>else</code>:",
+      "text": "Quando temos mais de duas opções, usamos `elif` (que vem de 'else if'). Podemos ter quantos `elif` quisermos!",
       "code": "nota = 75\nif nota < 30:\n    print(\"Reprovado\")\nelif nota < 50:\n    print(\"Recuperação\")\nelse:\n    print(\"Aprovado\")"
     },
     {
+      "type": "tip",
       "heading": "Dica de indentação",
-      "text": "Use sempre 4 espaços para indicar o começo de cada bloco. Python não usa chaves, mas sim a indentação."
+      "text": "Sempre use 4 espaços para o bloco dentro do if. O Python usa esse espaço para saber o que está dentro e o que está fora da condição."
+    },
+    {
+      "type": "question",
+      "heading": "❓ E se eu esquecer os dois pontos (:) depois do if?",
+      "text": "O Python vai dar erro! Sempre coloque `:` depois do `if`, `elif` e `else` para indicar que vem um bloco."
     }
   ],
   "exercises": [
     {
+      "type": "exercise",
       "prompt": "1. Peça um número ao usuário e imprima se ele é par ou ímpar.",
       "code_hint": "n = int(input(\"Digite um número: \"))\nif n % 2 == 0:\n    print(\"Par\")\nelse:\n    print(\"Ímpar\")"
     },
     {
+      "type": "exercise",
       "prompt": "2. Peça a idade do usuário e diga se ele é maior (>=18) ou menor (<18) de idade.",
       "code_hint": "idade = int(input(\"Idade: \"))\nif idade >= 18:\n    print(\"Maior de idade\")\nelse:\n    print(\"Menor de idade\")"
     },
     {
+      "type": "exercise",
       "prompt": "3. Peça uma nota (0–100). Use if/elif/else para classificar: < 30 = Reprovado; < 50 = Recuperação; ≥ 50 = Aprovado.",
       "code_hint": "nota = int(input(\"Nota: \"))\nif nota < 30:\n    print(\"Reprovado\")\nelif nota < 50:\n    print(\"Recuperação\")\nelse:\n    print(\"Aprovado\")"
     },
     {
+      "type": "challenge",
       "prompt": "4. *Desafio:* Peça duas notas do aluno e calcule a média. Classifique com base na média: < 5 = Reprovado; < 7 = Recuperação; ≥ 7 = Aprovado.",
       "code_hint": "n1 = float(input(\"Nota 1: \"))\nn2 = float(input(\"Nota 2: \"))\nmedia = (n1 + n2)/2\nif media < 5:\n    print(\"Reprovado\")\nelif media < 7:\n    print(\"Recuperação\")\nelse:\n    print(\"Aprovado\")"
     }
   ],
+  "project": {
+    "type": "project",
+    "name": "Classificador de notas",
+    "description": "Crie um programa que pede nome, duas notas e dá a média e o resultado final.",
+    "goal": "Praticar `input`, `float`, `if`, `elif`, `else` e f-strings."
+  },
   "video_suggestion": {
+    "type": "video",
     "text": "Para mais explicações, veja este vídeo em português que mostra condicional IF, ELIF e ELSE na prática:",
     "url": "https://www.youtube.com/watch?v=7oJtcrukTwM"
   }

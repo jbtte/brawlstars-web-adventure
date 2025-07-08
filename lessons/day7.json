@@ -1,48 +1,77 @@
 {
-  "title": "Dia 7 – Laços while e controle de repetição",
+  "title": "Dia 7 – Repetindo até parar: o laço while",
   "concepts": [
     {
-      "heading": "O que é um laço while?",
-      "text": "O laço <code>while</code> repete um bloco de código enquanto uma condição for verdadeira. É útil quando não sabemos exatamente quantas vezes vamos repetir algo."
+      "type": "explanation",
+      "heading": "Já ficou jogando até escurecer?",
+      "text": "Imagine que sua mãe disse: 'pode jogar até escurecer'. Você não sabe quantas vezes vai chutar a bola — depende do sol. O laço `while` é igual: ele repete enquanto uma condição for verdadeira. Quando deixar de ser, ele para sozinho!"
     },
     {
-      "heading": "Exemplo básico de while",
+      "type": "code",
+      "heading": "O que é o laço while?",
+      "text": "`while` é uma palavra do Python que diz: 'enquanto isso for verdade, continue'. Usamos quando não sabemos quantas vezes vamos repetir, só sabemos a condição.",
       "code": "contador = 1\nwhile contador <= 5:\n    print(\"Contando:\", contador)\n    contador += 1"
     },
     {
-      "heading": "Cuidado: loops infinitos",
-      "text": "Se a condição do <code>while</code> nunca ficar falsa, o programa vai repetir para sempre! Sempre altere alguma variável dentro do laço."
+      "type": "question",
+      "heading": "🧠 Dúvida comum: por que o while precisa mudar algo lá dentro?",
+      "text": "Se a condição nunca mudar, o laço nunca vai parar! É como jogar bola pra sempre porque o sol nunca se põe. Por isso, sempre alteramos alguma variável dentro do while — como o contador."
     },
     {
-      "heading": "Usando break para parar o laço",
+      "type": "code",
+      "heading": "Exemplo completo: laço infinito com senha secreta",
+      "text": "Esse programa continua pedindo uma senha até o usuário digitar a correta. Só então ele para. Um exemplo divertido de `while True` com break.",
+      "code": "while True:\n    senha = input(\"Digite a senha mágica: \")\n    if senha == \"abracadabra\":\n        print(\"Você entrou no castelo! 🏰\")\n        break\n    else:\n        print(\"Errado! Tente de novo...\")"
+    },
+    {
+      "type": "question",
+      "heading": "🧠 Dúvida comum: o que significa while True?",
+      "text": "Significa: 'enquanto for verdadeiro, continue'. Como True é sempre verdadeiro, esse while nunca para... a menos que tenha um `break` lá dentro!"
+    },
+    {
+      "type": "code",
+      "heading": "Cuidado com os loops infinitos!",
+      "text": "Se a condição do `while` nunca ficar falsa, o programa vai rodar para sempre! (Ou até travar 😬). Fique sempre de olho na condição.",
+      "code": "n = 1\nwhile n <= 5:\n    print(n)\n    # esqueci do n += 1... e agora?"
+    },
+    {
+      "type": "code",
+      "heading": "Usando break para escapar do laço",
+      "text": "`break` é uma palavra especial que diz: 'sai do laço agora'. Podemos usar quando a gente quer parar mesmo que a condição ainda esteja verdadeira.",
       "code": "while True:\n    texto = input(\"Digite 'sair' para parar: \")\n    if texto == \"sair\":\n        break\n    print(\"Você escreveu:\", texto)"
     },
     {
-      "heading": "Vídeo em português",
-      "text": "Este vídeo explica como usar <code>while</code> e <code>break</code> com exemplos simples e úteis:"
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "🔁 Use `while` para repetir até que algo mude\n🧱 A condição precisa mudar, senão o laço nunca acaba\n🛑 Use `break` quando quiser sair antes\n🔍 `while True` cria um laço infinito — só pare com `break`"
     }
   ],
   "exercises": [
     {
+      "type": "exercise",
       "prompt": "1. Crie um laço while que conte de 1 até 10.",
       "code_hint": "n = 1\nwhile n <= 10:\n    print(n)\n    n += 1"
     },
     {
+      "type": "exercise",
       "prompt": "2. Crie um programa que continue perguntando o nome do usuário até ele digitar 'fim'.",
       "code_hint": "while True:\n    nome = input(\"Digite seu nome (ou 'fim' para sair): \")\n    if nome == \"fim\":\n        break\n    print(f\"Olá, {nome}!\")"
     },
     {
+      "type": "exercise",
       "prompt": "3. Desafio: Faça um programa que pergunte números e pare quando o usuário digitar zero.",
       "code_hint": "while True:\n    numero = int(input(\"Digite um número (0 para parar): \"))\n    if numero == 0:\n        break\n    print(f\"Você digitou {numero}\")"
     }
   ],
   "project": {
+    "type": "project",
     "name": "Repetidor inteligente",
     "description": "Crie um programa que só para quando o usuário digitar uma senha secreta. Enquanto isso, ele continua pedindo inputs e mostrando algo engraçado.",
     "goal": "Praticar laço while, condição de parada e uso de break com input."
   },
   "video_suggestion": {
+    "type": "video",
     "text": "Vídeo em português explicando o laço while e o uso de break:",
-    "url": "https://www.youtube.com/watch?v=k6U-i4gXkLM"
+    "url": "https://youtu.be/s-ux9M_YDpM"
   }
 }
