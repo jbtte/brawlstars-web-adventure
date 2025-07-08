@@ -231,10 +231,14 @@ document.addEventListener('DOMContentLoaded', async () => {
       const videoEmbedDiv = document.createElement('div');
       videoEmbedDiv.classList.add('video-embed-container');
 
+      const originalUrl = lesson.video_suggestion.url;
+      const videoId = getYouTubeVideoId(originalUrl);
+      const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+
       const videoIframe = document.createElement('iframe');
       videoIframe.setAttribute('width', '560');
       videoIframe.setAttribute('height', '315');
-      videoIframe.setAttribute('src', lesson.video_suggestion.url);
+      videoIframe.setAttribute('src', embedUrl);
       videoIframe.setAttribute('frameborder', '0');
       videoIframe.setAttribute(
         'allow',
@@ -293,14 +297,11 @@ function displayErrorMessage(
         <p style="margin-top: 20px;">
           <a href="index.html" class="back-to-map-button">Voltar ao Mapa das Fases</a>
         </p>
-      </section>
-    `;
+      </section>`;
   }
   if (exercisesContainer) exercisesContainer.innerHTML = ``;
-
   const videoSection = document.getElementById('video-suggestion-section');
   if (videoSection) videoSection.style.display = 'none';
-
   const ideSection = document.querySelector('.interactive-ide-section');
   if (ideSection) ideSection.style.display = 'none';
 }
