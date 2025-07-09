@@ -2,50 +2,92 @@
   "title": "Dia 16 – Introdução à Programação Orientada a Objetos (POO)",
   "concepts": [
     {
+      "type": "explanation",
       "heading": "O que é POO?",
-      "text": "POO significa Programação Orientada a Objetos, um jeito de organizar o código usando 'caixinhas' chamadas classes, que definem objetos com características (atributos) e ações (métodos)."
+      "text": "Oi, meu pequeno programador! 😄 Hoje vamos aprender um jeito diferente de programar: a Programação Orientada a Objetos (POO). Sabe quando você brinca de montar seus próprios brinquedos? Cada um tem sua cor, tamanho e faz alguma coisa diferente, né? Pois é, a POO faz a mesma coisa no código: cria 'brinquedos' digitais com suas próprias características e ações. Vamos juntos montar nossos próprios personagens no Python!"
     },
     {
-      "heading": "Criando sua primeira classe",
-      "text": "Use <code>class</code> para criar uma classe. Dentro dela, use <code>def __init__</code> para inicializar atributos.",
-      "code": "class Personagem:\n    def __init__(self, nome, vida):\n        self.nome = nome\n        self.vida = vida"
+      "type": "image",
+      "heading": "Como funcionam os objetos",
+      "image_placeholder": "imagem de brinquedos (como carrinhos) com etiquetas como 'cor', 'velocidade', 'som'",
+      "image_url": "resources/images/lesson_illustrations/lesson_16_cars.jpg"
     },
     {
-      "heading": "Criando objetos (instâncias)",
-      "text": "Depois de definir uma classe, você pode criar objetos a partir dela.",
-      "code": "hero = Personagem(\"Mario\", 100)\nprint(hero.nome, hero.vida)"
+      "type": "explanation",
+      "heading": "Classe e Objeto",
+      "text": "Pensa assim: a 'classe' \u00e9 como uma receita de bolo ou uma caixa de Lego com instru\u00e7\u00f5es. J\u00e1 o 'objeto' \u00e9 o bolo pronto ou o carrinho que voc\u00ea montou. Com uma classe, voc\u00ea pode fazer v\u00e1rios objetos parecidos, cada um com detalhes diferentes. Legal, n\u00e9?"
     },
     {
-      "heading": "Adicionando métodos (ações)",
-      "text": "Use funções dentro da classe para definir comportamentos dos objetos.",
-      "code": "class Personagem:\n    def __init__(self, nome, vida):\n        self.nome = nome\n        self.vida = vida\n    def dizer_ola(self):\n        print(f\"Olá, eu sou {self.nome} e tenho {self.vida} de vida!\")\n\nhero = Personagem(\"Luigi\", 80)\nhero.dizer_ola()"
+      "type": "code",
+      "heading": "Exemplo de classe em Python",
+      "text": "Vamos montar nosso primeiro carrinho com Python! Copie com carinho no Thonny:",
+      "code": "class Carrinho:\n    def __init__(self, cor, velocidade):\n        self.cor = cor\n        self.velocidade = velocidade\n\n    def buzinar(self):\n        print(f\"O carrinho {self.cor} diz: Pii Pii!\")"
     },
     {
-      "heading": "Vídeo em português",
-      "text": "Este vídeo ensina passo a passo a criar classes, objetos e métodos em Python de forma clara:"
+      "type": "instruction",
+      "heading": "Criando um carrinho",
+      "text": "Agora vamos montar um carrinho azul que pode buzinar. Vamos juntos?",
+      "code": "meu_carrinho = Carrinho(\"azul\", 10)\nmeu_carrinho.buzinar()"
+    },
+    {
+      "type": "common_mistake",
+      "heading": "Erro comum",
+      "text": "Às vezes esquecemos de colocar os valores na hora de criar o carrinho (cor e velocidade). Sem isso, o Python fica confuso e dá erro. Sempre pense: se estou montando um brinquedo, preciso dizer como ele \u00e9!"
+    },
+    {
+      "type": "curiosity",
+      "heading": "Sabia que…?",
+      "text": "Jogos como Minecraft e Roblox usam muito POO! Cada personagem, item ou efeito é um objeto com seus próprios poderes. Agora você está entrando no mundo desses criadores!"
+    },
+    {
+      "type": "question",
+      "heading": "Pergunta para pensar",
+      "text": "Você já brincou com bonecos, carrinhos ou aviões? Que ações eles fazem? E quais características eles têm? Tente imaginar como você criaria eles no Python!"
+    },
+    {
+      "type": "step",
+      "heading": "Passo a passo",
+      "steps": [
+        "1. Abra o Thonny.",
+        "2. Crie um novo arquivo chamado carrinho.py.",
+        "3. Escreva a classe Carrinho com __init__ e o método buzinar().",
+        "4. Crie um objeto usando Carrinho(\"azul\", 10).",
+        "5. Faça o carrinho buzinar com meu_carrinho.buzinar().",
+        "6. Clique em Executar e veja a mágica acontecer!"
+      ]
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "Hoje você aprendeu que uma **classe** é o molde (como uma receita) e o **objeto** é o brinquedo feito com esse molde. Também viu como dar vida a esse brinquedo com ações!"
+    },
+    {
+      "type": "celebration",
+      "heading": "Você conseguiu!",
+      "text": "Uhuu! 🎉 Você criou seu primeiro objeto com Python. Isso é um passo de gigante no mundo da programação. Parabéns por sua dedicação! Estou muito orgulhoso de você! 💙"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. Defina uma classe `Animal` com `nome` e `som` como atributos. Crie um método `falar()` que imprima o som do animal.",
-      "code_hint": "class Animal:\n    def __init__(self, nome, som):\n        self.nome = nome\n        self.som = som\n    def falar(self):\n        print(self.som)\n\nc = Animal(\"Gato\", \"Miau\")\nc.falar()"
+      "type": "exercise",
+      "prompt": "Crie uma classe chamada Bola com atributos 'cor' e 'tamanho', e um método 'quicar' que imprime uma mensagem.",
+      "code_hint": "Dica: use __init__ para cor e tamanho, e defina um método que faça print(\"A bola está quicando!\")"
     },
     {
-      "prompt": "2. Crie uma classe `Bola` com atributo `cor` e um método `rolar()` que imprima 'A bola [cor] está rolando!'",
-      "code_hint": "class Bola:\n    def __init__(self, cor):\n        self.cor = cor\n    def rolar(self):\n        print(f\"A bola {self.cor} está rolando!\")\n\nb = Bola(\"vermelha\")\nb.rolar()"
-    },
-    {
-      "prompt": "3. Desafio: Adicione um método `mudar_cor(nova_cor)` na classe Bola que altera a cor e devolve a nova cor.",
-      "code_hint": "class Bola:\n    def __init__(self, cor):\n        self.cor = cor\n    def mudar_cor(self, nova_cor):\n        self.cor = nova_cor\n        return self.cor\n\nb = Bola(\"azul\")\nprint(b.mudar_cor(\"verde\"))"
+      "type": "exercise",
+      "prompt": "Crie duas bolas com cores diferentes e faça cada uma quicar.",
+      "code_hint": "Dica: crie algo como bola1 = Bola(\"vermelha\", \"grande\") e bola2 = Bola(\"azul\", \"pequena\")"
     }
   ],
   "project": {
-    "name": "Objetos do mundo real",
-    "description": "Crie pelo menos duas classes com atributos e métodos, instancie objetos e chame seus métodos em um script.",
-    "goal": "Entender como criar classes, atributos, métodos e como objetos interagem."
+    "type": "project",
+    "name": "Meu próprio brinquedo com POO",
+    "description": "Invente um brinquedo (como um Cachorro, Avião ou Boneca). Crie uma classe com atributos como cor, nome ou força, e um comportamento divertido como 'voar', 'falar' ou 'latir'.",
+    "goal": "Criar uma classe com pelo menos 2 atributos e 1 método. Depois, crie um objeto e teste esse comportamento no Thonny."
   },
   "video_suggestion": {
-    "text": "Vídeo em português que ensina POO: classes, objetos e métodos:",
-    "url": "https://www.youtube.com/watch?v=TJQFj67AcGc"
+    "type": "video",
+    "text": "Veja esse vídeo curtinho mostrando como usar classes e objetos em Python de um jeito divertido:",
+    "url": "https://www.youtube.com/embed/ZDa-Z5JzLYM"
   }
 }
