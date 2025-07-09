@@ -1,48 +1,88 @@
 {
-  "title": "Dia 19 – Jogo completo: Forca no terminal",
+  "title": "Dia 19 – Interações e Aventura na Tela",
   "concepts": [
     {
-      "heading": "Como funciona a Forca",
-      "text": "O jogador tenta adivinhar uma palavra ocultando letras. Ele tem algumas chances antes de perder. Vamos usar `while`, listas, `input()` e lógica para controlar o jogo."
+      "type": "explanation",
+      "heading": "Agora o jogo começa de verdade!",
+      "text": "Oi, mestre dos códigos! 😄 Ontem você fez seu herói aparecer na tela e andar com as teclas. Agora vamos deixar tudo mais divertido! Vamos adicionar um <b>inimigo</b>, fazer o herói <b>coletar itens</b> e reagir a <b>colisões</b>. É assim que seu jogo começa a virar uma aventura!"
     },
     {
-      "heading": "Estrutura básica do jogo",
-      "text": "1. Escolha uma palavra secreta. 2. Mostre ___ para cada letra. 3. Pergunte uma letra. 4. Revele as letras certas. 5. Conte erros."
+      "type": "image",
+      "heading": "Desafios e recompensas na tela",
+      "image_placeholder": "imagem de um herói pegando moedas e desviando de inimigos num cenário colorido de floresta",
+      "image_url": "resources/images/lesson_illustrations/lesson_19_hero.jpg"
     },
     {
-      "heading": "Exemplo de trecho do jogo",
-      "code": "palavra = \"python\"\nletras_certas = []\nerros = 0\nwhile erros < 6 and set(palavra) != set(letras_certas):\n    letra = input(\"Digite uma letra: \")\n    if letra in palavra:\n        letras_certas.append(letra)\n    else:\n        erros += 1\n    # Mostrar estado atual da palavra e erros"
+      "type": "explanation",
+      "heading": "Detectando colisões com o herói",
+      "text": "No Pygame Zero, podemos verificar se dois personagens se encostam com um comando especial: <b>colliderect</b>. Vamos usar isso para saber se o herói pegou um item ou encostou no inimigo."
     },
     {
-      "heading": "Finalizando o jogo",
-      "text": "Quando o `while` terminar, mostramos se o jogador ganhou ou perdeu, junto com a palavra secreta."
+      "type": "code",
+      "heading": "Verificando colisão com um inimigo",
+      "text": "Neste exemplo, se o herói encostar no inimigo, mostramos uma mensagem:",
+      "code": "heroi = Actor(\"heroi\")\ninimigo = Actor(\"dragao\")\nheroi.pos = 100, 200\ninimigo.pos = 300, 200\n\ndef draw():\n    screen.clear()\n    heroi.draw()\n    inimigo.draw()\n\ndef update():\n    if keyboard.right:\n        heroi.x += 4\n    if heroi.colliderect(inimigo):\n        print(\"Você foi atingido por um dragão!\")"
     },
     {
-      "heading": "Vídeo em português",
-      "text": "Este vídeo mostra passo a passo a criação de um jogo da Forca em Python no terminal:"
+      "type": "code",
+      "heading": "Adicionando um item para coletar",
+      "text": "Veja como fazer o herói pegar uma moeda e ganhar pontos:",
+      "code": "moeda = Actor(\"moeda\")\nmoeda.pos = 400, 200\npontos = 0\n\ndef draw():\n    screen.clear()\n    heroi.draw()\n    moeda.draw()\n    screen.draw.text(f\"Pontos: {pontos}\", (10, 10), fontsize=30, color=\"white\")\n\ndef update():\n    global pontos\n    if keyboard.right:\n        heroi.x += 4\n    if heroi.colliderect(moeda):\n        pontos += 10\n        moeda.x = -100  # Esconde a moeda"
+    },
+    {
+      "type": "question",
+      "heading": "O que acontece no seu jogo?",
+      "text": "Quando o herói encosta no inimigo... ele perde vida? E se pegar uma moeda? Ganha pontos? Escreva as regras da sua aventura!"
+    },
+    {
+      "type": "step",
+      "heading": "Passo a passo da aula",
+      "steps": [
+        "1. Crie um novo arquivo ou continue seu jogo.py.",
+        "2. Adicione um inimigo com Actor(\"dragao\") e posicione ele na tela.",
+        "3. Adicione um item como moeda ou coração.",
+        "4. Use colliderect para detectar colisões.",
+        "5. Faça algo acontecer: mostrar texto, mudar pontuação ou esconder o item.",
+        "6. Teste o jogo várias vezes!"
+      ]
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "Hoje seu herói começou a viver uma verdadeira aventura! Você aprendeu a detectar colisões com <b>colliderect</b>, adicionar inimigos e itens, e mostrar pontos na tela. Agora o jogo tem ação de verdade!"
+    },
+    {
+      "type": "celebration",
+      "heading": "Agora sim está ficando divertido!",
+      "text": "Uhuuu! 🎉 Seu jogo já tem inimigos, itens e pontuação. Isso é incrível! Continue criando, testando e melhorando sua aventura. O grande final está chegando! 💙"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. Escreva um trecho que mostra ___ para cada letra da palavra.",
-      "code_hint": "for letra in palavra:\n    if letra in letras_certas:\n        print(letra, end=' ')\n    else:\n        print('_', end=' ')"
+      "type": "exercise",
+      "prompt": "Adicione um segundo inimigo em outra posição da tela.",
+      "code_hint": "Dica: crie inimigo2 = Actor(\"fantasma\") e posicione com inimigo2.pos = (200, 100)"
     },
     {
-      "prompt": "2. Crie a lógica que adiciona letras certas e conta erros.",
-      "code_hint": "if letra in palavra:\n    letras_certas.append(letra)\nelse:\n    erros += 1"
+      "type": "exercise",
+      "prompt": "Faça o inimigo se mover para frente e para trás automaticamente.",
+      "code_hint": "Dica: use inimigo.x += 2 e depois mude a direção se ele chegar perto da borda"
     },
     {
-      "prompt": "3. Desafio: acrescente repetição do jogo até o jogador dizer que quer sair.",
-      "code_hint": "while True:\n    # jogo completo\n    novamente = input('Jogar de novo? (s/n) ')\n    if novamente.lower() != 's':\n        break"
+      "type": "exercise",
+      "prompt": "Crie um contador de vidas. Se o herói encostar no inimigo, perca uma vida.",
+      "code_hint": "Dica: use uma variável vidas = 3 e diminua quando houver colisão"
     }
   ],
   "project": {
-    "name": "Forca no terminal",
-    "description": "Crie um jogo da Forca simples: pede letra, verifica se está na palavra, controla erros, e avisa vitória ou derrota.",
-    "goal": "Aplicar variados conceitos aprendidos: loops, listas, input, if, lógica de jogo e repetição."
+    "type": "project",
+    "name": "Minha aventura começa!",
+    "description": "Adicione inimigos e itens ao seu jogo. Faça o herói ganhar pontos e reagir ao encostar nos outros personagens.",
+    "goal": "Criar um jogo interativo com pelo menos 1 inimigo, 1 item e sistema de pontuação ou vidas. Use colisões para deixar o jogo dinâmico!"
   },
   "video_suggestion": {
-    "text": "Vídeo em português ensinando como criar o jogo da Forca no terminal:",
-    "url": "https://www.youtube.com/watch?v=_A_2aTFHzJ0"
+    "type": "video",
+    "text": "Veja como adicionar inimigos, colisões e pontos em jogos com Pygame Zero neste vídeo curto para iniciantes:",
+    "url": "https://www.youtube.com/watch?v=TUrPpBeRkdA"
   }
 }
