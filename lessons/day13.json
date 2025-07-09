@@ -1,52 +1,115 @@
 {
-  "title": "Dia 13 – Módulos e import: usando código pronto ou seu próprio",
+  "title": "Dia 13 – Módulos: usando códigos prontos (ou seus próprios!)",
   "concepts": [
     {
-      "heading": "O que é um módulo?",
-      "text": "Um módulo é um arquivo `.py` que contém funções, variáveis ou códigos. Você pode usar `import` para usar esse código em outro programa."
+      "type": "explanation",
+      "heading": "💡 Já pensou em guardar suas ideias num caderno especial?",
+      "text": "Imagine que você tem um caderno só para suas melhores ideias: receitas, piadas, truques mágicos… Agora imagine que você pode abrir esse caderno em qualquer lugar, e copiar as ideias sempre que quiser. É isso que um módulo faz no Python: guarda pedaços de código que você pode reutilizar quando quiser!"
     },
     {
-      "heading": "Importando módulos prontos",
-      "text": "Muitos módulos já vêm com o Python. Exemplo:",
+      "type": "concept",
+      "heading": "O que é um módulo?",
+      "text": "Um módulo é um arquivo com funções ou comandos prontos. O Python já vem com vários módulos úteis, e você também pode criar os seus! Para usar, é só importar com <code>import nome_do_modulo</code>."
+    },
+    {
+      "type": "concept",
+      "heading": "Módulos famosos que vêm com o Python",
+      "text": "<ul><li><b>math</b>: para contas matemáticas</li><li><b>random</b>: para gerar números aleatórios</li><li><b>datetime</b>: para trabalhar com datas e horários</li><li><b>os</b>: para mexer com pastas e arquivos do computador</li></ul>"
+    },
+    {
+      "type": "code",
+      "heading": "Usando um módulo pronto",
+      "text": "Vamos usar o módulo <code>math</code> para fazer raiz quadrada:",
       "code": "import math\nprint(math.sqrt(9))  # mostra 3.0"
     },
     {
-      "heading": "Importando parte do módulo",
-      "text": "Você pode importar apenas o que precisa:",
+      "type": "explanation",
+      "heading": "Importando só o que você precisa",
+      "text": "As vezes você não precisa de <b> todas </b> as funções de um módulo, dai vc consegue importar só uma ou algumas funções. Legal, né?",
       "code": "from math import sqrt\nprint(sqrt(16))"
     },
     {
-      "heading": "Criando seu próprio módulo",
-      "text": "Se salvar funções em um arquivo, é um módulo. Depois você pode reaproveitá-las:",
-      "code": "# arquivo saudacoes.py\n def ola(nome):\n     return f\"Olá, {nome}!\"\n\n# no outro arquivo\nfrom saudacoes import ola\nprint(ola(\"Ana\"))"
+      "type": "explanation",
+      "heading": "Importando só o que você precisa (step-by-step)",
+      "steps": [
+        "<b>Passo 1:</b> Use <code>from</code> e o nome do módulo<br><b>",
+        "Passo 2:</b> Use <code>import</code> e o nome da função que quer<br>",
+        "<b>Exemplo:</b> Importar apenas a função <code>sqrt</code> do módulo math: <br> <pre>from math import sqrt</pre>"
+      ]
     },
     {
-      "heading": "Vídeo em português",
-      "text": "Este vídeo do canal LabEx ensina como criar e importar módulos em Python:",
-      "code": ""
+      "type": "question",
+      "heading": "💭 Dúvida comum",
+      "text": "<b>Posso usar as duas formas?</b> Sim! Você pode usar <code>import math</code> ou <code>from math import sqrt</code>. A diferença é que no primeiro caso, você precisa escrever <code>math.sqrt()</code> e no segundo, só <code>sqrt()</code>."
+    },
+    {
+      "type": "concept",
+      "heading": "Criando seu próprio módulo",
+      "text": "Se você criar um arquivo com funções, ele já é um módulo! E pode usar essas funções em outro programa. Isso ajuda a deixar o código mais organizado e reaproveitável."
+    },
+    {
+      "type": "code",
+      "heading": "Exemplo de módulo personalizado",
+      "text": "1. Crie um arquivo <code>saudacoes.py</code> com essa função:",
+      "code": "def ola(nome):\n    return f\"Olá, {nome}!\""
+    },
+    {
+      "type": "code",
+      "heading": "2. Em outro arquivo, use a função",
+      "code": "from saudacoes import ola\nprint(ola(\"Maria\"))"
+    },
+    {
+      "type": "celebration",
+      "heading": "Você criou sua primeira biblioteca! 🎉",
+      "text": "Agora você tem um módulo só seu. Isso é o começo para projetos maiores e mais organizados. Parabéns!"
+    },
+    {
+      "type": "concept",
+      "heading": "Como saber o que um módulo tem?",
+      "text": "Você pode pesquisar na <b>documentação oficial</b> do Python! Lá tem explicação sobre cada módulo, com exemplos e dicas. Comece com esses:",
+      "steps": [
+        "<a href='https://docs.python.org/pt-br/3/library/math.html' target='_blank'>math</a>",
+        "<a href='https://docs.python.org/pt-br/3/library/random.html' target='_blank'>random</a>",
+        "<a href='https://docs.python.org/pt-br/3/library/datetime.html' target='_blank'>datetime</a>"
+      ]
+    },
+    {
+      "type": "question",
+      "heading": "O que é documentação?",
+      "text": "É um guia oficial que explica como usar os comandos, funções e módulos do Python. Pode parecer difícil no começo, mas é uma ferramenta muito poderosa!"
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "<ul><li>📦 Módulos são arquivos com códigos prontos</li><li>📥 Use <code>import</code> para usar um módulo</li><li>🧠 Pode importar só uma parte com <code>from ... import ...</code></li><li>📁 Você também pode criar seus próprios módulos</li><li>📚 A documentação do Python é o lugar certo para explorar mais!</li></ul>"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. Importe o módulo `random` e use `random.randint(1, 10)` para mostrar um número aleatório.",
-      "code_hint": "import random\nprint(random.randint(1, 10))"
+      "type": "exercise",
+      "prompt": "1. Use o módulo `random` para sortear um número entre 1 e 10.",
+      "code_hint": "Entre na documentação do random e descubra como \ngerar int aleatórias"
     },
     {
-      "prompt": "2. Crie um arquivo chamado `minhas_funcoes.py` com uma função `boas_vindas()` que retorna ‘Oi!’; importe e use em outro script.",
-      "code_hint": "# em minhas_funcoes.py\ndef boas_vindas():\n    return \"Oi!\"\n\n# em principal.py\nfrom minhas_funcoes import boas_vindas\nprint(boas_vindas())"
+      "type": "exercise",
+      "prompt": "2. Crie um arquivo chamado `funcoes_legais.py` com uma função `apresentar(nome)`. Depois, use essa função em outro script.",
+      "code_hint": "Tente usar import"
     },
     {
-      "prompt": "3. Desafio: no mesmo módulo, adicione função `soma(a,b)` que retorna a soma, e teste importando nos dois estilos (`import` e `from`).",
-      "code_hint": "# em minhas_funcoes.py\ndef soma(a, b):\n    return a + b\n\n# em principal.py\nimport minhas_funcoes\nfrom minhas_funcoes import soma\n\nprint(minhas_funcoes.soma(2,3))\nprint(soma(5,7))"
+      "type": "exercise",
+      "prompt": "3. Desafio: crie no mesmo módulo uma função `dobro(n)` e teste ela em outro arquivo, usando os dois tipos de importação.",
+      "code_hint": "from funcoes_legais import dobro\nimport funcoes_legais"
     }
   ],
   "project": {
-    "name": "Minha caixa de ferramentas",
-    "description": "Crie um módulo com duas funções (ex: saudação e soma). Importe-o e use essas funções em outro script.",
-    "goal": "Ensinar criação de módulos, reutilização de código, e importação nos dois estilos (`import` e `from`)."
+    "type": "project",
+    "name": "Minha caixa de ferramentas secreta",
+    "description": "Crie um módulo com 3 funções diferentes (ex: saudação, conta e elogio). Depois use esse módulo em outro programa, chamando as 3 funções.",
+    "goal": "Explorar a criação e uso de módulos personalizados. Importar as funções e combiná-las em um programa divertido!"
   },
   "video_suggestion": {
-    "text": "Vídeo em português explicando como criar e importar módulos:",
-    "url": "https://www.youtube.com/watch?v=oOUyhGNib2Q"
+    "type": "video",
+    "text": "Vídeo em português ensinando módulos e como criar o seu próprio:",
+    "url": "https://www.youtube.com/watch?v=8ArHkS70QsQ. "
   }
 }

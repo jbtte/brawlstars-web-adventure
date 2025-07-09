@@ -20,7 +20,7 @@
     {
       "type": "explanation",
       "heading": "Onde vamos escrever nossos códigos?",
-      "text": "Vamos usar um programa especial chamado **Thonny**. Ele é como um caderno mágico onde escrevemos tudo o que queremos que o computador faça."
+      "text": "Vamos usar um programa especial chamado <b>Thonny</b>. Ele é como um caderno mágico onde escrevemos tudo o que queremos que o computador faça."
     },
     {
       "type": "installation",
@@ -38,8 +38,8 @@
       "heading": "Conhecendo o Thonny",
       "text": "Quando abrir o Thonny, você vai ver duas áreas importantes:",
       "steps": [
-        "**Área de Código (em cima)** – é onde você vai escrever seus programas",
-        "**Shell (embaixo)** – é onde o computador responde para você"
+        "<b>Área de Código (em cima)</b> – é onde você vai escrever seus programas",
+        "<b>Shell (embaixo)</b> – é onde o computador responde para você"
       ],
       "image_placeholder": "📷 (adicione aqui uma imagem com setas mostrando as partes do Thonny)"
     },
@@ -63,7 +63,7 @@
     {
       "type": "instruction",
       "heading": "Salvando seu primeiro programa",
-      "text": "Clique em **Arquivo → Salvar como...**, escolha um lugar fácil (como a área de trabalho) e digite o nome **hello_world.py**. Não esqueça do final `.py` — isso mostra que é um arquivo de Python!",
+      "text": "Clique em <b>Arquivo → Salvar como...</b>, escolha um lugar fácil (como a área de trabalho) e digite o nome <b>hello_world.py</b>. Não esqueça do final `.py` — isso mostra que é um arquivo de Python!",
       "image_placeholder": "📷 (adicione aqui uma imagem do menu Arquivo → Salvar como...)"
     },
     {
@@ -79,7 +79,7 @@
     },
     {
       "type": "exercise",
-      "prompt": "2. Salve este novo código com o nome **meu_nome.py**"
+      "prompt": "2. Salve este novo código com o nome <b>meu_nome.py</b>"
     },
     {
       "type": "exercise",

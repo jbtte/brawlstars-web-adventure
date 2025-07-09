@@ -1,47 +1,93 @@
 {
-  "title": "Dia 14 – Leitura e escrita de arquivos",
+  "title": "Dia 14 – Lendo e escrevendo em arquivos",
   "concepts": [
     {
-      "heading": "O que é um arquivo?",
-      "text": "Um arquivo é um documento que fica salvo no computador, como um arquivo de texto. Usamos Python para ler (abrir e ver) e escrever (criar ou modificar) esses arquivos."
+      "type": "celebration",
+      "heading": "Você chegou ao Dia 14!",
+      "text": "Parabéns por chegar até aqui! Agora vamos aprender uma mágica: fazer seu programa conversar com arquivos de texto. Imagina guardar pontuações de um jogo ou ler uma história salva em um arquivo? É isso que vamos aprender hoje! 🎉"
     },
     {
-      "heading": "Abrindo um arquivo",
-      "text": "Use `open()` com modo:<ul><li>'r' para ler</li><li>'w' para escrever (apaga antes)</li><li>'a' para adicionar no final</li></ul>",
-      "code": "arquivo = open('exemplo.txt', 'r')\nconteudo = arquivo.read()\nprint(conteudo)\narquivo.close()"
+      "type": "concept",
+      "heading": "O que é um arquivo de texto?",
+      "text": "É como um caderno que o computador pode abrir, escrever ou ler. Ele tem linhas com textos, números, listas... Você pode guardar quase tudo em um arquivo de texto simples (com final .txt)."
     },
     {
-      "heading": "Escrevendo em um arquivo",
-      "text": "Para criar ou escrever, use 'w' ou 'a', depois `write()` e finalize com `close()` (ou `with`).",
-      "code": "arquivo = open('saida.txt', 'w')\narquivo.write('Olá, arquivo!\\n')\narquivo.close()"
+      "type": "explanation",
+      "heading": "Abrindo um arquivo para escrever",
+      "text": "Usamos o comando <code>open()</code> com dois argumentos: o nome do arquivo e o modo de acesso. Para escrever, usamos <code>'w'</code> (de 'write'). Se o arquivo já existir, ele será apagado e começará do zero. Veja como fazer:",
+      "code": "arquivo = open('dados.txt', 'w')\narquivo.write('Olá! Esse é meu primeiro arquivo.')\narquivo.write('Python é divertido!')\narquivo.close()"
     },
     {
-      "heading": "Usando with (melhor jeito)",
-      "text": "O `with` abre e fecha o arquivo automaticamente:",
-      "code": "with open('idades.txt', 'a') as f:\n    f.write('João: 12 anos\\n')"
+      "type": "question",
+      "heading": "O que acontece se eu esquecer de fechar o arquivo?",
+      "text": "Pode ser que ele não salve tudo corretamente. Por isso, sempre termine com <code>arquivo.close()</code>."
+    },
+    {
+      "type": "explanation",
+      "heading": "Lendo um arquivo inteiro",
+      "text": "Se quiser ler o conteúdo do arquivo, usamos o modo <code>'r'</code> (de 'read'). Veja um exemplo:",
+      "code": "arquivo = open('dados.txt', 'r')\nconteudo = arquivo.read()\nprint(conteudo)\narquivo.close()"
+    },
+    {
+      "type": "step-by-step",
+      "heading": "Passo a passo: escrevendo e lendo",
+      "steps": [
+        "1. Use open('nome.txt', 'w') para escrever.",
+        "2. Use write() para colocar o conteúdo.",
+        "3. Use close() para fechar.",
+        "4. Depois, use open('nome.txt', 'r') para ler.",
+        "5. Use read() ou readlines() para ver o conteúdo."
+      ]
+    },
+    {
+      "type": "question",
+      "heading": "Qual a diferença entre read() e readlines()?",
+      "text": "<code>read()</code> lê tudo de uma vez, como um texto só. <code>readlines()</code> transforma cada linha em um item de uma lista."
+    },
+    {
+      "type": "code",
+      "heading": "Lendo linha por linha com for",
+      "text": "Às vezes é melhor ler linha por linha, especialmente se o arquivo for grande. Veja:",
+      "code": "arquivo = open('dados.txt', 'r')\nfor linha in arquivo:\n    print('Linha:', linha.strip())\narquivo.close()"
+    },
+    {
+      "type": "concept",
+      "heading": "Usando with para não esquecer de fechar",
+      "text": "Existe um jeito mais seguro de abrir arquivos: <code>with</code>. Ele cuida de fechar o arquivo pra você automaticamente. Olha só:",
+      "code": "with open('dados.txt', 'r') as arquivo:\n    conteudo = arquivo.read()\n    print(conteudo)"
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da Aula",
+      "text": "📂 <b>open()</b> abre o arquivo – use 'w' para escrever, 'r' para ler<br>📝 <b>write()</b> escreve no arquivo<br>📖 <b>read()</b> lê tudo; <b>readlines()</b> lê linha por linha<br>🔁 Dá pra usar <b>for linha in arquivo</b> para ler linha por linha<br>✅ <b>with open(...)</b> é mais seguro e fecha sozinho"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. Crie um arquivo `lista.txt`, escreva três nomes de amigos e depois abra e mostre esse conteúdo.",
-      "code_hint": "with open('lista.txt', 'w') as f:\n    f.write('Ana\\nBruno\\nCarla\\n')\nwith open('lista.txt', 'r') as f:\n    print(f.read())"
+      "type": "exercise",
+      "prompt": "1. Escreva seu nome e idade em um arquivo chamado 'meu_dado.txt'.",
+      "code_hint": "arquivo = open('meu_dado.txt', 'w')\narquivo.write('Nome: João\n')\narquivo.write('Idade: 12')\narquivo.close()"
     },
     {
-      "prompt": "2. Crie um arquivo `diario.txt` em modo append e escreva uma frase nova cada vez que rodar.",
-      "code_hint": "with open('diario.txt', 'a') as f:\n    f.write('Hoje eu aprendi Python!\\n')"
+      "type": "exercise",
+      "prompt": "2. Leia o arquivo 'meu_dado.txt' e mostre o conteúdo na tela.",
+      "code_hint": "arquivo = open('meu_dado.txt', 'r')\nprint(arquivo.read())\narquivo.close()"
     },
     {
-      "prompt": "3. Desafio: leia `diario.txt` e conte quantas linhas ele tem.",
-      "code_hint": "with open('diario.txt', 'r') as f:\n    linhas = f.readlines()\n    print('Linhas:', len(linhas))"
+      "type": "exercise",
+      "prompt": "3. Desafio: peça ao usuário um nome e escreva em um arquivo, depois leia e mostre na tela.",
+      "code_hint": "nome = input('Qual seu nome? ')\narquivo = open('nome.txt', 'w')\narquivo.write(nome)\narquivo.close()\n\narquivo = open('nome.txt', 'r')\nprint('Nome salvo foi:', arquivo.read())\narquivo.close()"
     }
   ],
   "project": {
-    "name": "Diário de Programação",
-    "description": "Crie um minidiário que adiciona uma frase por dia e ao final mostra quantas frases existem.",
-    "goal": "Praticar leitura, escrita, acréscimo de texto e contagem de linhas em arquivos."
+    "type": "project",
+    "name": "Meu Diário Secreto",
+    "description": "Crie um programa que peça ao usuário para digitar uma mensagem (como um diário). A mensagem deve ser salva no arquivo 'diario.txt'. Depois, o programa deve mostrar o conteúdo do diário ao usuário.",
+    "goal": "Aplicar leitura, escrita, uso de input(), open(), write(), read() e with."
   },
   "video_suggestion": {
-    "text": "Vídeo em português que mostra leitura, escrita e uso do with em Python:",
+    "type": "video",
+    "text": "Vídeo explicando leitura e escrita de arquivos de forma simples e didática:",
     "url": "https://www.youtube.com/watch?v=tCGqX17P6Zw"
   }
 }

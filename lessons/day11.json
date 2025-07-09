@@ -2,51 +2,86 @@
   "title": "Dia 11 – Listas: guardar vários itens juntos",
   "concepts": [
     {
-      "heading": "O que é uma lista?",
-      "text": "Uma lista é como uma caixa com compartimentos numerados, onde você pode guardar vários valores juntos — como nomes, números ou qualquer coisa."
+      "type": "introduction",
+      "heading": "👋 Oi de novo, programador!",
+      "text": "Hoje vamos aprender uma coisa muito útil: como guardar vários dados de uma vez só em um lugar só! Imagine guardar todos os seus jogos preferidos ou suas comidas favoritas em uma caixinha mágica que você pode abrir e mexer quando quiser. Essa caixinha mágica se chama... lista! Vamos conhecer?"
     },
     {
-      "heading": "Como criar uma lista",
-      "text": "Use colchetes para criar uma lista e coloque valores separados por vírgulas.",
-      "code": "frutas = ['maçã', 'banana', 'laranja']\nprint(frutas)"
+      "type": "explanation",
+      "heading": "📦 O que é uma lista?",
+      "text": "Uma lista é como uma caixa de brinquedos 🧸🪀 onde cada brinquedo tem um lugar. Na programação, usamos listas para guardar vários valores juntos: nomes, números, cores... tudo! Assim fica muito mais fácil organizar e usar as informações."
     },
     {
-      "heading": "Acessando itens por índice",
-      "text": "Cada item tem um número, começando do 0. O primeiro é índice 0, o segundo é 1, e assim por diante.",
-      "code": "print(frutas[0])  # maçã\nprint(frutas[2])  # laranja"
+      "type": "code",
+      "heading": "Criando uma lista simples",
+      "text": "Para criar uma lista, usamos colchetes [ ] e colocamos os itens separados por vírgulas.",
+      "code": "frutas = ['maçã', 'banana', 'laranja']\nprint(frutas)",
+      "note": "Você pode colocar o que quiser dentro de uma lista: palavras, números, ou até outras listas!"
     },
     {
-      "heading": "Adicionando e removendo itens",
-      "text": "Use `append()` para adicionar e `remove()` ou `pop()` para tirar algo da lista.",
-      "code": "frutas.append('uva')\nprint(frutas)\nfrutas.remove('banana')\nprint(frutas)"
+      "type": "explanation",
+      "heading": "🔢 Mas... como saber o que tem dentro da lista?",
+      "text": "Cada item tem um número que chamamos de índice. O primeiro item é o número 0 (isso mesmo, começa do zero!). O segundo é 1, e por aí vai. Então se quisermos saber qual é a primeira fruta, usamos frutas[0]."
     },
     {
-      "heading": "Sabendo quantos itens tem",
-      "text": "Use `len()` para saber o tamanho da lista.",
-      "code": "print(len(frutas))  # quantos itens"
+      "type": "code",
+      "heading": "Acessando os itens da lista",
+      "code": "print(frutas[0])  # mostra 'maçã'\nprint(frutas[2])  # mostra 'laranja'"
+    },
+    {
+      "type": "question",
+      "heading": "🧠 Dúvida comum: por que começa do zero?",
+      "text": "Na maioria das linguagens de programação, a contagem começa no zero. Pode parecer estranho no começo, mas você se acostuma rapidinho!"
+    },
+    {
+      "type": "code",
+      "heading": "Adicionando ou tirando coisas da lista",
+      "text": "Você pode colocar mais coisas na lista com `.append()` e tirar com `.remove()` ou `.pop()`.",
+      "code": "frutas.append('uva')  # adiciona uva\nfrutas.remove('banana')  # tira banana\nprint(frutas)"
+    },
+    {
+      "type": "code",
+      "heading": "Quantos itens tem na lista?",
+      "text": "Use a função `len()` para saber quantos itens tem lá dentro.",
+      "code": "print(len(frutas))"
+    },
+    {
+      "type": "curiosity",
+      "heading": "👀 Curiosidade!",
+      "text": "Sabia que você pode ter uma lista dentro de outra lista? Isso se chama lista aninhada, e a gente vai ver isso mais pra frente. Fica de olho! 😉"
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "🧺 Lista = caixa com vários itens\n🔢 Cada item tem um número (começando do 0)\n➕ Use append() para adicionar\n➖ Use remove() para tirar\n📏 Use len() para contar"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. Crie list `cores` com 3 cores diferentes e mostre o segundo item.",
-      "code_hint": "cores = ['vermelho', 'azul', 'verde']\nprint(cores[1])"
+      "type": "exercise",
+      "prompt": "1. Crie uma lista chamada `cores` com 3 cores e mostre a primeira cor.",
+      "code_hint": "cores = ['azul', 'verde', 'amarelo']\nprint(cores[0])"
     },
     {
-      "prompt": "2. Adicione mais uma cor à lista e depois mostre o total de cores.",
-      "code_hint": "cores.append('amarelo')\nprint(len(cores))"
+      "type": "exercise",
+      "prompt": "2. Adicione a cor 'vermelho' e mostre o total de cores.",
+      "code_hint": "cores.append('vermelho')\nprint(len(cores))"
     },
     {
-      "prompt": "3. Desafio: remova uma cor e mostre a lista atualizada.",
+      "type": "exercise",
+      "prompt": "3. Desafio: remova a cor 'verde' e mostre a lista final.",
       "code_hint": "cores.remove('verde')\nprint(cores)"
     }
   ],
   "project": {
-    "name": "Minha coleção de favoritos",
-    "description": "Crie uma lista com seus 5 jogos, filmes ou comidas favoritas. Mostre o primeiro, o último e o tamanho da lista.",
-    "goal": "Ensinar como criar, acessar, adicionar e remover itens de uma lista, além de usar `len()`."
+    "type": "project",
+    "name": "🎮 Meus Favoritos",
+    "description": "Crie uma lista com 5 coisas que você ama (pode ser jogos, comidas, personagens, o que quiser!). Depois mostre:\n- O primeiro item\n- O último item\n- Quantos itens tem no total",
+    "goal": "Aprender a criar uma lista, acessar itens por índice, adicionar e remover, e usar len()."
   },
   "video_suggestion": {
-    "text": "Vídeo em português que explica listas e seus métodos básicos:",
-    "url": "https://www.youtube.com/watch?v=4hMTl2A6feM"
+    "type": "video",
+    "text": "Este vídeo em português mostra como usar listas no Python com exemplos simples:",
+    "url": "https://youtu.be/TZUYanphUmU?si=MuBDaae5OVZP57tl"
   }
 }

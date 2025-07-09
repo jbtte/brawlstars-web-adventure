@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           }
           section.appendChild(imgPlaceholder);
         }
-        if (concept.type === 'code' && concept.code) {
+        if (concept.code) {
           const pre = document.createElement('pre');
           const code = document.createElement('code');
           code.classList.add('language-python');
