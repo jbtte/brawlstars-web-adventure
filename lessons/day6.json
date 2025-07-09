@@ -7,6 +7,12 @@
       "text": "Se eu pedir para você escrever 'Oi' cinco vezes no Thonny, você vai digitar print('Oi') cinco vezes? 😩 E se fossem 100 vezes? 😱"
     },
     {
+      "type": "image",
+      "heading": "O computador repetindo como um robô",
+      "image_placeholder": "imagem de um robô simpático repetindo movimentos ou tarefas, com setas em volta dele",
+      "image_url": "resources/images/lesson_illustrations/lesson_6_repeat.jpg"
+    },
+    {
       "type": "code",
       "heading": "O que é um laço for?",
       "text": "O laço for é como dizer: 'Repita isso para mim várias vezes'. Você escreve o que quer uma vez só, e o Python faz o trabalho repetitivo. É como um robô que segue ordens passo a passo.",

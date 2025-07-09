@@ -7,6 +7,12 @@
       "text": "Hoje vamos programar um jogo onde o computador escolhe um número secreto e você tenta descobrir qual é. A cada palpite, ele vai te dar uma dica: 'maior' ou 'menor'."
     },
     {
+      "type": "image",
+      "heading": "Jogo de adivinhação em ação!",
+      "image_placeholder": "imagem de um personagem tentando adivinhar um número com uma barra de progresso ou um contador de tentativas",
+      "image_url": "resources/images/lesson_illustrations/lesson_10_guess.jpg"
+    },
+    {
       "type": "code",
       "heading": "Como o computador escolhe um número sozinho?",
       "text": "Usamos o módulo random do Python. Ele serve para gerar números aleatórios — ou seja, que mudam toda vez. É como se o computador jogasse um dado invisível e secreto. Por trás disso existe uma fórmula especial que o Python usa para fingir que está sendo aleatório. Mais pra frente, a gente vai aprender como essa fórmula funciona, mas por enquanto só precisamos saber usar!",

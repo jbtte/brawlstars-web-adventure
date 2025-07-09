@@ -7,6 +7,12 @@
       "text": "Imagine que sua mãe disse: 'pode jogar até escurecer'. Você não sabe quantas vezes vai chutar a bola — depende do sol. O laço `while` é igual: ele repete enquanto uma condição for verdadeira. Quando deixar de ser, ele para sozinho!"
     },
     {
+      "type": "image",
+      "heading": "Repetindo enquanto algo acontece",
+      "image_placeholder": "imagem de um robô andando até uma parede com um balão de pensamento: 'ainda não chegou'",
+      "image_url": "resources/images/lesson_illustrations/lesson_7_while.jpg"
+    },
+    {
       "type": "code",
       "heading": "O que é o laço while?",
       "text": "`while` é uma palavra do Python que diz: 'enquanto isso for verdade, continue'. Usamos quando não sabemos quantas vezes vamos repetir, só sabemos a condição.",

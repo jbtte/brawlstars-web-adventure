@@ -7,6 +7,12 @@
       "text": "Você sabia que o computador precisa entender o tipo de informação que você está enviando para ele? Vamos aprender como o Python faz isso!"
     },
     {
+      "type": "image",
+      "heading": "O computador ouvindo você",
+      "image_placeholder": "imagem de um personagem digitando num computador e o computador 'pensando' com balões de fala mostrando perguntas e respostas",
+      "image_url": "resources/images/lesson_illustrations/lesson_9_input.jpg"
+    },
+    {
       "type": "explanation",
       "heading": "O que são tipos de dados?",
       "text": "Tipo de dado é a forma como o Python classifica as informações. Ele precisa saber se você está mandando um número, um texto ou uma decisão."

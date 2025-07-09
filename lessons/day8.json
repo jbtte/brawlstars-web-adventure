@@ -7,6 +7,12 @@
       "text": "Função é um nome que damos para um bloco de código que pode ser usado várias vezes. É como montar um lanche: você faz os mesmos passos e pode repetir quantas vezes quiser sem escrever tudo de novo."
     },
     {
+      "type": "image",
+      "heading": "Superpoderes com funções",
+      "image_placeholder": "imagem de um personagem com capa e poderes ativados por botões com nomes como 'voar()', 'invisivel()'",
+      "image_url": "resources/images/lesson_illustrations/lesson_8_function.jpg"
+    },
+    {
       "type": "code",
       "heading": "Criando sua primeira função",
       "text": "Use a palavra def, o nome da função, parênteses () e dois pontos. Depois escreva o que ela faz com indentação. No final, chame a função para ela rodar.",
