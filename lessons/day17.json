@@ -1,54 +1,105 @@
 {
-  "title": "Dia 17 – Herança e sobrescrita de métodos",
+  "title": "Dia 17 – Explorando mais as Classes em Python",
   "concepts": [
     {
-      "heading": "O que é herança?",
-      "text": "Herança é quando uma classe filha recebe todas as características da classe pai e ainda pode ter coisas diferentes."
+      "type": "explanation",
+      "heading": "Vamos brincar mais com classes!",
+      "text": "Oi, meu programador mirim! 😄 Ontem você aprendeu a criar classes, dar características (<b>atributos</b>) e fazer ações (<b>métodos</b>). Hoje vamos brincar mais com isso, criando brinquedos diferentes, animais, heróis ou o que a sua imaginação mandar! Vamos juntos? 🚀"
     },
     {
-      "heading": "Classe pai e classe filha",
-      "text": "A classe filha é criada com: class Gato(Animal). Isso significa que Gato herda tudo de Animal e pode adicionar ou modificar coisas."
+      "type": "image",
+      "heading": "Criando vários tipos de brinquedos",
+      "image_placeholder": "imagem de brinquedos diferentes: cachorro, robô, boneca, avião",
+      "image_url": "resources/images/lesson_illustrations/lesson_17_toys.jpg"
     },
     {
-      "heading": "Exemplo de herança",
-      "code": "class Animal:\n    def __init__(self, nome):\n        self.nome = nome\n    def falar(self):\n        print(\"...Som genérico...\")\n\nclass Gato(Animal):\n    pass\n\ng = Gato(\"Miauzinho\")\ng.falar()"
+      "type": "explanation",
+      "heading": "Criando métodos diferentes",
+      "text": "Você sabia que os métodos podem receber <b>informações extras</b>? Por exemplo, um robô pode dizer o que quiser se a gente passar isso como mensagem. Vamos ver como funciona?"
     },
     {
-      "heading": "Sobrescrevendo (override)",
-      "text": "A classe filha pode mudar o comportamento herdado, redefinindo o método.",
-      "code": "class Gato(Animal):\n    def falar(self):\n        print(\"Miau!\")\n\ng = Gato(\"Miauzinho\")\ng.falar()"
+      "type": "code",
+      "heading": "Classe Robô com método falar",
+      "text": "Olha só como criar um robô que fala o que você mandar:",
+      "code": "class Robo:\n    def __init__(self, nome):\n        self.nome = nome\n\n    def falar(self, mensagem):\n        print(f\"{self.nome} diz: {mensagem}\")"
     },
     {
-      "heading": "Chamando método do pai",
-      "text": "Da filha você ainda pode usar o método original com super().",
-      "code": "class Gato(Animal):\n    def falar(self):\n        super().falar()\n        print(\"Miau à moda do gato!\")\n\ng = Gato(\"Miauzinho\")\ng.falar()"
+      "type": "instruction",
+      "heading": "Hora de brincar com o robô",
+      "text": "Vamos criar um robô chamado Zeca e fazer ele dizer 'Olá, humano!':",
+      "code": "zeca = Robo(\"Zeca\")\nzeca.falar(\"Olá, humano!\")"
     },
     {
-      "heading": "Vídeo em português",
-      "text": "Este vídeo explica herança e sobrescrita de métodos em Python de forma visual e didática:"
+      "type": "explanation",
+      "heading": "Mudando atributos depois",
+      "text": "Você pode mudar os <b>atributos</b> do seu brinquedo mesmo depois de criado! Por exemplo, um herói pode ganhar mais força durante o jogo:"
+    },
+    {
+      "type": "code",
+      "heading": "Alterando atributos",
+      "text": "Veja como mudar um atributo depois da criação:",
+      "code": "heroi = Heroi(\"Flash\", 50)\nprint(heroi.forca)\nheroi.forca = 80\nprint(heroi.forca)"
+    },
+    {
+      "type": "code",
+      "heading": "Classe do herói",
+      "text": "Aqui está a classe que usamos acima:",
+      "code": "class Heroi:\n    def __init__(self, nome, forca):\n        self.nome = nome\n        self.forca = forca"
+    },
+    {
+      "type": "question",
+      "heading": "Qual brinquedo você criaria?",
+      "text": "Se você pudesse criar qualquer coisa no Python, o que seria? Um dragão? Um foguete? Uma fada mágica? Que <b>atributos</b> ela teria? E o que ela poderia fazer?"
+    },
+    {
+      "type": "step",
+      "heading": "Passo a passo da aula",
+      "steps": [
+        "1. Abra o Thonny.",
+        "2. Crie uma nova classe como Robo ou Heroi.",
+        "3. Use atributos e métodos com e sem parâmetros.",
+        "4. Crie objetos diferentes e teste seus comportamentos.",
+        "5. Tente mudar os atributos depois e veja o que acontece.",
+        "6. Brinque com sua imaginação! 😊"
+      ]
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "Hoje você explorou ainda mais o mundo das <b>classes</b>! Aprendeu que pode usar <b>métodos</b> com mensagens, alterar os <b>atributos</b> depois de criar um objeto e criar diferentes tipos de brinquedos com Python!"
+    },
+    {
+      "type": "celebration",
+      "heading": "Você está arrasando!",
+      "text": "Uau! 🎉 Você está ficando muito bom nisso! Cada aula você aprende mais e mais. Continue criando e se divertindo com seus códigos. Estou aqui com você em cada passo! 💙"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. Crie uma classe Animal com o método falar() genérico. Depois crie Cachorro que herda de Animal sem mudar nada e teste.",
-      "code_hint": "class Animal:\n    def __init__(self, nome):\n        self.nome = nome\n    def falar(self):\n        print(\"Algum som...\")\n\nclass Cachorro(Animal):\n    pass\n\nc = Cachorro(\"Totó\")\nc.falar()"
+      "type": "exercise",
+      "prompt": "Crie uma classe chamada Cachorro com os atributos 'nome' e 'raça', e um método chamado 'latir' que diga o nome do cachorro e que ele está latindo.",
+      "code_hint": "Dica: use print(f\"{self.nome} está latindo: Au Au!\")"
     },
     {
-      "prompt": "2. Agora sobrescreva falar() na classe Cachorro para imprimir 'Au au!'.",
-      "code_hint": "class Cachorro(Animal):\n    def falar(self):\n        print(\"Au au!\")\n\nc = Cachorro(\"Totó\")\nc.falar()"
+      "type": "exercise",
+      "prompt": "Crie dois robôs com nomes diferentes e faça cada um falar uma coisa diferente usando o método falar.",
+      "code_hint": "Dica: robo1.falar(\"Olá!\") e robo2.falar(\"Boas vindas!\")"
     },
     {
-      "prompt": "3. Desafio: crie classes Gato e Cachorro, sobrescreva falar() em cada uma, e adicione método cumprimentar() que usa falar().",
-      "code_hint": "class Gato(Animal):\n    def falar(self):\n        print(\"Miau!\")\n    def cumprimentar(self):\n        print(\"Olá, eu sou\", self.nome)\n        self.falar()\n\nclass Cachorro(Animal):\n    def falar(self):\n        print(\"Au au!\")\n    def cumprimentar(self):\n        print(\"Olá, eu sou\", self.nome)\n        self.falar()"
+      "type": "exercise",
+      "prompt": "Crie uma classe chamada Personagem com atributos 'nome' e 'vida'. Depois, mude a vida dele no meio do jogo para simular uma batalha.",
+      "code_hint": "Dica: personagem.vida = personagem.vida - 10"
     }
   ],
   "project": {
-    "name": "Animais que falam",
-    "description": "Crie classes Animal, Gato e Cachorro. Cada um deve falar diferente e cumprimentar. Teste instanciando objetos.",
-    "goal": "Praticar herança, sobrescrita de métodos e uso de super()."
+    "type": "project",
+    "name": "Minha fábrica de personagens",
+    "description": "Crie uma classe de personagem com pelo menos 3 atributos (como nome, poder, energia) e 2 métodos (como atacar e descansar). Depois, crie dois personagens e faça eles se comportarem de formas diferentes!",
+    "goal": "Praticar criação de atributos, uso de métodos com parâmetros e mudança de valores de atributos."
   },
   "video_suggestion": {
-    "text": "Vídeo em português explicando herança e override em Python:",
-    "url": "https://www.youtube.com/watch?v=Wo5dMEP_BbI"
+    "type": "video",
+    "text": "Esse vídeo mostra mais exemplos de como usar classes e objetos brincando com animais e super-heróis!",
+    "url": "https://www.youtube.com/embed/ZDa-Z5JzLYM"
   }
 }
