@@ -1,49 +1,88 @@
 {
-  "title": "Dia 20 – Jogo Final: Jogo de Terminal com Melhoria e Organização",
+  "title": "Dia 20 – Finalizando o Jogo e Criando Novos Mundos",
   "concepts": [
     {
-      "heading": "Unindo tudo que você aprendeu",
-      "text": "Agora você vai criar um jogo completo que usa vários conceitos: funções, loops, condições, listas e arquivos, tudo bem organizado."
+      "type": "explanation",
+      "heading": "Parabéns, você chegou até aqui!",
+      "text": "Uau, aventureiro(a) do Python! 😄 Você criou mundos, personagens, inimigos e desafios. Agora é hora de fazer os <b>ajustes finais</b>, testar o que está funcionando, corrigir o que falta e <b>melhorar</b> tudo com sua criatividade! Vamos deixar seu jogo com a sua cara!"
     },
     {
-      "heading": "Estrutura recomendada do código",
-      "text": "Separe o jogo em funções: `jogar()`, `mostrar_resultado()`, `salvar_pontuacao()`. E escreva a parte que roda tudo dentro de:\n<code>if __name__ == \"__main__\":</code>"
+      "type": "image",
+      "heading": "Seu jogo, sua aventura!",
+      "image_placeholder": "imagem com várias telas de um jogo feito por uma criança, com personagens, inimigos e placar",
+      "image_url": "resources/images/lesson_illustrations/lesson_20_victory.jpg"
     },
     {
-      "heading": "Como guardar a pontuação",
-      "text": "Você pode salvar a pontuação em um arquivo, usando `with open(...)` para gravar nome e pontos."
+      "type": "explanation",
+      "heading": "Testar é muito importante",
+      "text": "Antes de mostrar seu jogo para os outros, precisamos <b>testar tudo</b>. O herói se mexe? O inimigo ataca? A pontuação aumenta? Se algo der errado, não tem problema — todo programador faz testes para descobrir e corrigir. É assim que a gente melhora!"
     },
     {
-      "heading": "Adicionando melhorias",
-      "text": "Você pode adicionar mais níveis, dicas, menu inicial, e comando para reiniciar o jogo."
+      "type": "code",
+      "heading": "Dica: imprimir no console para ver o que está acontecendo",
+      "text": "Use o comando print() para mostrar o valor de variáveis e ver se está tudo certo:",
+      "code": "print(heroi.x, heroi.y)\nprint(\"Vidas restantes:\", vidas)\nprint(\"Colisão detectada!\")"
     },
     {
-      "heading": "Vídeo em português",
-      "text": "Este vídeo mostra a criação de um jogo completo no terminal, com organização por funções e estrutura clara:",
-      "url": "https://www.youtube.com/watch?v=hSLM9ed1NNw"
+      "type": "explanation",
+      "heading": "Personalize seu jogo!",
+      "text": "Agora que o jogo está funcionando, é hora de deixar ele com <b>o seu estilo</b>: escolha um nome legal, adicione uma tela de abertura, crie uma mensagem de vitória ou derrota. É você quem manda!"
+    },
+    {
+      "type": "code",
+      "heading": "Exemplo de tela de vitória",
+      "text": "Você pode mostrar uma mensagem especial quando o herói pegar todos os itens ou vencer o inimigo:",
+      "code": "def draw():\n    screen.clear()\n    if pontos >= 50:\n        screen.draw.text(\"Você venceu a aventura!\", center=(300, 200), fontsize=50, color=\"gold\")\n    else:\n        heroi.draw()\n        inimigo.draw()\n        screen.draw.text(f\"Pontos: {pontos}\", (10, 10), fontsize=30, color=\"white\")"
+    },
+    {
+      "type": "question",
+      "heading": "Como você pode melhorar ainda mais seu jogo?",
+      "text": "Será que você pode criar um menu? Fazer o inimigo se mover sozinho? Adicionar música ou efeitos sonoros? Que final surpresa você pode inventar?"
+    },
+    {
+      "type": "step",
+      "heading": "Passo a passo da aula",
+      "steps": [
+        "1. Teste tudo no seu jogo: personagem, inimigos, itens, pontuação, colisões.",
+        "2. Corrija erros usando print() para ver os valores.",
+        "3. Adicione mensagens de vitória ou derrota.",
+        "4. Crie uma tela de título ou de fim.",
+        "5. Dê um nome para o seu jogo e salve tudo direitinho.",
+        "6. Mostre seu jogo para alguém da sua família ou amigo!"
+      ]
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "Hoje você finalizou seu jogo com carinho e criatividade. Aprendeu a testar, corrigir erros e deixar tudo com sua cara. Agora seu jogo está pronto para ser jogado e compartilhado!"
+    },
+    {
+      "type": "celebration",
+      "heading": "Você criou seu próprio jogo!",
+      "text": "🎉 Uaaau! Parabéns por terminar essa aventura! Você usou lógica, criatividade e muita dedicação. Nunca se esqueça: o mundo da programação é seu para explorar! Continue criando, aprendendo e sonhando. Estou muito orgulhoso de você! 💙"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. Escreva uma função `jogar()` que contém todo o jogo (forca ou outro).",
-      "code_hint": "def jogar():\n    # conteudo do jogo aqui\n\nif __name__ == \"__main__\":\n    jogar()"
+      "type": "exercise",
+      "prompt": "Crie uma tela de título para o seu jogo usando screen.draw.text().",
+      "code_hint": "Dica: use draw() para mostrar uma mensagem grande, como 'Bem-vindo ao jogo do João!'"
     },
     {
-      "prompt": "2. Adicione um menu inicial que pergunta se o jogador quer iniciar ou sair.",
-      "code_hint": "op = input(\"Quer jogar? (s/n): \")\nif op.lower() == 's':\n    jogar()\nelse:\n    print(\"Até logo!\")"
+      "type": "exercise",
+      "prompt": "Adicione um final secreto se o jogador fizer uma pontuação muito alta.",
+      "code_hint": "Dica: use if pontos >= 100: mostrar uma nova mensagem especial"
     },
     {
-      "prompt": "3. Salve o nome do jogador e a pontuação em `pontuacoes.txt` cada vez que vencer.",
-      "code_hint": "with open('pontuacoes.txt', 'a') as f:\n    f.write(f\"{nome}:{pontos}\\n\")"
+      "type": "exercise",
+      "prompt": "Dê um nome criativo para seu jogo e escreva esse nome em destaque na tela inicial.",
+      "code_hint": "Dica: você pode usar screen.draw.text('Aventura de Fogo', center=(300, 100))"
     }
   ],
   "project": {
-    "name": "Mega Jogo Final",
-    "description": "Crie um jogo completo no terminal, organizado em funções, com menu inicial, pontuação salva em arquivo e opção de reiniciar.",
-    "goal": "Aplicar funções, laços, condições, arquivos e organização em um projeto real e completo."
-  },
-  "video_suggestion": {
-    "text": "Vídeo em português mostrando a construção de um jogo completo no terminal com estrutura por funções:",
-    "url": "https://www.youtube.com/watch?v=hSLM9ed1NNw"
+    "type": "project",
+    "name": "Meu jogo final em Python!",
+    "description": "Finalize o seu jogo com tudo que aprendeu. Teste, corrija e adicione detalhes criativos como finais, telas especiais e nome do jogo.",
+    "goal": "Apresentar um jogo completo com visual, interações, pontuação e uma finalização personalizada. Pode ser o início de uma nova versão no futuro!"
   }
 }
