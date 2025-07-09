@@ -7,6 +7,12 @@
       "text": "Hoje vamos brincar de inventar histórias engraçadas usando palavras que você escolher. É como preencher os espaços em branco de uma história maluca! Esse tipo de jogo se chama Mad Libs."
     },
     {
+      "type": "image",
+      "heading": "Frases malucas com espaços em branco",
+      "image_placeholder": "imagem de um formulário digital divertido onde o jogador preenche palavras como 'um lugar', 'um animal', 'uma comida', e vê a frase engraçada aparecer",
+      "image_url": "resources/images/lesson_illustrations/lesson_05_madlibs.jpg"
+    },
+    {
       "type": "explanation",
       "heading": "Como funciona esse jogo?",
       "text": "Você vai pedir algumas palavras ao usuário, como nome, animal, comida, lugar... Depois, o programa vai usar essas palavras para montar uma história. Cada vez que rodar o jogo, a história muda dependendo das respostas!"

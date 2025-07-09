@@ -7,6 +7,13 @@
       "type": "explanation"
     },
     {
+      "type": "image",
+      "heading": "O computador escutando e respondendo",
+      "image_placeholder": "imagem de um terminal moderno recebendo uma pergunta e respondendo de forma engraçada",
+      "image_url": "resources/images/lesson_illustrations/lesson_02_input.jpg"
+    },
+
+    {
       "heading": "🧠 Como funciona o input()?",
       "text": "input() é uma função do Python que serve para fazer uma pergunta ao usuário. Dentro dos parênteses, colocamos uma frase entre aspas — essa é a pergunta que o computador vai mostrar na tela. Quando o usuário digita a resposta e aperta Enter, o valor digitado é guardado dentro de uma variável, para que a gente possa usar depois. Mesmo que o usuário digite um número, o que chega é sempre um texto (tipo str).",
       "type": "explanation"

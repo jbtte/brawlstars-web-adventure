@@ -7,6 +7,12 @@
       "text": "Hoje a gente vai aprender a tomar decisões com o nosso código! Em vez de sempre fazer a mesma coisa, podemos dizer: 'se acontecer isso, faça aquilo'. O Python faz isso com o if, elif e else."
     },
     {
+      "type": "image",
+      "heading": "Escolhas no código: se... senão...",
+      "image_placeholder": "imagem de um personagem entre duas portas com 'if' e 'else'",
+      "image_url": "resources/images/lesson_illustrations/lesson_04_ifelse.jpg"
+    },
+    {
       "type": "comment",
       "heading": "💡 Exemplo do mundo real",
       "text": "Pense assim: 'Se estiver chovendo, levo guarda-chuva. Senão, vou sem.' Isso é uma condicional."

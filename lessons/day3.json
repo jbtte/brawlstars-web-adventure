@@ -7,6 +7,12 @@
       "text": "Vamos conversar: sabe quando você escreve uma frase entre aspas, como \"Olá, mundo!\"? Isso é uma **string**. No Python, strings são usadas para guardar texto — pode ser uma palavra, um número escrito como texto, ou até emojis!"
     },
     {
+      "type": "image",
+      "heading": "Laboratório de palavras digitais",
+      "image_placeholder": "imagem de um painel com palavras sendo cortadas, coladas, embaralhadas e transformadas digitalmente",
+      "image_url": "resources/images/lesson_illustrations/lesson_03_strings.jpg"
+    },
+    {
       "type": "example",
       "heading": "Exemplos de strings",
       "text": "Veja exemplos de strings:",

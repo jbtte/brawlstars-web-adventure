@@ -7,6 +7,13 @@
       "text": "Hoje começa sua jornada como programador! Você vai aprender a conversar com o computador e ensinar ele a fazer coisas incríveis: responder, contar piadas, fazer jogos e muito mais."
     },
     {
+      "type": "image",
+      "heading": "Seu primeiro código: Olá, mundo!",
+      "image_placeholder": "imagem de um terminal com código 'print(\"Olá, mundo!\")' em destaque",
+      "image_url": "resources/images/lesson_illustrations/lesson_01_hello.jpg"
+    },
+
+    {
       "type": "explanation",
       "heading": "O que é programar?",
       "text": "Programar é escrever instruções que o computador entende. É como ensinar um robô a obedecer você. Vamos ver um exemplo?"
