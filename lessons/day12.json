@@ -7,6 +7,12 @@
       "text": "Hoje você vai aprender como guardar várias informações juntas, usando palavras como se fossem etiquetas. Dicionários em Python são muito poderosos — e fáceis de usar quando você entende o jeito certo!"
     },
     {
+      "type": "image",
+      "heading": "Procurando pelo nome!",
+      "image_placeholder": "imagem de um álbum de figurinhas mágico onde cada figurinha tem uma etiqueta com nome e descrição",
+      "image_url": "resources/images/lesson_illustrations/lesson_12_dict.jpg"
+    },
+    {
       "type": "explanation",
       "heading": "O que é um dicionário?",
       "text": "Um dicionário em Python é como uma caixa com etiquetas. Em vez de usar números (como nas listas), você pode dar nomes às informações, como 'nome', 'idade' ou 'cidade'."

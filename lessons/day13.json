@@ -7,6 +7,12 @@
       "text": "Imagine que você tem um caderno só para suas melhores ideias: receitas, piadas, truques mágicos… Agora imagine que você pode abrir esse caderno em qualquer lugar, e copiar as ideias sempre que quiser. É isso que um módulo faz no Python: guarda pedaços de código que você pode reutilizar quando quiser!"
     },
     {
+      "type": "image",
+      "heading": "Caixa mágica de ferramentas de programação",
+      "image_placeholder": "imagem de uma caixa de ferramentas encantada com ícones de funções mágicas saindo dela (como dados, tempo, cores, jogos)",
+      "image_url": "resources/images/lesson_illustrations/lesson_13_modules.jpg"
+    },
+    {
       "type": "concept",
       "heading": "O que é um módulo?",
       "text": "Um módulo é um arquivo com funções ou comandos prontos. O Python já vem com vários módulos úteis, e você também pode criar os seus! Para usar, é só importar com <code>import nome_do_modulo</code>."

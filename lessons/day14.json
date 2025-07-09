@@ -7,6 +7,12 @@
       "text": "Parabéns por chegar até aqui! Agora vamos aprender uma mágica: fazer seu programa conversar com arquivos de texto. Imagina guardar pontuações de um jogo ou ler uma história salva em um arquivo? É isso que vamos aprender hoje! 🎉"
     },
     {
+      "type": "image",
+      "heading": "Diário do programador aventureiro",
+      "image_placeholder": "imagem de um diário mágico com páginas sendo escritas automaticamente por uma pena flutuante",
+      "image_url": "resources/images/lesson_illustrations/lesson_14_journal.jpg"
+    },
+    {
       "type": "concept",
       "heading": "O que é um arquivo de texto?",
       "text": "É como um caderno que o computador pode abrir, escrever ou ler. Ele tem linhas com textos, números, listas... Você pode guardar quase tudo em um arquivo de texto simples (com final .txt)."

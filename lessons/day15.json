@@ -7,6 +7,12 @@
       "text": "Imagine que alguém te peça para dividir um número por zero ou te entregue a palavra 'banana' quando você queria um número. 🤯 É assim que os programas se sentem quando não tratamos os erros! Nesta aula, vamos aprender a proteger nosso código usando o `try` e o `except`, criando programas mais seguros e inteligentes."
     },
     {
+      "type": "image",
+      "heading": "Calculadora mágica para heróis",
+      "image_placeholder": "imagem de uma calculadora com botões divertidos como 'ataque', 'defesa', 'magia', usada por um herói com capa",
+      "image_url": "resources/images/lesson_illustrations/lesson_15_calculator.jpg"
+    },
+    {
       "type": "concept",
       "heading": "Por que tratar erros?",
       "text": "Às vezes, o usuário digita algo errado ou o programa tenta fazer algo impossível, como dividir por zero. Se não tratarmos isso, o programa fecha com uma mensagem assustadora. 😨 Com `try/except`, conseguimos lidar com essas situações de forma educada e continuar funcionando.",

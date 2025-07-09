@@ -7,6 +7,12 @@
       "text": "Hoje vamos aprender uma coisa muito útil: como guardar vários dados de uma vez só em um lugar só! Imagine guardar todos os seus jogos preferidos ou suas comidas favoritas em uma caixinha mágica que você pode abrir e mexer quando quiser. Essa caixinha mágica se chama... lista! Vamos conhecer?"
     },
     {
+      "type": "image",
+      "heading": "Organizando tudo em uma lista",
+      "image_placeholder": "imagem de uma mochila mágica aberta com vários objetos saindo dela, todos numerados",
+      "image_url": "resources/images/lesson_illustrations/lesson_11_list.jpg"
+    },
+    {
       "type": "explanation",
       "heading": "📦 O que é uma lista?",
       "text": "Uma lista é como uma caixa de brinquedos 🧸🪀 onde cada brinquedo tem um lugar. Na programação, usamos listas para guardar vários valores juntos: nomes, números, cores... tudo! Assim fica muito mais fácil organizar e usar as informações."
