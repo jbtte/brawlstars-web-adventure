@@ -14,25 +14,47 @@
     },
     {
       "type": "explanation",
-      "heading": "Classe e Objeto",
-      "text": "Pensa assim: a 'classe' \u00e9 como uma receita de bolo ou uma caixa de Lego com instru\u00e7\u00f5es. J\u00e1 o 'objeto' \u00e9 o bolo pronto ou o carrinho que voc\u00ea montou. Com uma classe, voc\u00ea pode fazer v\u00e1rios objetos parecidos, cada um com detalhes diferentes. Legal, n\u00e9?"
+      "heading": "Classe e Objeto – Carrinho de Lego Digital!",
+      "text": "Pensa assim: a **classe** é como um manual de instruções de Lego para montar um carrinho. Ele te ensina como o carrinho pode ser: com 3 rodas, cor azul, tamanho pequeno... Mas só com o manual, você ainda não tem um carrinho real, né?\n\nQuando você segue esse manual e monta o carrinho, aí sim! Você tem um **objeto** – um carrinho único feito com suas próprias peças. E cada carrinho pode ser diferente, mesmo usando o mesmo manual. Legal, né?"
     },
     {
       "type": "code",
-      "heading": "Exemplo de classe em Python",
-      "text": "Vamos montar nosso primeiro carrinho com Python! Copie com carinho no Thonny:",
-      "code": "class Carrinho:\n    def __init__(self, cor, velocidade):\n        self.cor = cor\n        self.velocidade = velocidade\n\n    def buzinar(self):\n        print(f\"O carrinho {self.cor} diz: Pii Pii!\")"
+      "heading": "Criando uma classe vazia (só o chassi do carrinho)",
+      "text": "Vamos começar só com a estrutura do carrinho, sem nada dentro. Copie isso no Thonny:",
+      "code": "class Carrinho:\n    def __init__(self):\n        pass"
+    },
+    {
+      "type": "explanation",
+      "heading": "Adicionando características ao carrinho (atributos)",
+      "text": "Todo carrinho tem características como cor, tamanho e número de rodas. Essas características são chamadas de **atributos**. No Python, a gente coloca isso dentro do `__init__`, usando `self` para guardar essas informações em cada carrinho."
+    },
+    {
+      "type": "code",
+      "heading": "Classe com atributos",
+      "text": "Veja como fazer um carrinho com cor, tamanho e número de rodas:",
+      "code": "class Carrinho:\n    def __init__(self, cor, tamanho, rodas):\n        self.cor = cor\n        self.tamanho = tamanho\n        self.rodas = rodas"
+    },
+    {
+      "type": "explanation",
+      "heading": "Agora vamos fazer o carrinho fazer algo! (métodos)",
+      "text": "Além de ter cor e tamanho, nosso carrinho pode **fazer coisas**. Essas ações são chamadas de **métodos**. A gente cria métodos como funções normais dentro da classe. Por exemplo, um carrinho pode buzinar!"
+    },
+    {
+      "type": "code",
+      "heading": "Adicionando um método: buzinar",
+      "text": "Veja como criar um carrinho que pode buzinar:",
+      "code": "class Carrinho:\n    def __init__(self, cor, tamanho, rodas):\n        self.cor = cor\n        self.tamanho = tamanho\n        self.rodas = rodas\n\n    def buzinar(self):\n        print(f\"O carrinho {self.cor} está buzinando: Pii Pii!\")"
     },
     {
       "type": "instruction",
-      "heading": "Criando um carrinho",
-      "text": "Agora vamos montar um carrinho azul que pode buzinar. Vamos juntos?",
-      "code": "meu_carrinho = Carrinho(\"azul\", 10)\nmeu_carrinho.buzinar()"
+      "heading": "Criando e usando um carrinho",
+      "text": "Agora vamos montar um carrinho vermelho, pequeno, com 3 rodas e fazer ele buzinar. Vamos juntos?",
+      "code": "meu_carrinho = Carrinho(\"vermelho\", \"pequeno\", 3)\nmeu_carrinho.buzinar()"
     },
     {
       "type": "common_mistake",
       "heading": "Erro comum",
-      "text": "Às vezes esquecemos de colocar os valores na hora de criar o carrinho (cor e velocidade). Sem isso, o Python fica confuso e dá erro. Sempre pense: se estou montando um brinquedo, preciso dizer como ele \u00e9!"
+      "text": "Às vezes esquecemos de passar as informações certas na hora de montar o carrinho (como a cor e o tamanho). Isso faz o Python ficar confuso e dar erro. Sempre que você for criar um objeto, pense: 'Estou dizendo tudo que o carrinho precisa saber?'"
     },
     {
       "type": "curiosity",
@@ -51,7 +73,7 @@
         "1. Abra o Thonny.",
         "2. Crie um novo arquivo chamado carrinho.py.",
         "3. Escreva a classe Carrinho com __init__ e o método buzinar().",
-        "4. Crie um objeto usando Carrinho(\"azul\", 10).",
+        "4. Crie um objeto usando Carrinho(\"vermelho\", \"pequeno\", 3).",
         "5. Faça o carrinho buzinar com meu_carrinho.buzinar().",
         "6. Clique em Executar e veja a mágica acontecer!"
       ]
@@ -59,7 +81,7 @@
     {
       "type": "summary",
       "heading": "Resumo da aula",
-      "text": "Hoje você aprendeu que uma **classe** é o molde (como uma receita) e o **objeto** é o brinquedo feito com esse molde. Também viu como dar vida a esse brinquedo com ações!"
+      "text": "Hoje você aprendeu que uma **classe** é o molde (como uma receita ou manual de Lego) e o **objeto** é o brinquedo montado com esse molde. Aprendeu também a dar características ao seu brinquedo (atributos) e fazer ele agir (métodos)."
     },
     {
       "type": "celebration",
@@ -77,6 +99,11 @@
       "type": "exercise",
       "prompt": "Crie duas bolas com cores diferentes e faça cada uma quicar.",
       "code_hint": "Dica: crie algo como bola1 = Bola(\"vermelha\", \"grande\") e bola2 = Bola(\"azul\", \"pequena\")"
+    },
+    {
+      "type": "exercise",
+      "prompt": "Crie uma classe chamada Aluno com os atributos 'nome', 'idade' e 'apelido'. Depois, crie um aluno chamado João, com 9 anos e apelido 'Juju'.",
+      "code_hint": "Dica: use o __init__ com self.nome, self.idade e self.apelido. Depois, use aluno = Aluno(\"João\", 9, \"Juju\")"
     }
   ],
   "project": {
