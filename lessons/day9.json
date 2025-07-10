@@ -52,7 +52,7 @@
     {
       "type": "explanation",
       "heading": "input() sempre devolve texto (str)",
-      "text": "Você lembra da lição 2? Lá a gente aprendeu que o <code>input()</code> é usado para fazer uma pergunta ao usuário. O computador mostra essa pergunta na tela e espera uma resposta. Só que tem um detalhe importante: **tudo que vem do <code>input()</code> é guardado como texto (str)** — mesmo que a pessoa digite um número!"
+      "text": "Você lembra da lição 2? Lá a gente aprendeu que o <code>input()</code> é usado para fazer uma pergunta ao usuário. O computador mostra essa pergunta na tela e espera uma resposta. Só que tem um detalhe importante: <b>tudo que vem do <code>input()</code> é guardado como texto (str)</b> — mesmo que a pessoa digite um número!"
     },
     {
       "type": "code",
@@ -63,7 +63,7 @@
     {
       "type": "question",
       "heading": "🧐 Por que isso importa?",
-      "text": "**Você sabia que se digitar 10, o computador vai entender como \"10\" e não como número?** Isso significa que não dá pra fazer contas com esse valor... ainda!"
+      "text": "<b>Você sabia que se digitar 10, o computador vai entender como \"10\" e não como número?</b> Isso significa que não dá pra fazer contas com esse valor... ainda!"
     },
     {
       "type": "code",
