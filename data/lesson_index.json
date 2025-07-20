@@ -1,0 +1,122 @@
+[
+  {
+    "id": "day1",
+    "name": "Arena 1",
+    "title": "O Que é HTML? Olá Mundo na Web!",
+    "topic": "HTML"
+  },
+  {
+    "id": "day2",
+    "name": "Arena 2",
+    "title": "Textos e Parágrafos",
+    "topic": "HTML"
+  },
+  {
+    "id": "day3",
+    "name": "Arena 3",
+    "title": "Listas e Links",
+    "topic": "HTML"
+  },
+  {
+    "id": "day4",
+    "name": "Arena 4",
+    "title": "Imagens e Multimídia",
+    "topic": "HTML"
+  },
+  {
+    "id": "day5",
+    "name": "Arena 5",
+    "title": "Projeto Parcial 1 - Minha Página Pessoal Simples (com Git!)",
+    "topic": "HTML & Git"
+  },
+  {
+    "id": "day6",
+    "name": "Arena 6",
+    "title": "O Que é CSS? Cores e Estilos Básicos",
+    "topic": "CSS"
+  },
+  {
+    "id": "day7",
+    "name": "Arena 7",
+    "title": "Seletores e Classes",
+    "topic": "CSS"
+  },
+  {
+    "id": "day8",
+    "name": "Arena 8",
+    "title": "O Modelo de Caixa (Box Model)",
+    "topic": "CSS"
+  },
+  {
+    "id": "day9",
+    "name": "Arena 9",
+    "title": "Posicionamento Básico",
+    "topic": "CSS"
+  },
+  {
+    "id": "day10",
+    "name": "Arena 10",
+    "title": "Projeto Parcial 2 - Estilizando Minha Página Pessoal (com Git e GitHub!)",
+    "topic": "CSS, Git & GitHub"
+  },
+  {
+    "id": "day11",
+    "name": "Arena 11",
+    "title": "O Que é JavaScript? Console e Variáveis",
+    "topic": "JavaScript"
+  },
+  {
+    "id": "day12",
+    "name": "Arena 12",
+    "title": "Funções e Eventos Básicos",
+    "topic": "JavaScript"
+  },
+  {
+    "id": "day13",
+    "name": "Arena 13",
+    "title": "Manipulando o DOM - Mudando o Conteúdo",
+    "topic": "JavaScript & DOM"
+  },
+  {
+    "id": "day14",
+    "name": "Arena 14",
+    "title": "Manipulando o DOM - Estilos Dinâmicos",
+    "topic": "JavaScript & DOM"
+  },
+  {
+    "id": "day15",
+    "name": "Arena 15",
+    "title": "Projeto Parcial 3 - Galeria de Imagens Interativa (com Git e GitHub!)",
+    "topic": "JavaScript, Git & GitHub"
+  },
+  {
+    "id": "day16",
+    "name": "Arena 16",
+    "title": "Formulários Básicos e Entradas do Usuário",
+    "topic": "HTML & JavaScript"
+  },
+  {
+    "id": "day17",
+    "name": "Arena 17",
+    "title": "Condicionais (if/else) e Lógica Simples",
+    "topic": "JavaScript"
+  },
+  {
+    "id": "day18",
+    "name": "Arena 18",
+    "title": "Laços de Repetição (Loops - for/while)",
+    "topic": "JavaScript"
+  },
+  {
+    "id": "day19",
+    "name": "Arena 19",
+    "title": "Melhorando Interações e Pequenas Animações CSS",
+    "topic": "JavaScript & CSS"
+  },
+  {
+    "id": "day20",
+    "name": "Arena 20",
+    "title": "Projeto Final - Mini Game ou Ferramenta Interativa (e GitHub Pages!)",
+    "topic": "HTML, CSS, JS & GitHub Pages"
+  }
+]

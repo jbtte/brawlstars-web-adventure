@@ -1,0 +1,122 @@
+{
+  "title": "Dia 3 – Strings e Manipulação de Texto",
+  "concepts": [
+    {
+      "type": "concept",
+      "heading": "O que é uma string?",
+      "text": "Vamos conversar: sabe quando você escreve uma frase entre aspas, como \"Olá, mundo!\"? Isso é uma **string**. No Python, strings são usadas para guardar texto — pode ser uma palavra, um número escrito como texto, ou até emojis!"
+    },
+    {
+      "type": "image",
+      "heading": "Laboratório de palavras digitais",
+      "image_placeholder": "imagem de um painel com palavras sendo cortadas, coladas, embaralhadas e transformadas digitalmente",
+      "image_url": "resources/images/lesson_illustrations/lesson_03_strings.jpg"
+    },
+    {
+      "type": "example",
+      "heading": "Exemplos de strings",
+      "text": "Veja exemplos de strings:",
+      "code": "nome = \"Maria\"\nfrase = 'Python é divertido!'\nprint(nome)\nprint(frase)"
+    },
+    {
+      "type": "question",
+      "heading": "❓ DÚVIDA COMUM: Aspas simples ('') ou duplas (\"\")",
+      "text": "**Precisa usar aspas simples ou duplas?** Tanto faz! O Python aceita as duas, contanto que você use o mesmo tipo no começo e no fim."
+    },
+    {
+      "type": "concept",
+      "heading": "Concatenação: juntando textos",
+      "text": "Se você quiser juntar duas strings, pode usar o símbolo `+`. Isso se chama **concatenação**. Mas atenção: só funciona entre strings!"
+    },
+    {
+      "type": "example",
+      "heading": "Juntando nome e sobrenome",
+      "text": "Veja como unir nome e sobrenome:",
+      "code": "nome = \"Lucas\"\nsobrenome = \"Silva\"\nnome_completo = nome + \" \" + sobrenome\nprint(nome_completo)"
+    },
+    {
+      "type": "question",
+      "heading": "Texto + número?",
+      "text": "**Posso somar texto com número?** Não diretamente! Antes, você precisa transformar o número em texto com `str()`."
+    },
+    {
+      "type": "concept",
+      "heading": "f-strings: texto com variáveis",
+      "text": "f-strings são uma forma prática de montar frases com variáveis dentro. Basta colocar um `f` antes das aspas e usar `{}` para colocar a variável."
+    },
+    {
+      "type": "example",
+      "heading": "Exemplo de f-string",
+      "text": "Olha só como é simples:",
+      "code": "nome = \"Joana\"\nidade = 13\nprint(f\"Meu nome é {nome} e tenho {idade} anos.\")"
+    },
+    {
+      "type": "concept",
+      "heading": "Indexação: acessando letras",
+      "text": "Cada letra de uma string tem uma **posição**. A primeira é 0, a segunda é 1, e assim por diante. Isso se chama **índice**."
+    },
+    {
+      "type": "example",
+      "heading": "Exemplo de indexação",
+      "text": "Vamos acessar letras da palavra 'Python':",
+      "code": "palavra = \"Python\"\nprint(palavra[0])  # P\nprint(palavra[2])  # t"
+    },
+    {
+      "type": "question",
+      "heading": "Como pegar a última letra?",
+      "text": "**E se eu quiser a última letra?** Use índice negativo: `palavra[-1]`"
+    },
+    {
+      "type": "concept",
+      "heading": "Métodos úteis para strings",
+      "text": "Strings têm **métodos**, que são como superpoderes para mexer com texto. Você escreve o nome do método depois da string, com parênteses. Alguns úteis:"
+    },
+    {
+      "type": "example",
+      "heading": "Exemplo de métodos de string",
+      "text": "Exemplos com `.lower()`, `.strip()`, `.replace()` e `len()`:",
+      "code": "mensagem = \"  Olá, Mundo!  \"\nprint(len(mensagem))\nprint(mensagem.lower())\nprint(mensagem.strip())\nprint(mensagem.replace(\"Mundo\", \"Python\"))"
+    },
+    {
+      "type": "tip",
+      "heading": "Dica útil",
+      "text": "**Dica**: use `.strip()` sempre que quiser remover espaços extras do começo e do fim de um texto digitado pelo usuário."
+    }
+  ],
+  "exercises": [
+    {
+      "type": "exercise",
+      "prompt": "1. Crie uma string com uma frase e mostre ela usando `print()`.",
+      "code_hint": "frase = \"Programar é divertido!\"\nprint(frase)"
+    },
+    {
+      "type": "exercise",
+      "prompt": "2. Una seu nome e sobrenome e mostre o nome completo.",
+      "code_hint": "nome = \"Ana\"\nsobrenome = \"Souza\"\nprint(nome + \" \" + sobrenome)"
+    },
+    {
+      "type": "exercise",
+      "prompt": "3. Use f-string para mostrar: \"Olá, meu nome é Ana e tenho 13 anos.\"",
+      "code_hint": "nome = \"Ana\"\nidade = 13\nprint(f\"Olá, meu nome é {nome} e tenho {idade} anos.\")"
+    },
+    {
+      "type": "exercise",
+      "prompt": "4. Mostre a 1ª, 3ª e última letra de \"computador\".",
+      "code_hint": "palavra = \"computador\"\nprint(palavra[0])\nprint(palavra[2])\nprint(palavra[-1])"
+    },
+    {
+      "type": "exercise",
+      "prompt": "5. Transforme a frase \" Python é Incrível!   \" em minúsculas, remova espaços e troque \"Incrível\" por \"divertido\".",
+      "code_hint": "texto = \" Python é Incrível!   \"\ntexto = texto.strip().lower().replace(\"incrível\", \"divertido\")\nprint(texto)"
+    },
+    {
+      "type": "challenge",
+      "prompt": "*Desafio:* Pergunte nome e idade ao usuário e mostre: \"Olá, João! Você tem 12 anos.\"",
+      "code_hint": "nome = input(\"Qual seu nome? \")\nidade = input(\"Quantos anos você tem? \")\nprint(f\"Olá, {nome}! Você tem {idade} anos.\")"
+    }
+  ],
+  "video_suggestion": {
+    "text": "Para mais explicações, veja este tutorial em português sobre Strings em Python:",
+    "url": "https://www.youtube.com/watch?v=puA9pf9rhrI"
+  }
+}

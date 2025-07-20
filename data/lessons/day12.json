@@ -1,0 +1,104 @@
+{
+  "title": "Dia 12 – Dicionários: guardando informações com palavras",
+  "concepts": [
+    {
+      "type": "explanation",
+      "heading": "Bem-vindo à aula dos dicionários!",
+      "text": "Hoje você vai aprender como guardar várias informações juntas, usando palavras como se fossem etiquetas. Dicionários em Python são muito poderosos — e fáceis de usar quando você entende o jeito certo!"
+    },
+    {
+      "type": "image",
+      "heading": "Procurando pelo nome!",
+      "image_placeholder": "imagem de um álbum de figurinhas mágico onde cada figurinha tem uma etiqueta com nome e descrição",
+      "image_url": "resources/images/lesson_illustrations/lesson_12_dict.jpg"
+    },
+    {
+      "type": "explanation",
+      "heading": "O que é um dicionário?",
+      "text": "Um dicionário em Python é como uma caixa com etiquetas. Em vez de usar números (como nas listas), você pode dar nomes às informações, como 'nome', 'idade' ou 'cidade'."
+    },
+    {
+      "type": "step",
+      "heading": "Como criar um dicionário – Passo a passo",
+      "steps": [
+        "1. Use chaves <code>{}</code> para criar o dicionário.",
+        "2. Dentro das chaves, escreva o nome da <b>chave</b> (entre aspas), depois dois pontos <code>:</code>, depois o <b>valor</b>.",
+        "3. Separe cada par chave:valor com vírgula.",
+        "4. Exemplo:"
+      ],
+      "code": "pessoa = {'nome': 'Ana', 'idade': 12, 'cidade': 'Rio'}"
+    },
+    {
+      "type": "code",
+      "heading": "Acessando valores pelas chaves",
+      "text": "Para pegar uma informação de um dicionário, você precisa saber a <b>chave</b>. Use colchetes com a chave entre aspas:",
+      "code": "print(pessoa['nome'])   # mostra 'Ana'\nprint(pessoa['idade'])  # mostra 12"
+    },
+    {
+      "type": "instruction",
+      "heading": "Dica de professor 🧠",
+      "text": "Se você tentar acessar uma chave que não existe, o Python vai dar erro! Sempre tenha certeza de que a chave está no dicionário antes."
+    },
+    {
+      "type": "code",
+      "heading": "Adicionando ou mudando informações",
+      "text": "Para adicionar uma nova informação, é só dar uma nova chave. Se essa chave já existir, o valor antigo será substituído!",
+      "code": "pessoa['altura'] = 1.50  # adiciona altura\npessoa['idade'] = 13      # muda a idade"
+    },
+    {
+      "type": "code",
+      "heading": "Removendo informações",
+      "text": "Use <code>del</code> para remover uma informação do dicionário.",
+      "code": "del pessoa['cidade']"
+    },
+    {
+      "type": "step",
+      "heading": "Vendo o que tem no dicionário – passo a passo",
+      "steps": [
+        "<b>.keys()</b>: mostra só as chaves (os nomes).",
+        "<b>.values()</b>: mostra só os valores (as informações).",
+        "<b>.items()</b>: mostra tudo (chaves e valores juntos)."
+      ],
+      "code": "print(pessoa.keys())   # mostra as chaves\nprint(pessoa.values()) # mostra os valores\nprint(pessoa.items())  # mostra pares chave-valor"
+    },
+    {
+      "type": "code",
+      "heading": "Usando um loop com dicionário",
+      "text": "Você pode usar um <code>for</code> para passar por todas as informações do dicionário usando <code>.items()</code>:",
+      "code": "for chave, valor in pessoa.items():\n    print(chave, '→', valor)"
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "📚 Um dicionário guarda <b>informações com nome</b>, como etiquetas.\n🔑 As <b>chaves</b> (entre aspas) apontam para <b>valores</b>.\n➕ Você pode <b>adicionar</b> ou <b>mudar</b> dados com colchetes.\n❌ Use <code>del</code> para <b>remover</b> uma chave.\n🔍 <b>.keys()</b>, <b>.values()</b> e <b>.items()</b> mostram o que tem no dicionário.\n🔁 Um <b>loop for</b> com <code>for chave, valor in dicionario.items()</code> mostra tudo de forma organizada."
+    }
+  ],
+  "exercises": [
+    {
+      "type": "exercise",
+      "prompt": "1. Crie um dicionário `animal` com nome, espécie e idade. Mostre o nome.",
+      "code_hint": "animal = {'nome': 'Bidu', 'espécie': 'cachorro', 'idade': 3}\nprint(animal['nome'])"
+    },
+    {
+      "type": "exercise",
+      "prompt": "2. Adicione a cor ao animal e mostre o total de informações (use `len()`).",
+      "code_hint": "animal['cor'] = 'cinza'\nprint(len(animal))"
+    },
+    {
+      "type": "exercise",
+      "prompt": "3. Desafio: remova a idade e use <code>.items()</code> para mostrar o que sobrou.",
+      "code_hint": "del animal['idade']\nfor chave, valor in animal.items():\n    print(chave, valor)"
+    }
+  ],
+  "project": {
+    "type": "project",
+    "name": "Ficha de Super-Herói",
+    "description": "Crie um dicionário com nome, poder, cidade, idade e arqui-inimigo de um herói. Mostre as informações usando loop.",
+    "goal": "Praticar criação, modificação, leitura e exibição de informações em dicionários."
+  },
+  "video_suggestion": {
+    "type": "video",
+    "text": "Vídeo divertido (em inglês) que explica dicionários para iniciantes, com exemplos simples:",
+    "url": "https://www.youtube.com/watch?v=daefaLgNkw0"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "title": "Dia 17 – Montando o Mundo: Classes em Ação",
+  "concepts": [
+    {
+      "type": "explanation",
+      "heading": "Vamos montar nosso mundo!",
+      "text": "Oi, explorador(a) do código! 😄 Ontem você criou seus primeiros personagens com classes. Hoje vamos começar a montar um <b>mundo completo</b>: com lugares, heróis, monstros, itens mágicos e o que mais sua imaginação mandar! Tudo isso usando <b>classes</b> e <b>objetos</b> que podem conversar entre si. Pronto para criar seu universo de aventuras?"
+    },
+    {
+      "type": "image",
+      "heading": "Seu mundo com personagens e lugares",
+      "image_placeholder": "imagem de uma floresta encantada",
+      "image_url": "resources/images/lesson_illustrations/lesson_17_forest.jpg"
+    },
+    {
+      "type": "explanation",
+      "heading": "Criando vários tipos de classes",
+      "text": "Podemos criar não só personagens, mas também <b>lugares</b> e <b>itens mágicos</b>. Cada classe pode ter atributos diferentes e fazer ações diferentes. É como montar os blocos do seu jogo! Vamos ver exemplos?"
+    },
+    {
+      "type": "code",
+      "heading": "Criando um Herói e um Lugar",
+      "text": "Aqui temos um personagem com nome e força, e uma floresta com nível de dificuldade:",
+      "code": "class Heroi:\n    def __init__(self, nome, forca):\n        self.nome = nome\n        self.forca = forca\n\n    def atacar(self):\n        print(f\"{self.nome} ataca com força {self.forca}!\")\n\nclass Floresta:\n    def __init__(self, nome, dificuldade):\n        self.nome = nome\n        self.dificuldade = dificuldade\n\n    def descrever(self):\n        print(f\"Você entrou na {self.nome}. Cuidado! Dificuldade: {self.dificuldade}.\")"
+    },
+    {
+      "type": "instruction",
+      "heading": "Testando nossos objetos",
+      "text": "Vamos criar um herói e uma floresta e testar suas ações:",
+      "code": "heroi1 = Heroi(\"Luna\", 80)\nfloresta1 = Floresta(\"Floresta Sombria\", 5)\n\nheroi1.atacar()\nfloresta1.descrever()"
+    },
+    {
+      "type": "explanation",
+      "heading": "Usando listas para guardar vários objetos",
+      "text": "E se a gente quiser ter <b>vários inimigos</b>? Ou várias <b>salas</b> no jogo? Podemos guardar tudo isso numa <b>lista</b> e depois usar um laço para mostrar ou ativar cada um!"
+    },
+    {
+      "type": "code",
+      "heading": "Lista de inimigos",
+      "text": "Veja esse exemplo com monstros guardados numa lista:",
+      "code": "class Monstro:\n    def __init__(self, nome, energia):\n        self.nome = nome\n        self.energia = energia\n\n    def rugir(self):\n        print(f\"{self.nome} ruge com energia {self.energia}!\")\n\ninimigos = [\n    Monstro(\"Fera de Fogo\", 100),\n    Monstro(\"Golem de Pedra\", 120),\n    Monstro(\"Serpente Sombria\", 90)\n]\n\nfor inimigo in inimigos:\n    inimigo.rugir()"
+    },
+    {
+      "type": "question",
+      "heading": "Como seria seu mundo?",
+      "text": "Se você pudesse criar qualquer lugar mágico, como seria? E quem moraria lá? Quais personagens seriam amigos ou vilões?"
+    },
+    {
+      "type": "step",
+      "heading": "Passo a passo da aula",
+      "steps": [
+        "1. Abra o Thonny.",
+        "2. Crie classes diferentes como Heroi, Monstro, Lugar ou Item.",
+        "3. Dê atributos únicos para cada uma.",
+        "4. Crie métodos com ações como atacar(), descrever() ou rugir().",
+        "5. Crie vários objetos e experimente guardá-los em listas.",
+        "6. Use for para fazer seus objetos agirem juntos!"
+      ]
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "Hoje você aprendeu a criar vários tipos de classes: personagens, lugares, monstros e muito mais! Usou listas para organizar seus objetos e começou a montar seu próprio mundo de aventuras!"
+    },
+    {
+      "type": "celebration",
+      "heading": "Você criou um universo!",
+      "text": "Uau! 🎉 Que legal ver tudo que você criou hoje! Cada classe, cada personagem é uma peça do seu mundo. Continue criando — o melhor ainda está por vir! 💙"
+    }
+  ],
+  "exercises": [
+    {
+      "type": "exercise",
+      "prompt": "Crie uma classe chamada ItemMagico com os atributos 'nome' e 'efeito'. Depois, crie dois itens diferentes e mostre seus efeitos.",
+      "code_hint": "Dica: use print(f\"O item {self.nome} faz: {self.efeito}\")"
+    },
+    {
+      "type": "exercise",
+      "prompt": "Crie uma classe chamada Caverna com os atributos 'nome' e 'tem_monstro'. Se o valor for True, mostre uma mensagem assustadora!",
+      "code_hint": "Dica: use if self.tem_monstro: print(\"Algo se move na escuridão...\")"
+    }
+  ],
+  "project": {
+    "type": "project",
+    "name": "Construindo meu mundo em Python",
+    "description": "Use as classes que criou para montar um mundo com personagens, monstros, lugares e itens. Cada parte pode ter ações diferentes!",
+    "goal": "Criar pelo menos 3 classes com atributos e métodos. Depois, criar listas com objetos e fazer uma primeira simulação da sua aventura!"
+  },
+  "video_suggestion": {
+    "type": "video",
+    "text": "Veja esse vídeo mostrando como objetos diferentes se combinam para criar aventuras no Python!",
+    "url": "https://www.youtube.com/embed/ZDa-Z5JzLYM"
+  }
+}

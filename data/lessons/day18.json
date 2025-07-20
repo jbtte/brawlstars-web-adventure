@@ -1,0 +1,104 @@
+{
+  "title": "Dia 18 – Dando Vida ao Jogo com Pygame Zero",
+  "concepts": [
+    {
+      "type": "explanation",
+      "heading": "Hora de ver o mundo na tela!",
+      "text": "Oi, artista do código! 😄 Já pensou em ver seus personagens e lugares aparecendo na tela, coloridos e cheios de vida? Hoje você vai aprender a usar o <b>Pygame Zero</b>, uma ferramenta mágica que transforma seu código em imagens e movimentos! Vamos começar a construir o visual do seu jogo!"
+    },
+    {
+      "type": "image",
+      "heading": "O mundo ganha vida",
+      "image_placeholder": "imagem de um cenário de fantasia com floresta mágica, castelo e personagens como heróis, magos e dragões",
+      "image_url": "resources/images/lesson_illustrations/lesson_18_pygames.jpg"
+    },
+    {
+      "type": "explanation",
+      "heading": "O que é o Pygame Zero?",
+      "text": "<b>Pygame Zero</b> é uma biblioteca do Python feita especialmente para jogos simples. Com ela, você pode desenhar personagens, fazer eles se moverem, reagirem a cliques e muito mais — tudo com comandos bem fáceis de entender."
+    },
+    {
+      "type": "code",
+      "heading": "Primeiro passo: criando uma janela",
+      "text": "Veja como desenhar uma tela azul e uma mensagem:",
+      "code": "WIDTH = 600\nHEIGHT = 400\n\ndef draw():\n    screen.fill(\"skyblue\")\n    screen.draw.text(\"Bem-vindo ao meu jogo!\", (50, 180), fontsize=40, color=\"black\")"
+    },
+    {
+      "type": "instruction",
+      "heading": "Como rodar seu código com o Pygame Zero",
+      "text": "Salve o arquivo com o nome <b>jogo.py</b>, depois clique no menu <b>Executar → Executar como script Pygame Zero</b>. Isso abrirá a janelinha do jogo!"
+    },
+    {
+      "type": "explanation",
+      "heading": "Adicionando um personagem com imagem",
+      "text": "Agora vamos adicionar um herói com uma imagem. Primeiro, crie uma pasta chamada <b>images</b> e coloque lá uma imagem com nome <b>heroi.png</b>. Depois, use esse código:"
+    },
+    {
+      "type": "code",
+      "heading": "Desenhando um herói",
+      "text": "Código para desenhar o herói no meio da tela:",
+      "code": "heroi = Actor(\"heroi\")\nheroi.pos = 300, 200\n\ndef draw():\n    screen.clear()\n    heroi.draw()"
+    },
+    {
+      "type": "code",
+      "heading": "Fazendo o herói andar com as teclas",
+      "text": "Vamos deixar o herói se mover usando as setas do teclado:",
+      "code": "def update():\n    if keyboard.right:\n        heroi.x += 4\n    if keyboard.left:\n        heroi.x -= 4\n    if keyboard.up:\n        heroi.y -= 4\n    if keyboard.down:\n        heroi.y += 4"
+    },
+    {
+      "type": "question",
+      "heading": "Qual será o cenário do seu jogo?",
+      "text": "Você quer que o seu mundo seja uma floresta, uma cidade mágica, um castelo voador? O que você vai desenhar na tela?"
+    },
+    {
+      "type": "step",
+      "heading": "Passo a passo da aula",
+      "steps": [
+        "1. Instale o Pygame Zero (se ainda não tiver).",
+        "2. Crie uma nova pasta e dentro dela, crie o arquivo jogo.py.",
+        "3. Crie uma subpasta chamada 'images' e coloque uma imagem chamada heroi.png.",
+        "4. Copie o código para desenhar o herói.",
+        "5. Adicione o código para mover o herói com as teclas.",
+        "6. Execute o jogo com Pygame Zero e veja a mágica acontecer!"
+      ]
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "Hoje você aprendeu como usar o <b>Pygame Zero</b> para mostrar seu mundo na tela! Criou uma janela, desenhou um personagem com imagem e fez ele se mover com o teclado. Agora sim seu jogo está ganhando vida!"
+    },
+    {
+      "type": "celebration",
+      "heading": "Uaaau, que visual incrível!",
+      "text": "Você conseguiu! 🎉 Seu código virou um jogo com tela, cores e personagem que se mexe. Agora vamos deixar tudo ainda mais divertido nas próximas aulas. Continue brilhando! 💙"
+    }
+  ],
+  "exercises": [
+    {
+      "type": "exercise",
+      "prompt": "Troque a cor da tela para uma que você goste mais.",
+      "code_hint": "Dica: troque 'skyblue' por 'lightgreen', 'orange', 'black'..."
+    },
+    {
+      "type": "exercise",
+      "prompt": "Crie outro personagem chamado 'dragao' e desenhe ele em uma posição diferente.",
+      "code_hint": "Dica: use dragao = Actor(\"dragao\") e dragao.pos = (100, 100); depois, no draw(), escreva dragao.draw()"
+    },
+    {
+      "type": "exercise",
+      "prompt": "Faça seu personagem andar mais rápido ou mais devagar.",
+      "code_hint": "Dica: troque o número depois do += ou -= no update()."
+    }
+  ],
+  "project": {
+    "type": "project",
+    "name": "Começando o meu jogo com Pygame Zero",
+    "description": "Monte o início do seu jogo visual: escolha o fundo (cor ou imagem), posicione o herói e faça ele andar com as teclas. Depois, adicione um personagem extra (amigo ou inimigo).",
+    "goal": "Criar um jogo simples com pelo menos 1 personagem em movimento e 1 cenário. Esse será o início do seu projeto final!"
+  },
+  "video_suggestion": {
+    "type": "video",
+    "text": "Veja como funciona o Pygame Zero neste vídeo explicativo para iniciantes:",
+    "url": "https://www.youtube.com/embed/TUrPpBeRkdA&t"
+  }
+}

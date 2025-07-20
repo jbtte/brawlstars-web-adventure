@@ -1,0 +1,77 @@
+{
+  "title": "Lição 2 – Fazendo perguntas ao computador",
+  "concepts": [
+    {
+      "heading": "👋 O que vamos aprender hoje?",
+      "text": "Hoje vamos aprender como o computador pode conversar com você! Vamos usar um comando chamado <code>input()</code> para fazer perguntas e guardar respostas.",
+      "type": "explanation"
+    },
+    {
+      "type": "image",
+      "heading": "O computador escutando e respondendo",
+      "image_placeholder": "imagem de um terminal moderno recebendo uma pergunta e respondendo de forma engraçada",
+      "image_url": "resources/images/lesson_illustrations/lesson_02_input.jpg"
+    },
+
+    {
+      "heading": "🧠 Como funciona o input()?",
+      "text": "input() é uma função do Python que serve para fazer uma pergunta ao usuário. Dentro dos parênteses, colocamos uma frase entre aspas — essa é a pergunta que o computador vai mostrar na tela. Quando o usuário digita a resposta e aperta Enter, o valor digitado é guardado dentro de uma variável, para que a gente possa usar depois. Mesmo que o usuário digite um número, o que chega é sempre um texto (tipo str).",
+      "type": "explanation"
+    },
+    {
+      "heading": "💡 Exemplo: Perguntando o nome",
+      "text": "Vamos ver um exemplo simples. O computador pergunta o seu nome e responde com uma mensagem fofa!",
+      "code": "nome = input(\"Qual é seu nome? \")\nprint(\"Oi, \" + nome + \"! Que legal te conhecer!\")",
+      "type": "code"
+    },
+    {
+      "heading": "❓Dúvida comum: posso mudar a pergunta?",
+      "text": "**Sim!** Você pode escrever qualquer texto dentro de <code>input()</code>. Essa frase é o que o computador mostra pro usuário.",
+      "type": "question"
+    },
+    {
+      "heading": "🎉 Outro exemplo: comida favorita",
+      "text": "Agora vamos fazer uma pergunta divertida. Copie e execute esse código:",
+      "code": "comida = input(\"Qual sua comida favorita? \")\nprint(\"Puxa, eu também adoro \" + comida + \"!\")",
+      "type": "code"
+    },
+    {
+      "heading": "🤔 Por que a resposta vira texto?",
+      "text": "**Porque tudo que vem do <code>input()</code> é uma <code>string</code> (texto)**, mesmo que a pessoa digite um número! Depois a gente aprende como transformar isso.",
+      "type": "question"
+    },
+    {
+      "heading": "🔍 Curiosidade: input vem de onde?",
+      "text": "A palavra <i>input</i> vem do inglês e significa 'entrada'. É o que você DIGITA no teclado para o computador receber.",
+      "type": "curiosity"
+    }
+  ],
+  "exercises": [
+    {
+      "prompt": "1. Pergunte o nome do seu amigo e depois diga: 'Oi, [nome]! Vamos brincar hoje?'",
+      "code_hint": "nome = input(\"Digite o nome do seu amigo: \")\nprint(\"Oi, \" + nome + \"! Vamos brincar hoje?\")",
+      "type": "exercise"
+    },
+    {
+      "prompt": "2. Pergunte a idade do seu irmão e responda: 'Uau, [idade]! Que legal!'",
+      "code_hint": "idade = input(\"Idade do seu irmão: \")\nprint(\"Uau, \" + idade + \"! Que legal!\")",
+      "type": "exercise"
+    },
+    {
+      "prompt": "3. Desafio: Pergunte duas coisas (cor, fruta, animal...) e faça uma frase divertida.",
+      "code_hint": "cor = input(\"Diga uma cor: \")\nfruta = input(\"Diga uma fruta: \")\nprint(\"Nossa, um \" + fruta + \" \" + cor + \" seria super legal!\")",
+      "type": "exercise"
+    }
+  ],
+  "project": {
+    "name": "🎨 Projeto: Perguntas Divertidas",
+    "description": "Crie um programa que faz 3 perguntas diferentes (ex: nome, cor, comida) e usa as respostas para montar frases engraçadas.",
+    "goal": "Aprender como <code>input()</code> funciona e como criar frases personalizadas com as respostas.",
+    "type": "project"
+  },
+  "video_suggestion": {
+    "type": "video",
+    "text": "Para mais explicações, veja este tutorial em português sobre Strings em Python:",
+    "url": "https://www.youtube.com/watch?v=SHOXlpw6G3Q"
+  }
+}

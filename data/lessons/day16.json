@@ -1,0 +1,120 @@
+{
+  "title": "Dia 16 – Heróis e Monstros: Criando com Objetos",
+  "concepts": [
+    {
+      "type": "explanation",
+      "heading": "O que é Programação Orientada a Objetos?",
+      "text": "Oi, meu pequeno programador! 😄 Hoje vamos aprender um jeito novo e mágico de programar: a Programação Orientada a Objetos. É como se você pudesse construir seus próprios brinquedos no código, com poderes, cores, formas e até ações! Pronto para criar seus heróis e monstros? Vamos juntos!"
+    },
+    {
+      "type": "image",
+      "heading": "Objetos com personalidade",
+      "image_placeholder": "imagem de brinquedos ou personagens com etiquetas como 'nome', 'poder', 'energia'",
+      "image_url": "resources/images/lesson_illustrations/lesson_16_objects.jpg"
+    },
+    {
+      "type": "explanation",
+      "heading": "Classe e Objeto – Carrinho de Lego Digital!",
+      "text": "Pensa assim: uma <b>classe</b> é como o manual de instruções para montar um brinquedo de Lego. Já o <b>objeto</b> é o brinquedo que você realmente monta com suas peças.\n\nVocê pode usar o mesmo manual várias vezes e fazer carrinhos diferentes! No código é igual: a classe é o plano, e o objeto é o resultado!"
+    },
+    {
+      "type": "code",
+      "heading": "Começando com uma classe vazia",
+      "text": "Vamos criar uma classe chamada Carrinho, ainda sem nada dentro. Só para ver como se faz:",
+      "code": "class Carrinho:\n    def __init__(self):\n        pass"
+    },
+    {
+      "type": "explanation",
+      "heading": "Adicionando características ao carrinho (atributos)",
+      "text": "Agora vamos dar uma cor, um tamanho e número de rodas ao nosso carrinho. Essas características são chamadas de <b>atributos</b>. A gente usa o <b>self</b> para guardar essas informações dentro do carrinho."
+    },
+    {
+      "type": "code",
+      "heading": "Classe com atributos",
+      "text": "Veja como dar vida ao carrinho:",
+      "code": "class Carrinho:\n    def __init__(self, cor, tamanho, rodas):\n        self.cor = cor\n        self.tamanho = tamanho\n        self.rodas = rodas"
+    },
+    {
+      "type": "explanation",
+      "heading": "Fazendo o carrinho fazer algo (métodos)",
+      "text": "Agora vamos fazer o carrinho <b>buzinar</b>! Isso é uma <b>ação</b>, ou seja, um <b>método</b>. Métodos são funções que moram dentro da classe."
+    },
+    {
+      "type": "code",
+      "heading": "Método buzinar",
+      "text": "Veja como criamos um método simples:",
+      "code": "class Carrinho:\n    def __init__(self, cor, tamanho, rodas):\n        self.cor = cor\n        self.tamanho = tamanho\n        self.rodas = rodas\n\n    def buzinar(self):\n        print(f\"O carrinho {self.cor} está buzinando: Pii Pii!\")"
+    },
+    {
+      "type": "instruction",
+      "heading": "Testando o carrinho",
+      "text": "Agora vamos montar um carrinho vermelho, pequeno, com 3 rodas e fazer ele buzinar:",
+      "code": "meu_carrinho = Carrinho(\"vermelho\", \"pequeno\", 3)\nmeu_carrinho.buzinar()"
+    },
+    {
+      "type": "common_mistake",
+      "heading": "Erro comum",
+      "text": "Se esquecer de passar algum atributo como a cor ou o tamanho na hora de criar o objeto, o Python vai mostrar erro. Sempre confira se está dando todas as informações!"
+    },
+    {
+      "type": "curiosity",
+      "heading": "Sabia que…?",
+      "text": "Jogos como Minecraft e Roblox são cheios de objetos! Cada item, monstro ou jogador é criado como uma classe com seus próprios poderes. Você está no caminho certo para criar mundos incríveis!"
+    },
+    {
+      "type": "question",
+      "heading": "E se você criasse seu próprio personagem?",
+      "text": "Como seria o seu herói ou monstro? Qual seria o nome? Quais poderes ele teria? O que ele poderia fazer no jogo?"
+    },
+    {
+      "type": "step",
+      "heading": "Passo a passo da aula",
+      "steps": [
+        "1. Abra o Thonny.",
+        "2. Crie um novo arquivo chamado objetos.py.",
+        "3. Escreva a classe Carrinho com atributos e o método buzinar().",
+        "4. Crie um objeto Carrinho com valores personalizados.",
+        "5. Faça ele buzinar com o método.",
+        "6. Experimente criar mais carrinhos diferentes!"
+      ]
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da aula",
+      "text": "Hoje você aprendeu o que é uma <b>classe</b> e um <b>objeto</b>. Descobriu como dar características (atributos) e criar ações (métodos) para seus brinquedos digitais. Estamos montando nosso próprio mundo no Python!"
+    },
+    {
+      "type": "celebration",
+      "heading": "Você está criando mundos!",
+      "text": "Uhuuu! 🎉 Parabéns por criar seus primeiros objetos em Python. Você deu vida ao seu código! Agora vamos continuar criando juntos. 💙"
+    }
+  ],
+  "exercises": [
+    {
+      "type": "exercise",
+      "prompt": "Crie uma classe chamada Bola com atributos 'cor' e 'tamanho', e um método 'quicar' que imprime uma mensagem.",
+      "code_hint": "Dica: use __init__ para cor e tamanho, e defina um método que faça print(\"A bola está quicando!\")"
+    },
+    {
+      "type": "exercise",
+      "prompt": "Crie duas bolas com cores diferentes e faça cada uma quicar.",
+      "code_hint": "Dica: crie algo como bola1 = Bola(\"vermelha\", \"grande\") e bola2 = Bola(\"azul\", \"pequena\")"
+    },
+    {
+      "type": "exercise",
+      "prompt": "Crie uma classe chamada Aluno com os atributos 'nome', 'idade' e 'apelido'. Depois, crie um aluno chamado João, com 9 anos e apelido 'Juju'.",
+      "code_hint": "Dica: use o __init__ com self.nome, self.idade e self.apelido. Depois, use aluno = Aluno(\"João\", 9, \"Juju\")"
+    }
+  ],
+  "project": {
+    "type": "project",
+    "name": "Meu próprio personagem com POO",
+    "description": "Invente um personagem (pode ser um Herói, Monstro, Animal ou Robô). Crie uma classe com atributos como nome, energia, cor ou força, e uma ação como 'falar', 'atacar', ou 'se apresentar'.",
+    "goal": "Criar uma classe com pelo menos 2 atributos e 1 método. Depois, crie um objeto e teste esse comportamento no Thonny. Você pode usar esse personagem no seu jogo nas próximas aulas!"
+  },
+  "video_suggestion": {
+    "type": "video",
+    "text": "Veja esse vídeo curtinho mostrando como usar classes e objetos em Python de um jeito divertido:",
+    "url": "https://www.youtube.com/embed/ZDa-Z5JzLYM"
+  }
+}

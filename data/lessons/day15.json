@@ -1,0 +1,133 @@
+{
+  "title": "Dia 15 – Calculadora com tratamento de erros",
+  "concepts": [
+    {
+      "type": "celebration",
+      "heading": "Erros acontecem!",
+      "text": "Imagine que alguém te peça para dividir um número por zero ou te entregue a palavra 'banana' quando você queria um número. 🤯 É assim que os programas se sentem quando não tratamos os erros! Nesta aula, vamos aprender a proteger nosso código usando o `try` e o `except`, criando programas mais seguros e inteligentes."
+    },
+    {
+      "type": "image",
+      "heading": "Calculadora mágica para heróis",
+      "image_placeholder": "imagem de uma calculadora com botões divertidos como 'ataque', 'defesa', 'magia', usada por um herói com capa",
+      "image_url": "resources/images/lesson_illustrations/lesson_15_calculator.jpg"
+    },
+    {
+      "type": "concept",
+      "heading": "Por que tratar erros?",
+      "text": "Às vezes, o usuário digita algo errado ou o programa tenta fazer algo impossível, como dividir por zero. Se não tratarmos isso, o programa fecha com uma mensagem assustadora. 😨 Com `try/except`, conseguimos lidar com essas situações de forma educada e continuar funcionando.",
+      "steps": [
+        "Quando um erro acontece, o Python normalmente para tudo e mostra uma mensagem feia.",
+        "Com <code>try/except</code>, você consegue prever e controlar esses erros.",
+        "Isso deixa seu programa mais seguro e amigável para quem está usando."
+      ]
+    },
+    {
+      "type": "concept",
+      "heading": "Como funciona o try/except?",
+      "text": "Funciona assim: você tenta executar um bloco de código com `try:`. Se der erro, o Python pula para o `except:`. Veja o passo a passo:"
+    },
+    {
+      "type": "explanation",
+      "heading": "Como funciona o try/except?",
+      "text": "Imagine que você está tentando abrir uma porta. Se ela estiver trancada, você já tem uma chave reserva no bolso. O `try` é como tentar abrir a porta, e o `except` é o que fazer se ela estiver trancada.\n\nNo Python, usamos `try` para rodar um código que pode dar erro, e `except` para capturar esse erro e reagir de forma inteligente, sem deixar o programa travar.",
+      "steps": [
+        "Escreva `try:` e logo abaixo, com indentação (espaço), coloque o código que pode dar erro.",
+        "Em seguida, escreva `except:` e abaixo o que o programa deve fazer se der erro.",
+        "Você pode especificar o tipo de erro, como `ValueError` ou `ZeroDivisionError`, para reagir de forma diferente a cada caso.",
+        "Tudo o que estiver fora do bloco `try/except` continua rodando normalmente."
+      ]
+    },
+    {
+      "type": "explanation",
+      "heading": "Tipos de erros que podemos tratar",
+      "text": "Os erros mais comuns em programas simples são digitar letras no lugar de números (<code>ValueError</code>) e tentar dividir por zero (<code>ZeroDivisionError</code>). Podemos tratar cada um com um <code>except</code> diferente.",
+      "steps": [
+        "1. <code>ValueError</code>: quando tenta converter algo para número e não consegue.",
+        "2. <code>ZeroDivisionError</code>: quando tenta dividir algo por zero.",
+        "3. Você pode usar vários <code>except</code> seguidos, um para cada tipo de erro."
+      ]
+    },
+    {
+      "type": "concept",
+      "heading": "🤔 O que é ValueError?",
+      "text": "É o nome que o Python dá ao erro quando ele espera um valor (como um número), mas recebe algo diferente (como uma palavra)."
+    },
+    {
+      "type": "code",
+      "heading": "Exemplo 1: número inválido",
+      "text": "Esse código tenta transformar um texto em número. Se for uma letra, cai no <code>except</code>.",
+      "code": "try:\n    x = int(input('Digite um número: '))\n    print('Você digitou:', x)\nexcept ValueError:\n    print('Isso não é um número válido!')"
+    },
+    {
+      "type": "concept",
+      "heading": "🤔 O que é ZeroDivisionError?",
+      "text": "É o nome que o Python dá ao erro quando você tenta dividir um número por zero. Isso é bem ruim, pense que eles fizeram um erro só pra isso!"
+    },
+    {
+      "type": "code",
+      "heading": "Exemplo 2: divisão por zero",
+      "text": "Aqui temos dois tipos de erro que podem acontecer: o usuário pode digitar algo errado, ou tentar dividir por zero.",
+      "code": "try:\n    a = int(input('Dividendo: '))\n    b = int(input('Divisor: '))\n    print('Resultado:', a / b)\nexcept ZeroDivisionError:\n    print('Erro: não pode dividir por zero!')\nexcept ValueError:\n    print('Digite apenas números inteiros!')"
+    },
+    {
+      "type": "concept",
+      "heading": "Step-by-step: tratando erro de divisão por zero",
+      "steps": [
+        "Peça dois números com `input()` e transforme em `int()`.",
+        "Tente fazer a divisão.",
+        "Use `except ZeroDivisionError:` para capturar o erro se o divisor for zero.",
+        "Adicione também `except ValueError:` para erros de digitação."
+      ],
+      "code": "try:\n    a = int(input(\"Dividendo: \"))\n    b = int(input(\"Divisor: \"))\n    print(\"Resultado:\", a / b)\nexcept ZeroDivisionError:\n    print(\"Erro: não pode dividir por zero!\")\nexcept ValueError:\n    print(\"Digite apenas números inteiros!\")"
+    },
+    {
+      "type": "question",
+      "heading": "🤔 Dúvidas comuns",
+      "text": "<b>1.</b> E se eu não souber o tipo do erro? Use apenas `except:` (mas com cuidado!)\n<b>2.</b> Posso mostrar o erro real? Sim! Use `except ValueError as e:` e `print(e)`.\n<b>3.</b> Posso ter mais de um `except`? Sim, um para cada tipo de erro."
+    },
+    {
+      "type": "question",
+      "heading": "Existem outros tipos de erros além de ValueError e ZeroDivisionError?",
+      "text": "Sim! O Python tem vários tipos de erro diferentes. Por exemplo:\n<ul><li><b>TypeError</b>: quando você tenta fazer uma operação entre tipos incompatíveis, como somar um número com uma string.</li><li><b>IndexError</b>: quando você tenta acessar um índice que não existe em uma lista.</li><li><b>KeyError</b>: quando tenta acessar uma chave que não existe em um dicionário.</li></ul>Quer ver a lista completa? Ela está na <a href=\"https://docs.python.org/3/library/exceptions.html\" target=\"_blank\">documentação oficial do Python</a>."
+    },
+    {
+      "type": "concept",
+      "heading": "Comparando: com e sem tratamento de erro",
+      "text": "Sem `try/except`, o programa quebra. Com tratamento, o erro vira uma explicação amigável. O usuário se sente acolhido e o programa continua funcionando! 💪"
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da Aula",
+      "text": "<b>✔</b> Aprendemos o que são erros e por que tratá-los\n<b>✔</b> Usamos `try` e `except` para proteger nosso código\n<b>✔</b> Lidamos com erros de valor e divisão por zero\n<b>✔</b> Descobrimos como deixar nossa calculadora mais segura e esperta"
+    }
+  ],
+  "exercises": [
+    {
+      "type": "exercise",
+      "prompt": "1. Peça um número e mostre o dobro. Use `try/except` para avisar se não for número.",
+      "code_hint": "Use a função <code>int()</code> dentro do <code>try</code> e\n lembre-se de multiplicar por 2."
+    },
+    {
+      "type": "exercise",
+      "prompt": "2. Peça dois números para divisão, trate `ValueError` e `ZeroDivisionError` separadamente.",
+      "code_hint": "Você precisa de dois <code>input()</code>, e \nlembre-se de que <code>/</code> \ndivide e <code>except</code> precisa ser separado por tipo."
+    },
+    {
+      "type": "exercise",
+      "prompt": "3. Desafio: crie uma calculadora que pede operação (+, -, *, /), trata erros e mostra resultado ou mensagem.",
+      "code_hint": "Você vai precisar de <code>if</code>/<code>elif</code> \npara cada operação e verificar se o usuário digitou\n uma operação válida."
+    }
+  ],
+  "project": {
+    "type": "project",
+    "name": "Super Calculadora Segura",
+    "description": "Crie uma calculadora que nunca quebra! Ela deve pedir dois números, a operação, tratar erros de digitação e divisão por zero. E se o usuário errar? Mostre uma mensagem legal e peça de novo!",
+    "goal": "Praticar `try/except`, múltiplos tipos de erro, mensagens personalizadas e lógica de operações."
+  },
+  "video_suggestion": {
+    "type": "video",
+    "text": "Vídeo explicando o uso de `try`, `except` e como deixar seu programa mais seguro:",
+    "url": "https://www.youtube.com/watch?v=83dHYiwxOjg"
+  }
+}

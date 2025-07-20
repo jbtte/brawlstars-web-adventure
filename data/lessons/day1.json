@@ -1,0 +1,25 @@
+{
+  "id": "day1",
+  "name": "Arena 1",
+  "title": "Elementos Básicos: Tags e Estrutura",
+  "topic": "HTML",
+  "text": "Nesta primeira arena, vamos aprender sobre os blocos de construção de qualquer página web: as tags HTML. Elas são como os power-ups que dão forma ao seu site!",
+  "interactiveHtmlCode": "<h1>Olá Brawler!</h1>\n<p>Bem-vindo à sua primeira página web.</p>",
+  "interactiveCssCode": "body { font-family: 'Press Start 2P', cursive; color: #333; } h1 { color: #FFD700; }",
+  "explanation": "Aqui, `<h1>` define um título de nível 1 e `<p>` um parágrafo. São tags fundamentais para a estrutura.",
+  "hint": "Lembre-se que tags vêm em pares: abertura (<tag>) e fechamento (</tag>).",
+  "nextLessonId": "day2",
+  "concepts": [
+    {
+      "heading": "👋 O que vamos aprender hoje?",
+      "text": "Hoje vamos aprender como o computador pode conversar com você! Vamos usar um comando chamado <code>input()</code> para fazer perguntas e guardar respostas.",
+      "type": "explanation"
+    },
+    {
+      "heading": "💡 Exemplo: Uma tag simples",
+      "text": "Veja como criar um parágrafo:",
+      "code": "<p>Este é um parágrafo de exemplo.</p>",
+      "type": "code"
+    }
+  ]
+}
