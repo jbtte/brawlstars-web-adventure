@@ -1,41 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aventura Python: Explorando o Mundo da Programação</title>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="icon" type="image/png" href="resources/images/mario.png" />
+    <script src="scripts/load_head.js" defer></script>
   </head>
 
   <body>
     <audio id="background-music" loop>
-      <source
-        src="resources/sounds/super-mario-bros-theme.mp3"
-        type="audio/mpeg"
-      />
+      <source src="resources/sounds/brawl-stars-theme.mp3" type="audio/mpeg" />
       Seu navegador não suporta o elemento de áudio.
     </audio>
     <header>
-      <h1>Aventura Python: Explorando o Mundo da Programação</h1>
+      <h1>Brawl Stars Web Adventures: Desvendando o HTML & CSS</h1>
     </header>
     <div class="header-controls-wrapper">
       <nav class="main-nav">
         <ul>
-          <li><a href="#intro-videos-section">Descobrir a Magia</a></li>
-          <li><a href="#lessons">Fases</a></li>
-          <li><a href="#resources">Recursos</a></li>
-          <li><a href="#challenges">Desafios</a></li>
+          <li><a href="#intro-videos-section">Descobrir a Web</a></li>
+          <li><a href="#lessons">Arenas</a></li>
+          <li><a href="#resources">Ferramentas</a></li>
+          <li><a href="#challenges">Confrontos</a></li>
         </ul>
       </nav>
       <button id="music-toggle-button" class="music-toggle-button">
@@ -46,278 +29,290 @@
     <main>
       <section class="hero-section">
         <div class="hero-content">
-          <h2>Bem-vindo à Aventura Python!</h2>
+          <h2>Bem-vindo ao Brawl Stars Web Adventures!</h2>
           <p>
-            Prepare-se para uma jornada épica pelo reino da programação. Cada
-            fase desbloqueia novos poderes e desafios. Você está pronto para
-            salvar o dia com código?
+            Prepare-se para uma jornada épica no mundo da criação de sites. Cada
+            arena desbloqueia novos poderes para você construir e estilizar a
+            web. Você está pronto para dominar o HTML e o CSS?
           </p>
           <a href="#lessons" class="start-adventure-button">
-            <span class="button-text">Iniciar Aventura!</span>
+            <span class="button-text">Iniciar Confronto!</span>
             <span class="button-icon">🚀</span>
           </a>
         </div>
       </section>
 
       <section id="intro-videos-section" class="intro-videos-section">
-        <h2>Comece Sua Jornada: Por Que Programar?</h2>
+        <h2>Comece Sua Batalha: Por Que Criar Sites?</h2>
         <p>
-          Pronto para desvendar os segredos da tecnologia e criar coisas
-          incríveis? 🎮✨ Este é o seu portal para o mundo da programação!
-          Assista aos vídeos e descubra seu superpoder secreto. 🚀💡
+          Pronto para desvendar os segredos da web e criar coisas incríveis?
+          🎮✨ Este é o seu portal para o mundo do HTML e CSS! Assista aos
+          vídeos e descubra seu superpoder secreto da web. 🚀💡
         </p>
 
         <div class="video-buttons-grid">
           <a href="pages/video1.html" class="intro-video-card">
             <span class="card-icon">
               <img
-                src="resources/images/question2.png"
-                alt="Bloco de Interrogação do Mario"
+                src="resources/images/brawl-box.png"
+                alt="Caixa Brawl"
                 style="width: 60px; height: 60px; object-fit: contain"
               />
             </span>
-            <span class="card-title">O que é Programar?</span>
+            <span class="card-title">O que é HTML?</span>
             <span class="card-subtitle">Assista e Descubra!</span>
           </a>
 
           <a href="pages/video2.html" class="intro-video-card">
             <span class="card-icon">
               <img
-                src="resources/images/star-mario.png"
-                alt="Super Estrela do Mario"
+                src="resources/images/brawl-trophy.png"
+                alt="Troféu Brawl Stars"
                 style="width: 60px; height: 60px; object-fit: contain"
               />
             </span>
-            <span class="card-title">Por que Aprender?</span>
-            <span class="card-subtitle">Seu Poder Secreto!</span>
+            <span class="card-title">O que é CSS?</span>
+            <span class="card-subtitle">Seu Poder de Estilo!</span>
           </a>
 
           <a href="pages/video3.html" class="intro-video-card">
             <span class="card-icon">
               <img
-                src="resources/images/pngegg.png"
-                alt="Tryclyde"
+                src="resources/images/brawler-icon.png"
+                alt="Brawler"
                 style="width: 60px; height: 60px; object-fit: contain"
               />
             </span>
-            <span class="card-title">O que é Python?</span>
-            <span class="card-subtitle">Por que Usar?</span>
+            <span class="card-title">Por que Combiná-los?</span>
+            <span class="card-subtitle">Web Imbatível!</span>
           </a>
         </div>
 
         <a href="#lessons" class="start-adventure-button">
-          <span class="button-text">Pronto para o Mapa das Fases!</span>
+          <span class="button-text">Pronto para o Mapa das Arenas!</span>
           <span class="button-icon">🗺️</span>
         </a>
       </section>
 
       <section id="lessons" class="lesson-map-container">
-        <h2>O Mapa das Fases Python</h2>
+        <h2>O Mapa das Arenas</h2>
         <p class="map-intro-text">
-          Clique nas fases para iniciar sua missão de codificação!
+          Clique nas arenas para iniciar sua missão de codificação web!
         </p>
         <div class="lesson-card phase-1">
           <a href="day.html?id=day1">
-            <span class="phase-number">Fase 1</span>
-            <span class="phase-title">Instalação, Thonny e mais</span>
+            <span class="phase-number">Arena 1</span>
+            <span class="phase-title">Elementos Básicos: Tags e Estrutura</span>
           </a>
           <div class="status-icon unlocked"></div>
         </div>
         <div class="lesson-card phase-2">
           <a href="day.html?id=day2">
-            <span class="phase-number">Fase 2</span>
-            <span class="phase-title">Variáveis e Operadores</span>
+            <span class="phase-number">Arena 2</span>
+            <span class="phase-title">Atributos e Imagens</span>
           </a>
           <div class="status-icon unlocked"></div>
         </div>
         <div class="lesson-card phase-3">
           <a href="day.html?id=day3">
-            <span class="phase-number">Fase 3</span>
-            <span class="phase-title">Strings e Texto</span>
+            <span class="phase-number">Arena 3</span>
+            <span class="phase-title">Listas e Links: Navegando</span>
           </a>
           <div class="status-icon unlocked"></div>
         </div>
         <div class="lesson-card phase-4">
           <a href="day.html?id=day4">
-            <span class="phase-number">Fase 4</span>
-            <span class="phase-title">Condicionais: if, elif e else</span>
+            <span class="phase-number">Arena 4</span>
+            <span class="phase-title">Tabelas: Organizando Dados</span>
           </a>
           <div class="status-icon locked"></div>
         </div>
         <div class="lesson-card phase-5">
           <a href="day.html?id=day5">
-            <span class="phase-number">Fase 5</span>
-            <span class="phase-title">Projeto: Mad Libs</span>
+            <span class="phase-number">Arena 5</span>
+            <span class="phase-title"
+              >Formulários: Interagindo com o Usuário</span
+            >
           </a>
           <div class="status-icon locked"></div>
         </div>
 
         <div class="lesson-card phase-6">
           <a href="day.html?id=day6">
-            <span class="phase-number">Fase 6</span>
-            <span class="phase-title">Laços for e função range()</span>
+            <span class="phase-number">Arena 6</span>
+            <span class="phase-title">Introdução ao CSS: Cores e Fontes</span>
           </a>
           <div class="status-icon locked"></div>
         </div>
         <div class="lesson-card phase-7">
           <a href="day.html?id=day7">
-            <span class="phase-number">Fase 7</span>
-            <span class="phase-title">Laços while e controle de repetição</span>
+            <span class="phase-number">Arena 7</span>
+            <span class="phase-title"
+              >Seletores CSS: Id, Classe e Elemento</span
+            >
           </a>
           <div class="status-icon locked"></div>
         </div>
         <div class="lesson-card phase-8">
           <a href="day.html?id=day8">
-            <span class="phase-number">Fase 8</span>
-            <span class="phase-title">Funções: def e return</span>
+            <span class="phase-number">Arena 8</span>
+            <span class="phase-title"
+              >Box Model: Margem, Borda e Preenchimento</span
+            >
           </a>
           <div class="status-icon locked"></div>
         </div>
         <div class="lesson-card phase-9">
           <a href="day.html?id=day9">
-            <span class="phase-number">Fase 9</span>
+            <span class="phase-number">Arena 9</span>
             <span class="phase-title"
-              >Entrada de dados e conversão de tipos</span
+              >Posicionamento: Estático, Relativo, Absoluto</span
             >
           </a>
           <div class="status-icon locked"></div>
         </div>
         <div class="lesson-card phase-10">
           <a href="day.html?id=day10">
-            <span class="phase-number">Fase 10</span>
-            <span class="phase-title">Projeto: Jogo de Adivinhação</span>
+            <span class="phase-number">Arena 10</span>
+            <span class="phase-title">Projeto: Cartão de Brawler</span>
           </a>
           <div class="status-icon locked"></div>
         </div>
 
         <div class="lesson-card phase-11">
           <a href="day.html?id=day11">
-            <span class="phase-number">Fase 11</span>
-            <span class="phase-title">Listas: criação, acesso, métodos</span>
+            <span class="phase-number">Arena 11</span>
+            <span class="phase-title">Flexbox: Layouts Responsivos</span>
           </a>
           <div class="status-icon locked"></div>
         </div>
         <div class="lesson-card phase-12">
           <a href="day.html?id=day12">
-            <span class="phase-number">Fase 12</span>
-            <span class="phase-title"
-              >Dicionários: chaves, valores e métodos
-            </span>
+            <span class="phase-number">Arena 12</span>
+            <span class="phase-title">Grid CSS: Estruturas Complexas </span>
           </a>
           <div class="status-icon locked"></div>
         </div>
         <div class="lesson-card phase-13">
           <a href="day.html?id=day13">
-            <span class="phase-number">Fase 13</span>
-            <span class="phase-title">Módulos e bibliotecas</span>
+            <span class="phase-number">Arena 13</span>
+            <span class="phase-title">Responsividade: Media Queries</span>
           </a>
           <div class="status-icon locked"></div>
         </div>
         <div class="lesson-card phase-14">
           <a href="day.html?id=day14">
-            <span class="phase-number">Fase 14</span>
-            <span class="phase-title">Leitura e Escrita de Arquivos</span>
+            <span class="phase-number">Arena 14</span>
+            <span class="phase-title">Transições e Animações CSS</span>
           </a>
           <div class="status-icon locked"></div>
         </div>
         <div class="lesson-card phase-15">
           <a href="day.html?id=day15">
-            <span class="phase-number">Fase 15</span>
-            <span class="phase-title">Projeto: Calculadora</span>
+            <span class="phase-number">Arena 15</span>
+            <span class="phase-title">Projeto: Layout de Página do Jogo</span>
           </a>
           <div class="status-icon locked"></div>
         </div>
 
         <div class="lesson-card phase-16">
           <a href="day.html?id=day16">
-            <span class="phase-number">Fase 16</span>
-            <span class="phase-title"
-              >Heróis e Monstros: Criando com Objetos</span
-            >
+            <span class="phase-number">Arena 16</span>
+            <span class="phase-title">Variáveis CSS e Funções</span>
           </a>
           <div class="status-icon locked"></div>
         </div>
         <div class="lesson-card phase-17">
           <a href="day.html?id=day17">
-            <span class="phase-number">Fase 17</span>
-            <span class="phase-title">Montando o Mundo: Classes em Ação</span>
+            <span class="phase-number">Arena 17</span>
+            <span class="phase-title">Pseudo-Classes e Pseudo-Elementos</span>
           </a>
           <div class="status-icon locked"></div>
         </div>
         <div class="lesson-card phase-18">
           <a href="day.html?id=day18">
-            <span class="phase-number">Fase 18</span>
-            <span class="phase-title">Dando Vida ao Jogo com Pygame Zero</span>
+            <span class="phase-number">Arena 18</span>
+            <span class="phase-title">SVG e Ícones no Frontend</span>
           </a>
           <div class="status-icon locked"></div>
         </div>
         <div class="lesson-card phase-19">
           <a href="day.html?id=day19">
-            <span class="phase-number">Fase 19</span>
-            <span class="phase-title">Interações e Aventura na Tela</span>
+            <span class="phase-number">Arena 19</span>
+            <span class="phase-title">Boas Práticas e Otimização CSS</span>
           </a>
           <div class="status-icon locked"></div>
         </div>
         <div class="lesson-card phase-20">
           <a href="day.html?id=day20">
-            <span class="phase-number">Fase 20</span>
-            <span class="phase-title"
-              >Finalizando o Jogo e Criando Novos Mundos</span
-            >
+            <span class="phase-number">Arena 20</span>
+            <span class="phase-title">Finalizando o Site e Publicando</span>
           </a>
           <div class="status-icon locked"></div>
         </div>
       </section>
       <section class="reset-progress-section">
-        <h2>Reiniciar Aventura?</h2>
+        <h2>Reiniciar Confronto?</h2>
         <button id="reset-lessons-button" class="back-to-map-button">
           Zerar Progresso
         </button>
       </section>
 
       <section id="resources" class="resources-container">
-        <h2>Arsenal de Recursos</h2>
+        <h2>Arsenal de Ferramentas</h2>
         <div class="resource-cards">
           <div class="resource-card">
-            <a href="https://docs.python.org/3/" target="_blank"
-              >Documentação Oficial</a
+            <a
+              href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"
+              target="_blank"
+              >MDN Web Docs (HTML)</a
             >
-            <p>Seu guia supremo para o Python.</p>
+            <p>Seu guia supremo para o HTML.</p>
           </div>
           <div class="resource-card">
-            <a href="https://www.python.org/community/" target="_blank"
-              >Comunidade Python</a
+            <a
+              href="https://developer.mozilla.org/pt-BR/docs/Web/CSS"
+              target="_blank"
+              >MDN Web Docs (CSS)</a
             >
-            <p>Conecte-se com outros heróis da programação.</p>
+            <p>Seu guia supremo para o CSS.</p>
           </div>
           <div class="resource-card">
-            <a href="https://pythontutor.com/" target="_blank">Python Tutor</a>
-            <p>Visualize a magia do seu código passo a passo.</p>
+            <a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a>
+            <p>Dicas e truques avançados de CSS.</p>
           </div>
         </div>
       </section>
 
       <section id="challenges" class="games-container">
-        <h2>Arena de Desafios</h2>
+        <h2>Confrontos de Habilidades</h2>
         <div class="game-cards">
           <div class="game-card">
-            <a href="https://codecombat.com/" target="_blank">CodeCombat</a>
-            <p>Aprenda Python enquanto joga!</p>
+            <a href="https://flexboxfroggy.com/" target="_blank"
+              >Flexbox Froggy</a
+            >
+            <p>Aprenda Flexbox jogando!</p>
           </div>
           <div class="game-card">
-            <a href="https://www.codingame.com/" target="_blank">CodinGame</a>
-            <p>Desafios de programação com elementos de jogos.</p>
+            <a href="https://cssgridgarden.com/" target="_blank"
+              >CSS Grid Garden</a
+            >
+            <p>Domine CSS Grid com um jogo.</p>
           </div>
           <div class="game-card">
-            <a href="https://checkio.org/" target="_blank">CheckiO</a>
-            <p>Resolva quebra-cabeças de código em Python.</p>
+            <a href="https://www.frontendmentor.io/" target="_blank"
+              >Frontend Mentor</a
+            >
+            <p>Desafios reais para praticar HTML/CSS.</p>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 Aventura Python. Todos os direitos reservados.</p>
+      <p>
+        &copy; 2025 Brawl Stars Web Adventures. Todos os direitos reservados.
+      </p>
     </footer>
     <script src="scripts/lesson_progress.js"></script>
     <script src="scripts/music_control.js"></script>
