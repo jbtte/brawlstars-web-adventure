@@ -1,36 +1,63 @@
-/* styles/components/_resource_cards.css */
+/* styles/components/_resource_cards.css - Para Brawl Stars Web Adventures */
+
 .resources-container,
 .games-container {
-    background-color: var(--mario-grass-green);
-    border: 5px solid var(--mario-dirt-brown);
-    border-radius: 15px;
+    background-color: var(--brawl-light-purple); /* Roxo claro, como um painel de seleção */
+    border: 5px solid var(--brawl-yellow); /* Borda amarela vibrante */
+    border-radius: var(--border-radius-default); /* Usando variável */
     padding: 40px 30px 30px;
     margin-bottom: 30px;
-    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3);
-    color: var(--text-light);
+    /* Sombra com brilho roxo/amarelo para destacar */
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5), /* Brilho roxo */
+                0 0 30px rgba(255, 200, 0, 0.3), /* Brilho amarelo */
+                8px 8px 0px var(--brawl-dark-purple); /* Efeito 3D roxo escuro */
+    color: var(--text-light); /* Texto claro */
     position: relative;
     overflow: hidden;
+    text-align: center; /* Centraliza o título e o conteúdo antes do grid */
 }
 
 .resources-container::before,
 .games-container::before {
-    content: '';
+    content: ''; /* Mantido vazio, o emoji ficará no h2 para ser mais fácil de centralizar */
+    /* Removido o background-color e border-bottom para um visual mais limpo ou para ser definido no h2 */
+    /* Ou, se quiser um painel top visual: */
+    /*
+    background-color: var(--brawl-gold);
+    border-bottom: 3px solid var(--brawl-dark-purple);
+    border-radius: var(--border-radius-default) var(--border-radius-default) 0 0;
+    */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 30px;
-    background-color: #388E3C;
-    border-bottom: 3px solid var(--mario-dirt-brown);
-    border-radius: 15px 15px 0 0;
+    height: 30px; /* Mantido para caso queira um top visual */
+    z-index: 1; /* Garante que fique abaixo do h2 mas acima do fundo da seção */
 }
 
 .resources-container h2,
 .games-container h2 {
-    color: var(--text-light);
-    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
-    margin-top: 10px;
+    color: var(--brawl-gold); /* Títulos em dourado */
+    text-shadow: var(--text-shadow-default); /* Sombra padrão */
+    margin-top: 10px; /* Ajuste para o padding */
+    position: relative; /* Para z-index e possíveis ícones */
+    z-index: 2; /* Garante que o título fique sobre o ::before se ele existir */
+    font-size: 2em; /* Um pouco maior */
+    margin-bottom: 25px; /* Mais espaço para o grid */
 }
+
+/* Opcional: Adicionar um ícone ao lado do título */
+.resources-container h2::before {
+    content: '💎 '; /* Ícone de gema/cristal */
+    color: var(--brawl-blue); /* Cor do ícone */
+    font-size: 0.8em;
+}
+.games-container h2::before {
+    content: '⚔️ '; /* Ícone de espada/batalha */
+    color: var(--brawl-red); /* Cor do ícone */
+    font-size: 0.8em;
+}
+
 
 .resource-cards,
 .game-cards {
@@ -41,44 +68,54 @@
 
 .resource-card,
 .game-card {
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 3px solid var(--mario-dirt-brown);
-    border-radius: 8px;
+    background-color: var(--bg-medium); /* Fundo médio escuro para os cards internos */
+    border: 3px solid var(--brawl-gold); /* Borda dourada vibrante */
+    border-radius: var(--border-radius-default); /* Usando variável */
     padding: 20px;
-    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease;
+    /* Sombra que lembra um cartão/badge do jogo */
+    box-shadow: 4px 4px 0px var(--brawl-dark-purple), /* Efeito 3D roxo escuro */
+                0 0 10px rgba(255, 215, 0, 0.4); /* Brilho sutil dourado */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    color: var(--text-light); /* Texto claro */
 }
 
 .resource-card:hover,
 .game-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.02); /* Efeito de "subir" e leve zoom */
+    background-color: rgba(52, 58, 64, 0.9); /* Fundo um pouco mais escuro no hover */
+    box-shadow: 6px 6px 0px var(--brawl-dark-purple), 
+                0 0 15px rgba(255, 215, 0, 0.6); /* Brilho e sombra mais intensos */
 }
 
 .resource-card a,
 .game-card a {
-    font-family: var(--pixel-font);
-    color: black;
+    font-family: var(--font-heading); /* Fonte pixelada */
+    color: var(--brawl-yellow); /* Links em amarelo vibrante */
     text-decoration: none;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.1em; /* Um pouco maior */
     display: block;
     margin-bottom: 8px;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+    text-shadow: var(--text-shadow-default); /* Sombra padrão */
+    transition: color 0.2s ease;
+}
+
+.resource-card a:hover,
+.game-card a:hover {
+    color: var(--brawl-gold); /* Dourado no hover */
 }
 
 .resource-card p,
 .game-card p {
-    color: black; /* Garante que o texto seja preto e visível */
-    font-size: 0.9em;
+    color: var(--text-light); /* Texto claro */
+    font-size: 0.95em; /* Ligeiramente maior */
     margin: 0;
-    line-height: 1.3; /* Aumentado ligeiramente para melhor leitura */
-    text-shadow: 0.5px 0.5px 0px rgba(255, 255, 255, 0.6); /* Sombra sutil para destacar */
-    
+    line-height: 1.4; /* Aumentado ligeiramente */
+    text-shadow: 0.5px 0.5px 0px rgba(0, 0, 0, 0.3); /* Sombra sutil escura */
 }
 
-.lesson-map-container h2,
-.lesson-map-container .map-intro-text {
-    grid-column: 1 / -1; /* Faz esses elementos ocuparem todas as colunas do grid */
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 20px; /* Adiciona um espaço abaixo deles */
-}
+/* Opcional: Adicionar ícones aos cards de recurso/jogo, similar aos intro-video-card */
+/* Exemplo:
+.resource-card.mdn-html::before { content: '📄'; }
+.resource-card.flexbox-froggy::before { content: '🐸'; }
+*/

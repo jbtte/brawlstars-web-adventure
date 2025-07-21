@@ -1,134 +1,148 @@
-/* styles/base/_global.css */
-html, body {
-    height: 100%; /* Garante que html e body ocupem 100% da viewport */
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Mantém horizontal sem barra de rolagem */
-    overflow-y: scroll; /* Força a barra de rolagem vertical no body */
+/* Reseta estilos básicos do navegador */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* Rolagem suave para âncoras */
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    padding-bottom: 60px;
-    text-align: center;
-    color: var(--text-dark);
-
-    /* Imagem de fundo da página */
-    background-image: url('../../resources/images/page-bg.png');
+  font-family: var(--font-body); /* Fonte padrão para o corpo (Roboto) */
+  line-height: 1.6;
+  color: var(--text-light); /* Cor de texto padrão (claro) */
+  background-color: var(--brawl-dark-purple); /* Fundo geral do site, um roxo escuro */
+  background-image: url('../../resources/images/brawl-stars-bg.jpg'); /* Nova imagem de fundo Brawl Stars */
+  background-size: cover; /* Cobre todo o fundo */
+  background-position: center; /* Centraliza a imagem */
+  background-attachment: fixed; /* Imagem de fundo fixa na rolagem */
+  min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+  display: flex;
+  flex-direction: column; /* Para o footer ficar no final */
+  overflow-x: hidden; /* Mantém horizontal sem barra de rolagem */
+  overflow-y: scroll; /* Força a barra de rolagem vertical no body */
+  padding-bottom: 60px; /* Mantém o padding para o footer */
+  text-align: center; /* Mantido para centralizar conteúdo principal, mas seções internas serão left */
 }
 
 main {
-    max-width: 1000px;
+    max-width: 1200px; /* Aumentado para melhor aproveitamento do espaço em telas maiores */
     margin: 20px auto;
-    padding: 0 20px;
-    position: relative; /* Mantido para z-index */
+    padding: 0 var(--spacing-unit); /* Usando a variável de espaçamento */
+    position: relative;
     z-index: 10;
-    
 }
 
 /* Estilo padrão para todas as seções (seus "blocos de conteúdo") */
 section {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 8px 8px 0px var(--mario-dirt-brown), 12px 12px 0px rgba(0, 0, 0, 0.1);
-    border: 4px solid var(--mario-dirt-brown);
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-dark);
+    background-color: rgba(0, 0, 0, 0.75); /* Fundo semi-transparente escuro para seções */
+    border-radius: var(--border-radius-default); /* Usando variável de border-radius */
+    padding: 30px; /* Mantido o padding */
+    margin-bottom: 30px; /* Mantido o espaçamento */
+    /* Nova sombra e borda inspiradas em elementos de jogo */
+    box-shadow: 0 0 15px rgba(255, 200, 0, 0.5), /* Brilho dourado/amarelo */
+                0 0 30px rgba(255, 200, 0, 0.3); /* Brilho maior */
+    border: 4px solid var(--brawl-yellow); /* Borda amarela vibrante */
+    font-family: var(--font-body); /* Fonte do corpo */
+    color: var(--text-light); /* Cor de texto claro */
     font-size: 1.05em;
     line-height: 1.6;
-    text-align: left;
+    text-align: left; /* Conteúdo das seções alinhado à esquerda */
 }
 
 section p {
-    margin-bottom: 1em; /* Garante espaçamento entre parágrafos */
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5); /* Sombra sutil para destacar */
-    /* Você pode ajustar a cor do text-shadow para um tom mais escuro (rgba(0,0,0,0.2)) se o fundo for escuro */
+    margin-bottom: 1em;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3); /* Sombra mais escura para texto claro */
 }
 
 section h2 {
-    font-family: var(--pixel-font);
-    color: var(--mario-red);
+    font-family: var(--font-heading); /* Fonte pixelada para títulos de seção */
+    color: var(--brawl-gold); /* Títulos em dourado */
     font-size: 1.8em;
     margin-top: 0;
-    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+    text-shadow: var(--text-shadow-default); /* Sombra padrão de texto */
     text-align: center; /* Títulos de seção centralizados */
 }
 
-/* Estilo para listas dentro das seções (se houver) */
+/* Estilo para listas dentro das seções */
 section ul {
     list-style: none; /* Remove marcadores padrão */
-    padding-left: 20px; /* Ajusta o padding */
+    padding-left: 20px;
     margin: 15px 0;
 }
 
 section ul li {
     position: relative;
-    padding-left: 25px; /* Espaço para o marcador personalizado */
+    padding-left: 30px; /* Espaço para o marcador personalizado maior */
     margin-bottom: 8px;
 }
 
 section ul li::before {
-    content: '▶️'; /* Marcador de lista personalizado */
-    font-size: 0.8em;
+    content: '⭐'; /* Marcador de lista Brawl Stars (estrela) */
+    font-size: 1.2em; /* Tamanho maior para o ícone */
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--mario-red);
+    color: var(--brawl-yellow); /* Cor amarela para a estrela */
 }
 
 /* Estilos para os snippets de código dentro das explicações */
-section pre code.language-python {
+section pre code.language-html,
+section pre code.language-css { /* Adicionado para HTML/CSS */
     display: block;
     padding: 15px;
     margin-top: 15px;
-    background-color: #282c34;
-    color: #abb2bf;
-    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+    background-color: #1a1a2e; /* Fundo mais escuro para código (tema Brawl) */
+    color: #e0e0e0; /* Texto claro para código */
+    font-family: 'Fira Code', 'Consolas', 'Monaco', monospace; /* Mantido uma fonte monospace */
     font-size: 0.9em;
     line-height: 1.4;
-    border-radius: 5px;
+    border-radius: var(--border-radius-default); /* Usando variável */
     overflow-x: auto;
-    box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    box-shadow: var(--box-shadow-default); /* Sombra padrão */
     text-align: left;
+    border: 1px solid var(--brawl-light-purple); /* Borda sutil */
 }
 
-/* Estilos para os snippets de exercício */
+
+/* Estilos para os snippets de exercício (pode ser usado para dicas de código de exercício) */
 .exercise-snippet {
-    background-color: #f0f0f0; /* Fundo claro para o snippet */
-    border: 1px dashed #ccc;
+    background-color: var(--bg-medium); /* Fundo médio para o snippet */
+    border: 1px dashed var(--brawl-yellow); /* Borda tracejada amarela */
     padding: 10px;
     margin-top: 10px;
-    border-radius: 5px;
-    font-family: 'Fira Code', monospace;
-    font-size: 0.85em;
-    color: #555;
+    border-radius: var(--border-radius-default);
+    font-family: var(--font-body); /* Usando fonte padrão do corpo */
+    font-size: 0.9em; /* Ligeiramente menor para snippets */
+    color: var(--text-light); /* Cor de texto claro */
     white-space: pre-wrap;
     text-align: left;
-    margin-bottom: 20px; /* Adiciona um espaço de 20px abaixo de cada dica */
-    line-height: 40px;
+    margin-bottom: 20px;
+    line-height: 1.4;
   }
 
   /* Estilos para o botão "Voltar ao Mapa das Fases" em mensagens de erro/status */
 .back-to-map-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: var(--mario-blue);
-    color: var(--text-dark); /* Garante que o texto seja branco e visível */
-    font-family: var(--pixel-font);
+    background-color: var(--brawl-yellow); /* Amarelo Brawl Stars */
+    color: var(--text-dark); /* Texto escuro para contraste */
+    font-family: var(--font-heading); /* Fonte pixelada */
     text-decoration: none;
-    border-radius: 5px;
-    box-shadow: 3px 3px 0px var(--mario-dirt-brown);
-    transition: transform 0.1s ease, box-shadow 0.1s ease; /* Adicionando transição para hover */
-    margin-top: 20px; /* Adiciona margem acima do botão */
-    border: 2px solid var(--mario-dirt-brown); /* Borda para parecer mais um botão de jogo */
+    border-radius: var(--border-radius-default);
+    box-shadow: 3px 3px 0px var(--brawl-brown); /* Sombra marrom/terrosa */
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+    margin-top: 20px;
+    border: 2px solid var(--brawl-brown); /* Borda marrom/terrosa */
+    cursor: pointer; /* Indica que é clicável */
 }
 
 .back-to-map-button:hover {
-    transform: translateY(-2px); /* Efeito de "pular" no hover */
-    box-shadow: 5px 5px 0px var(--mario-dirt-brown); /* Sombra mais pronunciada no hover */
-    background-color: #72A0EE; /* Um azul um pouco mais claro no hover */
-    color: var(--mario-block-yellow); /* Opção 1: Amarelo vibrante, como as moedas do Mario */
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 0px var(--brawl-brown);
+    background-color: var(--brawl-gold); /* Dourado no hover */
+    color: var(--text-dark); /* Mantém a cor do texto para contraste */
 }

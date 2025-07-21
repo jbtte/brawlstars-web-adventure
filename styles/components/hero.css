@@ -1,64 +1,90 @@
 /* styles/components/_hero.css */
 .hero-section {
-    background-image: url('../../resources/images/hero-section-bg.png');
-    background-color: var(--mario-sky-blue);
-    color: var(--text-light);
-    padding: 60px 20px;
-    border-radius: 10px;
+    /* Imagem de fundo inspirada em arenas de Brawl Stars ou telas de loading */
+    background-image: url('../../resources/images/brawl-hero-bg.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--brawl-dark-purple); /* Cor de fundo roxa escura */
+    color: var(--text-light); /* Texto claro */
+    padding: 80px 20px; /* Aumentei o padding para mais destaque */
+    border-radius: var(--border-radius-default); /* Usando variável */
     margin-bottom: 30px;
-    box-shadow: 5px 5px 0px var(--mario-dirt-brown), 10px 10px 0px rgba(0, 0, 0, 0.1);
-    border: 3px solid var(--mario-dirt-brown);
+    /* Sombras e bordas inspiradas em elementos de jogo do Brawl Stars */
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.7), /* Grande brilho dourado */
+                0 0 50px rgba(255, 215, 0, 0.4); /* Brilho secundário */
+    border: 5px solid var(--brawl-gold); /* Borda dourada grossa */
     position: relative;
     overflow: hidden;
+    /* Adicione uma leve animação de background se a imagem permitir */
+    /* animation: pan-background 30s linear infinite alternate; */
 }
 
+/* Exemplo de animação (coloque em global.css se for usar) */
+/*
+@keyframes pan-background {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+*/
+
 .hero-content {
-    max-width: 800px;
+    max-width: 900px; /* Aumentado para acomodar mais texto ou elementos */
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    border-radius: 8px;
-    display: flex; /* Transforma em um contêiner flexível */
-    flex-direction: column; /* Organiza os itens em coluna */
-    align-items: center; /* Centraliza os itens horizontalmente (incluindo o botão) */
-    
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo mais escuro e opaco para melhor leitura */
+    padding: 30px; /* Mais padding */
+    border-radius: var(--border-radius-default); /* Usando variável */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid var(--brawl-yellow); /* Borda amarela sutil para o conteúdo */
+    box-shadow: var(--box-shadow-default); /* Sombra padrão para o card interno */
 }
 
 .hero-section h2 {
-    font-family: var(--pixel-font);
-    font-size: 2.2em;
-    color: var(--mario-block-yellow);
-    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+    font-family: var(--font-heading); /* Fonte pixelada */
+    font-size: 2.8em; /* Título bem maior e impactante */
+    color: var(--brawl-gold); /* Cor dourada forte para o título */
+    text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.6); /* Sombra mais profunda para destaque */
     margin-top: 0;
+    margin-bottom: 20px; /* Mais espaço abaixo do título */
+    line-height: 1.1; /* Ajuste para títulos grandes */
 }
 
 .hero-section p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 30px;
+    font-family: var(--font-body); /* Usando fonte padrão do corpo */
+    font-size: 1.2em; /* Texto um pouco maior */
+    line-height: 1.7;
+    margin-bottom: 40px; /* Mais espaço antes do botão */
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3); /* Sombra sutil para legibilidade */
+    text-align: center; /* Centraliza o texto do parágrafo */
 }
 
 .start-adventure-button {
     display: inline-flex;
     align-items: center;
-    background-color: var(--mario-red);
-    color: var(--text-light);
-    font-family: var(--pixel-font);
-    font-size: 1.2em;
-    padding: 15px 30px;
-    border-radius: 10px;
+    justify-content: center; /* Centraliza ícone e texto se houver */
+    background-color: var(--brawl-red); /* Vermelho impactante do Brawl Stars */
+    color: var(--text-light); /* Texto claro */
+    font-family: var(--font-heading); /* Fonte pixelada */
+    font-size: 1.4em; /* Botão maior e mais chamativo */
+    padding: 18px 35px; /* Mais padding */
+    border-radius: var(--border-radius-default); /* Usando variável */
     text-decoration: none;
-    box-shadow: 5px 5px 0px var(--mario-dirt-brown);
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
-    border: 3px solid var(--mario-dirt-brown);
+    box-shadow: 6px 6px 0px var(--brawl-brown); /* Sombra marrom/terrosa mais pronunciada */
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+    border: 3px solid var(--brawl-dark-purple); /* Borda roxa escura */
+    cursor: pointer;
 }
 
 .start-adventure-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 8px 8px 0px var(--mario-dirt-brown);
+    transform: translateY(-5px); /* Efeito de "subir" mais dramático */
+    box-shadow: 10px 10px 0px var(--brawl-brown); /* Sombra ainda mais pronunciada */
+    background-color: #ff4757; /* Um vermelho ligeiramente mais claro no hover */
 }
 
 .start-adventure-button .button-icon {
-    margin-left: 10px;
-    font-size: 1.5em;
+    margin-left: 15px; /* Mais espaço para o ícone */
+    font-size: 1.8em; /* Ícone maior */
+    line-height: 1; /* Alinha o ícone verticalmente */
 }

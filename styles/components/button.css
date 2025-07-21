@@ -1,43 +1,55 @@
+/* Styles para o Botão "Ver Dica de Código" */
 .show-hint-button {
     display: inline-block;
     padding: 8px 15px;
-    margin-top: 10px; /* Espaço acima do botão */
-    background-color: var(--mario-grass-green); /* Verde como um cano */
-    color: var(--text-light);
-    font-family: var(--pixel-font);
-    font-size: 0.8em;
-    border: 2px solid var(--mario-dirt-brown);
-    border-radius: 5px;
+    margin-top: 15px; /* Mais espaço acima do botão */
+    background-color: var(--brawl-blue); /* Azul vibrante do Brawl Stars */
+    color: var(--text-light); /* Texto claro */
+    font-family: var(--font-heading); /* Fonte pixelada */
+    font-size: 0.9em; /* Ligeiramente maior */
+    border: 2px solid var(--brawl-dark-purple); /* Borda roxa escura */
+    border-radius: var(--border-radius-default); /* Usando variável */
     cursor: pointer;
-    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 0px var(--brawl-brown); /* Sombra marrom para efeito 3D */
     transition: transform 0.1s ease, background-color 0.1s ease, box-shadow 0.1s ease;
+    text-shadow: var(--text-shadow-default); /* Sombra padrão para texto */
 }
 
 .show-hint-button:hover {
-    transform: translateY(-2px);
-    background-color: #5cb85c; /* Um verde um pouco mais claro */
-    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px); /* Efeito de "subir" mais pronunciado */
+    background-color: #0099ff; /* Um azul um pouco mais claro no hover */
+    box-shadow: 5px 5px 0px var(--brawl-brown); /* Sombra mais pronunciada */
 }
 
 .show-hint-button:active {
-    transform: translateY(1px);
-    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+    transform: translateY(0); /* Volta à posição original ao clicar */
+    box-shadow: 2px 2px 0px var(--brawl-brown); /* Sombra menor ao clicar */
+    background-color: var(--brawl-blue); /* Volta à cor original */
 }
 
+/* Estilo para o container da dica, que será escondido/mostrado */
 .hint-container {
-    /* Estilo para o container da dica, que será escondido/mostrado */
-    margin-top: 15px; /* Espaço entre o botão e a dica */
-    transition: opacity 0.3s ease, max-height 0.3s ease; /* Transição suave */
-    overflow: hidden; /* Garante que não haja transbordamento durante a transição */
-    max-height: 500px; /* Altura máxima para transição */
-    opacity: 1; /* Visível por padrão antes da classe hidden */
+    margin-top: 15px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutilmente transparente para a dica */
+    border: 1px solid var(--brawl-yellow); /* Borda amarela para dica */
+    border-radius: var(--border-radius-default);
+    padding: 15px;
+    transition: opacity 0.3s ease, max-height 0.3s ease, margin-top 0.3s ease;
+    overflow: hidden;
+    max-height: 500px;
+    opacity: 1;
+    color: var(--text-light); /* Texto claro para a dica */
+    font-size: 0.95em;
+    line-height: 1.5;
 }
 
 .hint-container.hidden {
-    max-height: 0; /* Altura zero para esconder */
-    opacity: 0; /* Totalmente transparente */
-    margin-top: 0; /* Remove a margem quando escondido */
-    pointer-events: none; /* Impede interação quando escondido */
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    pointer-events: none;
+    padding-top: 0; /* Remove padding quando escondido */
+    padding-bottom: 0; /* Remove padding quando escondido */
 }
 
 /* Garante que o .exercise-snippet dentro da dica não tenha margin-bottom se for o último item da dica */
@@ -45,31 +57,33 @@
     margin-bottom: 0; 
 }
 
+
 /* Estilos para o Botão de Controle de Música */
 .music-toggle-button {
-    background-color: var(--mario-red); /* Volta para o vermelho Mario */
-    color: var(--text-light);
-    font-family: var(--pixel-font);
-    font-size: 0.7em;
-    padding: 5px 10px;
-    border: 2px solid var(--mario-dirt-brown); /* Borda marrom */
-    border-radius: 5px;
+    background-color: var(--brawl-red); /* Vermelho Brawl Stars */
+    color: var(--text-light); /* Texto claro */
+    font-family: var(--font-heading); /* Fonte pixelada */
+    font-size: 0.8em; /* Ligeiramente maior */
+    padding: 7px 12px; /* Um pouco mais de padding */
+    border: 2px solid var(--brawl-dark-purple); /* Borda roxa escura */
+    border-radius: var(--border-radius-default); /* Usando variável */
     cursor: pointer;
-    box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 0px var(--brawl-brown); /* Sombra marrom para efeito 3D */
     transition: all 0.1s ease;
     white-space: nowrap; /* Evita quebra de linha */
-    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
-    margin-left: 20px; /* Aumentado de 10px para 20px */
+    text-shadow: var(--text-shadow-default); /* Sombra padrão para texto */
+    margin-left: 20px; /* Mantém a margem */
 }
 
 
 .music-toggle-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 3px 3px 0px rgba(0,0,0,0.4);
-    background-color: #FF6347; /* Vermelho mais claro no hover */
+    transform: translateY(-2px); /* Efeito de "subir" */
+    box-shadow: 4px 4px 0px var(--brawl-brown); /* Sombra mais pronunciada */
+    background-color: #ff4757; /* Um vermelho um pouco mais claro no hover */
 }
 
 .music-toggle-button:active {
-    transform: translateY(1px);
-    box-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    transform: translateY(0); /* Volta à posição original ao clicar */
+    box-shadow: 1px 1px 0px var(--brawl-brown); /* Sombra menor ao clicar */
+    background-color: var(--brawl-red); /* Volta à cor original */
 }

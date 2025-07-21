@@ -1,57 +1,60 @@
 /* styles/components/_header.css */
 
 header {
-    background-color: var(--mario-sky-blue);
-    color: var(--text-light);
+    background-color: var(--brawl-dark-purple); /* Roxo escuro Brawl Stars */
+    color: var(--text-light); /* Texto claro */
     padding: 15px 20px;
-    /* border-bottom: 5px solid var(--mario-dirt-brown); */
+    /* Remover bordas e sombras aqui para definir no wrapper sticky */
+    /* border-bottom: 5px solid var(--brawl-yellow); */ /* Exemplo de borda */
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
-    /* z-index: 1000; */
+    /* z-index: 1000; */ /* Z-index será no wrapper sticky */
 
     display: flex;
     flex-direction: column; /* Organiza os filhos um abaixo do outro */
     align-items: center; /* Centraliza horizontalmente (h1 e o wrapper) */
+    width: 100%; /* Garante que o header ocupe a largura total */
 }
 
 header h1 {
-    font-family: var(--pixel-font);
-    font-size: 2em;
-    margin: 0 auto 15px auto; /* 0px topo, auto lados (para centralizar), 15px inferior */
-    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
+    font-family: var(--font-heading); /* Fonte pixelada do Brawl Stars */
+    font-size: 2.2em; /* Um pouco maior para destaque */
+    margin: 0 auto 15px auto;
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5); /* Sombra mais forte para destaque */
     white-space: normal;
-    width: fit-content; /* Permite que o h1 seja centralizado como um bloco */
+    width: fit-content;
     line-height: 1.2;
+    color: var(--brawl-gold); /* Título em dourado */
 }
 
 /* Wrapper para a navegação e o botão de música */
 .header-controls-wrapper {
-    display: flex; /* Faz a nav e o botão ficarem lado a lado */
-    justify-content: center; /* Centraliza a nav e o botão juntos */
-    align-items: center; /* Alinha verticalmente nav e botão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-    width: 100%; /* Ocupa a largura total */
-    max-width: 100%; /* Garante que não transborde */
-    margin: 0; /* Centraliza o próprio wrapper */
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
     
-    position: sticky; /* Torna este container (menu + botão) sticky */
-    top: 0; /* Gruda no topo da tela */
-    background-color: var(--mario-sky-blue); /* Fundo para quando ele estiver sticky */
-    padding: 10px 20px; /* Padding para a barra sticky */
-    border-bottom: 2px solid var(--mario-dirt-brown); /* Borda para a barra sticky */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Sombra para a barra sticky */
-    z-index: 999; /* Z-index para ficar acima do conteúdo ao rolar, mas abaixo do h1 se ele deslizar */
+    position: sticky;
+    top: 0;
+    background-color: var(--brawl-light-purple); /* Um roxo mais claro para a barra sticky */
+    padding: 10px 20px;
+    border-bottom: 3px solid var(--brawl-yellow); /* Borda amarela mais grossa */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.4); /* Sombra mais pronunciada */
+    z-index: 999;
 }
 
 /* Navegação principal */
 .main-nav {
     width: auto; 
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente para destacar */
-    padding: 10px 0; /* Espaçamento interno */
-    border-top: 2px solid var(--mario-dirt-brown); /* Borda superior para separação */
-    border-bottom: 2px solid var(--mario-dirt-brown); /* Borda inferior */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil para profundidade */
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente escuro para destacar */
+    padding: 10px 0;
+    border-top: 2px solid var(--brawl-gold); /* Borda superior dourada */
+    border-bottom: 2px solid var(--brawl-gold); /* Borda inferior dourada */
+    box-shadow: var(--box-shadow-default); /* Sombra sutil padrão */
+    border-radius: var(--border-radius-default); /* Usando variável */
     flex-shrink: 0;
 }
 
@@ -60,23 +63,24 @@ header h1 {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Centraliza os itens da lista dentro da ul */
+    justify-content: center;
     gap: 20px;
 }
 
 .main-nav a {
-    font-family: var(--pixel-font);
-    color: var(--text-light);
+    font-family: var(--font-heading); /* Fonte pixelada */
+    color: var(--text-light); /* Texto claro */
     text-decoration: none;
-    font-size: 0.7em;
-    padding: 5px 10px;
+    font-size: 0.8em; /* Ligeiramente maior */
+    padding: 5px 12px; /* Um pouco mais de padding */
     border: 2px solid transparent;
     transition: all 0.2s ease;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+    text-shadow: var(--text-shadow-default); /* Sombra padrão para texto */
 }
 
 .main-nav a:hover {
-    border-color: var(--mario-block-yellow);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+    border-color: var(--brawl-yellow); /* Borda amarela no hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutilmente transparente no hover */
+    border-radius: var(--border-radius-default);
+    color: var(--brawl-gold); /* Dourado no hover para destaque */
 }

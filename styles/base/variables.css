@@ -1,11 +1,35 @@
 /* styles/base/_variables.css */
 :root {
-    --mario-sky-blue: #6495ED;
-    --mario-grass-green: #4CAF50;
-    --mario-dirt-brown: #8B4513;
-    --mario-block-yellow: #FFD700;
-    --mario-red: #FF4500;
-    --text-dark: #333;
-    --text-light: #F0F0F0;
-    --pixel-font: 'Press Start 2P', cursive;
+  /* Cores Brawl Stars inspiradas */
+  --brawl-blue: #007bff; /* Um azul vibrante */
+  --brawl-red: #dc3545;  /* Um vermelho forte para perigo/dano */
+  --brawl-yellow: #ffc107; /* O amarelo clássico do logo e energia */
+  --brawl-green: #28a745; /* Verde para sucesso/vida */
+  --brawl-dark-purple: #4B0082; /* Um roxo escuro, como o fundo da tela de carregamento */
+  --brawl-light-purple: #8A2BE2; /* Um roxo mais claro */
+  --brawl-brown: #8B4513; /* Cores de terra/caixas */
+  --brawl-gold: #FFD700; /* Dourado para elementos premium/destaque */
+  --brawl-silver: #C0C0C0; /* Prateado para elementos secundários */
+
+  /* Cores de texto */
+  --text-light: #f8f9fa; /* Branco quase puro para contraste em fundos escuros */
+  --text-dark: #343a40;  /* Cinza escuro para texto principal */
+
+  /* Cores de fundo */
+  --bg-dark: #212529;    /* Fundo escuro */
+  --bg-medium: #343a40;  /* Fundo intermediário */
+  --bg-light: #f8f9fa;   /* Fundo claro para seções */
+
+  /* Fontes Brawl Stars inspiradas */
+  --font-heading: 'Press Start 2P', cursive; /* A fonte pixelada para títulos */
+  --font-body: 'Roboto', sans-serif; /* Uma fonte legível para o corpo */
+
+  /* Espaçamentos e Bordas */
+  --spacing-unit: 1rem; /* 16px */
+  --border-radius-default: 8px;
+  --border-width-default: 2px;
+
+  /* Sombras */
+  --box-shadow-default: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --text-shadow-default: 2px 2px 0px rgba(0, 0, 0, 0.2);
 }

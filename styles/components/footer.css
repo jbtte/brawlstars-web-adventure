@@ -1,23 +1,29 @@
 /* styles/components/_footer.css */
 footer {
-    background-color: var(--mario-dirt-brown);
-    color: var(--text-light);
+    background-color: var(--brawl-brown); /* Marrom terroso do Brawl Stars */
+    color: var(--text-light); /* Texto claro */
     padding: 20px 0;
     font-size: 0.9em;
-    position: relative;
+    position: relative; /* Mantido para posicionamento */
     bottom: 0;
     width: 100%;
-    border-top: 5px solid var(--mario-block-yellow);
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+    border-top: 5px solid var(--brawl-yellow); /* Borda superior amarela vibrante */
+    text-shadow: var(--text-shadow-default); /* Sombra de texto padrão */
+    /* Garante que o texto dentro do footer seja centralizado, se o main não estiver centralizando tudo */
+    text-align: center; 
+}
+
+footer p {
+    margin-bottom: 0; /* Remove margem extra de parágrafos no footer */
 }
 
 footer a {
-    color: var(--text-light);
+    color: var(--text-light); /* Links em cor clara para contraste */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.2s ease;
 }
 
 footer a:hover {
-    color: var(--mario-block-yellow);
+    color: var(--brawl-gold); /* Dourado no hover para destaque */
 }

@@ -1,4 +1,5 @@
 /* styles/base/_responsive.css */
+
 @media (max-width: 768px) {
     header h1 {
         flex-grow: 0;
@@ -11,7 +12,7 @@
         max-width: 100%; /* Ocupa largura total */
         padding: 10px 0; /* Padding vertical para quando empilhado */
         position: static; /* Remove sticky em mobile para não cobrir tudo ao rolar */
-        background-color: var(--mario-sky-blue); /* Fundo no mobile */
+        background-color: var(--brawl-dark-purple); /* Fundo no mobile, um roxo escuro */
         box-shadow: none; /* Remove sombra em mobile */
         border-bottom: none; /* Remove borda em mobile */
     }
@@ -20,11 +21,11 @@
         width: 100%; /* Ocupa largura total */
         margin: 0; /* Remove margem lateral */
         padding: 5px 0; /* Menos padding */
-        background-color: rgba(0, 0, 0, 0.3); /* Fundo para o menu em mobile */
-        border-radius: 5px;
-        border-top: 2px solid var(--mario-dirt-brown); /* Bordas para o menu em mobile */
-        border-bottom: 2px solid var(--mario-dirt-brown);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente escuro para o menu em mobile */
+        border-radius: var(--border-radius-default); /* Usando variável */
+        border-top: 2px solid var(--brawl-yellow); /* Bordas amarelas para o menu em mobile */
+        border-bottom: 2px solid var(--brawl-yellow);
+        box-shadow: var(--box-shadow-default); /* Sombra padrão mais sutil */
     }
 
     .main-nav ul {
@@ -40,17 +41,22 @@
     }
 
     section {
-        padding: 20px;
+        padding: 20px; /* Mantém o padding reduzido */
     }
     section h2 {
-        font-size: 1.4em;
+        font-size: 1.4em; /* Mantém o tamanho de fonte reduzido */
     }
+    
+    /* Adaptado para a nova estrutura de GRID seções */
     .lesson-map-container, /* Para index.html */
-    .lesson-container, /* Para day.html se usado para layout de conceitos */
+    /* Removido .lesson-container pois o day.html tem um layout flexbox agora */
     .resource-cards,
     .game-cards {
+        display: grid; /* Garante que Grid seja usado */
         grid-template-columns: 1fr; /* Coluna única em telas pequenas */
+        gap: var(--spacing-unit); /* Espaçamento entre os itens do grid */
     }
+
     .lesson-card { /* Para index.html */
         min-height: 100px;
         width: auto;
@@ -65,4 +71,28 @@
         font-size: 1em;
         padding: 12px 25px;
     }
+
+    /* Ajustes específicos para a página de lição (day.html) em mobile */
+    .lesson-content {
+        flex-direction: column; /* Empilha o conteúdo principal e a sidebar */
+        padding: 0 var(--spacing-unit); /* Padding lateral para o conteúdo da lição */
+    }
+
+    .lesson-content .lesson-text-content {
+        width: 100%; /* Ocupa toda a largura */
+        order: 1; /* Garante que o conteúdo da lição venha primeiro */
+    }
+
+    .lesson-sidebar {
+        width: 100%; /* Ocupa toda a largura */
+        order: 2; /* Sidebar vem depois do conteúdo principal */
+        margin-top: 20px; /* Espaço entre o conteúdo e a sidebar empilhados */
+    }
+
+    /* Esconde a barra lateral em telas muito pequenas, se necessário, ou adapta */
+    /* Exemplo:
+    .lesson-sidebar {
+        display: none;
+    }
+    */
 }

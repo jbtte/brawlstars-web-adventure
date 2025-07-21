@@ -1,8 +1,10 @@
+/* styles/components/_lesson_map_common.css - Para Brawl Stars Web Adventures */
+
 /* Contêiner das Lições - O "Mapa" ou "Fases" (para index.html) */
 .lesson-map-container {
-    background-color: transparent;
-    box-shadow: none;
-    border: none;
+    background-color: var(--brawl-light-purple); /* Fundo roxo claro como base */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra mais difusa */
+    border: 3px solid var(--brawl-yellow); /* Borda amarela vibrante */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 25px;
@@ -10,46 +12,47 @@
     position: relative;
     z-index: 1;
 
-    /* Imagem de fundo da seção de lições */
-    background-image: url('../../resources/images/lessons-section-bg.png');
-    background-size: repeat;
+    /* Imagem de fundo da seção de lições - remete a um mapa de jogo do Brawl Stars */
+    background-image: url('../../resources/images/brawl-map-bg.jpg'); /* Nova imagem de fundo */
+    background-size: cover; /* Cobre todo o contêiner */
     background-position: center center;
+    background-repeat: no-repeat;
     min-height: 500px;
-    border-radius: 10px;
+    border-radius: var(--border-radius-default); /* Usando variável */
     overflow: hidden;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
-/* --- ALTERAÇÃO AQUI: Título e Parágrafo da Seção de Lições --- */
+/* Título da Seção de Lições */
 .lesson-map-container h2 {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* Ocupa todas as colunas no grid */
     text-align: center;
     margin-bottom: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro e semi-transparente */
     padding: 10px 15px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-    /* Cor do texto: Mais claro, talvez o amarelo ou um branco */
-    color: var(--mario-block-yellow); /* Amarelo vibrante do Bloco '?' */
-    /* text-shadow: Sombra mais escura para destacar */
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.7); /* Sombra mais escura e definida */
+    border-radius: var(--border-radius-default); /* Usando variável */
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.5); /* Sombra mais pronunciada */
+    
+    color: var(--brawl-gold); /* Título em dourado, como destaque no jogo */
+    text-shadow: var(--text-shadow-default); /* Sombra padrão */
 }
 
 .lesson-map-container .map-intro-text {
     grid-column: 1 / -1;
     text-align: center;
-    font-family: var(--pixel-font);
-    /* Cor do texto: Mais claro, como o branco */
-    color: var(--text-light); /* Branco/cinza claro */
+    font-family: var(--font-body); /* Usando a fonte do corpo para melhor legibilidade aqui */
+    color: var(--text-light); /* Texto claro */
     font-size: 1.1em;
-    /* text-shadow: Sombra mais escura e definida */
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5); /* Sombra mais escura */
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5); /* Sombra para legibilidade */
     margin-top: -10px;
     margin-bottom: 30px;
     line-height: 1.4;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 5px 10px;
-    border-radius: 0;
-    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para o texto */
+    padding: 8px 15px; /* Mais padding para o texto introdutório */
+    border-radius: var(--border-radius-default); /* Arredondado para harmonizar */
+    box-shadow: var(--box-shadow-default); /* Sombra sutil para o box de texto */
+    max-width: 800px; /* Limita a largura para melhor leitura */
+    margin-left: auto; /* Centraliza */
+    margin-right: auto; /* Centraliza */
 }

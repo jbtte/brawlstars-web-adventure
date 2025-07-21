@@ -1,15 +1,16 @@
-/* styles/components/lesson_cards.css - Para Python-Adventure (Tema Mario) */
+/* styles/components/_lesson_cards.css - Para Brawl Stars Web Adventures */
+
 .lesson-card {
-  background-color: transparent; /* A imagem será o fundo principal */  
-  border: none;
-    border-radius: 8px;
+    background-color: transparent; /* A imagem de fundo será o foco */  
+    border: none;
+    border-radius: var(--border-radius-default); /* Usando variável */
     padding: 15px;
     
-    /* Simula a borda mais grossa e o relevo */
+    /* Simula a borda e o relevo das caixas de Brawl Stars */
     box-shadow: 
-        inset 2px 2px 5px rgba(0, 0, 0, 0.1), /* Leve sombra interna para profundidade */
-        4px 4px 0 #D6A44A, /* Borda sólida mais escura na direita e embaixo */
-        -2px -2px 0 #FFF2A9; /* Borda mais clara na esquerda e em cima para o brilho */
+        inset 2px 2px 8px rgba(0, 0, 0, 0.4), /* Sombra interna para profundidade */
+        5px 5px 0 var(--brawl-brown), /* Sombra marrom/terrosa para efeito 3D */
+        -3px -3px 0 var(--brawl-yellow); /* Brilho amarelo para destaque */
     
     transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
     
@@ -22,24 +23,31 @@
     cursor: pointer;
     text-align: center;
     width: auto;
-    max-width: 180px;
+    max-width: 180px; /* Largura máxima do card */
     margin: 0 auto;
     overflow: hidden;
     
-    /* Adiciona um overlay semi-transparente sobre a imagem para o texto ser legível */
-    /* A cor amarela do bloco será dada pelo overlay e pela imagem */
+    /* Imagem de fundo padrão para caixas de Brawl Stars não abertas */
     background-image: 
-        linear-gradient(rgba(255, 218, 97, 0.7), rgba(255, 218, 97, 0.7)), 
-        url('../../resources/images/question-mark-box.jpg'); /* Caminho para a sua imagem interna do bloco */
-    background-size: cover ; /* Ajusta a imagem para cobrir todo o card */
-    background-position: center center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Overlay escuro para legibilidade do texto */
+        url('../../resources/images/brawl-box-closed.png'); /* Caminho para a sua imagem da caixa fechada */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px) scale(1.05); /* Efeito de "subir" e crescer mais dramático */
+    box-shadow: 
+        inset 2px 2px 8px rgba(0, 0, 0, 0.4), 
+        8px 8px 0 var(--brawl-brown), /* Sombra mais pronunciada */
+        -5px -5px 0 var(--brawl-gold); /* Brilho mais intenso */
 }
 
 .lesson-card a {
-    font-family: var(--pixel-font);
+    font-family: var(--font-heading); /* Fonte pixelada */
     text-decoration: none;
-    font-size: 0.9em; 
+    font-size: 0.95em; /* Ligeiramente maior */ 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,52 +59,64 @@
     opacity: 1;
     transition: none;
 
-    color: #FFFFFF; /* Mantido branco para o texto da fase */
+    color: var(--text-light); /* Texto claro */
     text-shadow: 
-        1.5px 1.5px 0px #000000, 
-        -1.5px -1.5px 0px #000000,
-        1.5px -1.5px 0px #000000,
-        -1.5px 1.5px 0px #000000,
-        0 0 5px rgba(255, 255, 255, 0.7);
+        1.5px 1.5px 0px var(--bg-dark), /* Sombra escura forte */ 
+        -1.5px -1.5px 0px var(--bg-dark),
+        1.5px -1.5px 0px var(--bg-dark),
+        -1.5px 1.5px 0px var(--bg-dark),
+        0 0 5px rgba(255, 255, 255, 0.7); /* Brilho sutil */
 }
 
-.lesson-card p {
-    font-size: 0.75em;
-    margin: 0;
+.lesson-card .phase-number { /* Mantido phase-number para ID, mas pode renomear para arena-number */
+    font-size: 1.2em; /* Um pouco maior */
+    color: var(--brawl-yellow); /* Amarelo para o número da arena */
+    margin-bottom: 5px;
+    text-shadow: var(--text-shadow-default);
+}
+
+.lesson-card .phase-title { /* Mantido phase-title para ID, mas pode renomear para arena-title */
+    font-size: 0.8em; /* Ajustado para caber melhor */
     line-height: 1.2;
     opacity: 1; 
     margin-top: 5px;
-    
-    color: #FFFFFF; /* Mantido branco para o parágrafo da fase */
-    text-shadow: 
-        1px 1px 0px #000000, 
-        -1px -1px 0px #000000;
+    color: var(--text-light); /* Texto claro para o título da arena */
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.7), 
+                 -1px -1px 0px rgba(0, 0, 0, 0.7);
 }
 
 /* Status icon para ficar sobre a caixa */
 .lesson-card .status-icon {
     z-index: 3;
-    width: 24px;
-    height: 24px;
+    width: 32px; /* Ícone um pouco maior */
+    height: 32px;
     position: absolute;
-    top: -12px;
-    right: -12px;
+    top: -16px; /* Ajustado para o novo tamanho */
+    right: -16px; /* Ajustado para o novo tamanho */
     background-size: contain;
     background-repeat: no-repeat;
-    /* Adicione as imagens de status aqui */
-    /* .status-icon.unlocked { background-image: url('../resources/images/star-icon.png'); } */
-    /* .status-icon.locked { background-image: url('../resources/images/lock-icon.png'); } */
 }
+
+/* Estilos para o ícone de lição "desbloqueada" (visitada ou disponível) */
+.lesson-card .status-icon.unlocked { 
+    background-image: url('../../resources/images/brawl-star-icon.png'); /* Ícone de estrela Brawl */
+}
+/* Estilos para o ícone de lição "bloqueada" */
+.lesson-card .status-icon.locked { 
+    background-image: url('../../resources/images/brawl-lock-icon.png'); /* Ícone de cadeado Brawl */
+}
+
+/* Estado de card VISITADO */
 .lesson-card.visited {
-    /* Remove a sombra de relevo do bloco "?" e adiciona uma sombra mais "plana" */
+    /* Remove a sombra de relevo da caixa e adiciona uma sombra mais "plana" de troféu */
     box-shadow: 
-        inset 1px 1px 3px rgba(0, 0, 0, 0.2), /* Sombra interna sutil */
-        2px 2px 0px rgba(0, 0, 0, 0.4); /* Sombra mais escura para profundidade */
+        inset 1px 1px 5px rgba(0, 0, 0, 0.3), /* Sombra interna sutil */
+        3px 3px 0px var(--brawl-brown); /* Sombra mais sutil */
     
-    /* Imagem de fundo da parede de tijolos com overlay mais escuro */
+    /* Imagem de fundo de troféu ou caixa aberta com overlay mais escuro */
     background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Overlay mais escuro para o texto */
-        url('../../resources/images/brick-wall-bg.jpg'); /* Sua imagem da parede de tijolos */
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Overlay mais escuro */
+        url('../../resources/images/brawl-trophy-bg.png'); /* Sua imagem de troféu ou caixa aberta */
     
     background-size: cover;
     background-position: center center;
@@ -105,29 +125,27 @@
 
 /* Ajuste da cor do texto para cards visitados */
 .lesson-card.visited a {
-    color: #F0F0F0; /* Branco acinzentado para melhor contraste com tijolo */
+    color: var(--brawl-gold); /* Texto dourado para cards visitados */
     text-shadow: 
-        1.5px 1.5px 0px rgba(0, 0, 0, 0.8), /* Sombra preta forte */
+        1.5px 1.5px 0px rgba(0, 0, 0, 0.8), 
         -1.5px -1.5px 0px rgba(0, 0, 0, 0.8),
         1.5px -1.5px 0px rgba(0, 0, 0, 0.8),
         -1.5px 1.5px 0px rgba(0, 0, 0, 0.8),
-        0 0 5px rgba(255, 255, 255, 0.5); /* Brilho sutil */
-
-    background-color: rgba(0, 0, 0, 0.3); /* Fundo preto 50% transparente */
-    padding: 2px 5px; /* Pequeno padding para o fundo */
-    border-radius: 3px; /* Bordas arredondadas */
+        0 0 5px rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo preto semi-transparente para o texto */
+    padding: 2px 5px;
+    border-radius: 3px;
 }
 
-.lesson-card.visited p {
-    color: #E0E0E0; /* Branco acinzentado mais suave */
+.lesson-card.visited .phase-number,
+.lesson-card.visited .phase-title {
+    color: var(--brawl-gold); /* Dourado para números e títulos de fases visitadas */
     text-shadow: 
         1px 1px 0px rgba(0, 0, 0, 0.7), 
         -1px -1px 0px rgba(0, 0, 0, 0.7);
 }
 
 /* Opcional: Ajuste do ícone de status para cards visitados, se houver um ícone específico */
-/* .lesson-card.visited .status-icon {
-    background-image: url('../resources/images/checked-icon.png');
-} */
-
-/* --- FIM DO ESTILO DA CAIXA DA LIÇÃO --- */
+.lesson-card.visited .status-icon.unlocked {
+    background-image: url('../../resources/images/brawl-checked-icon.png'); /* Ícone de "check" Brawl Stars */
+}
