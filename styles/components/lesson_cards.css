@@ -1,64 +1,64 @@
 /* styles/components/_lesson_cards.css - Para Brawl Stars Web Adventures */
 
 .lesson-card {
-    background-color: transparent; /* A imagem de fundo será o foco */  
-    border: none;
-    border-radius: var(--border-radius-default); /* Usando variável */
-    padding: 15px;
+    /* Gradiente como fundo principal (o "box" real), a imagem ficará sobre ele */
+    background: linear-gradient(to bottom, var(--brawl-light-purple), var(--brawl-dark-purple)); /* Gradiente roxo */
+    border: none; /* A borda será dada pela box-shadow */
+    border-radius: var(--border-radius-default);
+    padding: 10px; /* Padding interno do card */
     
     /* Simula a borda e o relevo das caixas de Brawl Stars */
     box-shadow: 
         inset 2px 2px 8px rgba(0, 0, 0, 0.4), /* Sombra interna para profundidade */
-        5px 5px 0 var(--brawl-brown), /* Sombra marrom/terrosa para efeito 3D */
-        -3px -3px 0 var(--brawl-yellow); /* Brilho amarelo para destaque */
+        6px 6px 0 var(--brawl-brown), /* Sombra marrom/terrosa para efeito 3D (maior) */
+        -4px -4px 0 var(--brawl-yellow); /* Brilho amarelo para destaque (maior) */
     
     transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
     
     position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 120px;
+    flex-direction: column; /* Organiza a imagem (fundo) e o texto um abaixo do outro */
+    justify-content: flex-end; /* Alinha o conteúdo (texto) à parte inferior do card */
+    align-items: center; /* Centraliza o texto "Arena X" horizontalmente */
+    
+    /* Aumentando o tamanho dos cards */
+    min-height: 200px; /* Altura mínima aumentada */
+    max-height: 250px; /* Altura máxima para controle */
+    max-width: 200px; /* Largura máxima aumentada */
+    width: auto; /* Mantém a largura automática para ajuste no grid */
+
     cursor: pointer;
     text-align: center;
-    width: auto;
-    max-width: 180px; /* Largura máxima do card */
     margin: 0 auto;
-    overflow: hidden;
+    overflow: hidden; /* Garante que nada vaze */
     
     /* Imagem de fundo padrão para caixas de Brawl Stars não abertas */
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Overlay escuro para legibilidade do texto */
-        url('../../resources/images/brawl-box-closed.png'); /* Caminho para a sua imagem da caixa fechada */
-    background-size: cover;
-    background-position: center center;
+    /* A imagem é um segundo background, sobre o gradiente */
+    background-image: url('../../resources/images/brawl-box-closed.png');
+    background-size: 85%; /* Ajusta a imagem para ocupar mais espaço no card */
+    background-position: center 20px; /* Posiciona a imagem mais para o topo, com mais espaço */
     background-repeat: no-repeat;
+    
+    padding-top: 120px; /* Ajusta padding para o texto ficar abaixo da imagem. Aumentado! */
+    padding-bottom: 15px; /* Padding na parte de baixo do card para o texto */
 }
 
 .lesson-card:hover {
-    transform: translateY(-5px) scale(1.05); /* Efeito de "subir" e crescer mais dramático */
+    transform: translateY(-7px) scale(1.08); /* Efeito de "subir" e crescer mais dramático */
     box-shadow: 
         inset 2px 2px 8px rgba(0, 0, 0, 0.4), 
-        8px 8px 0 var(--brawl-brown), /* Sombra mais pronunciada */
-        -5px -5px 0 var(--brawl-gold); /* Brilho mais intenso */
+        10px 10px 0 var(--brawl-brown), /* Sombra mais pronunciada */
+        -6px -6px 0 var(--brawl-gold); /* Brilho mais intenso */
 }
 
 .lesson-card a {
-    font-family: var(--font-heading); /* Fonte pixelada */
+    font-family: var(--font-heading);
     text-decoration: none;
-    font-size: 0.95em; /* Ligeiramente maior */ 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.1em; /* Fonte do nome da arena ligeiramente maior */
+    
     width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 2;
-    opacity: 1;
-    transition: none;
-
+    margin-top: auto; /* Empurra o overlay para a parte inferior do card */
+    
     color: var(--text-light); /* Texto claro */
     text-shadow: 
         1.5px 1.5px 0px var(--bg-dark), /* Sombra escura forte */ 
@@ -66,80 +66,81 @@
         1.5px -1.5px 0px var(--bg-dark),
         -1.5px 1.5px 0px var(--bg-dark),
         0 0 5px rgba(255, 255, 255, 0.7); /* Brilho sutil */
+    
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo preto mais opaco para o texto */
+    padding: 8px 10px; /* Mais padding para o overlay de texto */
+    border-radius: var(--border-radius-default); /* Aplica em todo o overlay */
+    width: fit-content; /* Faz o overlay se ajustar ao conteúdo */
+    /* margin: 0 auto;  Este será aplicado no span.phase-number */
+    box-sizing: border-box; /* Inclui padding na altura/largura */
+    z-index: 2; /* Garante que o texto esteja acima da imagem de fundo */
+    opacity: 1;
+    transition: none;
+    display: block; /* Garante que o <a> seja um bloco para margin auto */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.lesson-card .phase-number { /* Mantido phase-number para ID, mas pode renomear para arena-number */
-    font-size: 1.2em; /* Um pouco maior */
+.lesson-card .phase-number { 
+    font-size: 1.5em; /* Aumentando ainda mais o tamanho do número da arena */
     color: var(--brawl-yellow); /* Amarelo para o número da arena */
-    margin-bottom: 5px;
-    text-shadow: var(--text-shadow-default);
-}
-
-.lesson-card .phase-title { /* Mantido phase-title para ID, mas pode renomear para arena-title */
-    font-size: 0.8em; /* Ajustado para caber melhor */
+    margin: 0; 
     line-height: 1.2;
-    opacity: 1; 
-    margin-top: 5px;
-    color: var(--text-light); /* Texto claro para o título da arena */
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.7), 
-                 -1px -1px 0px rgba(0, 0, 0, 0.7);
+    text-shadow: var(--text-shadow-default);
 }
 
 /* Status icon para ficar sobre a caixa */
 .lesson-card .status-icon {
     z-index: 3;
-    width: 32px; /* Ícone um pouco maior */
-    height: 32px;
+    width: 36px; /* Ícone um pouco maior */
+    height: 36px;
     position: absolute;
-    top: -16px; /* Ajustado para o novo tamanho */
-    right: -16px; /* Ajustado para o novo tamanho */
+    top: -18px; /* Ajustado para o novo tamanho */
+    right: -18px; /* Ajustado para o novo tamanho */
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 /* Estilos para o ícone de lição "desbloqueada" (visitada ou disponível) */
 .lesson-card .status-icon.unlocked { 
-    background-image: url('../../resources/images/brawl-star-icon.png'); /* Ícone de estrela Brawl */
+    background-image: url('../../resources/images/brawl-star-icon.png');
 }
 /* Estilos para o ícone de lição "bloqueada" */
 .lesson-card .status-icon.locked { 
-    background-image: url('../../resources/images/brawl-lock-icon.png'); /* Ícone de cadeado Brawl */
+    background-image: url('../../resources/images/brawl-lock-icon.png');
 }
 
 /* Estado de card VISITADO */
 .lesson-card.visited {
     /* Remove a sombra de relevo da caixa e adiciona uma sombra mais "plana" de troféu */
     box-shadow: 
-        inset 1px 1px 5px rgba(0, 0, 0, 0.3), /* Sombra interna sutil */
-        3px 3px 0px var(--brawl-brown); /* Sombra mais sutil */
+        inset 1px 1px 5px rgba(0, 0, 0, 0.3), 
+        5px 5px 0px var(--brawl-brown); /* Sombra mais sutil e consistente com o normal */
     
-    /* Imagem de fundo de troféu ou caixa aberta com overlay mais escuro */
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Overlay mais escuro */
-        url('../../resources/images/brawl-trophy-bg.png'); /* Sua imagem de troféu ou caixa aberta */
+    /* Gradiente para cards visitados (troféu) */
+    background: linear-gradient(to bottom, var(--brawl-gold), var(--brawl-yellow)); /* Gradiente dourado */
     
-    background-size: cover;
-    background-position: center center;
+    /* Imagem de fundo de troféu ou caixa aberta */
+    background-image: url('../../resources/images/brawl-trophy-bg.png'); 
+    background-size: 85%; /* Mesma proporção para imagem de troféu */
+    background-position: center 20px; /* Mesma posição */
     background-repeat: no-repeat;
 }
 
 /* Ajuste da cor do texto para cards visitados */
 .lesson-card.visited a {
-    color: var(--brawl-gold); /* Texto dourado para cards visitados */
+    color: var(--brawl-dark-purple); /* Texto roxo escuro para contraste no dourado */
     text-shadow: 
-        1.5px 1.5px 0px rgba(0, 0, 0, 0.8), 
-        -1.5px -1.5px 0px rgba(0, 0, 0, 0.8),
-        1.5px -1.5px 0px rgba(0, 0, 0, 0.8),
-        -1.5px 1.5px 0px rgba(0, 0, 0, 0.8),
-        0 0 5px rgba(255, 255, 255, 0.5);
-    background-color: rgba(0, 0, 0, 0.4); /* Fundo preto semi-transparente para o texto */
-    padding: 2px 5px;
-    border-radius: 3px;
+        1.5px 1.5px 0px rgba(255, 255, 255, 0.8), 
+        -1.5px -1.5px 0px rgba(255, 255, 255, 0.8),
+        1.5px -1.5px 0px rgba(255, 255, 255, 0.8),
+        -1.5px 1.5px 0px rgba(255, 255, 255, 0.8),
+        0 0 5px rgba(0, 0, 0, 0.5); /* Sombra para o brilho */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto mais opaco para o texto */
 }
 
-.lesson-card.visited .phase-number,
-.lesson-card.visited .phase-title {
-    color: var(--brawl-gold); /* Dourado para números e títulos de fases visitadas */
+.lesson-card.visited .phase-number {
+    color: var(--brawl-gold); /* Mantém dourado para o número da arena visitada */
     text-shadow: 
         1px 1px 0px rgba(0, 0, 0, 0.7), 
         -1px -1px 0px rgba(0, 0, 0, 0.7);
@@ -147,5 +148,5 @@
 
 /* Opcional: Ajuste do ícone de status para cards visitados, se houver um ícone específico */
 .lesson-card.visited .status-icon.unlocked {
-    background-image: url('../../resources/images/brawl-checked-icon.png'); /* Ícone de "check" Brawl Stars */
+    background-image: url('../../resources/images/brawl-checked-icon.png');
 }

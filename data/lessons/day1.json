@@ -3,23 +3,73 @@
   "name": "Arena 1",
   "title": "Elementos Básicos: Tags e Estrutura",
   "topic": "HTML",
-  "text": "Nesta primeira arena, vamos aprender sobre os blocos de construção de qualquer página web: as tags HTML. Elas são como os power-ups que dão forma ao seu site!",
-  "interactiveHtmlCode": "<h1>Olá Brawler!</h1>\n<p>Bem-vindo à sua primeira página web.</p>",
-  "interactiveCssCode": "body { font-family: 'Press Start 2P', cursive; color: #333; } h1 { color: #FFD700; }",
-  "explanation": "Aqui, `<h1>` define um título de nível 1 e `<p>` um parágrafo. São tags fundamentais para a estrutura.",
-  "hint": "Lembre-se que tags vêm em pares: abertura (<tag>) e fechamento (</tag>).",
-  "nextLessonId": "day2",
   "concepts": [
     {
-      "heading": "👋 O que vamos aprender hoje?",
-      "text": "Hoje vamos aprender como o computador pode conversar com você! Vamos usar um comando chamado <code>input()</code> para fazer perguntas e guardar respostas.",
-      "type": "explanation"
+      "type": "text",
+      "heading": "Explicação",
+      "text": "HTML é como o esqueleto de um boneco ou a planta de uma casa. Ele mostra onde cada parte da página web vai ficar, como títulos, textos e imagens. Com HTML, organizamos o conteúdo que vai aparecer no site."
     },
     {
-      "heading": "💡 Exemplo: Uma tag simples",
-      "text": "Veja como criar um parágrafo:",
-      "code": "<p>Este é um parágrafo de exemplo.</p>",
-      "type": "code"
+      "type": "text",
+      "heading": "Analogia",
+      "text": "Imagine que você vai montar uma casa. O HTML é como o desenho que diz onde vai ficar cada cômodo: sala, quarto, banheiro... No site, o HTML diz onde ficam o título, o texto, as imagens. A decoração (cores, estilos) vem depois com o CSS!"
+    },
+    {
+      "type": "steps",
+      "heading": "Passo a Passo",
+      "steps": [
+        "Abra o VS Code e crie uma pasta chamada 'Aula01-OlaMundo'.",
+        "Crie um novo arquivo dentro dessa pasta com o nome index.html.",
+        "Digite 'html:5' e aperte TAB ou Enter para gerar a estrutura básica do HTML.",
+        "Edite o conteúdo como no exemplo abaixo.",
+        "Clique com o botão direito no index.html e escolha 'Open with Live Server'.",
+        "Veja sua primeira página no navegador!"
+      ]
+    },
+    {
+      "type": "code",
+      "heading": "Código",
+      "code": "<!DOCTYPE html>\n<html lang=\"pt-br\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Minha Primeira Página!</title>\n</head>\n<body>\n    <h1>Olá, Mundo!</h1>\n</body>\n</html>"
+    },
+    {
+      "type": "text",
+      "heading": "Explicação do Código",
+      "text": "Cada parte do código HTML tem uma função. O <!DOCTYPE html> diz que estamos usando HTML moderno. As tags <html>, <head> e <body> organizam a página. O <title> define o nome da aba e o <h1> mostra o título principal da página."
+    },
+    {
+      "type": "text",
+      "heading": "Dúvidas Comuns",
+      "text": "Por que algumas tags têm '/'? Porque toda tag de abertura (<h1>) precisa ter uma de fechamento (</h1>). Esquecer de fechar pode bagunçar sua página. Pense em sanduíches: abrimos e fechamos o pão!"
+    },
+    {
+      "type": "image_placeholder",
+      "heading": "Imagem: Estrutura Básica HTML",
+      "text": "Uma imagem mostrando como as partes do HTML (head, body, title, h1) aparecem na página e no navegador."
     }
-  ]
+  ],
+  "exercises": [
+    {
+      "prompt": "Mude o título da aba do navegador para 'Meu Site Genial!'."
+    },
+    {
+      "prompt": "Mude o texto 'Olá, Mundo!' para 'Bem-vindo ao meu primeiro site!'."
+    },
+    {
+      "prompt": "Adicione um <h2> abaixo do <h1>, com o texto 'Subtítulo da Página'."
+    },
+    {
+      "prompt": "Apague o <h1> e escreva ele de novo sozinho."
+    },
+    {
+      "prompt": "Adicione um <h3> com o seu nome na página."
+    }
+  ],
+  "project": {
+    "title": "Desafio: Segunda Página com Link",
+    "description": "Crie um novo arquivo chamado pagina2.html com um <h1> diferente. Em index.html, adicione um link com <a href=\"pagina2.html\"> para que, ao clicar, vá para a nova página."
+  },
+  "video_suggestion": {
+    "title": "O que é HTML? (Explicação simples e visual)",
+    "url": "https://www.youtube.com/embed/ok-plXXHlWw"
+  }
 }

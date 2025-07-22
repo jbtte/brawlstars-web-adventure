@@ -20,9 +20,10 @@
   --bg-medium: #343a40;  /* Fundo intermediário */
   --bg-light: #f8f9fa;   /* Fundo claro para seções */
 
-  /* Fontes Brawl Stars inspiradas */
-  --font-heading: 'Press Start 2P', cursive; /* A fonte pixelada para títulos */
-  --font-body: 'Roboto', sans-serif; /* Uma fonte legível para o corpo */
+   /* Fontes Brawl Stars inspiradas (ATUALIZADAS) */
+  --font-heading: 'Lilita One', cursive; /* A nova fonte para títulos */
+  --font-body: 'Fredoka', sans-serif; /* A nova fonte legível para o corpo */
+  --font-pixel: 'Press Start 2P', cursive; /* Mantenha se quiser para efeitos pixelados em pontos específicos */
 
   /* Espaçamentos e Bordas */
   --spacing-unit: 1rem; /* 16px */

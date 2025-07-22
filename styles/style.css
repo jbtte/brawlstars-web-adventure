@@ -1,5 +1,13 @@
 /* styles/style.css */
 
+/* Importar fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap'); /* Para corpo */
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');    /* Para títulos */
+/* Manter Press Start 2P se quiser usá-la em alguns pontos específicos,
+   mas ela não será a font-heading principal. */
+/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
+
+
 /* Importar variáveis e base primeiro */
 @import url('base/variables.css'); 
 @import url('base/global.css');    
@@ -14,7 +22,6 @@
 @import url('components/lesson_cards.css'); /* Estilos para lesson-card e lesson-container (index.html) */
 @import url('components/lesson_map_common.css');
 @import url('components/lessons_content_types.css');
-@import url('components/main_layout.css'); /* Estilos para o 'main' e seções gerais */
 @import url('components/reset_section.css'); 
 @import url('components/resource_cards.css'); /* Estilos para resource/game cards */
 @import url('components/video.css'); 

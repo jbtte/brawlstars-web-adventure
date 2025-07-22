@@ -21,7 +21,8 @@
     color: var(--brawl-gold); /* Título em dourado para destaque */
     font-size: 2em; /* Um pouco maior */
     text-shadow: var(--text-shadow-default); /* Sombra padrão */
-    margin-bottom: 15px;
+    /* Removendo margin-bottom para o ícone no HTML */
+    margin-bottom: 15px; /* Manter margem se o ícone for in-line */
 }
 
 .reset-progress-section p {
@@ -32,41 +33,38 @@
     margin-bottom: 25px;
 }
 
-/* Pseudo-elemento para um detalhe visual no topo do painel */
-.reset-progress-section::before {
-    content: '⚠️'; /* Ícone de alerta/perigo */
-    font-size: 2.5em; /* Tamanho maior para o ícone */
-    color: var(--brawl-yellow); /* Amarelo de aviso */
+/* REMOVIDO: Pseudo-elemento para um detalhe visual no topo do painel */
+/* .reset-progress-section::before {
+    content: '⚠️';
+    font-size: 2.5em;
+    color: var(--brawl-yellow);
     position: absolute;
-    top: 10px; /* Posição dentro da seção */
+    top: 10px;
     left: 50%;
-    transform: translateX(-50%); /* Centraliza */
-    z-index: 1; /* Garante que fique acima do fundo, mas abaixo do h2 */
+    transform: translateX(-50%);
+    z-index: 1;
     text-shadow: var(--text-shadow-default);
-}
+} */
 
 /* --- Botão de reset --- */
-/* Como o botão usa a classe .back-to-map-button, ajustaremos ela para este uso específico */
-/* É importante que este estilo venha DEPOIS da definição original de .back-to-map-button,
-   ou que seja mais específico. */
-.reset-progress-section #reset-lessons-button { /* Mais específico para o botão de reset */
-    background-color: var(--brawl-gold); /* Fundo dourado (alto impacto) */
-    color: var(--brawl-dark-purple); /* Texto roxo escuro para alto contraste */
-    border: 3px solid var(--brawl-dark-purple); /* Borda roxa escura */
-    box-shadow: 3px 3px 0px var(--brawl-brown), 5px 5px 0px rgba(0,0,0,0.3); /* Sombra 3D marrom */
-    font-family: var(--font-heading); /* Fonte pixelada */
-    font-size: 1.2em; /* Um pouco maior */
-    padding: 12px 25px; /* Mais padding */
+.reset-progress-section #reset-lessons-button {
+    background-color: var(--brawl-gold);
+    color: var(--brawl-dark-purple);
+    border: 3px solid var(--brawl-dark-purple);
+    box-shadow: 3px 3px 0px var(--brawl-brown), 5px 5px 0px rgba(0,0,0,0.3);
+    font-family: var(--font-heading);
+    font-size: 1.2em;
+    padding: 12px 25px;
     border-radius: var(--border-radius-default);
     cursor: pointer;
     transition: transform 0.1s ease, background-color 0.1s ease, box-shadow 0.1s ease;
 }
 
 .reset-progress-section #reset-lessons-button:hover {
-    background-color: #FFEA00; /* Um dourado mais claro no hover */
+    background-color: #FFEA00;
     color: var(--brawl-dark-purple);
     box-shadow: 5px 5px 0px var(--brawl-brown), 8px 8px 0px rgba(0,0,0,0.4);
-    transform: translateY(-3px); /* Efeito de "subir" mais pronunciado */
+    transform: translateY(-3px);
 }
 
 .reset-progress-section #reset-lessons-button:active {
