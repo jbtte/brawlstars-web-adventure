@@ -1,7 +1,7 @@
 /* styles/components/_hero.css */
 .hero-section {
     /* Imagem de fundo inspirada em arenas de Brawl Stars ou telas de loading */
-    background-image: url('../../resources/images/brawl-hero-bg.png'); 
+    background-image: url('../../resources/images/brawl-hero-bg.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
