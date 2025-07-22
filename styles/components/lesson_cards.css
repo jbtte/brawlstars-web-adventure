@@ -101,15 +101,6 @@
     background-repeat: no-repeat;
 }
 
-/* Estilos para o ícone de lição "desbloqueada" (visitada ou disponível) */
-.lesson-card .status-icon.unlocked { 
-    background-image: url('../../resources/images/brawl-star-icon.png');
-}
-/* Estilos para o ícone de lição "bloqueada" */
-.lesson-card .status-icon.locked { 
-    background-image: url('../../resources/images/brawl-lock-icon.png');
-}
-
 /* Estado de card VISITADO */
 .lesson-card.visited {
     /* Remove a sombra de relevo da caixa e adiciona uma sombra mais "plana" de troféu */
@@ -144,9 +135,4 @@
     text-shadow: 
         1px 1px 0px rgba(0, 0, 0, 0.7), 
         -1px -1px 0px rgba(0, 0, 0, 0.7);
-}
-
-/* Opcional: Ajuste do ícone de status para cards visitados, se houver um ícone específico */
-.lesson-card.visited .status-icon.unlocked {
-    background-image: url('../../resources/images/brawl-checked-icon.png');
 }
