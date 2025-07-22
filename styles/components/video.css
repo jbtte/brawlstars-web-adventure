@@ -1,98 +1,110 @@
 /* styles/components/_video.css - Para Brawl Stars Web Adventures */
 
-/* Estilos para as páginas de vídeo (ex: pages/video1.html) */
+/* Estilos para as páginas de vídeo (ex: pages/video1.html, video2.html, video3.html) */
 .video-page-section {
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente escuro */
+    background-color: var(--bg-light); /* Fundo branco vibrante */
     border-radius: var(--border-radius-default);
     padding: 30px;
     margin-top: 30px;
     margin-bottom: 30px;
-    /* Sombras e bordas similares às seções gerais */
-    box-shadow: 0 0 15px rgba(255, 200, 0, 0.5),
-                0 0 30px rgba(255, 200, 0, 0.3);
-    border: 4px solid var(--brawl-yellow);
+    /* Novas sombras e bordas para destaque */
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.6), /* Brilho amarelo forte */
+                0 0 40px rgba(255, 193, 7, 0.3), /* Brilho secundário */
+                8px 8px 0px var(--brawl-brown); /* Efeito 3D marrom */
+    border: 5px solid var(--brawl-yellow); /* Borda amarela forte */
     text-align: center;
-    color: var(--text-light); /* Texto claro para a seção */
+    color: var(--text-dark); /* Texto escuro para contraste no fundo claro */
+    max-width: 900px; /* Largura máxima para centralizar */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .video-page-section h2 {
     font-family: var(--font-heading);
-    color: var(--brawl-gold);
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-shadow: var(--text-shadow-default);
+    color: var(--brawl-red); /* Título em vermelho forte para impacto */
+    font-size: 2.2em; /* Um pouco maior para destaque */
+    margin-bottom: 25px; /* Mais espaço abaixo do título */
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4); /* Sombra mais forte */
 }
 
 .video-page-section p {
-    font-family: var(--font-body); /* Usando Roboto */
+    font-family: var(--font-body);
     font-size: 1.1em;
     line-height: 1.6;
-    color: var(--text-light); /* Texto claro */
+    color: var(--text-dark); /* Texto escuro */
     margin-bottom: 1em;
     text-align: center;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5); /* Sombra sutil branca */
 }
 
 /* NOVO: Estilos para uma seção de vídeo genérica (seção de introdução ou em outras páginas) */
 .video-section {
-    background-color: rgba(75, 0, 130, 0.8); /* Roxo escuro semi-transparente, como um painel de transmissão */
-    border: 4px solid var(--brawl-blue); /* Borda azul vibrante */
+    /* Mantido como estava, com fundo escuro semi-transparente, pois é um contexto diferente */
+    background-color: rgba(75, 0, 130, 0.8);
+    border: 4px solid var(--brawl-blue);
     border-radius: var(--border-radius-default);
-    padding: 25px; /* Ligeiramente menos padding */
+    padding: 25px;
     margin: 40px auto;
     max-width: 800px;
-    /* Sombra mais pronunciada e com um leve brilho para se destacar */
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5), /* Brilho azul */
-                6px 6px 0px var(--brawl-dark-purple); /* Sombra 3D roxa escura */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5),
+                6px 6px 0px var(--brawl-dark-purple);
     text-align: center;
-    color: var(--text-light); /* Texto claro para a seção */
+    color: var(--text-light);
 }
 
 .video-section h2 {
     font-family: var(--font-heading);
-    color: var(--brawl-gold); /* Título em dourado */
-    font-size: 2em; /* Mantido o tamanho */
-    text-shadow: var(--text-shadow-default); /* Sombra padrão */
+    color: var(--brawl-gold);
+    font-size: 2em;
+    text-shadow: var(--text-shadow-default);
     margin-bottom: 20px;
 }
 
 .video-section p {
-    font-family: var(--font-body); /* Usando Roboto */
-    color: var(--text-light); /* Texto claro para contraste no fundo roxo */
+    font-family: var(--font-body);
+    color: var(--text-light);
     font-size: 1.1em;
     margin-bottom: 30px;
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
 
-/* Container para vídeos embedados (YouTube, etc.) - REPETIDO E UNIFICADO AQUI */
-/* Note: Se você já tinha isso em outro lugar e importa _video.css, não haverá problema */
+/* Container para vídeos embedados (YouTube, etc.) */
 .video-embed-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* Proporção 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    background-color: var(--bg-dark); /* Fundo escuro enquanto o vídeo carrega */
+    background-color: var(--bg-dark);
     border-radius: var(--border-radius-default);
-    box-shadow: var(--box-shadow-default); /* Sombra padrão */
-    border: 2px solid var(--brawl-yellow); /* Borda amarela */
-    margin: 30px auto; /* Centraliza e adiciona margem */
-    max-width: 800px; /* Largura máxima para o vídeo */
+    box-shadow: var(--box-shadow-default);
+    border: 2px solid var(--brawl-yellow);
+    margin: 30px auto;
+    max-width: 800px;
 }
 
 .video-embed-container iframe,
-.video-embed-container object, /* Adicionado para compatibilidade */
-.video-embed-container embed { /* Adicionado para compatibilidade */
+.video-embed-container object,
+.video-embed-container embed {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: 0; /* Remove a borda padrão do iframe */
-    border-radius: var(--border-radius-default); /* Aplica border-radius ao iframe */
+    border: 0;
+    border-radius: var(--border-radius-default);
 }
 
 /* Botão de "Voltar ao Mapa" específico para páginas de vídeo */
 .video-page-section .back-to-map-button {
-    margin-top: 30px; /* Mais espaço acima do botão */
+    margin-top: 30px;
+    /* Ajustes específicos para o botão, se necessário, dado o novo fundo */
+    background-color: var(--brawl-blue); /* Um azul forte para se destacar no fundo branco */
+    color: var(--text-light);
+    border-color: var(--brawl-dark-purple);
+    box-shadow: 3px 3px 0px var(--brawl-brown);
+}
+.video-page-section .back-to-map-button:hover {
+    background-color: #0099ff; /* Azul um pouco mais claro */
+    box-shadow: 5px 5px 0px var(--brawl-brown);
 }
