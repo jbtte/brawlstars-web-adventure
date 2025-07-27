@@ -1,8 +1,5 @@
 # 🌟 Brawl Stars Web Adventures: Desvende o HTML & CSS no Campo de Batalha da Web! ⚔️
 
-![Banner Brawl Stars Web Adventures](resources/images/brawl-stars-web-banner.png)
-_(Você pode criar um banner legal com o logo do projeto e elementos do Brawl Stars para colocar aqui!)_
-
 ---
 
 Bem-vindo, Brawler! 🚀 Prepare-se para uma emocionante jornada onde a adrenalina das arenas do Brawl Stars encontra o poder criativo da programação web! O **Brawl Stars Web Adventures** é um curso interativo e envolvente, especialmente desenhado para jovens codificadores (e seus pais curiosos!) que querem dominar os segredos do HTML e CSS.
@@ -24,7 +21,10 @@ Este projeto te guiará por um mapa de fases vibrante, onde a diversão do unive
 
 _(Sugestão: Adicione GIFs ou screenshots aqui quando tiver o site funcionando com os novos estilos e conteúdo!)_
 
-![Screenshot do Mapa de Arenas Brawl Stars (placeholder)](./resources/images/screenshot_map_brawl_stars.png)
+![Screenshot da Página (placeholder)](resources/images/screenshot_brawl_stars.png)
+_(Um screenshot do topo da página)_
+
+![Screenshot do Mapa de Arenas Brawl Stars (placeholder)](resources/images/screenshot_map_brawl_stars.png)
 _(Um screenshot do mapa de arenas com os cards estilizados)_
 
 ![Screenshot de Página de Lição com Exemplo de Código (placeholder)](./resources/images/screenshot_lesson_brawl_stars.png)
