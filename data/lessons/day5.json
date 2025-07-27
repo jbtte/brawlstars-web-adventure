@@ -1,75 +1,72 @@
 {
-  "title": "Dia 5 – Projeto: Gerador de Histórias (Mad Libs)",
+  "title": "Dia 5 – Projeto Parcial 1: Minha Página Pessoal Simples (com Git!)",
   "concepts": [
     {
-      "type": "explanation",
-      "heading": "Vamos criar um jogo com sua imaginação!",
-      "text": "Hoje vamos brincar de inventar histórias engraçadas usando palavras que você escolher. É como preencher os espaços em branco de uma história maluca! Esse tipo de jogo se chama Mad Libs."
+      "type": "intro",
+      "heading": "🚀 Hora de mostrar o que você sabe!",
+      "text": "Uhuuul! Você chegou até aqui e já aprendeu muita coisa legal com HTML: títulos, textos, listas, links, imagens e até vídeos! Agora é hora de juntar tudo isso num projeto especial: sua **primeira página pessoal completa**. E mais: vamos aprender a salvar essa página com uma ferramenta de verdade usada por programadores do mundo inteiro: o **Git**! 😎\n\nVai ser como guardar seu trabalho num baú mágico, onde nada se perde e tudo pode ser revisado. Vamos nessa? 💼✨"
     },
     {
       "type": "image",
-      "heading": "Frases malucas com espaços em branco",
-      "image_placeholder": "imagem de um formulário digital divertido onde o jogador preenche palavras como 'um lugar', 'um animal', 'uma comida', e vê a frase engraçada aparecer",
-      "image_url": "resources/images/lesson_illustrations/lesson_05_madlibs.jpg"
+      "heading": "Imagem: Projeto pessoal com várias seções",
+      "image_placeholder": "Uma ilustração vibrante de uma criança sorridente em frente a um computador com um site colorido na tela e um cofre mágico de onde saem códigos",
+      "image_url": "resources/images/lesson_illustrations/lesson_05_project.png"
     },
     {
       "type": "explanation",
-      "heading": "Como funciona esse jogo?",
-      "text": "Você vai pedir algumas palavras ao usuário, como nome, animal, comida, lugar... Depois, o programa vai usar essas palavras para montar uma história. Cada vez que rodar o jogo, a história muda dependendo das respostas!"
+      "heading": "📂 O que seu site pessoal deve ter",
+      "text": "Sua página pode ter:\n- Um título com seu nome (&lt;h1&gt;)\n- Uma seção 'Sobre mim' (&lt;h2&gt; e &lt;p&gt;)\n- Uma imagem sua (&lt;img&gt;)\n- Uma lista com seus hobbies ou jogos favoritos (&lt;ul&gt;)\n- Um link para outra página ou para o YouTube (&lt;a&gt;)\n- Um vídeo incorporado (&lt;iframe&gt;)"
     },
     {
-      "type": "code",
-      "heading": "Exemplo divertido",
-      "code": "animal = input(\"Digite um animal: \")\ncor = input(\"Digite uma cor: \")\nprint(f\"Era uma vez um {animal} muito {cor} que vivia na floresta.\")",
-      "text": "O computador pede as palavras e depois junta tudo. Parece mágica, mas é só código bem montado!"
+      "type": "steps",
+      "heading": "🔧 Passo a passo do projeto",
+      "text": "Vamos montar o projeto em etapas, bem tranquilas:",
+      "steps": [
+        "Crie uma pasta chamada 'meu-site-pessoal'",
+        "Crie um arquivo chamado 'index.html'",
+        "Adicione o HTML básico (use html:5 no VS Code)",
+        "Preencha a página com os conteúdos que você aprendeu até aqui",
+        "Crie uma imagem de perfil (pode ser um arquivo chamado 'perfil.jpg') e salve na mesma pasta",
+        "Abra com o Live Server e veja como está ficando!"
+      ]
     },
     {
-      "type": "question",
-      "heading": "⚠️ DÚVIDA COMUM: Por que usar f-string?",
-      "text": "**Porque é mais fácil e organizado!** Com `f\"texto {variavel}\"`, o Python sabe exatamente onde colocar cada palavra."
-    },
-    {
-      "type": "tip",
-      "heading": "Dica do professor: escreva a história antes",
-      "text": "Antes de começar a programar, escreva sua história num papel ou no caderno. Substitua algumas palavras por espaços, como: 'Era uma vez um __ que morava no __'. Essas lacunas vão virar `input()` no código!"
-    },
-    {
-      "type": "objective",
-      "heading": "O que você vai aprender",
-      "text": "• Criar um programa divertido do zero\n• Usar `input()` para pegar dados do usuário\n• Montar frases com `f-strings`\n• Praticar criatividade e organização no código"
+      "type": "explanation",
+      "heading": "💾 Salvando com Git (passo simples)",
+      "text": "O Git é um sistema que guarda versões do seu trabalho. Vamos usar o Git para registrar essa versão do seu site pessoal.\nVocê pode fazer assim no terminal (prompt de comando):\n1. Vá até a pasta do seu projeto\n2. Digite: `git init`\n3. Depois: `git add .`\n4. Depois: `git commit -m \"meu primeiro site pessoal\"`\nPronto! Seu projeto está salvo com segurança."
     }
   ],
   "exercises": [
     {
       "type": "exercise",
-      "prompt": "1. Peça pelo menos 5 palavras ao usuário: nome, lugar, cor, comida e animal.",
-      "code_hint": "nome = input(\"Digite um nome: \")\nlugar = input(\"Digite um lugar: \")\ncor = input(\"Digite uma cor: \")\ncomida = input(\"Digite uma comida: \")\nanimal = input(\"Digite um animal: \")"
+      "prompt": "1. No seu site pessoal, crie uma seção com título 'Sobre mim' e escreva dois parágrafos sobre você.",
+      "code_hint": "<h2>Sobre mim</h2>\n<p>Meu nome é ...</p>\n<p>Eu gosto de ...</p>"
     },
     {
       "type": "exercise",
-      "prompt": "2. Use essas palavras para montar uma história engraçada com f-string.",
-      "code_hint": "print(f\"Um dia, {nome} foi ao {lugar} com um {animal} {cor}. Lá, eles comeram muito {comida} e ficaram felizes para sempre!\")"
+      "prompt": "2. Adicione uma imagem sua e uma lista com seus hobbies.",
+      "code_hint": "<img src=\"perfil.jpg\" alt=\"Minha foto\">\n<ul><li>Jogar</li><li>Desenhar</li><li>Estudar</li></ul>"
     },
     {
       "type": "exercise",
-      "prompt": "3. Desafio: invente uma história mais longa com verbos e adjetivos.",
-      "code_hint": "verbo = input(\"Digite um verbo: \")\nadjetivo = input(\"Digite um adjetivo: \")\nprint(f\"Era uma vez um {animal} muito {adjetivo} que adorava {verbo}. Ele conheceu {nome} no {lugar} e comeram {comida} juntos.\")"
+      "prompt": "3. Adicione um link para um vídeo seu favorito no YouTube.",
+      "code_hint": "<a href=\"https://www.youtube.com\">Meu vídeo favorito</a>"
     },
     {
       "type": "exercise",
-      "prompt": "4. Extra: salve a história em um arquivo .txt",
-      "code_hint": "with open(\"minha_historia.txt\", \"w\") as arquivo:\n    arquivo.write(f\"Era uma vez {nome} e um {animal} {cor} que... (sua história aqui)\")"
+      "prompt": "4. Desafio: incorpore esse vídeo com iframe na sua página.",
+      "code_hint": "<iframe src=\"https://www.youtube.com/embed/SEU_CODIGO\"></iframe>"
     }
   ],
   "project": {
     "type": "project",
-    "name": "Gerador de Histórias Malucas",
-    "description": "Crie um programa que peça palavras e monte uma história engraçada com elas. Use sua criatividade!",
-    "goal": "Treinar `input()`, `f-string`, organização do código e aplicar tudo o que aprendeu de forma divertida."
+    "name": "🌟 Meu site pessoal com Git",
+    "description": "Monte sua página pessoal com os elementos aprendidos (título, texto, imagem, lista, link, vídeo) e depois salve tudo usando os primeiros comandos do Git.",
+    "goal": "Consolidar o aprendizado de HTML e começar a entender o controle de versões com Git."
   },
   "video_suggestion": {
     "type": "video",
-    "text": "Vídeo em inglês com legendas mostrando passo a passo como criar um Mad Libs em Python:",
-    "url": "https://www.youtube.com/watch?v=GdBV4irqOd8"
+    "text": "Este vídeo mostra como iniciar um projeto com HTML e usar Git de forma simples:",
+    "url": "https://www.youtube.com/embed/SWYqp7iY_Tc"
   }
 }

@@ -31,6 +31,61 @@
 
 /* --- ESTILOS PARA CADA TIPO DE BLOCO ESPECÍFICO --- */
 
+/* type: "intro" - Novo estilo para o bloco de introdução */
+.lesson-block--intro {
+    background: linear-gradient(to bottom, #7B68EE, #4B0082); /* Gradiente roxo vibrante */
+    border: 5px solid var(--brawl-gold); /* Borda dourada grossa */
+    border-radius: var(--border-radius-default);
+    padding: 35px; /* Mais padding para um visual de 'documento' */
+    margin-top: 30px;
+    margin-bottom: 40px; /* Mais espaço para se destacar */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7), /* Brilho dourado */
+                0 0 40px rgba(123, 104, 238, 0.5), /* Brilho roxo */
+                10px 10px 0px var(--brawl-brown); /* Sombra 3D marrom forte */
+    text-align: center; /* Centraliza o texto do bloco */
+    color: var(--text-light); /* Texto claro */
+    position: relative;
+    overflow: hidden;
+    line-height: 1.8; /* Mais espaçamento entre linhas para melhor leitura */
+}
+.lesson-block--intro h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2em; /* Título grande e impactante */
+    color: var(--brawl-gold); /* Título em dourado */
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.6); /* Sombra forte */
+    margin-bottom: 25px; /* Mais espaço abaixo do título */
+    border-bottom: 3px dashed rgba(255, 255, 255, 0.3); /* Linha tracejada decorativa */
+    padding-bottom: 10px;
+}
+.lesson-block--intro p {
+    font-family: var(--font-body); /* Fonte do corpo, mas pode usar var(--font-heading) para um efeito 'scroll' */
+    font-size: 1.2em; /* Texto maior para legibilidade */
+    color: var(--text-light);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4); /* Sombra mais escura para legibilidade */
+    margin-bottom: 1.5em; /* Espaçamento entre parágrafos no intro */
+    text-align: left; /* Alinhar o texto à esquerda dentro do bloco */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px; /* Limita a largura do texto para leitura */
+}
+.lesson-block--intro p:last-child {
+    margin-bottom: 0; /* Remove margem do último parágrafo */
+}
+/* Opcional: Efeito de borda decorativa (como fita ou corrente) */
+.lesson-block--intro::before,
+.lesson-block--intro::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    background-color: var(--brawl-red);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    top: 0;
+}
+.lesson-block--intro::before { left: 0; border-radius: var(--border-radius-default) 0 0 var(--border-radius-default); }
+.lesson-block--intro::after { right: 0; border-radius: 0 var(--border-radius-default) var(--border-radius-default) 0; }
+
+
 /* type: "explanation" */
 .lesson-block--explanation {
     background-color: rgba(75, 0, 130, 0.7); /* Roxo escuro semi-transparente */

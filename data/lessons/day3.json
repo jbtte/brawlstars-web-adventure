@@ -1,122 +1,79 @@
 {
-  "title": "Dia 3 – Strings e Manipulação de Texto",
+  "title": "Dia 3 – Listas e Links",
   "concepts": [
     {
-      "type": "concept",
-      "heading": "O que é uma string?",
-      "text": "Vamos conversar: sabe quando você escreve uma frase entre aspas, como \"Olá, mundo!\"? Isso é uma **string**. No Python, strings são usadas para guardar texto — pode ser uma palavra, um número escrito como texto, ou até emojis!"
+      "type": "intro",
+      "heading": "🔗 Tudo conectado e bem organizado!",
+      "text": "Imagine que você vai fazer uma super missão de organização! 🧠✨\nVocê tem uma mochila cheia de itens e precisa organizar tudo em listas: seus jogos favoritos, suas comidas preferidas e até os vídeos mais legais do YouTube.\n\nE se eu te dissesse que você também pode criar portais mágicos (os links!) que levam de uma página para outra, ou até para qualquer lugar do mundo da internet? 🌍💫\n\nHoje você vai aprender duas ferramentas poderosas do HTML: as listas, que deixam tudo arrumadinho, e os links, que conectam tudo como num mapa do tesouro. Vamos deixar seu site muito mais esperto, organizado e interativo! Pronto para essa missão? 🚀"
     },
     {
       "type": "image",
-      "heading": "Laboratório de palavras digitais",
-      "image_placeholder": "imagem de um painel com palavras sendo cortadas, coladas, embaralhadas e transformadas digitalmente",
-      "image_url": "resources/images/lesson_illustrations/lesson_03_strings.jpg"
+      "heading": "Imagem: Lista de itens com links",
+      "image_placeholder": "Imagem de uma página HTML com uma lista de itens e alguns deles como links clicáveis",
+      "image_url": "resources/images/lesson_illustrations/lesson_03_list_links.png"
     },
     {
-      "type": "example",
-      "heading": "Exemplos de strings",
-      "text": "Veja exemplos de strings:",
-      "code": "nome = \"Maria\"\nfrase = 'Python é divertido!'\nprint(nome)\nprint(frase)"
+      "type": "explanation",
+      "heading": "📋 Criando listas",
+      "text": "No HTML, temos dois tipos principais de lista:\n- &lt;ul&gt; (lista não ordenada): aparece com bolinhas\n- &lt;ol&gt; (lista ordenada): aparece com números\nCada item da lista vai dentro de &lt;li&gt; (list item)."
     },
     {
-      "type": "question",
-      "heading": "❓ DÚVIDA COMUM: Aspas simples ('') ou duplas (\"\")",
-      "text": "**Precisa usar aspas simples ou duplas?** Tanto faz! O Python aceita as duas, contanto que você use o mesmo tipo no começo e no fim."
+      "type": "code",
+      "heading": "Exemplo de lista não ordenada",
+      "code": "<ul>\n  <li>Jogar Brawl Stars</li>\n  <li>Estudar HTML</li>\n  <li>Assistir vídeos no YouTube</li>\n</ul>"
     },
     {
-      "type": "concept",
-      "heading": "Concatenação: juntando textos",
-      "text": "Se você quiser juntar duas strings, pode usar o símbolo `+`. Isso se chama **concatenação**. Mas atenção: só funciona entre strings!"
+      "type": "explanation",
+      "heading": "🌐 Fazendo links com &lt;a&gt;",
+      "text": "Para criar um link usamos a tag &lt;a&gt;. Dentro dela usamos o atributo href (de HYPERLINK REFERENCE) para dizer o destino. Pode ser uma página sua ou outro site."
     },
     {
-      "type": "example",
-      "heading": "Juntando nome e sobrenome",
-      "text": "Veja como unir nome e sobrenome:",
-      "code": "nome = \"Lucas\"\nsobrenome = \"Silva\"\nnome_completo = nome + \" \" + sobrenome\nprint(nome_completo)"
-    },
-    {
-      "type": "question",
-      "heading": "Texto + número?",
-      "text": "**Posso somar texto com número?** Não diretamente! Antes, você precisa transformar o número em texto com `str()`."
-    },
-    {
-      "type": "concept",
-      "heading": "f-strings: texto com variáveis",
-      "text": "f-strings são uma forma prática de montar frases com variáveis dentro. Basta colocar um `f` antes das aspas e usar `{}` para colocar a variável."
-    },
-    {
-      "type": "example",
-      "heading": "Exemplo de f-string",
-      "text": "Olha só como é simples:",
-      "code": "nome = \"Joana\"\nidade = 13\nprint(f\"Meu nome é {nome} e tenho {idade} anos.\")"
-    },
-    {
-      "type": "concept",
-      "heading": "Indexação: acessando letras",
-      "text": "Cada letra de uma string tem uma **posição**. A primeira é 0, a segunda é 1, e assim por diante. Isso se chama **índice**."
-    },
-    {
-      "type": "example",
-      "heading": "Exemplo de indexação",
-      "text": "Vamos acessar letras da palavra 'Python':",
-      "code": "palavra = \"Python\"\nprint(palavra[0])  # P\nprint(palavra[2])  # t"
+      "type": "code",
+      "heading": "Exemplo de link para outra página",
+      "code": "<a href=\"pagina2.html\">Ir para a página 2</a>;"
     },
     {
       "type": "question",
-      "heading": "Como pegar a última letra?",
-      "text": "**E se eu quiser a última letra?** Use índice negativo: `palavra[-1]`"
+      "heading": "❓ Dúvida comum: posso colocar um link dentro de uma lista?",
+      "text": "Sim! Você pode misturar &lt;li&gt; com &lt;a&gt; e criar listas com links. Assim:\n&lt;ul&gt;\n  &lt;li&gt;&lt;a href=\"pagina2.html\"&gt;Página 2&lt;/a&gt;&lt;/li&gt;\n  &lt;li&gt;&lt;a href=\"https://brawlstars.com\"&gt;Site do Brawl Stars&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;"
     },
     {
-      "type": "concept",
-      "heading": "Métodos úteis para strings",
-      "text": "Strings têm **métodos**, que são como superpoderes para mexer com texto. Você escreve o nome do método depois da string, com parênteses. Alguns úteis:"
-    },
-    {
-      "type": "example",
-      "heading": "Exemplo de métodos de string",
-      "text": "Exemplos com `.lower()`, `.strip()`, `.replace()` e `len()`:",
-      "code": "mensagem = \"  Olá, Mundo!  \"\nprint(len(mensagem))\nprint(mensagem.lower())\nprint(mensagem.strip())\nprint(mensagem.replace(\"Mundo\", \"Python\"))"
-    },
-    {
-      "type": "tip",
-      "heading": "Dica útil",
-      "text": "**Dica**: use `.strip()` sempre que quiser remover espaços extras do começo e do fim de um texto digitado pelo usuário."
+      "type": "summary",
+      "heading": "Resumo da Aula",
+      "text": "📋 &lt;ul&gt;/&lt;ol&gt; com &lt;li&gt; para listas\n🔗 &lt;a href=\"...\"&gt; para links\n🌟 Links podem ir para páginas suas ou sites externos"
     }
   ],
   "exercises": [
     {
       "type": "exercise",
-      "prompt": "1. Crie uma string com uma frase e mostre ela usando `print()`.",
-      "code_hint": "frase = \"Programar é divertido!\"\nprint(frase)"
+      "prompt": "1. No seu site pessoal, crie uma lista não ordenada com 3 hobbies seus.",
+      "code_hint": "&lt;ul&gt;\n  &lt;li&gt;Desenhar&lt;/li&gt;\n  &lt;li&gt;Jogar futebol&lt;/li&gt;\n  &lt;li&gt;Assistir desenhos&lt;/li&gt;\n&lt;/ul&gt;"
     },
     {
       "type": "exercise",
-      "prompt": "2. Una seu nome e sobrenome e mostre o nome completo.",
-      "code_hint": "nome = \"Ana\"\nsobrenome = \"Souza\"\nprint(nome + \" \" + sobrenome)"
+      "prompt": "2. No site sobre Brawl Stars, crie uma lista ordenada com seus 3 personagens favoritos.",
+      "code_hint": "&lt;ol&gt;\n  &lt;li&gt;Leon&lt;/li&gt;\n  &lt;li&gt;Shelly&lt;/li&gt;\n  &lt;li&gt;Spike&lt;/li&gt;\n&lt;/ol&gt;"
     },
     {
       "type": "exercise",
-      "prompt": "3. Use f-string para mostrar: \"Olá, meu nome é Ana e tenho 13 anos.\"",
-      "code_hint": "nome = \"Ana\"\nidade = 13\nprint(f\"Olá, meu nome é {nome} e tenho {idade} anos.\")"
+      "prompt": "3. Adicione um link no seu site pessoal que leve até o YouTube.",
+      "code_hint": "&lt;a href=\"https://www.youtube.com\"&gt;Meu canal favorito&lt;/a&gt;"
     },
     {
       "type": "exercise",
-      "prompt": "4. Mostre a 1ª, 3ª e última letra de \"computador\".",
-      "code_hint": "palavra = \"computador\"\nprint(palavra[0])\nprint(palavra[2])\nprint(palavra[-1])"
-    },
-    {
-      "type": "exercise",
-      "prompt": "5. Transforme a frase \" Python é Incrível!   \" em minúsculas, remova espaços e troque \"Incrível\" por \"divertido\".",
-      "code_hint": "texto = \" Python é Incrível!   \"\ntexto = texto.strip().lower().replace(\"incrível\", \"divertido\")\nprint(texto)"
-    },
-    {
-      "type": "challenge",
-      "prompt": "*Desafio:* Pergunte nome e idade ao usuário e mostre: \"Olá, João! Você tem 12 anos.\"",
-      "code_hint": "nome = input(\"Qual seu nome? \")\nidade = input(\"Quantos anos você tem? \")\nprint(f\"Olá, {nome}! Você tem {idade} anos.\")"
+      "prompt": "4. Desafio: Crie uma lista com 2 links: um para 'pagina2.html' e outro para 'brawl.html'.",
+      "code_hint": "&lt;ul&gt;\n  &lt;li&gt;&lt;a href=\"pagina2.html\"&gt;Sobre mim&lt;/a&gt;&lt;/li&gt;\n  &lt;li&gt;&lt;a href=\"brawl.html\"&gt;Site Brawl Stars&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;"
     }
   ],
+  "project": {
+    "type": "project",
+    "name": "🔗 Menu de Navegação",
+    "description": "Crie um menu com uma lista de links para cada uma das suas páginas: index.html (pessoal), brawl.html (jogo) e um link para o YouTube.",
+    "goal": "Usar &lt;ul&gt;, &lt;li&gt; e &lt;a href=...&gt; para criar um menu útil."
+  },
   "video_suggestion": {
-    "text": "Para mais explicações, veja este tutorial em português sobre Strings em Python:",
-    "url": "https://www.youtube.com/watch?v=puA9pf9rhrI"
+    "type": "video",
+    "text": "Este vídeo mostra como criar listas e links no HTML de forma simples:",
+    "url": "https://www.youtube.com/embed/kUMe1FH4CHE"
   }
 }

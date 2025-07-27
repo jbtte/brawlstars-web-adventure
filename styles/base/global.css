@@ -33,6 +33,7 @@ main {
     padding: 0 var(--spacing-unit); /* Usando a variável de espaçamento */
     position: relative;
     z-index: 10;
+    flex-grow: 1;
 }
 
 /* Estilo padrão para todas as seções (seus "blocos de conteúdo") */

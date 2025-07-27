@@ -1,77 +1,74 @@
 {
-  "title": "Lição 2 – Fazendo perguntas ao computador",
+  "title": "Dia 2 – Textos e Parágrafos",
   "concepts": [
     {
-      "heading": "👋 O que vamos aprender hoje?",
-      "text": "Hoje vamos aprender como o computador pode conversar com você! Vamos usar um comando chamado <code>input()</code> para fazer perguntas e guardar respostas.",
-      "type": "explanation"
+      "type": "intro",
+      "heading": "📚 Escrevendo na internet!",
+      "text": "Sabe quando você quer escrever uma história, um bilhete ou até uma lista de tarefas? Com HTML, também dá para fazer isso! Hoje vamos aprender a usar títulos, parágrafos e quebra de linha para deixar sua página cheia de palavras lindas e bem organizadas. Pronto para virar um autor digital? 🖋️✨"
     },
     {
       "type": "image",
-      "heading": "O computador escutando e respondendo",
-      "image_placeholder": "imagem de um terminal moderno recebendo uma pergunta e respondendo de forma engraçada",
-      "image_url": "resources/images/lesson_illustrations/lesson_02_input.jpg"
-    },
-
-    {
-      "heading": "🧠 Como funciona o input()?",
-      "text": "input() é uma função do Python que serve para fazer uma pergunta ao usuário. Dentro dos parênteses, colocamos uma frase entre aspas — essa é a pergunta que o computador vai mostrar na tela. Quando o usuário digita a resposta e aperta Enter, o valor digitado é guardado dentro de uma variável, para que a gente possa usar depois. Mesmo que o usuário digite um número, o que chega é sempre um texto (tipo str).",
-      "type": "explanation"
+      "heading": "Exemplo de Página com Textos",
+      "image_placeholder": "Uma imagem de uma página da web com vários títulos e parágrafos bem organizados",
+      "image_url": "resources/images/lesson_illustrations/lesson_02_texts.png"
     },
     {
-      "heading": "💡 Exemplo: Perguntando o nome",
-      "text": "Vamos ver um exemplo simples. O computador pergunta o seu nome e responde com uma mensagem fofa!",
-      "code": "nome = input(\"Qual é seu nome? \")\nprint(\"Oi, \" + nome + \"! Que legal te conhecer!\")",
-      "type": "code"
+      "type": "explanation",
+      "heading": "📝 O que são parágrafos e títulos?",
+      "text": "Um parágrafo é como uma parte de uma história. E os títulos mostram os assuntos principais. Em HTML usamos &lt;p&gt; para parágrafos e &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;... para os títulos. Quanto menor o número, maior o título!"
     },
     {
-      "heading": "❓Dúvida comum: posso mudar a pergunta?",
-      "text": "**Sim!** Você pode escrever qualquer texto dentro de <code>input()</code>. Essa frase é o que o computador mostra pro usuário.",
-      "type": "question"
+      "type": "code",
+      "heading": "Exemplo de uso de &ltp&gt e &lth1&gt a &lth3&gt",
+      "code": "<h1>Meu Primeiro Site</h1>\n<h2>Sobre Mim</h2>\n<p>Meu nome é Ana e eu adoro desenhar e programar!</p>\n<h3>Minhas Cores Favoritas</h3>\n<p>Azul, roxo e amarelo.</p>"
     },
     {
-      "heading": "🎉 Outro exemplo: comida favorita",
-      "text": "Agora vamos fazer uma pergunta divertida. Copie e execute esse código:",
-      "code": "comida = input(\"Qual sua comida favorita? \")\nprint(\"Puxa, eu também adoro \" + comida + \"!\")",
-      "type": "code"
+      "type": "explanation",
+      "heading": "🔁 Quebrando a linha com &ltbr&gt",
+      "text": "Se você quiser pular uma linha dentro do mesmo parágrafo, pode usar a tag &ltbr&gt. Ela funciona como quando apertamos Enter no teclado."
     },
     {
-      "heading": "🤔 Por que a resposta vira texto?",
-      "text": "**Porque tudo que vem do <code>input()</code> é uma <code>string</code> (texto)**, mesmo que a pessoa digite um número! Depois a gente aprende como transformar isso.",
-      "type": "question"
+      "type": "code",
+      "heading": "Usando &ltbr&gt para pular linha",
+      "code": "<p>Hoje eu aprendi HTML!<br>Estou muito feliz!<br>Quero criar muitos sites!</p>"
     },
     {
-      "heading": "🔍 Curiosidade: input vem de onde?",
-      "text": "A palavra <i>input</i> vem do inglês e significa 'entrada'. É o que você DIGITA no teclado para o computador receber.",
-      "type": "curiosity"
+      "type": "question",
+      "heading": "😕 Dúvida comum: posso colocar qualquer coisa dentro de &lth1&gt?",
+      "text": "Você pode escrever qualquer texto dentro das tags &lth1&gt, &lth2&gt, etc., mas lembre-se de usar essas tags para títulos importantes! Elas ajudam o navegador e as pessoas a entenderem do que se trata sua página."
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da Aula",
+      "text": "📖 &ltp&gt para parágrafos\n🏷️ &lth1&gt até &lth6&gt para títulos\n↩️ &ltbr&gt para quebra de linha"
     }
   ],
   "exercises": [
     {
-      "prompt": "1. Pergunte o nome do seu amigo e depois diga: 'Oi, [nome]! Vamos brincar hoje?'",
-      "code_hint": "nome = input(\"Digite o nome do seu amigo: \")\nprint(\"Oi, \" + nome + \"! Vamos brincar hoje?\")",
-      "type": "exercise"
+      "type": "exercise",
+      "prompt": "1. No seu site pessoal, crie um parágrafo com seu nome e o que você gosta de fazer.",
+      "code_hint": "&ltp&gtMeu nome é e eu gosto de_&lt/p&gt"
     },
     {
-      "prompt": "2. Pergunte a idade do seu irmão e responda: 'Uau, [idade]! Que legal!'",
-      "code_hint": "idade = input(\"Idade do seu irmão: \")\nprint(\"Uau, \" + idade + \"! Que legal!\")",
-      "type": "exercise"
+      "type": "exercise",
+      "prompt": "2. No site sobre Brawl Stars, adicione um título principal (h1) com o nome do jogo.",
+      "code_hint": "&lth1&gtBem-vindo ao meu site sobre Brawl Stars!&lt/h1&gt"
     },
     {
-      "prompt": "3. Desafio: Pergunte duas coisas (cor, fruta, animal...) e faça uma frase divertida.",
-      "code_hint": "cor = input(\"Diga uma cor: \")\nfruta = input(\"Diga uma fruta: \")\nprint(\"Nossa, um \" + fruta + \" \" + cor + \" seria super legal!\")",
-      "type": "exercise"
+      "type": "exercise",
+      "prompt": "3. Escreva dois parágrafos sobre seu personagem favorito de Brawl Stars e use &ltbr&gt para quebrar uma linha.",
+      "code_hint": "&ltp&gtMeu personagem favorito é o Leon.&ltbr&gtEle é rápido e se esconde bem!&lt/p&gt"
+    },
+    {
+      "type": "exercise",
+      "prompt": "4. Desafio: No seu site pessoal, crie uma mini-biografia usando &lth2&gt e dois &ltp&gt diferentes.",
+      "code_hint": "&lth2&gtSobre Mim&lt/h2&gt\n&ltp&gtTenho 12 anos e amo programar.&lt/p&gt\n&ltp&gtTambém gosto muito de gatos!&lt/p&gt"
     }
   ],
   "project": {
-    "name": "🎨 Projeto: Perguntas Divertidas",
-    "description": "Crie um programa que faz 3 perguntas diferentes (ex: nome, cor, comida) e usa as respostas para montar frases engraçadas.",
-    "goal": "Aprender como <code>input()</code> funciona e como criar frases personalizadas com as respostas.",
-    "type": "project"
-  },
-  "video_suggestion": {
-    "type": "video",
-    "text": "Para mais explicações, veja este tutorial em português sobre Strings em Python:",
-    "url": "https://www.youtube.com/watch?v=SHOXlpw6G3Q"
+    "type": "project",
+    "name": "📄 Página de Apresentação Pessoal + Brawl Stars",
+    "description": "Atualize sua página pessoal com &lth1&gt com seu nome, &lth2&gt com o título 'Sobre Mim', e dois parágrafos contando mais sobre você. Depois, crie uma nova página chamada 'brawl.html' e adicione um &lth1&gt e um &ltp&gt com uma introdução ao jogo.",
+    "goal": "Praticar o uso de &lth1&gt, &lth2&gt, &ltp&gt e &ltbr&gt em dois contextos diferentes: pessoal e de interesse (Brawl Stars)."
   }
 }

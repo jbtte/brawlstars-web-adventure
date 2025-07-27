@@ -1,92 +1,74 @@
 {
-  "title": "Dia 4 – Condicionais: if, elif e else",
+  "title": "Dia 4 – Imagens e Multimídia",
   "concepts": [
     {
-      "type": "concept",
-      "heading": "O que são Condicionais?",
-      "text": "Hoje a gente vai aprender a tomar decisões com o nosso código! Em vez de sempre fazer a mesma coisa, podemos dizer: 'se acontecer isso, faça aquilo'. O Python faz isso com o if, elif e else."
+      "type": "intro",
+      "heading": "🖼️ Deixando tudo mais bonito!",
+      "text": "Imagine abrir seu site e ver uma imagem incrível logo de cara. Legal, né? 😍\nAgora pense como seria mostrar seu personagem favorito do Brawl Stars, sua própria foto ou até um vídeo que você ama do YouTube – tudo ali no seu site! 🧙‍♂️✨\n\nHoje vamos aprender a colocar imagens nas páginas e também como preparar espaço para vídeos do YouTube. Isso deixa seus dois sites – o pessoal e o do Brawl Stars – muito mais vivos, criativos e interessantes.\n\nCom imagens, você pode se apresentar, mostrar o que gosta, montar uma galeria de personagens ou até criar um mural. Com vídeos, dá para mostrar conteúdo seu ou de canais que você curte.\n\nVamos deixar sua página cheia de vida, cor e movimento? 🌈🎥\nEntão prepara o pincel do programador e vem comigo colorir a web! 🎨💻"
     },
     {
       "type": "image",
-      "heading": "Escolhas no código: se... senão...",
-      "image_placeholder": "imagem de um personagem entre duas portas com 'if' e 'else'",
-      "image_url": "resources/images/lesson_illustrations/lesson_04_ifelse.jpg"
+      "heading": "Imagem: Página com imagens e vídeo embutido",
+      "image_placeholder": "Uma página HTML mostrando uma imagem de perfil e um vídeo do YouTube incorporado",
+      "image_url": "resources/images/lesson_illustrations/lesson_04_media.jpg"
     },
     {
-      "type": "comment",
-      "heading": "💡 Exemplo do mundo real",
-      "text": "Pense assim: 'Se estiver chovendo, levo guarda-chuva. Senão, vou sem.' Isso é uma condicional."
+      "type": "explanation",
+      "heading": "🖼️ Como mostrar uma imagem",
+      "text": "Para mostrar uma imagem, usamos a tag &lt;img&gt;. Ela precisa de um atributo chamado **src**, onde colocamos o caminho do arquivo. E também podemos usar **alt**, que é uma descrição da imagem."
     },
     {
-      "type": "concept",
-      "heading": "if: Fazendo algo se a condição for verdadeira",
-      "text": "A palavra `if` significa 'se'. Com ela, o computador testa uma condição. Se for verdadeira, ele executa o que está dentro do bloco indentado (com espaço).",
-      "code": "idade = 12\nif idade >= 18:\n    print(\"Você é maior de idade\")"
+      "type": "code",
+      "heading": "Exemplo de imagem",
+      "code": "<img src=\"perfil.jpg\" alt=\"Minha foto de perfil\">"
     },
     {
-      "type": "question",
-      "heading": "❓ DÚVIDA COMUM: O que é >= ?",
-      "text": "Esse símbolo quer dizer 'maior ou igual'. Então `idade >= 18` significa: a idade é maior ou igual a 18?"
+      "type": "explanation",
+      "heading": "📺 Colocando vídeos do YouTube",
+      "text": "Para mostrar um vídeo no seu site, usamos a tag &lt;iframe&gt;. O YouTube oferece esse código pronto: é só copiar o código de compartilhamento e colar."
     },
     {
-      "type": "concept",
-      "heading": "if‑else: Decisão binária",
-      "text": "Com `else`, dizemos o que fazer se a condição for falsa. Assim cobrimos os dois casos possíveis:",
-      "code": "n = 7\nif n % 2 == 0:\n    print(\"Par\")\nelse:\n    print(\"Ímpar\")"
-    },
-    {
-      "type": "question",
-      "heading": "❓ DÚVIDA COMUM: O que significa % 2 == 0?",
-      "text": "Esse código testa se o número é divisível por 2 (ou seja, se é par). `%` é o 'resto da divisão'."
-    },
-    {
-      "type": "concept",
-      "heading": "if‑elif‑else: Múltiplas escolhas",
-      "text": "Quando temos mais de duas opções, usamos `elif` (que vem de 'else if'). Podemos ter quantos `elif` quisermos!",
-      "code": "nota = 75\nif nota < 30:\n    print(\"Reprovado\")\nelif nota < 50:\n    print(\"Recuperação\")\nelse:\n    print(\"Aprovado\")"
-    },
-    {
-      "type": "tip",
-      "heading": "Dica de indentação",
-      "text": "Sempre use 4 espaços para o bloco dentro do if. O Python usa esse espaço para saber o que está dentro e o que está fora da condição."
+      "type": "code",
+      "heading": "Exemplo de vídeo embutido",
+      "code": "<iframe width=\"300\" height=\"180\" src=\"https://www.youtube.com/embed/dQw4w9WgXcQ\" frameborder=\"0\" allowfullscreen></iframe>"
     },
     {
       "type": "question",
-      "heading": "❓ E se eu esquecer os dois pontos (:) depois do if?",
-      "text": "O Python vai dar erro! Sempre coloque `:` depois do `if`, `elif` e `else` para indicar que vem um bloco."
+      "heading": "❓ Posso usar qualquer imagem?",
+      "text": "Você pode usar imagens suas ou imagens grátis da internet. Mas evite usar imagens de sites sem permissão! Você também pode fazer o upload de imagens na mesma pasta do seu site."
+    },
+    {
+      "type": "summary",
+      "heading": "Resumo da Aula",
+      "text": "🖼️ &lt;img src=\"...\" alt=\"...\"&gt; para imagens\n📺 &lt;iframe src=\"...\"&gt; para vídeos do YouTube\n🗂️ As imagens devem estar na mesma pasta do seu site ou ter um link direto"
     }
   ],
   "exercises": [
     {
       "type": "exercise",
-      "prompt": "1. Peça um número ao usuário e imprima se ele é par ou ímpar.",
-      "code_hint": "n = int(input(\"Digite um número: \"))\nif n % 2 == 0:\n    print(\"Par\")\nelse:\n    print(\"Ímpar\")"
+      "prompt": "1. Adicione uma imagem de perfil na sua página pessoal (você pode usar uma imagem chamada 'perfil.jpg').",
+      "code_hint": "<img src=\"perfil.jpg\" alt=\"Minha foto de perfil\">"
     },
     {
       "type": "exercise",
-      "prompt": "2. Peça a idade do usuário e diga se ele é maior (>=18) ou menor (<18) de idade.",
-      "code_hint": "idade = int(input(\"Idade: \"))\nif idade >= 18:\n    print(\"Maior de idade\")\nelse:\n    print(\"Menor de idade\")"
+      "prompt": "2. Adicione uma imagem de um personagem no site do Brawl Stars (ex: 'leon.png').",
+      "code_hint": "<img src=\"leon.png\" alt=\"Personagem Leon do Brawl Stars\">"
     },
     {
       "type": "exercise",
-      "prompt": "3. Peça uma nota (0–100). Use if/elif/else para classificar: < 30 = Reprovado; < 50 = Recuperação; ≥ 50 = Aprovado.",
-      "code_hint": "nota = int(input(\"Nota: \"))\nif nota < 30:\n    print(\"Reprovado\")\nelif nota < 50:\n    print(\"Recuperação\")\nelse:\n    print(\"Aprovado\")"
+      "prompt": "3. No seu site pessoal, insira um vídeo do YouTube que você gosta usando iframe.",
+      "code_hint": "<iframe width=\"300\" height=\"180\" src=\"https://www.youtube.com/embed/seu_codigo_aqui\" frameborder=\"0\" allowfullscreen></iframe>"
     },
     {
-      "type": "challenge",
-      "prompt": "4. *Desafio:* Peça duas notas do aluno e calcule a média. Classifique com base na média: < 5 = Reprovado; < 7 = Recuperação; ≥ 7 = Aprovado.",
-      "code_hint": "n1 = float(input(\"Nota 1: \"))\nn2 = float(input(\"Nota 2: \"))\nmedia = (n1 + n2)/2\nif media < 5:\n    print(\"Reprovado\")\nelif media < 7:\n    print(\"Recuperação\")\nelse:\n    print(\"Aprovado\")"
+      "type": "exercise",
+      "prompt": "4. Desafio: Crie uma galeria com 3 imagens diferentes no site do Brawl Stars.",
+      "code_hint": "<img src=\"img1.jpg\" alt=\"Imagem 1\">\n<img src=\"img2.jpg\" alt=\"Imagem 2\">\n<img src=\"img3.jpg\" alt=\"Imagem 3\">"
     }
   ],
   "project": {
     "type": "project",
-    "name": "Classificador de notas",
-    "description": "Crie um programa que pede nome, duas notas e dá a média e o resultado final.",
-    "goal": "Praticar `input`, `float`, `if`, `elif`, `else` e f-strings."
-  },
-  "video_suggestion": {
-    "type": "video",
-    "text": "Para mais explicações, veja este vídeo em português que mostra condicional IF, ELIF e ELSE na prática:",
-    "url": "https://www.youtube.com/watch?v=7oJtcrukTwM"
+    "name": "🖼️ Galeria e Vídeo",
+    "description": "Atualize o site pessoal com uma imagem de perfil e um vídeo do YouTube sobre você. No site do Brawl Stars, adicione pelo menos duas imagens dos personagens e um vídeo do jogo.",
+    "goal": "Praticar o uso de imagens (&lt;img&gt;) e vídeos (&lt;iframe&gt;) para deixar o site mais interessante."
   }
 }

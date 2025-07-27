@@ -9,38 +9,33 @@
       type="image/png"
       href="resources/images/brawl-stars-arena-icon.png"
     />
-    <link rel="stylesheet" href="styles/day.css" />
 
     <script defer src="scripts/load_lesson_content.js"></script>
   </head>
 
   <body>
     <audio id="background-music" loop>
-      <source src="resources/sounds/music-theme.mp3" type="type/mpeg" />
+      <source src="resources/sounds/music-theme.mp3" type="audio/mpeg" />
       Seu navegador não suporta o elemento de áudio.
     </audio>
 
     <header>
-      <div class="header-content">
-        <a href="index.html" class="back-button">
-          <img
-            src="resources/images/brawl-stars-logo-small.png"
-            alt="Voltar ao Mapa"
-            style="height: 30px; vertical-align: middle"
-          />
-          Voltar ao Mapa
-        </a>
-        <h1 id="lesson-title">Carregando Arena...</h1>
-      </div>
+      <h1 id="lesson-title">Carregando Arena...</h1>
     </header>
-
+    <div class="header-controls-wrapper">
+      <nav class="main-nav lesson-page-nav">
+        <ul>
+          <li>
+            <a href="index.html#mapa">Voltar ao Mapa das Arenas</a>
+          </li>
+        </ul>
+      </nav>
+      <button id="music-toggle-button" class="music-toggle-button">
+        🎵 Ligado
+      </button>
+    </div>
     <main class="lesson-content">
       <section id="lesson-text-content" class="lesson-text-content">
-        <p>
-          Bem-vindo à <span id="lesson-name"></span>! Prepare-se para aprender
-          tudo sobre <span id="lesson-topic"></span> no universo de Brawl Stars.
-        </p>
-
         <div id="interactive-example" class="interactive-example"></div>
 
         <div id="code-example" class="code-example">
@@ -56,22 +51,12 @@
           <p id="explanation-text"></p>
         </div>
       </section>
-
-      <aside class="lesson-sidebar">
-        <h3>Nesta Arena:</h3>
-        <ul id="lesson-topics"></ul>
-        <button id="show-hint-button" class="hint-button">Ver Dica</button>
-        <div id="hint-text" class="hint-text" style="display: none"></div>
-      </aside>
     </main>
 
     <footer class="lesson-footer">
-      <button id="previous-lesson-button" class="navigation-button" disabled>
-        Arena Anterior
-      </button>
-      <button id="next-lesson-button" class="navigation-button" disabled>
-        Próxima Arena
-      </button>
+      <p>
+        &copy; 2025 Brawl Stars Web Adventures. Todos os direitos reservados.
+      </p>
     </footer>
 
     <script src="scripts/lesson_progress.js"></script>

@@ -21,11 +21,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   const hintButton = document.getElementById('show-hint-button'); // Botão de dica
   const hintTextDiv = document.getElementById('hint-text'); // Div da dica
 
-  // Elementos de navegação
-  const prevButton = document.getElementById('previous-lesson-button');
-  const nextButton = document.getElementById('next-lesson-button');
-  const lessonTopicsList = document.getElementById('lesson-topics'); // Lista de tópicos na sidebar
-
   let lessonIndexData = []; // Para armazenar o índice de todas as lições
   let currentLessonIndex = -1; // Índice da lição atual no array lessonIndexData
 
@@ -47,8 +42,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (explanationText) explanationText.parentElement.style.display = 'none';
     if (hintButton) hintButton.style.display = 'none';
     if (hintTextDiv) hintTextDiv.style.display = 'none';
-    if (prevButton) prevButton.disabled = true;
-    if (nextButton) nextButton.disabled = true;
     if (lessonTopicsList) lessonTopicsList.innerHTML = '';
   }
 
@@ -399,10 +392,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     }
 
-    // Habilita/desabilita botões de navegação com base no lessonIndexData
-    prevButton.disabled = currentLessonIndex <= 0;
-    nextButton.disabled = currentLessonIndex >= lessonIndexData.length - 1;
-
     // Garante que o Highlight.js processe o novo conteúdo
     if (typeof hljs !== 'undefined') {
       hljs.highlightAll();
@@ -423,69 +412,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     return match && match[1].length === 11 ? match[1] : null;
   }
 
-  // --- Função para popular a barra lateral (seção "Nesta Arena") ---
-  function populateLessonTopicsSidebar() {
-    if (!lessonTopicsList) return;
-
-    lessonTopicsList.innerHTML = '';
-    const currentPathId = getLessonIdFromUrl();
-
-    lessonIndexData.forEach((lesson) => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = `day.html?id=${lesson.id}`;
-      a.textContent = `${lesson.name}: ${lesson.title}`;
-      if (lesson.id === currentPathId) {
-        a.classList.add('current-lesson');
-      }
-      li.appendChild(a);
-      lessonTopicsList.appendChild(li);
-    });
-  }
-
   // --- Obtém o ID da lição da URL ---
   function getLessonIdFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('id');
-  }
-
-  // --- Event Listeners para navegação ---
-  prevButton.addEventListener('click', () => {
-    if (currentLessonIndex > 0) {
-      window.location.href = `day.html?id=${
-        lessonIndexData[currentLessonIndex - 1].id
-      }`;
-    }
-  });
-
-  nextButton.addEventListener('click', () => {
-    if (currentLessonIndex < lessonIndexData.length - 1) {
-      window.location.href = `day.html?id=${
-        lessonIndexData[currentLessonIndex + 1].id
-      }`;
-    } else {
-      const firstLessonId =
-        lessonIndexData.length > 0 ? lessonIndexData[0].id : null;
-      if (firstLessonId) {
-        window.location.href = `day.html?id=${firstLessonId}`;
-      } else {
-        console.warn(
-          'Não há próxima lição e nem lições disponíveis para navegar.'
-        );
-      }
-    }
-  });
-
-  // Event listener para o botão de dica
-  if (hintButton) {
-    hintButton.addEventListener('click', () => {
-      if (hintTextDiv) {
-        hintTextDiv.style.display =
-          hintTextDiv.style.display === 'none' ? 'block' : 'none';
-        hintButton.textContent =
-          hintTextDiv.style.display === 'none' ? 'Ver Dica' : 'Esconder Dica';
-      }
-    });
   }
 
   // --- Inicialização ---
