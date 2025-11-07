@@ -1,97 +1,116 @@
 {
-  "title": "Dia 6 – Aprendendo a repetir com o laço for e a função range()",
+  "title": "Dia 6 – O que é CSS? Cores e Estilos Básicos",
   "concepts": [
     {
-      "type": "explanation",
-      "heading": "Vamos imaginar uma tarefa chata...",
-      "text": "Se eu pedir para você escrever 'Oi' cinco vezes no Thonny, você vai digitar print('Oi') cinco vezes? 😩 E se fossem 100 vezes? 😱"
+      "type": "intro",
+      "heading": "🎨 Deixando seu site com a sua cara!",
+      "text": "Sabe quando você ganha um caderno novinho e quer logo personalizar? Coloca seu nome, desenha na capa, usa canetinha colorida... 😍\n\nSeu site também pode (e deve!) ter a sua cara! Até agora, ele tem conteúdo: textos, listas, links, imagens... mas ainda está com aquela carinha básica de caderno sem capa. É aí que entra o nosso herói de hoje: o **CSS**.\n\nO CSS é o que dá cor, forma, estilo e alegria ao seu site. Ele é como os lápis de cor e os stickers da sua criatividade digital. Vamos aprender a pintar e transformar o seu mundo na web? 🌟💻"
     },
     {
       "type": "image",
-      "heading": "O computador repetindo como um robô",
-      "image_placeholder": "imagem de um robô simpático repetindo movimentos ou tarefas, com setas em volta dele",
-      "image_url": "resources/images/lesson_illustrations/lesson_6_repeat.jpg"
+      "heading": "Antes e depois do estilo",
+      "image_placeholder": "Uma página simples em HTML ao lado de outra com o mesmo conteúdo, mas colorida, divertida e estilizada",
+      "image_url": "resources/images/lesson_illustrations/lesson_06_css_before_after_fun.png"
+    },
+    {
+      "type": "explanation",
+      "heading": "🎨 O que é CSS?",
+      "text": "CSS quer dizer Cascading Style Sheets – parece complicado, né? Mas pensa assim: se o HTML é o esqueleto do seu site, o CSS é a roupa, o cabelo, os acessórios e até os efeitos especiais!\n\nCom o CSS você pode:\n- Mudar as cores dos textos e do fundo\n- Trocar a fonte e o tamanho das letras\n- Colocar bordas, margens e até sombras\n- Posicionar coisas com mais controle\n- Criar animações incríveis (mais pra frente!)"
+    },
+    {
+      "type": "explanation",
+      "heading": "🧱 Blocos básicos do CSS",
+      "text": "O CSS funciona assim:\n`css\nseletor {\n  propriedade: valor;\n}\n`\nPor exemplo:\n`css\nh1 {\n  color: red;\n}\n`\nIsso muda a cor do título &lt;h1&gt; para vermelho. Agora vamos aprender os estilos mais usados!"
+    },
+    {
+      "type": "steps",
+      "heading": "🔟 10 estilos mais comuns no CSS",
+      "text": "Vamos ver um por um com explicação, exemplo e código!",
+      "steps": [
+        "1. color — muda a cor do texto",
+        "2. background-color — muda a cor do fundo",
+        "3. font-family — escolhe a fonte das letras",
+        "4. font-size — aumenta ou diminui o tamanho da letra",
+        "5. text-align — alinha o texto (esquerda, centro, direita)",
+        "6. border — cria uma borda ao redor de algo",
+        "7. padding — espaço entre o conteúdo e a borda",
+        "8. margin — espaço entre os elementos",
+        "9. width — define a largura",
+        "10. height — define a altura"
+      ]
     },
     {
       "type": "code",
-      "heading": "O que é um laço for?",
-      "text": "O laço for é como dizer: 'Repita isso para mim várias vezes'. Você escreve o que quer uma vez só, e o Python faz o trabalho repetitivo. É como um robô que segue ordens passo a passo.",
-      "code": "for i in range(5):\n    print(\"Oi\")"
-    },
-    {
-      "type": "explanation",
-      "heading": "Vamos entender essa frase mágica:",
-      "text": "Essa linha tem várias partes importantes: `for`, `i`, `in`, `range()` e os dois pontos. Cada pedacinho tem um papel!"
-    },
-    {
-      "type": "explanation",
-      "heading": "Quadro: Como montar um laço for?",
-      "text": "<table><tr><th>Parte</th><th>O que significa</th><th>Exemplo</th></tr>\n<tr><td><code>for</code></td><td>Começa o laço</td><td><code>for i in range(5):</code></td></tr>\n<tr><td><code>i</code></td><td>Variável que muda a cada volta</td><td><code>0, 1, 2, 3, 4</code></td></tr>\n<tr><td><code>in</code></td><td>Lê-se 'em'</td><td><code>i in range(5)</code></td></tr>\n<tr><td><code>range()</code></td><td>Gera os números</td><td><code>range(5)</code> gera 0 a 4</td></tr>\n<tr><td><code>:</code></td><td>Indica que o bloco será repetido</td><td><code>:</code> no final da linha</td></tr>\n<tr><td><code>indentação</code></td><td>Espaço antes da linha</td><td><code>    print(i)</code></td></tr></table>"
-    },
-    {
-      "type": "explanation",
-      "heading": "O que é o `i`?",
-      "text": "`i` é só um nome para a variável que muda a cada repetição. Ela começa com 0, depois vira 1, depois 2, e assim por diante. Você pode trocar o nome por `num`, `linha`, `contador`, mas `i` é o mais usado."
-    },
-    {
-      "type": "explanation",
-      "heading": "O que é `range()`?",
-      "text": "`range()` é uma função que cria uma sequência de números para o for repetir. É como uma fila invisível de números que o Python vai lendo um por um."
-    },
-    {
-      "type": "code",
-      "heading": "Testando range() no Thonny",
-      "text": "Teste isso! O que aparece? O que é o valor de i a cada volta?",
-      "code": "for i in range(3):\n    print(\"Volta número:\", i)"
-    },
-    {
-      "type": "explanation",
-      "heading": "Tipos de range",
-      "text": "- `range(fim)` → vai de 0 até um antes do fim\n- `range(início, fim)` → começa no número que você quiser, vai até um antes do fim\n- `range(início, fim, passo)` → mesmo esquema, mas pulando de tanto em tanto"
-    },
-    {
-      "type": "code",
-      "heading": "Exemplos úteis de range",
-      "text": "Repare que o último número NUNCA aparece. Sempre para um antes!",
-      "code": "range(5)       # 0, 1, 2, 3, 4\nrange(2, 6)    # 2, 3, 4, 5\nrange(1, 10, 2)  # 1, 3, 5, 7, 9"
+      "heading": "Estilo direto no elemento (inline)",
+      "code": "<h1 style=\"color: blue;\">Bem-vindo ao meu site!</h1>\n<p style=\"background-color: yellow;\">Esse é meu parágrafo com fundo colorido!</p>\n<p style=\"font-family: Comic Sans MS;\">Texto com fonte divertida!</p>"
     },
     {
       "type": "question",
-      "heading": "🤔 Dúvidas comuns de quem está começando",
-      "text": "**Por que começa do 0?** Porque no Python (e em muitas linguagens), a contagem começa do zero. É como se a primeira volta fosse a número 0.\n**Por que o último número não aparece?** O `range(5)` vai até o número antes do 5. Então ele mostra 0, 1, 2, 3 e 4. O número final nunca aparece!\n**Posso trocar o nome do `i`?** Sim! `i` é só um nome. Você pode usar `num`, `vez`, `contador`, ou qualquer outro — só não pode usar espaços ou acentos.\n**O que acontece se eu colocar `range(1, 5)`?** Ele mostra: 1, 2, 3, 4. Começa no 1 e vai até um antes do 5."
+      "heading": "❓ Posso usar qualquer nome de cor?",
+      "text": "Sim! Você pode usar nomes em inglês como 'red', 'blue', 'orange'... ou códigos hexadecimais como '#00FF00' para verde."
     },
     {
-      "type": "summary",
-      "heading": "Resumo da aula",
-      "text": "🔁 `for` repete comandos para você\n📦 `range()` cria os números da repetição\n📌 `i` é a variável que muda a cada volta\n🧪 Dá pra fazer laços contando, pulando ou invertendo"
+      "type": "code",
+      "heading": "Estilo dentro do &lt;head&gt; (interna)",
+      "code": "<style>\n  p {\n    font-size: 20px;\n    text-align: center;\n    color: purple;\n  }\n  h2 {\n    border: 2px dashed green;\n  }\n  ul {\n    padding: 20px;\n  }\n</style>"
+    },
+    {
+      "type": "question",
+      "heading": "🤔 O que é padding mesmo?",
+      "text": "É o espaço entre o conteúdo e a borda. Imagina um texto dentro de uma caixa. O padding é o acolchoado dentro da caixa!"
+    },
+    {
+      "type": "code",
+      "heading": "Estilo em arquivo separado (externo)",
+      "code": "/* style.css */\nbody {\n  margin: 0;\n  background-color: #f0f0f0;\n}\ndiv {\n  width: 300px;\n  height: 150px;\n  background-color: coral;\n}\nimg {\n  height: 200px;\n  border: 5px solid black;\n}"
+    },
+    {
+      "type": "explanation",
+      "heading": "🧩 Ligando o CSS externo com o HTML",
+      "text": "Para usar um CSS externo, crie um arquivo chamado 'style.css' e ligue assim no seu HTML dentro do &lt;head&gt;:\n`html\n&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;\n`"
     }
   ],
   "exercises": [
     {
       "type": "exercise",
-      "prompt": "1. Imprima 'Linha X' para cada número de 1 a 5 (substitua X pelo número).",
-      "code_hint": "for i in range(1, 6):\n    print(f\"Linha {i}\")"
+      "prompt": "1. No site pessoal, use style inline para colorir o título com sua cor favorita.",
+      "code_hint": "<h1 style=\"color: green;\">Meu Site!</h1>"
     },
     {
       "type": "exercise",
-      "prompt": "2. Use um laço `for` para imprimir os números de 10 a 15.",
-      "code_hint": "for num in range(10, 16):\n    print(num)"
+      "prompt": "2. Altere a fonte de um parágrafo para 'Courier New' usando estilo inline.",
+      "code_hint": "<p style=\"font-family: Courier New;\">Texto com nova fonte</p>"
     },
     {
       "type": "exercise",
-      "prompt": "3. Desafio: Crie um laço `for` que imprima a frase 'Aventura!' 3 vezes.",
-      "code_hint": "for _ in range(3):\n    print(\"Aventura!\")"
+      "prompt": "3. Use CSS no &lt;head&gt; para centralizar os parágrafos do site Brawl Stars.",
+      "code_hint": "<style>\np { text-align: center; }\n</style>"
+    },
+    {
+      "type": "exercise",
+      "prompt": "4. Adicione uma borda laranja de 4px ao &lt;h1&gt; da sua página.",
+      "code_hint": "<style>\nh1 { border: 4px solid orange; }\n</style>"
+    },
+    {
+      "type": "exercise",
+      "prompt": "5. Desafio: crie um arquivo 'style.css' e mude o fundo do seu site pessoal para azul claro.",
+      "code_hint": "body { background-color: lightblue; }"
+    },
+    {
+      "type": "exercise",
+      "prompt": "6. Desafio bônus: estilize a galeria de imagens do site Brawl Stars usando CSS externo.",
+      "code_hint": "img { border: 2px dashed red; margin: 10px; }"
     }
   ],
   "project": {
     "type": "project",
-    "name": "Contador Personalizado",
-    "description": "Peça ao usuário o número de início, fim e passo. Use for + range para contar e mostrar na tela.",
-    "goal": "Praticar range(início, fim, passo), input(), print() e for com controle total."
+    "name": "🎨 Estilizando minha página",
+    "description": "Escolha cores, fontes e estilos para o seu site pessoal e para o site do Brawl Stars. Use estilo inline, interno e externo. Experimente mudar fundo, textos, listas, bordas e imagens!",
+    "goal": "Aplicar diferentes formas de CSS e deixar seus sites com muito mais personalidade e beleza."
   },
   "video_suggestion": {
     "type": "video",
-    "text": "Vídeo em português explicando for e range de forma clara e prática:",
-    "url": "https://www.youtube.com/watch?v=Bpmks-l04ck"
+    "text": "Veja como usar CSS para mudar as cores, fontes e bordas do seu site:",
+    "url": "https://www.youtube.com/embed/1PnVor36_40"
   }
 }
