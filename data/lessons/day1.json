@@ -1,90 +1,80 @@
 {
   "id": "day1",
   "name": "Arena 1",
-  "title": "Elementos Básicos: Tags e Estrutura",
-  "topic": "HTML",
+  "title": "Estrutura HTML + Navegação + Primeiro JS",
+  "topic": "HTML & JavaScript",
   "concepts": [
     {
       "type": "intro",
-      "heading": "A Porta Secreta do Mundo dos Sites",
-      "text": "Era uma vez... um jovem aventureiro (ou aventureira!) que descobriu um portal secreto para criar coisas incríveis: sites mágicos, onde tudo que você imaginar pode ganhar vida. 🌐✨<br><br>Esse portal se chama HTML, e ele é como o mapa secreto de um castelo. Ele mostra onde fica cada sala (como os textos, as imagens, os títulos), onde estão os portões (os links), e até onde você pode guardar seus tesouros (os vídeos e as músicas!).<br><br>Sabe aqueles joguinhos que você adora? Ou aquele site onde você assiste vídeos ou lê tirinhas? Todos eles começaram com HTML, com alguém muito curioso – assim como você – que decidiu aprender a construir seu próprio mundo digital!<br><br>HTML é como o esqueleto de um boneco, ou como a planta de uma casa: não tem ainda a pintura, nem os móveis, mas mostra certinho onde vai ficar cada coisa.<br><br>Hoje, você vai dar o primeiro passo para construir o seu próprio mundo na internet. Não importa se você nunca programou antes — eu estou aqui com você, e vamos fazer tudo juntinhos! 🤝<br><br>Pronto para abrir esse portal mágico? 🌟"
+      "heading": "Primeiro passo: criar e ver no navegador",
+      "text": "Todo mundo começa em algum lugar — e hoje é o momento em que o nosso mundo aparece na tela pela primeira vez. Criamos as páginas iniciais do reino, ligamos uma à outra e acendemos o primeiro sinal de vida com um toque de JavaScript. É aqui que o mapa deixa de ser imaginação e começa a existir de verdade no navegador."
     },
     {
       "type": "image",
-      "heading": "Imagem: Olá, Mundo!",
-      "image_placeholder": "Uma imagem de uma página HTML simples com o título 'Olá, Mundo!",
-      "image_url": "resources/images/lesson_illustrations/lesson_01_hello.png"
+      "heading": "Um mundo novo",
+      "image_placeholder": "Uma ilustração leve de um brawler navegando.",
+      "image_url": "resources/images/lesson_illustrations/lesson_01_webpage.png"
     },
     {
       "type": "explanation",
-      "heading": "Tipo o desenho de uma casa",
-      "text": "Imagine que você vai montar uma casa. O HTML é como o desenho que diz onde vai ficar cada cômodo: sala, quarto, banheiro... No site, o HTML diz onde ficam o título, o texto, as imagens. A decoração (cores, estilos) vem depois com o CSS!"
+      "heading": "Tags fundamentais",
+      "text": "• &lt;!DOCTYPE html&gt; — define HTML moderno. <br>• &lt;html&gt; — raiz da página. <br>• &lt;head&gt; — título e metadados. <br>• &lt;body&gt; — conteúdo visível. <br>• &lt;h1&gt;, &lt;p&gt;, &lt;a&gt; — principais elementos da aula."
     },
     {
       "type": "steps",
-      "heading": "Passo a Passo",
-      "text": "Vamos criar nossa primeira página HTML! Siga esses passos:",
+      "heading": "Live-coding — o que fizemos no projeto Fantasia Épica",
+      "text": "Criamos duas páginas conectadas e adicionamos um script simples.",
       "steps": [
-        "Abra o VS Code e crie uma pasta chamada 'Aula01-OlaMundo'.",
-        "Crie um novo arquivo dentro dessa pasta com o nome index.html.",
-        "Digite 'html:5' e aperte TAB ou Enter para gerar a estrutura básica do HTML.",
-        "Edite o conteúdo como no exemplo abaixo.",
-        "Clique com o botão direito no index.html e escolha 'Open with Live Server'.",
-        "Veja sua primeira página no navegador!"
+        "Criar a pasta fantasia-epica/.",
+        "Criar index.html com título, texto e link para regioes.html.",
+        "Criar regioes.html e adicionar link de volta para index.html.",
+        "Abrir no navegador com Live Server.",
+        "Adicionar um &lt;script&gt; com console.log e alteração de texto."
       ]
     },
     {
       "type": "code",
-      "heading": "Código",
-      "code": "<!DOCTYPE html>\n<html lang=\"pt-br\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Minha Primeira Página!</title>\n</head>\n<body>\n    <h1>Olá, Mundo!</h1>\n</body>\n</html>"
+      "heading": "fantasia-epica/index.html",
+      "code": "<!DOCTYPE html>\n<html lang=\"pt-br\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Mapa do Reino</title>\n  </head>\n  <body>\n    <h1>Mapa do Reino</h1>\n    <p id=\"intro\">Bem-vindo ao reino de Eldoria.</p>\n\n    <a href=\"regioes.html\">Ver Regiões</a>\n\n    <button id=\"btn\">Ativar Portal</button>\n\n    <script>\n      console.log(\"JS carregado: Mapa do Reino\");\n\n      document.addEventListener(\"DOMContentLoaded\", () => {\n        const intro = document.getElementById(\"intro\");\n        const btn = document.getElementById(\"btn\");\n\n        btn.addEventListener(\"click\", () => {\n          intro.textContent = \"Portal ativado. A jornada começa.\";\n          alert(\"Portal energizado!\");\n        });\n      });\n    </script>\n  </body>\n</html>"
+    },
+    {
+      "type": "code",
+      "heading": "fantasia-epica/regioes.html",
+      "code": "<!DOCTYPE html>\n<html lang=\"pt-br\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Regiões de Eldoria</title>\n  </head>\n  <body>\n    <h1>Regiões</h1>\n    <p>Floresta Sombria, Montanhas Azuis, Pântano Prateado.</p>\n\n    <a href=\"index.html\">Voltar</a>\n\n    <script>\n      console.log(\"JS carregado: Regiões\");\n    </script>\n  </body>\n</html>"
     },
     {
       "type": "explanation",
-      "heading": "Explicação do Código",
-      "text": "Cada parte do código HTML tem uma função. <br>O !DOCTYPE html diz que estamos usando HTML moderno. <br>As tags html, head e body organizam a página. <br>O title define o nome da aba e o h1 mostra o título principal da página."
+      "heading": "JS (mínimo) usado hoje",
+      "text": "• console.log — confirma que o script carregou. <br>• document.getElementById — seleciona um elemento. <br>• .textContent — altera o texto da página. <br>• addEventListener — reage ao clique."
     },
     {
       "type": "question",
-      "heading": "Dúvidas Comuns",
-      "text": "Por que algumas tags têm '/'? <br>Porque toda tag de abertura (h1) precisa ter uma de fechamento (/h1). <br>Esquecer de fechar pode bagunçar sua página. Pense em sanduíches: abrimos e fechamos o pão!"
-    },
-    {
-      "type": "image",
-      "heading": "Imagem: Estrutura Básica HTML",
-      "image_placeholder": "Uma imagem mostrando como as partes do HTML (head, body, title, h1) aparecem na página e no navegador.",
-      "image_url": "resources/images/lesson_illustrations/lesson_01_html.png"
+      "heading": "Armadilhas comuns",
+      "text": "• Nome do arquivo diferente do link (href). <br>• Esquecer .html no href. <br>• Colocar o &lt;script&gt; antes do conteúdo sem DOMContentLoaded. <br>• Criar mais de um &lt;h1&gt; na mesma página."
     }
   ],
   "exercises": [
     {
       "type": "exercise",
-      "prompt": "Mude o título da aba do navegador para 'Meu Site Genial!'."
+      "prompt": "Crie duas páginas no seu projeto, conectadas com &lt;a href&gt;."
     },
     {
       "type": "exercise",
-      "prompt": "Mude o texto 'Olá, Mundo!' para 'Bem-vindo ao meu primeiro site!'."
+      "prompt": "Adicione um &lt;script&gt; com console.log para confirmar que o JS carregou."
     },
     {
       "type": "exercise",
-      "prompt": "Adicione um h2 abaixo do h1, com o texto 'Subtítulo da Página'."
+      "prompt": "Crie um botão e, ao clicar, altere o texto de um elemento da sua página."
     },
     {
       "type": "exercise",
-      "prompt": "Apague o h1 e escreva ele de novo sozinho."
-    },
-    {
-      "type": "exercise",
-      "prompt": "Adicione um h3 com o seu nome na página."
+      "prompt": "Personalize o &lt;title&gt; de cada página."
     }
   ],
   "project": {
     "type": "project",
-    "name": "Desafio: Segunda Página com Link",
-    "description": "Crie um novo arquivo chamado pagina2.html com um `h1` diferente. Em index.html, adicione um link com `a href=\"pagina2.html\"` para que, ao clicar, vá para a nova página.",
-    "goal": "Criar uma segunda página HTML e adicionar um link para ela na primeira página."
-  },
-  "video_suggestion": {
-    "title": "O que é HTML? (Explicação simples e visual)",
-    "url": "https://www.youtube.com/embed/ok-plXXHlWw"
+    "name": "Mini-site navegável + JS básico",
+    "description": "Hoje criamos duas páginas simples conectadas, vimos como o navegador reage aos links e ativamos o primeiro comportamento usando JavaScript.",
+    "goal": "Ver o site carregando, funcionando e reagindo a um clique."
   }
 }

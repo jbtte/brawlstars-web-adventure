@@ -1,74 +1,75 @@
 {
-  "title": "Dia 2 – Textos e Parágrafos",
+  "id": "day2",
+  "name": "Arena 2",
+  "title": "Títulos, Parágrafos e Listas",
+  "topic": "HTML",
   "concepts": [
     {
       "type": "intro",
-      "heading": "📚 Escrevendo na internet!",
-      "text": "Sabe quando você quer escrever uma história, um bilhete ou até uma lista de tarefas? Com HTML, também dá para fazer isso! Hoje vamos aprender a usar títulos, parágrafos e quebra de linha para deixar sua página cheia de palavras lindas e bem organizadas. Pronto para virar um autor digital? 🖋️✨"
+      "heading": "Estruturando conteúdo",
+      "text": "O reino já existe… mas ainda está vazio. Hoje começamos a construir as primeiras áreas dele: textos que explicam, listas que organizam e títulos que dão ordem às coisas. É aqui que a página começa a ganhar forma e deixar de ser só um rascunho."
     },
     {
       "type": "image",
-      "heading": "Exemplo de Página com Textos",
-      "image_placeholder": "Uma imagem de uma página da web com vários títulos e parágrafos bem organizados",
-      "image_url": "resources/images/lesson_illustrations/lesson_02_texts.png"
+      "heading": "Uma página mais organizada",
+      "image_placeholder": "Uma ilustração leve de páginas com títulos e listas.",
+      "image_url": "resources/images/lesson_illustrations/lesson_02_hierarchy.png"
     },
     {
       "type": "explanation",
-      "heading": "📝 O que são parágrafos e títulos?",
-      "text": "Um parágrafo é como uma parte de uma história. E os títulos mostram os assuntos principais. Em HTML usamos &lt;p&gt; para parágrafos e &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;... para os títulos. Quanto menor o número, maior o título!"
+      "heading": "Elementos da aula",
+      "text": "• &lt;h1&gt; ... &lt;h3&gt; — hierarquia de títulos. <br>• &lt;p&gt; — parágrafo. <br>• &lt;ul&gt; — lista não ordenada. <br>• &lt;ol&gt; — lista ordenada. <br>• &lt;li&gt; — item da lista."
+    },
+    {
+      "type": "steps",
+      "heading": "Live-coding — projeto Fantasia Épica",
+      "text": "O que adicionamos hoje no index.html do reino:",
+      "steps": [
+        "Criamos uma nova seção usando &lt;h2&gt;.",
+        "Escrevemos um &lt;p&gt; sobre o reino.",
+        "Criamos uma lista &lt;ul&gt; com três regiões.",
+        "Criamos uma lista &lt;ol&gt; com níveis de perigo.",
+        "Revisamos a hierarquia de títulos (apenas um &lt;h1&gt;)."
+      ]
     },
     {
       "type": "code",
-      "heading": "Exemplo de uso de &ltp&gt e &lth1&gt a &lth3&gt",
-      "code": "<h1>Meu Primeiro Site</h1>\n<h2>Sobre Mim</h2>\n<p>Meu nome é Ana e eu adoro desenhar e programar!</p>\n<h3>Minhas Cores Favoritas</h3>\n<p>Azul, roxo e amarelo.</p>"
+      "heading": "Código criado no live-coding",
+      "code": "<h2>Sobre o Reino</h2>\n<p>Terra antiga, misteriosa e cheia de histórias esquecidas.</p>\n\n<h3>Regiões Principais</h3>\n<ul>\n  <li>Floresta Sombria</li>\n  <li>Montanhas Azuis</li>\n  <li>Pântano Prateado</li>\n</ul>\n\n<h3>Níveis de Perigo</h3>\n<ol>\n  <li>Baixo</li>\n  <li>Médio</li>\n  <li>Alto</li>\n</ol>"
     },
     {
       "type": "explanation",
-      "heading": "🔁 Quebrando a linha com &ltbr&gt",
-      "text": "Se você quiser pular uma linha dentro do mesmo parágrafo, pode usar a tag &ltbr&gt. Ela funciona como quando apertamos Enter no teclado."
-    },
-    {
-      "type": "code",
-      "heading": "Usando &ltbr&gt para pular linha",
-      "code": "<p>Hoje eu aprendi HTML!<br>Estou muito feliz!<br>Quero criar muitos sites!</p>"
+      "heading": "Boas práticas",
+      "text": "• Use títulos em ordem lógica: &lt;h1&gt; → &lt;h2&gt; → &lt;h3&gt;. <br>• Uma seção clara = título + parágrafo. <br>• Listas só com &lt;li&gt; dentro. <br>• Não pule níveis sem motivo."
     },
     {
       "type": "question",
-      "heading": "😕 Dúvida comum: posso colocar qualquer coisa dentro de &lth1&gt?",
-      "text": "Você pode escrever qualquer texto dentro das tags &lth1&gt, &lth2&gt, etc., mas lembre-se de usar essas tags para títulos importantes! Elas ajudam o navegador e as pessoas a entenderem do que se trata sua página."
-    },
-    {
-      "type": "summary",
-      "heading": "Resumo da Aula",
-      "text": "📖 &ltp&gt para parágrafos\n🏷️ &lth1&gt até &lth6&gt para títulos\n↩️ &ltbr&gt para quebra de linha"
+      "heading": "Erros comuns",
+      "text": "• Abrir &lt;ul&gt; e esquecer de fechar. <br>• Colocar texto solto fora de &lt;li&gt; dentro da lista. <br>• Criar mais de um &lt;h1&gt;."
     }
   ],
   "exercises": [
     {
       "type": "exercise",
-      "prompt": "1. No seu site pessoal, crie um parágrafo com seu nome e o que você gosta de fazer.",
-      "code_hint": "&ltp&gtMeu nome é e eu gosto de_&lt/p&gt"
+      "prompt": "No seu projeto, crie uma seção com &lt;h2&gt; e um &lt;p&gt; explicando o tema."
     },
     {
       "type": "exercise",
-      "prompt": "2. No site sobre Brawl Stars, adicione um título principal (h1) com o nome do jogo.",
-      "code_hint": "&lth1&gtBem-vindo ao meu site sobre Brawl Stars!&lt/h1&gt"
+      "prompt": "Crie uma &lt;ul&gt; com pelo menos 4 itens relevantes ao seu tema."
     },
     {
       "type": "exercise",
-      "prompt": "3. Escreva dois parágrafos sobre seu personagem favorito de Brawl Stars e use &ltbr&gt para quebrar uma linha.",
-      "code_hint": "&ltp&gtMeu personagem favorito é o Leon.&ltbr&gtEle é rápido e se esconde bem!&lt/p&gt"
+      "prompt": "Crie uma &lt;ol&gt; com níveis, fases, ou categorias do seu tema."
     },
     {
       "type": "exercise",
-      "prompt": "4. Desafio: No seu site pessoal, crie uma mini-biografia usando &lth2&gt e dois &ltp&gt diferentes.",
-      "code_hint": "&lth2&gtSobre Mim&lt/h2&gt\n&ltp&gtTenho 12 anos e amo programar.&lt/p&gt\n&ltp&gtTambém gosto muito de gatos!&lt/p&gt"
+      "prompt": "Ajuste o &lt;title&gt; da página para algo mais claro."
     }
   ],
   "project": {
     "type": "project",
-    "name": "📄 Página de Apresentação Pessoal + Brawl Stars",
-    "description": "Atualize sua página pessoal com &lth1&gt com seu nome, &lth2&gt com o título 'Sobre Mim', e dois parágrafos contando mais sobre você. Depois, crie uma nova página chamada 'brawl.html' e adicione um &lth1&gt e um &ltp&gt com uma introdução ao jogo.",
-    "goal": "Praticar o uso de &lth1&gt, &lth2&gt, &ltp&gt e &ltbr&gt em dois contextos diferentes: pessoal e de interesse (Brawl Stars)."
+    "name": "Estrutura inicial do Reino",
+    "description": "Adicionamos as primeiras seções reais, organizando o conteúdo com títulos, parágrafos e listas.",
+    "goal": "Ter uma página inicial clara e estruturada."
   }
 }

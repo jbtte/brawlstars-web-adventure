@@ -1,0 +1,90 @@
+{
+  "id": "day1",
+  "name": "Arena 1",
+  "title": "Elementos Básicos: Tags e Estrutura",
+  "topic": "HTML",
+  "concepts": [
+    {
+      "type": "intro",
+      "heading": "A Porta Secreta do Mundo dos Sites",
+      "text": "Era uma vez... um jovem aventureiro (ou aventureira!) que descobriu um portal secreto para criar coisas incríveis: sites mágicos, onde tudo que você imaginar pode ganhar vida. 🌐✨<br><br>Esse portal se chama HTML, e ele é como o mapa secreto de um castelo. Ele mostra onde fica cada sala (como os textos, as imagens, os títulos), onde estão os portões (os links), e até onde você pode guardar seus tesouros (os vídeos e as músicas!).<br><br>Sabe aqueles joguinhos que você adora? Ou aquele site onde você assiste vídeos ou lê tirinhas? Todos eles começaram com HTML, com alguém muito curioso – assim como você – que decidiu aprender a construir seu próprio mundo digital!<br><br>HTML é como o esqueleto de um boneco, ou como a planta de uma casa: não tem ainda a pintura, nem os móveis, mas mostra certinho onde vai ficar cada coisa.<br><br>Hoje, você vai dar o primeiro passo para construir o seu próprio mundo na internet. Não importa se você nunca programou antes — eu estou aqui com você, e vamos fazer tudo juntinhos! 🤝<br><br>Pronto para abrir esse portal mágico? 🌟"
+    },
+    {
+      "type": "image",
+      "heading": "Imagem: Olá, Mundo!",
+      "image_placeholder": "Uma imagem de uma página HTML simples com o título 'Olá, Mundo!",
+      "image_url": "resources/images/lesson_illustrations/lesson_01_hello.png"
+    },
+    {
+      "type": "explanation",
+      "heading": "Tipo o desenho de uma casa",
+      "text": "Imagine que você vai montar uma casa. O HTML é como o desenho que diz onde vai ficar cada cômodo: sala, quarto, banheiro... No site, o HTML diz onde ficam o título, o texto, as imagens. A decoração (cores, estilos) vem depois com o CSS!"
+    },
+    {
+      "type": "steps",
+      "heading": "Passo a Passo",
+      "text": "Vamos criar nossa primeira página HTML! Siga esses passos:",
+      "steps": [
+        "Abra o VS Code e crie uma pasta chamada 'Aula01-OlaMundo'.",
+        "Crie um novo arquivo dentro dessa pasta com o nome index.html.",
+        "Digite 'html:5' e aperte TAB ou Enter para gerar a estrutura básica do HTML.",
+        "Edite o conteúdo como no exemplo abaixo.",
+        "Clique com o botão direito no index.html e escolha 'Open with Live Server'.",
+        "Veja sua primeira página no navegador!"
+      ]
+    },
+    {
+      "type": "code",
+      "heading": "Código",
+      "code": "<!DOCTYPE html>\n<html lang=\"pt-br\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Minha Primeira Página!</title>\n</head>\n<body>\n    <h1>Olá, Mundo!</h1>\n</body>\n</html>"
+    },
+    {
+      "type": "explanation",
+      "heading": "Explicação do Código",
+      "text": "Cada parte do código HTML tem uma função. <br>O !DOCTYPE html diz que estamos usando HTML moderno. <br>As tags html, head e body organizam a página. <br>O title define o nome da aba e o h1 mostra o título principal da página."
+    },
+    {
+      "type": "question",
+      "heading": "Dúvidas Comuns",
+      "text": "Por que algumas tags têm '/'? <br>Porque toda tag de abertura (h1) precisa ter uma de fechamento (/h1). <br>Esquecer de fechar pode bagunçar sua página. Pense em sanduíches: abrimos e fechamos o pão!"
+    },
+    {
+      "type": "image",
+      "heading": "Imagem: Estrutura Básica HTML",
+      "image_placeholder": "Uma imagem mostrando como as partes do HTML (head, body, title, h1) aparecem na página e no navegador.",
+      "image_url": "resources/images/lesson_illustrations/lesson_01_html.png"
+    }
+  ],
+  "exercises": [
+    {
+      "type": "exercise",
+      "prompt": "Mude o título da aba do navegador para 'Meu Site Genial!'."
+    },
+    {
+      "type": "exercise",
+      "prompt": "Mude o texto 'Olá, Mundo!' para 'Bem-vindo ao meu primeiro site!'."
+    },
+    {
+      "type": "exercise",
+      "prompt": "Adicione um h2 abaixo do h1, com o texto 'Subtítulo da Página'."
+    },
+    {
+      "type": "exercise",
+      "prompt": "Apague o h1 e escreva ele de novo sozinho."
+    },
+    {
+      "type": "exercise",
+      "prompt": "Adicione um h3 com o seu nome na página."
+    }
+  ],
+  "project": {
+    "type": "project",
+    "name": "Desafio: Segunda Página com Link",
+    "description": "Crie um novo arquivo chamado pagina2.html com um `h1` diferente. Em index.html, adicione um link com `a href=\"pagina2.html\"` para que, ao clicar, vá para a nova página.",
+    "goal": "Criar uma segunda página HTML e adicionar um link para ela na primeira página."
+  },
+  "video_suggestion": {
+    "title": "O que é HTML? (Explicação simples e visual)",
+    "url": "https://www.youtube.com/embed/ok-plXXHlWw"
+  }
+}
